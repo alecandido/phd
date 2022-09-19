@@ -1,0 +1,197 @@
+\newif\ifnotoc\notocfalse
+\newif\ifemailadd\emailaddfalse
+\newif\ifnatbibsort\natbibsorttrue
+
+\RequirePackage[colorlinks=true
+  ,urlcolor=blue
+  ,anchorcolor=blue
+  ,citecolor=blue
+  ,filecolor=blue
+  ,linkcolor=blue
+  ,menucolor=blue
+  ,pagecolor=blue
+  ,linktocpage=true
+  ,pdfproducer=medialab
+  ,pdfa=true
+]{hyperref}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{epsfig}
+\ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
+
+\def\@abstract{\@empty}
+\def\@keywords{\@empty}
+
+% \newcommand{\keywords}[1]{\if!\@keywords!\gdef\@keywords{#1}\else%
+\renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
+\renewcommand\@oddfoot{\hfill-- \thepage\ --\hfill}
+
+% acknowledgment section
+\newcommand\acknowledgments{\section*{Acknowledgments}}
+\newcommand\notoc{\notoctrue}
+\newcommand\preprint[1]{\gdef\@preprint{\hfill #1}}
+
+%headings style
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+                                   {-3.5ex \@plus -1.3ex \@minus -.7ex}%
+                                   {2.3ex \@plus.4ex \@minus .4ex}%
+                                   {\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                   {-2.3ex\@plus -1ex \@minus -.5ex}%
+                                   {1.2ex \@plus .3ex \@minus .3ex}%
+                                   {\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                   {-2.3ex\@plus -1ex \@minus -.5ex}%
+                                   {1ex \@plus .2ex \@minus .2ex}%
+                                   {\normalfont\normalsize\bfseries}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                   {1.75ex \@plus1ex \@minus.2ex}%
+                                   {-1em}%
+                                   {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+                                   {1.75ex \@plus1ex \@minus .2ex}%
+                                   {-1em}%
+                                   {\normalfont\normalsize\itshape}}
+
+% Page layout
+\renewcommand{\baselinestretch}{1.1}\normalsize
+\setlength\lineskip{1\p@}
+\setlength\parindent{1.2\parindent}
+\setlength\normallineskip{1\p@}
+\setlength\parskip{0\p@ \@plus \p@}
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+\widowpenalty 1000
+\clubpenalty 1000
+
+\setcounter{topnumber}{4}
+\renewcommand\topfraction{1}
+\setcounter{bottomnumber}{1}
+\renewcommand\bottomfraction{.6}
+\setcounter{totalnumber}{5}
+\renewcommand\textfraction{0}
+\renewcommand\floatpagefraction{0.8}
+
+\textwidth  .84\paperwidth
+\setlength\@tempdima{.76\paperheight}
+\divide\@tempdima\baselineskip
+\@tempcnta=\@tempdima
+\setlength\textheight{\@tempcnta\baselineskip}
+\addtolength\textheight{\topskip}
+
+\voffset -1in
+\topmargin   .05\paperheight
+\headheight  .02\paperheight
+\headsep     .03\paperheight
+\footskip    .07\paperheight
+
+\marginparsep 9\p@
+\marginparpush 6\p@
+
+\hoffset -1.5in
+\oddsidemargin .14\paperwidth
+\evensidemargin .14\paperwidth
+\marginparwidth .11\paperwidth
+
+\setlength\arraycolsep{2\p@}
+\setlength\tabcolsep{6\p@}
+\setlength\arrayrulewidth{.4\p@}
+\setlength\doublerulesep{2\p@}
+\setlength\tabbingsep{\labelsep}
+\skip\@mpfootins = \skip\footins
+\setlength\fboxsep{3\p@}
+\setlength\fboxrule{.4\p@}
+
+% No dots in the table of contents
+\renewcommand{\@dotsep}{10000}
+
+% Footer and header of the body
+% the command ``\pagestyle{myplain}'' must be inserted
+% just after ``\begin{document}''
+\newcommand\ps@myplain{
+\pagenumbering{arabic}
+\renewcommand\@oddfoot{\hfill-- \thepage\ --\hfill}
+\renewcommand\@oddhead{}}
+\let\ps@plain=\ps@myplain
+
+%number equations after the sections
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{section}
+
+%Caption of figure and table
+\def\fnum@figure{\textbf{\figurename\nobreakspace\thefigure}}
+\def\fnum@table{\textbf{\tablename\nobreakspace\thetable}}
+
+%authors and affiliations
+\newtoks\auth@toks
+\renewcommand{\author}[2][]{%
+  \if!#1!%
+    \auth@toks=\expandafter{\the\auth@toks#2\ }%
+  \else
+    \auth@toks=\expandafter{\the\auth@toks#2$^{#1}$\ }%
+  \fi
+}
+
+%redefining \@makecaption, to have captions with \small font size
+%taken from article.cls l.489--498
+%the only differences are the ``\small '' commands added on two lines
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{\small #1. #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    \small #1. #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+%apply some formatting on the biblio
+%without redefining the whole env
+\let\oldthebibliography=\thebibliography
+\let\endoldthebibliography=\endthebibliography
+\renewenvironment{thebibliography}[1]{%
+\begin{oldthebibliography}{#1}%
+\small%
+\raggedright%
+\setlength{\itemsep}{5pt plus 0.2ex minus 0.05ex}%
+}%
+{%
+\end{oldthebibliography}%
+}
+
+% no header in the title page
+\newcommand\ps@titlepage{\renewcommand\@oddhead{}}
+
+%first page
+\renewcommand\maketitle{\twocolumn[
+%% First page
+\pagestyle{empty}
+\thispagestyle{titlepage}
+\setcounter{page}{0}
+% Title
+{\LARGE\flushleft\bfseries\@title\par}
+\bigskip
+% Author
+{\large\raggedright\the\auth@toks\quad-\quad{\itshape\today}\par}
+\bigskip
+% Rule
+\if!\@abstract!\else\bigskip\fi
+\hrule height 0.5\p@%
+% Abstract
+\if!\@abstract!\else\bigskip\noindent{\renewcommand\baselinestretch{.9}\textsc{Summary:}}\ \@abstract\fi
+% Keywords
+% \if!\@keywords!\else\noindent{\textsc{Keywords:}} \@keywords\afterKeywordsSpace\fi
+% Dedication
+% \if!\@dedicated!\else\vbox{\small\it\raggedleft\@dedicated}\afterDedicatedSpace\fi
+% Rule
+\if!\@abstract!\else\bigskip\hrule height 0.5\p@\fi
+\bigskip\bigskip
+%
+\ifnotoc\else
+\tableofcontents
+\fi
+% \setcounter{footnote}{0}
+\pagestyle{myplain}\pagenumbering{arabic}
+]} % close the \renewcommand\maketitle{

@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt,twocolumn]{article}
+
+\usepackage{styles/layout}
+\usepackage{styles/main}
+\usepackage{styles/defs}
+\usepackage{styles/pqcd}
+\newcites{pap}{Papers}
+\newcites{code}{Codes}
+
+\graphicspath{{assets/}}
+
+\title{Research Activity Report}
+\author{Alessandro Candido}
+
+\abstract{
+    Following, the activity report about the research performed in the period
+    October 2019 - September 2022, as a member of the \nnnpdf{} team, and
+    lately also of the \nnpdf{} collaboration, under the supervision of the
+    prof. Stefano Forte.
+    Most of the research has been focused on the development of a new
+    framework, to provide fast, flexible, and reproducible theory predictions
+    for \pdf{} fitting.
+    Despite this being the main effort, a number of other results has been
+    achieved in the meanwhile, from framework's applications, to dedicated
+    studies.
+    Attendance to schools and conferences is reported at the end, together with
+    references to delivered talks.
+}
+
+\begin{document} 
+\notoc
+\maketitle
+
+\section{Research}
+\label{sec:research}
+\input{sections/research}
+
+\section{Schools}
+\label{sec:schools}
+\input{sections/schools}
+
+\section{Conferences}
+\label{sec:conferences}
+\input{sections/conferences}
+
+\bibliographystylepap{styles/JHEP}
+\bibliographypap{bibliography/papers.bib}
+\bibliographystylecode{alpha}
+\bibliographycode{bibliography/codes.bib}
+
+\end{document}
