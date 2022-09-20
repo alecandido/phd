@@ -1,5 +1,3 @@
-LATEXC := pdflatex
-BIBC := bibtex
 SECTIONS := $(shell find sections/ -type f)
 STYLES := $(shell find styles/ -type f)
 BIBLIOGRAPHY := $(shell find bibliography/*.bib -type f)
@@ -13,11 +11,7 @@ main: ${PAPER}
 ${PAPER}: main.tex ${SECTIONS} ${STYLES} ${BIBLIOGRAPHY}
 	$(eval MAIN=$(patsubst %.tex,%,$<))
 	$(eval OUT=$(patsubst %.pdf,%,$@))
-	$(LATEXC) --shell-escape -jobname=${OUT} ${MAIN}
-	$(BIBC) ${OUT}
-	$(LATEXC) --shell-escape -jobname=${OUT} ${MAIN}
-	$(LATEXC) --shell-escape -jobname=${OUT} ${MAIN}
-
+	latexmk --shell-escape -jobname=${OUT} ${MAIN}
 
 clean:
 	@git clean -xdf . \
