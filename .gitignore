@@ -4,6 +4,7 @@
 *.ist
 *.mtc
 *.txss
+*.symbols-glo
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
