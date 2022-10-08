@@ -1,0 +1,34 @@
+% !TEX encoding = UTF-8
+% !TEX root = ../thesis.tex
+% !TEX spellcheck = en-US
+
+\usepackage{datetime2}
+\usepackage{datetime2-calc}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+\usepackage{calc}
+\usepackage[sort]{cleveref}
+
+% glossaries (after hyperref)
+\usepackage[acronym,automake,nomain,section=section]{glossaries}
+%\newglossary*{sym}{Symbols}
+\newglossary*{symbols}{Symbols}
+\renewcommand*{\glstextformat}[1]{\textcolor{CTurl!30!black}{#1}} %color defined by classichthesis
+\makeglossaries
+
+\usepackage{ifoddpage}
+\input{styles/layout}
+\input{styles/math}
+
+% mycommands
+\newcommand{\ttmp}[1]{\textit{\textcolor{violet}{#1}}}
+\newcommand{\gsym}[1]{\glssymbol{#1}}
+
+%\newcommand{\Section}[2][]{
+%	\ifstrempty{#1}{%
+%		\section{#2}
+%	}{%
+%		\setcounter{section}{#1-1}
+%		\section{#2}
+%	}%
+%}

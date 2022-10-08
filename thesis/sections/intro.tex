@@ -1,0 +1,73 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = it-IT
+
+%*******************************************************
+% Introduzione
+%*******************************************************
+\cleardoublepage
+\pdfbookmark{Introduction}{introduction}
+
+\chapter*{Introduction}
+\markboth{\spacedlowsmallcaps{Introduction}}%
+	{\spacedlowsmallcaps{Introduction}}
+
+
+\indent Since Einstein-Hilbert action is non-renormalizable there is no natural candidate for a quantum theory of the gravitation. Thus there are more different attempts to define a consistent theory for Quantum Gravity, one of these is Asymptotic Safety (\cite{Weinberg1979}).
+\newline
+
+\indent Asymptotic Safety is still a Quantum Field Theory approach, the difference  is that another notion of renormalizability is taken into account, that generalizes the usual one; it consists in searching for a generic Renormalization Group (RG) ultraviolet fixed points rather than requesting the renormalizability perturbing around the Gaussian one.
+
+Causal Dynamical Triangulation (CDT, \cite{Ambjorn2012}) is a non-perturbative regulator for gravity used for defining the RG flow, in a way similar to that of lattice in flat space QFT, in which the ultraviolet divergences are cutoffed limiting the configurations (that in general is the quotient set of differential manifolds with diffeomorphisms) to the piece-wise flat ones, where the geometry is defined by an abstract triangulation and the length of the simplex's edge, that acts as a lattice spacing.
+
+Moreover a suitable version of discrete action must be defined to be evaluated on a given triangulation, with the requirement to reproduce the Einstein-Hilbert one in the continuum limit. This is called Regge action (\cite{Regge1961}) and has been defined associating the curvature term to the \textit{missing angles} (while the volume term is trivially the triangulation's volume).
+\newline
+
+\indent So CDT regulator allows the use of numerical simulations, because the new configuration space has a discrete structure that can be represented in a finite memory space.
+
+This has been done employing Monte Carlo methods to create a sample distributed according the probability defined by the Euclidean action, to obtain a discrete version of the path integral. Some successful results have been found for a particular phase, e.g. it has been shown that the shape of the simulated quantum universe is consistent with a de Sitter one.
+\newline
+
+\indent The main goal of the thesis is to extend the dynamical variables from the bare geometry, i.e. a pure gravity theory, to the inclusion of gauge fields living on the triangulation.
+\newline
+
+\indent The first step consists in identifying an appropriate representation for the new degrees of freedom in the framework of the Dynamical Triangulations. We did this localizing gauge fields on the links of the graph dual to the triangulation, and the reasons of this choice will be discussed in the thesis.
+
+Then other two fundamental ingredients needed are: defining a suitable (and efficient) Monte Carlo algorithm and an appropriate action that considers the new degrees of freedom introduced.
+\newline
+
+\indent The Monte Carlo algorithm for sample extraction is a local Markov Chain, in the sense that transition probability are non-zero only between those configurations that differ only in a small region.
+The small regions considered are called \textit{cell}, and are the smallest available to jump from a given triangulation in another legal one. These jumps, i.e. the set of couples of "adjacent" triangulations on which the Markov Chain has non-zero values, are called \textit{moves}, and are already defined in absence of gauge fields.
+
+The presence of the gauge fields require mainly two upgrades of the Markov Chain: the definition of gauge structure update during each triangulation move and a dedicated gauge move (performed on a fixed triangulation) that updates a single gauge field, for which we choose to employ the heat-bath algorithm.
+The second upgrade is needed in order to ensure the ergodicity of the upgraded Markov Chain.
+\newline
+
+\indent We define the second ingredient, the action for gauge-including triangulations, merging the most similar objects that are already used: the Regge action for triangulations and the lattice one for gauge theories.
+
+While the Regge action is already appropriate for this kind of objects the lattice action needs to be generalized for being applied on triangulations, because its definition is for regular flat lattices.
+This generalization has been chosen in order to still have a correct naïve continuum limit, and to be proportional to the original action on a flat triangulation; this is done multiplying the term preexisting term for the inverse length of the plaquette, that oppositely to what happens for hypercubic lattices is not fixed for generic triangulations, and according the Regge action is the measure of the local curvature.
+\newline
+
+\indent We used the defined algorithm to test the behavior of gauge fields in a dynamical geometry, and their back-reaction on the geometry itself.
+So both gauge and triangulation observables are analyzed to characterize the physics of the system, in particular, the causal structure of CDT gives us a straightforward definition of correlation lengths, and taking one length from the geometry (from slice volumes' correlation) and one from the gauge sector (torelons for example) it is possible to define a common continuum limit, where the two lengths scale with a fixed ratio while taking triangulations of increasing volume.
+
+%\vfill
+
+%\pagebreak
+
+\vspace*{20pt}
+
+The thesis is structured in five chapters: the first three are an introduction to theory and the methods we used, while the following two contain our developments.
+
+In particular:
+\begin{description}
+\item[{\hyperref[cap:assty]{The first chapter}}] is a review of the Asymptotic Safety physical principle, and some related concepts are introduced;
+\item[{\hyperref[cap:cdt]{The second chapter}}] is a review of the Causal Dynamical Triangulation framework, explaining how and why it can be used as a theoretical and numerical instrument for studying quantum gravity;
+\item[{\hyperref[cap:nummet]{The third chapter}}] is an introduction to some numerical methods employed in our simulations;
+\item[{\hyperref[cap:gcdt]{The fourth chapter}}] is about the introduction of gauge fields dynamics in CDT and it describes both the theoretical principles and the new Monte Carlo algorithm;
+\item[{\hyperref[cap:res]{The fifth chapter}}] collects the results of the simulations performed with the new algorithm, discussing the effects of gauge on triangulations dynamics and vice versa;
+\item[{\hyperref[cap:misc]{The appendix A}}] analyzes in details some concepts introduced in \cref{cap:assty,cap:cdt};
+\item[{\hyperref[cap:gaugeapp]{The appendix B}}] contains detailed description of topics related to gauge fields, introduced in \cref{cap:gcdt} and used in simulations.
+\end{description}

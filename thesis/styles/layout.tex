@@ -1,0 +1,68 @@
+% !TEX encoding = UTF-8
+% !TEX root = ../thesis.tex
+% !TEX spellcheck = en-US
+
+% --- PACKAGES ---
+%\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage[bottom]{footmisc}
+%\usepackage{wrapfig}
+\usepackage{float}
+%\usepackage{indentfirst}			% rientra il primo capoverso di ogni sezione
+%\usepackage[bottom]{footmisc}		% note a fondo pagina
+%\usepackage{emptypage}
+\usepackage{verbatim}
+\usepackage{lipsum}
+\usepackage{enumerate}
+%\usepackage{enumitem}
+%\usepackage{kantlipsum}
+\usepackage{tcolorbox}
+\usepackage{changepage}
+\usepackage{minitoc}
+\let\checkmark\relax
+\usepackage{dingbat}
+% --------------------
+
+%------------ INSPECT ---------------%
+%\usepackage{layouts}
+%\printinunitsof{mm}{\pagevalues}
+%\verb|\marginparwidth|: \printinunitsof{mm}\prntlen{\marginparwidth}
+%------------------------------------%
+
+%------------------------------------%
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage{pgfornament}
+% \usepackage{pgfornament,pgfornament-han}
+\usetikzlibrary{arrows,shapes,decorations,automata,backgrounds,petri,positioning}
+%------------------------------------%
+
+\setlength{\skip\footins}{15pt}
+
+\tcbuselibrary{theorems}
+
+\newcommand{\OpenLeft}[0]{\makeatletter\@openrightfalse\makeatother}
+\newcommand{\OpenRight}[0]{\makeatletter\@openrighttrue\makeatother}
+% al momento non funzionano, ma il loro contenuto sì, bisognerà capire perché
+
+\newenvironment{BoxNota}[1]{
+	%
+	\tcolorbox
+	[savedelimiter=mybox,
+	colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,
+	title=#1]}
+%
+{\endtcolorbox}
+
+\def\code#1{\texttt{#1}}
+
+%\renewcommand{\footnoterule}{%
+%	\kern -5pt
+%	\begin{center}
+%		\pgfornament[height=4pt,color=black!50,rotate=270]{5}
+%	\end{center}
+%	\kern -3pt
+%}

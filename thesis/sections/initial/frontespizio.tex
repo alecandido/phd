@@ -1,0 +1,24 @@
+% !TEX encoding = UTF-8
+% !TEX root = ../../main.tex
+% !TEX spellcheck = en-US
+
+%*******************************************************
+% Frontespizio
+%*******************************************************
+	
+\restoregeometry
+\thispagestyle{empty}
+\phantomsection
+\pdfbookmark{Title Page}{Title Page}
+
+\begin{center}
+	{\huge \textsf{\myTitle}}\\
+	\vspace{5pt}
+	{\large \textsf{\myName}}
+\end{center}
+
+\vspace*{4cm}
+
+\ifthenelse{\boolean{gs}}%
+{\includegraphics[width=\textwidth]{GalleriaStampe_gs}}%
+{\includegraphics[width=\textwidth]{GalleriaStampe}}%

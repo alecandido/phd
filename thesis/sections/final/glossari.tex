@@ -1,0 +1,29 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../Tesi.tex
+% !TEX spellcheck = en-US
+
+%*******************************************************
+% Glossari
+%*******************************************************
+\cleardoublepage
+\pdfbookmark{Glossaries}{glossaries}
+
+\chapter*{Glossaries}
+\markboth{\spacedlowsmallcaps{Glossaries}}%
+	{\spacedlowsmallcaps{Glossaries}}
+
+\hypersetup{linkcolor=CTurl}
+
+\renewcommand{\glsglossarymark}[1]{}
+
+%nonumberlist
+\printglossary[type=acronym,nopostdot]
+
+\renewcommand{\glstreepredesc}{\newline\noindent}
+\renewcommand{\glspostdescription}{.}
+\renewenvironment*{theglossary}{\begin{description}}{\end{description}}
+
+\printglossary[type=symbols,title=Physical Quantities]
+
+\hypersetup{linkcolor=CTlink}

@@ -1,0 +1,38 @@
+% !TEX encoding = UTF-8
+% !TEX root = ../main.tex
+% !TEX spellcheck = en-US
+
+%*******************************************************
+% Introduzione
+%*******************************************************
+\cleardoublepage
+\pdfbookmark{Conclusions}{conclusions}
+
+\chapter*{Conclusions}
+\markboth{\spacedlowsmallcaps{Conclusions}}%
+	{\spacedlowsmallcaps{Conclusions}}
+
+The main task of this thesis was to design a suitable algorithm to simulate the quantum dynamics of both gauge fields and gravity.
+
+\paragraph{Design} The starting point was the CDT framework, in which the quantum dynamic of gravity is implemented representing the space-time as a triangulation, a specific kind of piece-wise linear manifold.
+Then we tried to reproduce on triangulations the Wilson action, that is the action usually employed on flat lattices. We found that it needs some upgrades, because the triangulations have less regularity than a hypercubic lattice, so we fix the exact form of the action matching the continuum limit.
+
+
+%************************************************
+\section*{Perspectives}
+\label{sec:perspectives}
+%************************************************
+
+\paragraph{Universality class} We found the critical indices in the gravity sector and that they are independent on the presence of gauge fields, so we would analyze the analytical properties of our model of gravity identifying the universality class it belongs to.
+Furthermore we would inspect the critical behavior of the gauge sector, comparing it with the known one for flat fixed background.
+
+\paragraph{Strong coupling limit} Another interesting task that is available to be done with the present algorithm and its implementation is the exploration of the strong coupling limit $ \beta \rightarrow 0 $, to compare it with analytical results, that are simpler in that limit.
+
+\paragraph{Higher Dimension} The main upgrade we are seeking is the generalization to triangulations in higher dimensions. Our algorithm removes any conceptual obstruction, but there is still the technical complication discussed above.
+It would be very interesting because if the simulations became available in $ 4 $ dimensions we would be reproducing a physical scenario, and the comparison with cosmological observations would become achievable.
+
+\paragraph{Different Gauge groups} We explore the dynamics with a $ U(1) $ field, but we already have all the ingredients to simulate different gauge groups dynamics. In particular the $ U(N) $ and $ SU(2) $ groups are particularly easy, thanks to the results in \cite{Brower1981, Brower1981a}, while $ SU(3) $ and $ SU(N) $ with higher $ N $ are still possible, but harder to prepare and more expensive to simulate.
+
+\paragraph{Matter Fields} Another interesting task is the introduction of matter fields. This is quite to different to change the gauge groups, both because it is not gauge and because the known matter is composed by fermion fields, so it requires another algorithm upgrade, but it can be worth the effort.
+
+\vfill

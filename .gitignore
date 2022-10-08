@@ -1,5 +1,10 @@
 *.pdf
 
+# More generated files
+*.ist
+*.mtc
+*.txss
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

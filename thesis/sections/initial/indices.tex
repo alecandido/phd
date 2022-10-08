@@ -1,0 +1,70 @@
+% !TEX encoding = UTF-8
+% !TEX root = ../../main.tex
+% !TEX spellcheck = en-US
+
+%*******************************************************
+% Indici
+%*******************************************************
+\cleardoublepage
+\pdfbookmark{\contentsname}{tableofcontents}
+\dominitoc[e]
+\mtcsetrules{minitoc}{off}
+\mtcsetfeature{minitoc}{before}{\hspace*{-10pt}\textcolor{black!70}{\rule{\textwidth}{0.1pt}}\vspace{-30pt}}
+\mtcsetfeature{minitoc}{after}{\vspace{-20pt}\hspace*{-10pt}\textcolor{black!70}{\rule{\textwidth}{0.1pt}}}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\adjustmtc
+\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}} 
+\clearpage
+
+\begingroup 
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    %*******************************************************
+    % Elenco delle figure
+    %*******************************************************    
+    \phantomsection
+    \pdfbookmark{\listfigurename}{lof}
+    \listoffigures
+
+    \vspace*{5cm}
+
+    %*******************************************************
+    % Elenco delle tabelle
+    %*******************************************************
+    \phantomsection
+    \pdfbookmark{\listtablename}{lot}
+    \listoftables
+       
+\endgroup
+\vfill
+
+%\pagebreak
+%\phantomsection
+%\pdfbookmark{Sommario}{Sommario}
+%\begingroup
+%\let\clearpage\relax
+%\let\cleardoublepage\relax
+%\let\cleardoublepage\relax
+%
+%\ttmp{Se qui rimane una pagina bianca posso metterci un breve sommario}
+
+%\chapter*{Sommario}
+%
+%\lipsum[1]
+%
+%\vfill
+
+%\vspace*{100pt}
+
+%\selectlanguage{english}
+%\pdfbookmark{Abstract}{Abstract}
+%\chapter*{Abstract}
+%
+%\lipsum[2]
+%
+%\selectlanguage{italian}
+%
+%\endgroup			
+
+\cleardoublepage

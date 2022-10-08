@@ -1,0 +1,97 @@
+% !TEX encoding = UTF-8
+% !TEX root = ../thesis.tex
+
+% font encoding:
+% NOTA BENE! richiede una distribuzione *completa* di LaTeX,
+% per esempio TeXLive o MiKTeX *complete*
+\usepackage[T1]{fontenc}
+
+% input encoding:
+% [latin1] is also fine
+% ACHTUNG! Sync to editor preferences
+\usepackage[utf8]{inputenc}
+
+% to write both in Italian and English;
+% last language is the default one
+\usepackage[italian,english]{babel}
+
+% frontespizo
+% per includerlo nel documento bisogna:
+% 1. compilare una prima volta Tesi.tex;
+% 2. compilare a parte Tesi-frn.tex, generato dalla compilazione precedente;
+% 3. compilare ancora Tesi.tex.
+%\usepackage[suftesi]{frontespizio}
+
+
+ % rientra il primo capoverso di ogni sezione
+\usepackage{indentfirst}
+
+% images
+\usepackage{graphicx}
+
+% codes
+\usepackage{listings}
+
+% quotes
+\usepackage[font=small]{quoting}
+
+% math
+\usepackage{amsmath,amssymb,amsthm}
+
+% complete page references
+\usepackage[english]{varioref}
+
+% fixed width tables
+\usepackage{tabularx}
+
+% double quotes optimized for biblatex
+\usepackage[autostyle,italian=guillemets]{csquotes}
+
+% bibliography;
+% make citing style author-year;
+% the style "numeric-comp" makes numeric references;
+\usepackage[style=philosophy-modern, url=false,
+			hyperref,square,backend=biber]{biblatex}
+
+% biblatex database
+\addbibresource{library.bib}
+
+% sub-figures and sub-tables
+\usepackage{subfig}
+
+% pseudo-text
+\usepackage{lipsum}
+
+% ClassicThesis style
+% - chapter numbers in Euler font
+% - if using subfig package
+% - Bera Mono as monospace font
+% - AMS Euler as math font
+% - improve line spacing
+% - codes
+% - for documents divided in parts 
+\usepackage[eulerchapternumbers,%
+            subfig,%
+            beramono,%
+            eulermath,%
+            pdfspacing,%
+            listings,%
+            parts,%
+            ]{classicthesis}
+% rearrange the appearance of classicthesis
+\usepackage{arsclassica}
+
+% inner=2.5cm,
+\usepackage[bottom=3.5cm]{geometry}
+
+\newlength{\myshift}
+\setlength{\myshift}{4mm}
+\addtolength{\evensidemargin}{-\myshift}
+\addtolength{\oddsidemargin}{\myshift}
+%\setlength{\evensidemargin}{8.40024mm} % initial value: 12.40024mm
+%\setlength{\oddsidemargin}{3.80026mm} % initial value: -0.19974mm
+
+% grey-scale
+\usepackage{ifthen}
+\newboolean{gs}
+\setboolean{gs}{false}

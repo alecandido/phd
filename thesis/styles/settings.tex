@@ -1,0 +1,105 @@
+% Here are stored personal settings
+
+%*********************************************************************************
+% Personal commands
+%*********************************************************************************
+% author
+\newcommand{\myName}{Alessandro Candido}                        
+% title
+\newcommand{\myTitle}{Theory Predictions for PDF fitting}
+% thesis type
+\newcommand{\myDegree}{PhD Thesis}                          
+% university
+\newcommand{\myUni}{Universit\`a degli Studi di Milano}       					
+% department
+\newcommand{\myDepartment}{Dipartimento di Fisica Aldo Pontremoli}      
+% supervisor
+\newcommand{\myProf}{Prof.~Stefano Forte}             		
+% co-supervisor
+\newcommand{\myOtherProf}{Prof.~Stefano Carrazza}        
+% where
+\newcommand{\myLocation}{Milan}                                  
+% when
+\newcommand{\myTime}{\DTMMonthname{\the\month} \the\year}       
+
+%*********************************************************************************
+% amsmath, amssymb, amsthm settings
+%*********************************************************************************
+
+% theorem, laws, and acts (amsthm package required)
+\theoremstyle{plain} 
+\newtheorem{theorem}{Theorem}
+\newtheorem{law}{Law}
+\newtheorem{act}[law]{Act}
+\newtheorem{murphy}{Murphy}[section]
+
+%*********************************************************************************
+% biblatex settings
+%*********************************************************************************
+\defbibheading{bibliography}{%
+\cleardoublepage
+\manualmark
+\phantomsection 
+\addcontentsline{toc}{chapter}{\tocEntry{\bibname}}
+\chapter*{\bibname\markboth{\spacedlowsmallcaps{\bibname}}
+{\spacedlowsmallcaps{\bibname}}}}
+
+%*********************************************************************************
+% listings settings
+%*********************************************************************************
+\lstset{language=[LaTeX]Tex,%C++,
+    keywordstyle=\color{RoyalBlue},%\bfseries,
+    basicstyle=\small\ttfamily,
+    %identifierstyle=\color{NavyBlue},
+    commentstyle=\color{Green}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,%left,%
+    numberstyle=\scriptsize,%\tiny
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single
+} 
+
+%*********************************************************************************
+% graphicx settings
+%*********************************************************************************
+\graphicspath{{pictures/}}
+
+%*********************************************************************************
+% Optimized margins for A4
+%*********************************************************************************
+\areaset[current]{370pt}{750pt}
+\setlength{\marginparwidth}{7em}
+\setlength{\marginparsep}{2em}%
+
+%*********************************************************************************
+% varioref settings
+%*********************************************************************************
+\makeatletter
+\vref@addto\extrasitalian{%
+   \def\reftextfaraway#1{a pagina~\pageref{#1}}%
+}
+\makeatother
+
+%*********************************************************************************
+% More
+%*********************************************************************************
+
+% [...] ;-)
+\newcommand{\omissis}{[\dots\negthinspace]}
+
+% hyphenation exceptions
+\hyphenation{Fortran ma-cro-istru-zio-ne nitro-idrossil-amminico}
+
+% correct scrreprt's bug about figure numbering
+\renewcommand*{\figureformat}{%
+  \figurename~\thefigure%
+  %\autodot%
+}
+\renewcommand*{\tableformat}{%
+  \tablename~\thetable%
+  %\autodot%
+}
