@@ -2,67 +2,90 @@
 % !TEX root = ../thesis.tex
 % !TEX spellcheck = en-US
 
-% --- PACKAGES ---
-%\usepackage{multicol}
+% manage layouts
 \usepackage{geometry}
+
+% indent first paragraph of each section
+\usepackage{indentfirst}
+
+% fixed width tables
+% \usepackage{tabularx}
+
 \usepackage{booktabs}
 \usepackage{subfig}
 \usepackage[bottom]{footmisc}
-%\usepackage{wrapfig}
 \usepackage{float}
-%\usepackage{indentfirst}			% rientra il primo capoverso di ogni sezione
 %\usepackage[bottom]{footmisc}		% note a fondo pagina
 %\usepackage{emptypage}
 \usepackage{verbatim}
 \usepackage{lipsum}
 \usepackage{enumerate}
 %\usepackage{enumitem}
-%\usepackage{kantlipsum}
-\usepackage{tcolorbox}
 \usepackage{changepage}
-\usepackage{minitoc}
 \let\checkmark\relax
 \usepackage{dingbat}
-% --------------------
+\usepackage{lettrine}
 
-%------------ INSPECT ---------------%
+%*********************************************************************************
+% Color Boxes
+%*********************************************************************************
 %\usepackage{layouts}
 %\printinunitsof{mm}{\pagevalues}
 %\verb|\marginparwidth|: \printinunitsof{mm}\prntlen{\marginparwidth}
-%------------------------------------%
 
-%------------------------------------%
+%*********************************************************************************
+% Tikz
+%*********************************************************************************
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{rotating}
 \usepackage{pgfornament}
 % \usepackage{pgfornament,pgfornament-han}
 \usetikzlibrary{arrows,shapes,decorations,automata,backgrounds,petri,positioning}
-%------------------------------------%
 
 \setlength{\skip\footins}{15pt}
 
+%*********************************************************************************
+% Color Boxes
+%*********************************************************************************
+
+\usepackage{tcolorbox}
 \tcbuselibrary{theorems}
 
-\newcommand{\OpenLeft}[0]{\makeatletter\@openrightfalse\makeatother}
-\newcommand{\OpenRight}[0]{\makeatletter\@openrighttrue\makeatother}
-% al momento non funzionano, ma il loro contenuto sì, bisognerà capire perché
+%*********************************************************************************
+% Optimized margins for B5
+%*********************************************************************************
+\KOMAoptions{BCOR=10mm}
+\areaset[current]{360pt}{650pt}
+\setlength{\marginparwidth}{7em}
+\setlength{\marginparsep}{2em}%
 
-\newenvironment{BoxNota}[1]{
-	%
-	\tcolorbox
-	[savedelimiter=mybox,
-	colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,
-	title=#1]}
-%
-{\endtcolorbox}
+%*********************************************************************************
+% Minitoc settings
+%*********************************************************************************
+\usepackage{minitoc}
+\dominitoc[e]
+\mtcsetrules{minitoc}{off}
+\mtcsetfeature{minitoc}{before}{\textcolor{black!70}{\rule{0.8\textwidth}{0.1pt}}\vspace{-20pt}}
+\mtcsetfeature{minitoc}{after}{\vspace{-20pt}\textcolor{black!70}{\rule{0.8\textwidth}{0.1pt}}}
+\setcounter{tocdepth}{2}
 
-\def\code#1{\texttt{#1}}
-
-%\renewcommand{\footnoterule}{%
-%	\kern -5pt
-%	\begin{center}
-%		\pgfornament[height=4pt,color=black!50,rotate=270]{5}
-%	\end{center}
-%	\kern -3pt
-%}
+%*********************************************************************************
+% listings settings - code snippets
+%*********************************************************************************
+\usepackage{listings}
+\lstset{language=[LaTeX]Tex,%C++,
+    keywordstyle=\color{RoyalBlue},%\bfseries,
+    basicstyle=\small\ttfamily,
+    %identifierstyle=\color{NavyBlue},
+    commentstyle=\color{Green}\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,%left,%
+    numberstyle=\scriptsize,%\tiny
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single
+} 

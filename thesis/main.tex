@@ -10,56 +10,57 @@
 % !TEX root = thesis.tex
 % !TEX spellcheck = en-US
 
-\documentclass[11pt,%                      % corpo del font principale
-               a4paper,%                   % carta A4
+\documentclass[10pt,%                      % corpo del font principale
+               b5paper,%                   % carta A4
                twoside,openright,%         % fronte-retro
 %              oneside,openany,%           % solo fronte
                titlepage,%                 % frontespizio
                headinclude,,footinclude,%  % testatina e piede di pagina
-               BCOR=5mm,%                   % rilegatura di 5 mm
                cleardoublepage=empty,%     % pagine vuote senza testatina e piede di pagina
                captions=tableheading,%     % didascalie in cima alle tabelle
                ]{scrreprt}                 % classe report di KOMA-Script;
                
-\input{styles/frontmatter}
+% packages and style
+\input{styles/preamble}
 % personal settings
 \input{styles/settings}
-% further styles
-\input{styles/mypkg}
 
 \begin{document}
-\pagestyle{scrheadings}
-%******************************************************************
-% Materiale iniziale
-%******************************************************************
-\input{sections/initial/cover} 
-\pagenumbering{roman}
-\input{sections/initial/frontespizio}
-\input{sections/initial/colophon}
-\input{sections/initial/dedica}
-\input{sections/initial/indices}
-%\input{sections/initial/abstract}
-%\input{sections/initial/Ringraziamenti}
-\input{sections/intro}
 
-\cleardoublepage
-%******************************************************************
-% Materiale principale
-%******************************************************************
-\pagenumbering{arabic}
-\part[Literature]{Introductory material\protect\\ and \protect\\state of the art} %Letteratura
-\input{sections/asymptotic-safety}
-\part{Original developments}
-\input{sections/final/conclusions}
+    \pagestyle{scrheadings}
 
-\appendix
-\part*{Appendices}
-\input{sections/misc}
-% *****************************************************************
-% Materiale finale
-%******************************************************************
-\input{sections/final/glossari}
-\input{sections/final/bibliography}
-%\input{sections/final/declaration}
-\input{sections/final/acknowledgements}
+    %******************************************************************
+    % Materiale iniziale
+    %******************************************************************
+    \input{sections/initial/cover} 
+    \pagenumbering{roman}
+    % \input{sections/initial/title-page}
+    \input{sections/initial/colophon}
+    \input{sections/initial/dedica}
+    \input{sections/initial/indices}
+    %\input{sections/initial/abstract}
+    \input{sections/intro}
+
+    \cleardoublepage
+
+    %******************************************************************
+    % Materiale principale
+    %******************************************************************
+    \pagenumbering{arabic}
+    \part{Theory}
+    \input{sections/asymptotic-safety}
+    \part{Applications}
+    \input{sections/final/conclusions}
+
+    \appendix
+    \part*{Appendices}
+    \input{sections/misc}
+
+    % *****************************************************************
+    % Materiale finale
+    %******************************************************************
+    \input{sections/final/glossari}
+    \input{sections/final/bibliography}
+    \input{sections/final/acknowledgements}
+
 \end{document}

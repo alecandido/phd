@@ -15,22 +15,8 @@
 % last language is the default one
 \usepackage[italian,english]{babel}
 
-% frontespizo
-% per includerlo nel documento bisogna:
-% 1. compilare una prima volta Tesi.tex;
-% 2. compilare a parte Tesi-frn.tex, generato dalla compilazione precedente;
-% 3. compilare ancora Tesi.tex.
-%\usepackage[suftesi]{frontespizio}
-
-
- % rientra il primo capoverso di ogni sezione
-\usepackage{indentfirst}
-
 % images
 \usepackage{graphicx}
-
-% codes
-\usepackage{listings}
 
 % quotes
 \usepackage[font=small]{quoting}
@@ -81,12 +67,40 @@
 % rearrange the appearance of classicthesis
 \usepackage{arsclassica}
 
-% inner=2.5cm,
-\usepackage[bottom=3.5cm]{geometry}
-
 \newlength{\myshift}
 \setlength{\myshift}{4mm}
 \addtolength{\evensidemargin}{-\myshift}
 \addtolength{\oddsidemargin}{\myshift}
 %\setlength{\evensidemargin}{8.40024mm} % initial value: 12.40024mm
 %\setlength{\oddsidemargin}{3.80026mm} % initial value: -0.19974mm
+
+\usepackage{datetime2}
+\usepackage{datetime2-calc}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+\usepackage{calc}
+\usepackage[sort]{cleveref}
+
+% glossaries (after hyperref)
+\usepackage[acronym,automake,nomain,section=section]{glossaries}
+%\newglossary*{sym}{Symbols}
+\newglossary*{symbols}{Symbols}
+\renewcommand*{\glstextformat}[1]{\textcolor{CTurl!30!black}{#1}} %color defined by classichthesis
+\makeglossaries
+
+\usepackage{ifoddpage}
+\input{styles/layout}
+\input{styles/math}
+
+% mycommands
+\newcommand{\ttmp}[1]{\textit{\textcolor{violet}{#1}}}
+\newcommand{\gsym}[1]{\glssymbol{#1}}
+
+%\newcommand{\Section}[2][]{
+%	\ifstrempty{#1}{%
+%		\section{#2}
+%	}{%
+%		\setcounter{section}{#1-1}
+%		\section{#2}
+%	}%
+%}
