@@ -33,7 +33,7 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.dir }}.pdf
+          name: ${{ matrix.dir }}
           path: ${{ matrix.dir }}/main.pdf
 
   collect:
@@ -45,6 +45,17 @@ jobs:
     steps:
       - name: Download built documents
         uses: actions/download-artifact@v3
+      - name: Extract
+        run: |
+          artifacts=$(echo */ | tr ' ' '\n' | xargs -I _ basename _)
+          for art in $artifacts; do
+            if [ $art != "home" ]; then
+              mv $art/main.pdf ${art}.pdf
+            else
+              echo "Home: do nothing"
+            fi
+            rm -r $art
+          done
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
