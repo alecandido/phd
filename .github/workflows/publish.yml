@@ -1,0 +1,57 @@
+name: Publish Documents
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: ${{ matrix.dir }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        dir:
+          - thesis
+          - activity-report
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: ${{ matrix.dir }}/main.tex
+          work_in_root_file_dir: true
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.dir }}.pdf
+
+  collect:
+    runs-on: ubuntu-latest
+
+    if: ${{ always() }}
+    needs: compile
+
+    steps:
+      - name: Download built documents
+        uses: actions/download-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: collect
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

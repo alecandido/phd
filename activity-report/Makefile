@@ -1,7 +1,7 @@
 SECTIONS := $(shell find sections/ -type f)
 STYLES := $(shell find styles/ -type f)
 BIBLIOGRAPHY := $(shell find bibliography/*.bib -type f)
-PAPER := activity-report.pdf
+PAPER := main.pdf
 DIR := $(shell git rev-parse --show-prefix)
 
 .PHONY: main clean cleanall lm-clean view
