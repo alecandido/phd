@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
 
     if: ${{ always() }}
-    needs: compile
+    needs: build
 
     steps:
       - name: Download built documents
