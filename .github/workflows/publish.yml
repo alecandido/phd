@@ -75,7 +75,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: pages
-          path: build/
+          path: pages/build/
 
   collect:
     runs-on: ubuntu-latest
@@ -90,7 +90,7 @@ jobs:
         run: |
           artifacts=$(echo */ | tr ' ' '\n' | xargs -I _ basename _)
           for art in $artifacts; do
-            if [ $art != "home" ]; then
+            if [ $art != "pages" ]; then
               mv $art/main.pdf ${art}.pdf
             else
               mv $art/build/* .
