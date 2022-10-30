@@ -36,11 +36,52 @@ jobs:
           name: ${{ matrix.dir }}
           path: ${{ matrix.dir }}/main.pdf
 
+  pages:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: false
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Upload website pages
+        uses: actions/upload-artifact@v3
+        with:
+          name: pages
+          path: build/
+
   collect:
     runs-on: ubuntu-latest
 
     if: ${{ always() }}
-    needs: build
+    needs: [build, pages]
 
     steps:
       - name: Download built documents
@@ -52,7 +93,7 @@ jobs:
             if [ $art != "home" ]; then
               mv $art/main.pdf ${art}.pdf
             else
-              echo "Home: do nothing"
+              mv $art/build/* .
             fi
             rm -r $art
           done
