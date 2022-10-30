@@ -93,7 +93,7 @@ jobs:
             if [ $art != "pages" ]; then
               mv $art/main.pdf ${art}.pdf
             else
-              mv $art/build/* .
+              mv $art/* .
             fi
             rm -r $art
           done
