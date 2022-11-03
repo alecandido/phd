@@ -23,7 +23,6 @@
 \input{styles/settings}
 
 \begin{document}
-
     \pagestyle{scrheadings}
 
     %******************************************************************
@@ -45,13 +44,24 @@
     %******************************************************************
     \pagenumbering{arabic}
     \part{Theory}
-    \input{sections/asymptotic-safety}
+    \input{sections/chapters/positivity/index}
+    \input{sections/chapters/eko/index}
+    \input{sections/chapters/dis/index}
     \part{Applications}
-    \input{sections/final/conclusions}
+    \input{sections/chapters/ic/index}
+    \input{sections/chapters/afb/index}
+    \input{sections/chapters/neutrinos/index}
+    % TODO: separate part?
+    % - it is a single one and short
+    % - it is not about theory, nor an application
+    \input{sections/chapters/gp/index}
+
+    % conclusions
+    \input{sections/conclusions}
 
     \appendix
     \part*{Appendices}
-    \input{sections/misc}
+    \input{sections/appendices/misc}
 
     % *****************************************************************
     % Back matter
