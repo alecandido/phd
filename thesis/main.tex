@@ -22,6 +22,9 @@
 % personal settings
 \input{styles/settings}
 
+% definitions
+\input{definitions/index}
+
 \begin{document}
     \pagestyle{scrheadings}
 
@@ -43,6 +46,8 @@
     % Main Matter
     %******************************************************************
     \pagenumbering{arabic}
+    \part{Fundamentals}
+    \input{sections/chapters/qcd/index}
     \part{Theory}
     \input{sections/chapters/positivity/index}
     \input{sections/chapters/dis/index}
