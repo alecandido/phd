@@ -1,0 +1,128 @@
+\section{Parton distributions from the parton model to QCD}
+\label{sec:intro}
+
+In the naive parton model parton distribution functions (PDFs) are probability
+densities for a parton to carry a given fraction of their parent hadron's
+momentum. This simple picture remains true at leading order (LO) in QCD where
+each PDF is proportional to a physically measurable (in principle) cross
+section: it can consequently still be viewed as a probability and it is
+non-negative. We will henceforth refer to the property of being non-negative as
+``positivity'' (while really meaning ``positive-semidefiniteness'').
+
+As is well known~\cite{Altarelli:1998gn}, positivity of the PDFs is in general
+violated at higher perturbative orders, where physical cross sections are the
+convolution of the PDFs with a partonic cross section.
+Partonic cross sections are beset by collinear singularities, whose subtraction
+and factorization into the PDF spoils in general the separate positivity of the
+subtracted partonic cross sections and of the PDFs.
+Therefore, the positivity condition on PDFs beyond LO becomes a positivity
+constraint of physical observables~\cite{Altarelli:1998gn,Forte:1998kd}. 
+When determining
+PDFs from data, this constraint must be imposed on physical observables, rather
+than PDFs themselves: for instance by using Lagrange multipliers, or pseudodata
+for suitable positivity observables, such as for example hypothetical
+deep-inelastic structure functions corresponding to gauge bosons that couple to
+only one quark flavor~\cite{Ball:2008by}.
+
+
+These positivity constraint 
+may have a significant impact on
+PDF determination, especially in regions where there are little or no direct
+constraints coming from experimental data. For example, in a recent
+study of the strange PDF~\cite{Faura:2020oom} it was found that
+adding to the dataset a positivity constraint for the charm structure
+function $F_2^c$ significantly impacts the flavor decomposition of the
+quark sea in the
+large $x$ region. However, adding positivity constraints in this way,
+as constraints on pseudo-observables, is cumbersome from a methodological point
+of view, and theoretically not satisfactory. Indeed, as  the target
+accuracy of the PDFs increases, and PDFs are used more and more
+for new physics studies and searches in regions in which the PDFs are
+experimentally 
+unconstrained, it becomes necessary to enforce 
+an increasingly
+elaborate set of positivity
+constraints~\cite{Ball:2010de,Ball:2014uwa} for
+a set of suitably chosen and tuned pseudo-observables. This poses
+obvious problems of fine-tuning. In fact,
+universality of PDFs suggests that  positivity constraints
+should be imposed in a process-independent way, without having to rely
+on a specific choice  of processes, and therefore, that it ought to be
+possible to impose the constraint at the level of PDFs.
+
+Here, we address this issue head-on by constructing a subtraction scheme in
+which PDFs are positive, and which we
+refer to as a ``positive'' factorization scheme. We do this by
+studying the way collinear subtraction is performed in the \msbar{}
+scheme, and showing that negative partonic
+cross sections arise as a consequence of
+over-subtraction of a positive contribution\footnote{A subtlety is related to the fact that
+  generally partonic cross sections are the sum of an ordinary
+  function of the scaling variable, and a distribution localized at
+  the kinematic threshold of the scaling variable. Here, by ``negative
+  cross section'' we mean that the function (i.e., non-distributional
+  part of the cross section) is negative. For positivity to hold, the
+  distributional part must also be positive in the sense that it gives
+a positive result when integrated over a positive test function. As we
+shall see below, this condition turns out to be automatically satisfied
+in \msbar{} and related schemes.}.
+This is chiefly due to the fact that the subtraction is
+performed at a scale which, as the  kinematic threshold for production
+of the final state is approached,
+is higher than the actual physical scale;
+and also, in gluonic
+channels, due to the way
+the $d$-dimensional averaging over gluon polarizations is treated in
+dimensional regularization.
+
+Once these effects are taken into account
+it is possible to formulate a subtraction prescription such that
+partonic cross sections remain
+positive. Effectively, this choice of subtraction corresponds to a ``physical''
+scheme, in which the scale choice is directly related to the scale of
+parton radiation.
+Of course, the
+positive factorization scheme is not unique, since any
+further scheme change through a matrix with positive entries
+(``positive matrix'', henceforth) would leave 
+the partonic cross sections positive.  It is then possible to show that there exist
+schemes in which PDFs also remain positive, so that the positive
+hadronic cross section is obtained by convoluting positive
+partonic cross sections with positive PDFs.
+
+The availability of positive schemes can be
+advantageous in the 
+context of PDF determination. Indeed, if PDFs are
+parametrized in the positive scheme, positivity can be enforced by
+choice of parametrization. Results in the commonly used \msbar{} scheme
+can then be obtained by scheme transformation.
+
+However, perhaps surprisingly, this turns out not to be necessary:
+indeed, using the explicit form of the scheme change
+matrix from the positive scheme to \msbar{} it is easy to prove that in
+the perturbative region  PDFs remain positive in
+\msbar{}. Hence, the common lore that \msbar{} PDFs might be negative
+beyond LO
+turns out to be incorrect. Positivity of the fitted PDFs can then be imposed
+using the standard methodology in the
+\msbar{} scheme.
+
+The paper is organized as follows. In Section~\ref{sec:subtr} we show
+how negative partonic cross sections arise due to over-subtraction. We
+start with the   prototypical case of deep-inelastic scattering (DIS): we
+review the computation of coefficient functions at next-to-leading
+order (NLO); we show how over-subtraction arises in the \msbar{} scheme
+and how it can be fixed by choosing a suitable subtraction
+prescription; we then discuss how this works in the general case of
+hadronic processes, where we can define a ``positive'' subtraction prescription
+which preserves
+positivity of all partonic cross sections.
+In Sect.~\ref{sec:scheme} we then turn to
+positivity of PDFs: first, we use our positive subtraction
+prescription to define a positive factorization scheme; then we show
+how positivity of PDFs is preserved in this factorization scheme; and
+finally by studying the transformation from the positive scheme to  \msbar{}
+we prove that positivity is preserved in \msbar{} in the perturbative
+regime. The bulk of our discussion will be at NLO, and its validity
+beyond NLO will be addressed in the end of Sect.~\ref{sec:scheme}.
+
