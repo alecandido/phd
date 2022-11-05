@@ -1,45 +1,45 @@
 % !TeX root = ../main.tex
 
 % silence some noisy and useless warnings
-\input{styles/silence}
+\RequirePackage{styles/silence-list}
 
 % font encoding:
 % NOTA BENE! richiede una distribuzione *completa* di LaTeX,
 % per esempio TeXLive o MiKTeX *complete*
-\usepackage[T1]{fontenc}
-% \usepackage{fontspec}
+\RequirePackage[T1]{fontenc}
+% \RequirePackage{fontspec}
 
 % input encoding:
 % [latin1] is also fine
 % ACHTUNG! Sync to editor preferences
-\usepackage[utf8]{inputenc}
+\RequirePackage[utf8]{inputenc}
 
 % to write both in Italian and English;
 % last language is the default one
-\usepackage[italian,english]{babel}
+\RequirePackage[italian,english]{babel}
 
 % images
-\usepackage{graphicx}
+\RequirePackage{graphicx}
 
 % quotes
-\usepackage[font=small]{quoting}
+\RequirePackage[font=small]{quoting}
 
 % math
-\usepackage{amsmath,amssymb,amsthm}
+\RequirePackage{amsmath,amssymb,amsthm}
 
 % complete page references
-\usepackage[english]{varioref}
+\RequirePackage[english]{varioref}
 
 % fixed width tables
-\usepackage{tabularx}
+\RequirePackage{tabularx}
 
 % double quotes optimized for biblatex
-\usepackage[autostyle,italian=guillemets]{csquotes}
+\RequirePackage[autostyle,italian=guillemets]{csquotes}
 
 % bibliography;
 % make citing style author-year;
 % the style "numeric-comp" makes numeric references;
-\usepackage[style=philosophy-modern,url=false,
+\RequirePackage[style=philosophy-modern,url=false,
             hyperref,square,backend=biber]{biblatex}
 
 % biblatex database
@@ -47,10 +47,10 @@
 \addbibresource{bibliography/positivity.bib}
 
 % sub-figures and sub-tables
-\usepackage{subfig}
+\RequirePackage{subfig}
 
 % pseudo-text
-\usepackage[language=english]{lipsum}
+\RequirePackage[language=english]{lipsum}
 
 % ClassicThesis style
 % - chapter numbers in Euler font
@@ -60,7 +60,7 @@
 % - improve line spacing
 % - codes
 % - for documents divided in parts 
-\usepackage[eulerchapternumbers,%
+\RequirePackage[eulerchapternumbers,%
             subfig,%
             beramono,%
             eulermath,%
@@ -69,7 +69,7 @@
             parts,%
             ]{classicthesis}
 % rearrange the appearance of classicthesis
-\usepackage{arsclassica}
+\RequirePackage{arsclassica}
 
 \newlength{\myshift}
 \setlength{\myshift}{4mm}
@@ -78,21 +78,21 @@
 %\setlength{\evensidemargin}{8.40024mm} % initial value: 12.40024mm
 %\setlength{\oddsidemargin}{3.80026mm} % initial value: -0.19974mm
 
-\usepackage{datetime2}
-\usepackage{datetime2-calc}
-\usepackage{ifthen}
-\usepackage{etoolbox}
-\usepackage{calc}
-\usepackage[sort]{cleveref}
+\RequirePackage{datetime2}
+\RequirePackage{datetime2-calc}
+\RequirePackage{ifthen}
+\RequirePackage{etoolbox}
+\RequirePackage{calc}
+\RequirePackage[sort]{cleveref}
 
 % glossaries (after hyperref)
-\usepackage[acronym,automake,nomain,section=section]{glossaries}
+\RequirePackage[acronym,automake,nomain,section=section]{glossaries}
 %\newglossary*{sym}{Symbols}
 \newglossary*{symbols}{Symbols}
 \renewcommand*{\glstextformat}[1]{\textcolor{CTurl!30!black}{#1}} %color defined by classichthesis
 \makeglossaries
 \newcommand{\gsym}[1]{\glssymbol{#1}}
 
-\usepackage{ifoddpage}
-\input{styles/layout}
-\input{styles/math}
+\RequirePackage{ifoddpage}
+\RequirePackage{styles/layout}
+\RequirePackage{styles/math}

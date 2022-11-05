@@ -1,46 +1,46 @@
 % !TeX root = ../main.tex
 
-\usepackage{microtype}
+\RequirePackage{microtype}
 
 % manage layouts
-\usepackage{geometry}
+\RequirePackage{geometry}
 
 % indent first paragraph of each section
-\usepackage{indentfirst}
+\RequirePackage{indentfirst}
 
 % fixed width tables
-% \usepackage{tabularx}
+% \RequirePackage{tabularx}
 
-\usepackage{booktabs}
-\usepackage{subfig}
-\usepackage[bottom]{footmisc}
-\usepackage{float}
-%\usepackage[bottom]{footmisc}		% note a fondo pagina
-%\usepackage{emptypage}
-\usepackage{verbatim}
-\usepackage{lipsum}
-\usepackage{enumerate}
-%\usepackage{enumitem}
-\usepackage{changepage}
+\RequirePackage{booktabs}
+\RequirePackage{subfig}
+\RequirePackage[bottom]{footmisc}
+\RequirePackage{float}
+%\RequirePackage[bottom]{footmisc}		% note a fondo pagina
+%\RequirePackage{emptypage}
+\RequirePackage{verbatim}
+\RequirePackage{lipsum}
+\RequirePackage{enumerate}
+%\RequirePackage{enumitem}
+\RequirePackage{changepage}
 \let\checkmark\relax
-\usepackage{dingbat}
-\usepackage{lettrine}
+\RequirePackage{dingbat}
+\RequirePackage{lettrine}
 
 %*********************************************************************************
 % Color Boxes
 %*********************************************************************************
-%\usepackage{layouts}
+%\RequirePackage{layouts}
 %\printinunitsof{mm}{\pagevalues}
 %\verb|\marginparwidth|: \printinunitsof{mm}\prntlen{\marginparwidth}
 
 %*********************************************************************************
 % Tikz
 %*********************************************************************************
-\usepackage{pgf}
-\usepackage{tikz}
-\usepackage{rotating}
-\usepackage{pgfornament}
-% \usepackage{pgfornament,pgfornament-han}
+\RequirePackage{pgf}
+\RequirePackage{tikz}
+\RequirePackage{rotating}
+\RequirePackage{pgfornament}
+% \RequirePackage{pgfornament,pgfornament-han}
 \usetikzlibrary{arrows,shapes,decorations,automata,backgrounds,petri,positioning}
 
 \setlength{\skip\footins}{15pt}
@@ -49,7 +49,7 @@
 % Color Boxes
 %*********************************************************************************
 
-\usepackage{tcolorbox}
+\RequirePackage{tcolorbox}
 \tcbuselibrary{theorems}
 
 %*********************************************************************************
@@ -63,7 +63,7 @@
 %*********************************************************************************
 % Minitoc settings
 %*********************************************************************************
-\usepackage{minitoc}
+\RequirePackage{minitoc}
 \dominitoc[e]
 \mtcsetrules{minitoc}{off}
 \mtcsetfeature{minitoc}{before}{\textcolor{black!70}{\rule{0.8\textwidth}{0.1pt}}\vspace{-20pt}}
@@ -73,7 +73,7 @@
 %*********************************************************************************
 % listings settings - code snippets
 %*********************************************************************************
-\usepackage{listings}
+\RequirePackage{listings}
 \lstset{language=[LaTeX]Tex,%C++,
     keywordstyle=\color{RoyalBlue},%\bfseries,
     basicstyle=\small\ttfamily,
