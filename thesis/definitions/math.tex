@@ -2,3 +2,19 @@
 
 \def\toinf#1{\mathrel{\mathop{\sim}\limits_{\scriptscriptstyle
 {#1\rightarrow\infty }}}}
+
+\DeclarePairedDelimiter\set\{\}
+
+% partial derivative
+\newcommand{\partdev}[2]%
+	{\frac{\partial {#1}}{\partial {#2}}}
+
+% partial derivative with fixed variables
+\newcommand{\partfix}[3]%
+	{\left(\partdev{#1}{#2}\right)_{#3}}
+	
+% spaced implication
+\newcommand{\qqimplies}{\qquad\implies\qquad}
+
+% Lattice
+\newcommand{\staple}{\scalebox{.8}[1.4]{$\sqsupset$}}

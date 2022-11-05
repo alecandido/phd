@@ -1,4 +1,3 @@
-% !TeX program = pdflatex
 % !TeX root = ../main.tex
 
 % --- PACKAGES ---
@@ -13,25 +12,10 @@
 %\usepackage{fourier}		% alternativa decente a bassa sbatta
 %\usepackage[euler-digits,euler-hat-accent]{eulervm}
 \usepackage[cdot, thickqspace, squaren]{SIunits}
-
 % ------------
 
 % --- THEOREMS ---
-% teoremi (con amsthm) in italiano
-%\theoremstyle{plain}% default
-%\newtheorem{thm}{Teorema}[section]
-%\newtheorem{lem}[thm]{Lemma}
-%\newtheorem{prop}[thm]{Proposizione}
-%\newtheorem*{cor}{Corollario}
-%
-%\theoremstyle{definition}
-%\newtheorem{defn}{Definizione}[section]
-%\newtheorem{es}{Esempio}[section]
-%\newtheorem{ex}{Esercizio}[section]
-%\newtheorem*{oss}{Ossevazione}
-%\newtheorem*{note}{Nota}
-
-%% theorems (with amsthm) in english
+% theorems (with amsthm) in english
 \theoremstyle{plain}% default
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{lem}[thm]{Lemma}
@@ -51,40 +35,9 @@
 \newtheorem*{note}{Note}
 
 % ENVIRONMENTS
-
-\newtcbtheorem[number within=section]{esempio}{Esempio}%
-{colback=CornflowerBlue!4,colframe=CornflowerBlue!60!black,fonttitle=\bfseries,before upper={\parindent15pt\noindent}}{th}
-
 \newtcbtheorem[number within=section]{example}{Example}%
 {colback=CornflowerBlue!4,colframe=CornflowerBlue!60!black,fonttitle=\bfseries,before upper={\parindent15pt\noindent}}{th}
 
 %\newtcbtheorem[number within=section]{mytheo}{My Theorem}%
 %{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}
-
-% ------------
-
-% --- SYMBOLS ---
-\newcommand{\staple}{\scalebox{.8}[1.4]{$\sqsupset$}}
-% ------------
-
-% --- MACROS ---
-\DeclarePairedDelimiter\set\{\}
-
-% partial derivative
-\newcommand{\partdev}[2]%
-	{\frac{\partial {#1}}{\partial {#2}}}
-
-% partial derivative with fixed variables
-\newcommand{\partfix}[3]%
-	{\left(\partdev{#1}{#2}\right)_{#3}}
-	
-% spaced implication
-\newcommand{\qqimplies}{\qquad\implies\qquad}
-
-	% --- VARIABLES ---
-% planck costant
-\newcommand{\hplanck}{(2\pi \hbar)}
-
-% thermal energy
-\newcommand{\kt}{k_B T}
 % ------------
