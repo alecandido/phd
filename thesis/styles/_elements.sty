@@ -1,0 +1,37 @@
+% !TeX root = ../main.tex
+
+% quotes
+\RequirePackage[font=small]{quoting}
+
+% complete page references
+\RequirePackage[english]{varioref}
+
+% smart references
+\RequirePackage[sort]{cleveref}
+
+% fixed width tables
+\RequirePackage{tabularx}
+
+% images
+\RequirePackage{graphicx}
+
+% sub-figures and sub-tables
+\RequirePackage{subfig}
+
+% dates and times
+\RequirePackage{datetime2}
+\RequirePackage{datetime2-calc}
+
+% bibliography;
+% make citing style author-year;
+% the style "numeric-comp" makes numeric references;
+\RequirePackage[style=philosophy-modern,url=false,
+            hyperref,square,backend=biber]{biblatex}
+
+% pseudo-text
+% \RequirePackage[language=english]{lipsum}
+
+% glossaries (after hyperref)
+\RequirePackage[acronym,automake,nomain,section=section]{glossaries}
+\renewcommand*{\glstextformat}[1]{\textcolor{CTurl!30!black}{#1}} %color defined by classichthesis
+\makeglossaries

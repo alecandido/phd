@@ -1,13 +1,7 @@
 % !TeX root = ../main.tex
 
 % silence some noisy and useless warnings
-\RequirePackage{styles/silence-list}
-
-% font encoding:
-% NOTA BENE! richiede una distribuzione *completa* di LaTeX,
-% per esempio TeXLive o MiKTeX *complete*
-\RequirePackage[T1]{fontenc}
-% \RequirePackage{fontspec}
+\RequirePackage{styles/_silence}
 
 % input encoding:
 % [latin1] is also fine
@@ -17,40 +11,6 @@
 % to write both in Italian and English;
 % last language is the default one
 \RequirePackage[italian,english]{babel}
-
-% images
-\RequirePackage{graphicx}
-
-% quotes
-\RequirePackage[font=small]{quoting}
-
-% math
-\RequirePackage{amsmath,amssymb,amsthm}
-
-% complete page references
-\RequirePackage[english]{varioref}
-
-% fixed width tables
-\RequirePackage{tabularx}
-
-% double quotes optimized for biblatex
-\RequirePackage[autostyle,italian=guillemets]{csquotes}
-
-% bibliography;
-% make citing style author-year;
-% the style "numeric-comp" makes numeric references;
-\RequirePackage[style=philosophy-modern,url=false,
-            hyperref,square,backend=biber]{biblatex}
-
-% biblatex database
-\addbibresource{bibliography/library.bib}
-\addbibresource{bibliography/positivity.bib}
-
-% sub-figures and sub-tables
-\RequirePackage{subfig}
-
-% pseudo-text
-\RequirePackage[language=english]{lipsum}
 
 % ClassicThesis style
 % - chapter numbers in Euler font
@@ -71,28 +31,23 @@
 % rearrange the appearance of classicthesis
 \RequirePackage{arsclassica}
 
-\newlength{\myshift}
-\setlength{\myshift}{4mm}
-\addtolength{\evensidemargin}{-\myshift}
-\addtolength{\oddsidemargin}{\myshift}
-%\setlength{\evensidemargin}{8.40024mm} % initial value: 12.40024mm
-%\setlength{\oddsidemargin}{3.80026mm} % initial value: -0.19974mm
+% strictly typographic packages and settings
+\RequirePackage{styles/_typography}
 
-\RequirePackage{datetime2}
-\RequirePackage{datetime2-calc}
-\RequirePackage{ifthen}
-\RequirePackage{etoolbox}
-\RequirePackage{calc}
-\RequirePackage[sort]{cleveref}
+% computing tools
+% XXX: keep before _layout, because of lipsum
+\RequirePackage{styles/_tools}
 
-% glossaries (after hyperref)
-\RequirePackage[acronym,automake,nomain,section=section]{glossaries}
-%\newglossary*{sym}{Symbols}
-\newglossary*{symbols}{Symbols}
-\renewcommand*{\glstextformat}[1]{\textcolor{CTurl!30!black}{#1}} %color defined by classichthesis
-\makeglossaries
-\newcommand{\gsym}[1]{\glssymbol{#1}}
+% layout settings and tools
+\RequirePackage{styles/_layout}
 
-\RequirePackage{ifoddpage}
-\RequirePackage{styles/layout}
-\RequirePackage{styles/math}
+% page elements
+% in the same spirit of web frameworks components
+\RequirePackage{styles/_elements}
+
+% math packages and settings
+\RequirePackage{styles/_math}
+
+% biblatex database
+\addbibresource{bibliography/library.bib}
+\addbibresource{bibliography/positivity.bib}

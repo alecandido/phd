@@ -1,5 +1,6 @@
 % !TeX root = ../main.tex
 
+% improve microtyping
 \RequirePackage{microtype}
 
 % manage layouts
@@ -25,6 +26,7 @@
 \let\checkmark\relax
 \RequirePackage{dingbat}
 \RequirePackage{lettrine}
+\RequirePackage{ifoddpage}
 
 %*********************************************************************************
 % Color Boxes
@@ -90,3 +92,13 @@
     frame=single
 } 
 
+%*********************************************************************************
+% my sizes
+%*********************************************************************************
+
+\newlength{\myshift}
+\setlength{\myshift}{4mm}
+\addtolength{\evensidemargin}{-\myshift}
+\addtolength{\oddsidemargin}{\myshift}
+%\setlength{\evensidemargin}{8.40024mm} % initial value: 12.40024mm
+%\setlength{\oddsidemargin}{3.80026mm} % initial value: -0.19974mm
