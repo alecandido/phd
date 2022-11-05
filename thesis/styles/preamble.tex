@@ -1,5 +1,8 @@
 % !TeX root = ../main.tex
 
+% silence some noisy and useless warnings
+\input{styles/silence}
+
 % font encoding:
 % NOTA BENE! richiede una distribuzione *completa* di LaTeX,
 % per esempio TeXLive o MiKTeX *complete*
@@ -36,8 +39,8 @@
 % bibliography;
 % make citing style author-year;
 % the style "numeric-comp" makes numeric references;
-\usepackage[style=philosophy-modern, url=false,
-			hyperref,square,backend=biber]{biblatex}
+\usepackage[style=philosophy-modern,url=false,
+            hyperref,square,backend=biber]{biblatex}
 
 % biblatex database
 \addbibresource{bibliography/library.bib}
@@ -47,7 +50,7 @@
 \usepackage{subfig}
 
 % pseudo-text
-\usepackage{lipsum}
+\usepackage[language=english]{lipsum}
 
 % ClassicThesis style
 % - chapter numbers in Euler font
@@ -93,6 +96,3 @@
 \usepackage{ifoddpage}
 \input{styles/layout}
 \input{styles/math}
-
-% mycommands
-\newcommand{\ttmp}[1]{\textit{\textcolor{violet}{#1}}}
