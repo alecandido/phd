@@ -30,21 +30,23 @@ Of course, Mellin transformation turns the convolution into an ordinary product
 and upon transformation all these variables are mapped onto the same $N$
 variable. 
  
-
-  At LO all factors on the
-  right-hand side of
-  Eq.~(\ref{eq:masterfac}) are manifestly positive. Indeed, the partonic
-  cross sections (which for DIS at LO are trivial) are defined as the square modulus of amplitudes. The
-  PDFs in turn are defined as operator matrix elements
-  which can be interpreted as probability
-  distributions~\cite{Collins:1981uw,Curci:1980uw}: for quark
-  PDFs~\cite{Collins:1981uw}  
-  \begin{equation}
+At LO all factors on the right-hand side of Eq.~(\ref{eq:masterfac}) are
+manifestly positive.
+Indeed, the partonic cross sections (which for DIS at LO are trivial) are
+defined as the square modulus of amplitudes. 
+The PDFs in turn are defined as operator matrix elements which can be
+interpreted as probability distributions~\cite{Collins:1981uw,Curci:1980uw}:
+for quark PDFs~\cite{Collins:1981uw}  
+\begin{align}
     \label{eq:quark}
-f_i(\xi)=\frac{1}{4\pi}\int dy^- e^{-i \xi P^+ y^-}\langle P| 
-\bar \psi_i(0,y^-,\vec 0_T)\gamma^+ {\cal P} \exp\left[ i g_s \int_0^{y^-} d
-  \bar y^- A_a^+(0,\bar y^-,\vec 0_T)\frac{1}{2} \lambda_a\right] \psi_i(0) |P\rangle ,
-\end{equation}
+    f_i(\xi)=
+    &\frac{1}{4\pi}\int dy^- e^{-i \xi P^+ y^-}
+    \langle P| \bar \psi_i(0,y^-,\vec 0_T)\gamma^+
+    \nonumber\\ 
+    &\qquad\qquad
+    \times{\cal P} \exp\left[ i g_s \int_0^{y^-} d
+    \bar y^- A_a^+(0,\bar y^-,\vec 0_T)\frac{1}{2} \lambda_a\right] \psi_i(0) |P\rangle ,
+\end{align}
 where ${\cal P}$ denotes path-ordering; $P$ is the four-momentum of
 the parent hadron in light-cone components and $g_s$ is the strong
 coupling, with analogous expressions for antiquarks and
@@ -368,7 +370,7 @@ $\epsilon<0$, so $\frac{1}{1-\epsilon}<1$.
 
 Therefore, we define a modified positivity subtraction as
 \begin{align}\label{eq:cgrenpos}
-  {C^{(1)}_{g}}^{\textrm{DPOS}}(z) &= \lim_{\epsilon\to0^-}
+  \hspace*{-1em}{C^{(1)}_{g}}^{\textrm{DPOS}}(z) &= \lim_{\epsilon\to0^-}
   \left[{C^{(1)}_{g}}(z,Q^2,\epsilon) - \frac{1}{1-\epsilon}\left(\frac{\mu_D^2}{\pi\mu^2}\right)^{-\epsilon} \left(-\frac 1
     {\epsilon}+\gamma_E\right) P_{qg}(z)\right]\\\label{eq:cgrenpos1}
     &= 3\left[T_R- P_{qg}(z)\right].
@@ -426,10 +428,9 @@ $ {C^{(1)}_q}^{\mmsbar}(z)$ proportional to a Dirac $\delta$
 (corresponding to a constant in Mellin space) so that
 ${\overline{C_{q}}^{(1)}}^{\mmsbar}(z)$ only contains  functions and
 $+$ distributions.
-The NLO diagonal
-coefficient function is given by
+The NLO diagonal coefficient function is given by
 \begin{align}
-{C^{(1)}_q}^{\mmsbar}(z)&=
+\hspace*{-1em}{C^{(1)}_q}^{\mmsbar}(z)&=
 \lim_{\epsilon\to
   0^-}\left[C_{q}^{(1)}(z,Q^2,\epsilon) - \left(\frac{Q^2}{4\pi
       \mu^2}\right)^{-\epsilon} \left(-\frac 1
@@ -677,12 +678,19 @@ The coefficient function is clearly positive. Its Mellin transform is
 also shown in Fig.~\ref{fig:higgs}.
 
 We finally examine the gluon-gluon NLO coefficient function:
-\begin{align}\label{eq:higgsg}
-\hspace*{-30pt}  {{C^g{}_g}^{(1)}}^{\mmsbar} (z) &=C_A\left[ 2\frac 1 z \left(z p_{gg}(z) \ln\left(\frac{(1-z)^2}{z}\right) \right)_++
-    \left(\frac{473}{36} + \frac{4\pi^2}{3}\right)\delta(1-z) -
-    \frac{11}{3}\frac{(1-z)^3}{z}\right]\nonumber\\
-&={\Delta^{(1)}_{gg}}^{\mmsbar}\delta(1-z)+ C_A\left[ 2\frac 1 z \left(z p_{gg}(z) \ln\left(\frac{(1-z)^2}{z}\right) \right)_+-
-    \frac{11}{3}\frac{(1-z)^3}{z}\right] \,,
+\begin{align}
+  \label{eq:higgsg}
+  {{C^g{}_g}^{(1)}}^{\mmsbar} (z) 
+  &=C_A\left[ 2\frac 1 z \left(z p_{gg}(z) \ln\left(\frac{(1-z)^2}{z}\right) \right)_+
+    \right. \nonumber\\
+    &\qquad\qquad\qquad\qquad \left.
+      + \left(\frac{473}{36} + \frac{4\pi^2}{3}\right)\delta(1-z) -
+      \frac{11}{3}\frac{(1-z)^3}{z} \right]\\
+    &={\Delta^{(1)}_{gg}}^{\mmsbar}\delta(1-z)
+      \nonumber\\
+      &\qquad
+      + C_A \left[ 2\frac 1 z \left(z p_{gg}(z) \ln\left(\frac{(1-z)^2}{z}\right) \right)_+-
+      \frac{11}{3}\frac{(1-z)^3}{z}\right] \,,
 \end{align}
 where, in analogy to Eq.~(\ref{eq:pqq}), $p_{gg}(x)$ is implicitly
 defined by
