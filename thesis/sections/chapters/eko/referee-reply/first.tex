@@ -1,0 +1,303 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{../styles/jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+\usepackage{lmodern}
+
+\usepackage{../styles/main}
+\usepackage{../styles/defs}
+
+
+\usepackage{microtype,xparse,tcolorbox}
+\newenvironment{reviewer-comment }{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment }{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\newcounter{comment}[section]
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {\refstepcounter{comment}
+  \IfValueT {#1} {
+    \begin{reviewer-comment~}
+      \noindent
+      \textbf{Comment\hspace{1mm}\thecomment :\hspace{2mm}} \ttfamily #1 
+    \end{reviewer-comment~}
+  }
+  \par\noindent\ignorespaces
+} { \bigskip\par\par }
+\ExplSyntaxOff
+
+
+\begin{document} 
+%\maketitle
+%\flushbottom
+
+\begin{response}{
+The authors present a new open-source library, written in Python, meant to
+provide tools to evolve parton distribution functions.}
+
+We thank the referee for reviewing our manuscript and providing suggestions / comments for improvement.
+
+In the following, we arrange the referee's comments into a series of items and 
+will address them one by one.
+
+\end{response}
+
+
+
+\begin{response}{
+This work adds one more item to a long list of DGLAP evolution packages that are
+publicly available. While variety, and choice of computer language, is nice to
+have, one can wonder about the need of a physics paper to present a code that
+does not seem to contain new physical content.}
+
+Due to an unfortunate oversight on our side the first version of the paper got wrongly submitted with
+the article type \enquote{Regular Article}, where instead we wanted to submit as
+\enquote{Tools for Experiment and Theory/Scientific Notes}. This should be corrected with the current version.
+
+Now, it is indeed true that the paper mostly does not include any new physics content as
+\dglap{} evolution equations are known for a long time. Instead, the aim of the paper
+is to make the community aware of a new software tool that is tailored to address the specific needs in a common
+task in the determination of \pdf{}s. Moreover, while this paper does (mostly) not include
+new physics, instead we expect future development based on this work to discuss
+genuinely new physics. In the paper we mention explicitly: (a) the determination of
+intrinsic charm in the proton, (b) the determination of missing higher order
+uncertainties in \pdf{}, and (c) the determination of \nnnlo{} \pdf{}s. Each of these
+items we consider a major improvement in the determination of \pdf{}s.
+We added a sentence to the outlook in conclusions to stress this point.
+
+\end{response}
+
+
+
+\begin{response}{
+In a sense, the paper seems to read more like an advertisement of the code and
+its features, with physical content simply sketched. While there would indeed be
+no need to present it in detail, since it is in principle well know, I am not
+sure if the middle ground chosen here is the best choice, as it is neither a
+complete physics description, nor a sufficient manual for the code
+(and I am not sure that the accompanying web pages are either).}
+
+As explained in the previous comment the paper should really be with the article type
+\enquote{Tools for Experiment and Theory/Scientific Notes} and hence it is considered
+to be an advertisement of the code. We agree that the underlying physics is well known
+and this one of the reason, why we refrained from repeating it here.
+The other being, that indeed in the documentation we do spell out most details and formulas together with the suitable
+references for the convenience of users and developers. As said in the paper we put
+a dedicated effort for a good and extensive documentation. We added a paragraph at the beginning
+of the theory section to highlight this more. We also added an explicit mention of the
+API section in the documentation where we document \textit{all} available functions of the library.
+
+\end{response}
+
+
+
+\begin{response}{An example of the somewhat fuzzy description provided by the paper is the
+beginning of section 3.3, where it is said that the internal Mellin
+representation and the x-space output are ``bridged'' using a
+Lagrange-Interpolation, but no further details are given, which is disappointing
+as this is supposed to be one of the features of the new code (and one that has
+an impact on the precision).}
+
+We did expand section 2.2 and referred to it in section 3.3. We also added an explicit sentence
+referring to Section 3.1 that interpolation is not blocking us in achieving the LHA benchmark.
+We also want to point out that the full interpolation algorithm along with an example is spelled out
+in the online documentation.
+
+\end{response}
+
+
+
+\begin{response}{Another weak point seems to be the performance of the code. The running times
+mentiond in Table 2 seem to me to be way longer than those of other codes. I am
+aware that python, as an interpreted language, is not expected to be very fast,
+and that it can have other advantages. And the authors themselves mention that
+their code may not be competitive under this point of view. However, at the very
+least they should provide a more extensive and quantitative comparison with the
+other packages currently widely used.}
+
+The choice of the programming language is only a benefit for the overall
+project management, since Python syntax is much expressive and widely known,
+lowering the barrier for code inspection by third parties, and contributions as
+well.
+
+The moment we get performance intensive tasks, like integration, the usage of
+external libraries with compiled extensions (like \texttt{scipy}, whose
+\href{https://scipy.github.io/devdocs/tutorial/integrate.html}{\texttt{integration}}
+sub-package relies on the \texttt{C++} implementation of \texttt{QUADPACK}
+inside \texttt{GSL}) reduce the performance impact of the interpreted language
+choice, since in practice it is only a driver for a program implemented in a
+completely different language.
+
+The second source of performance decoupling from Python, it is actually the
+adoption of a Just In Time (JIT) compilation package (namely
+\href{https://numba.pydata.org/}{\texttt{numba}}), that actually makes part of
+the code being run not directly on the common runtime (the Python interpreter),
+but compiled on \texttt{LLVM}-like back-end (the same back-end of
+\texttt{clang} \texttt{C++} compiler, and many others) and off-loaded to a
+stand-alone compiled function.
+Effectively, this turns a restricted set of Python syntax into a separate
+embedded language, in the sense that the encapsulated code undergoes a
+completely different (compilation and) execution process than the rest of the
+code base.
+
+Only the availability of these tools has made the choice of Python possible for
+this performance intensive task.
+This is for sure not a novelty, since it is continuously happening in the
+Machine Learning community, where the main libraries are all Python driven
+(\texttt{TensorFlow}, \texttt{PyTorch}, \texttt{JAX}, \dots) and the task is
+very performance demanding, and for the Quantum Computing community as well
+(\texttt{Qiskit}, \texttt{Cirq}, \texttt{Q\#}, \dots), where the hardware is
+potentially completely different from the usual CPUs.  That's why Python has
+become common as a \enquote{glue language}.
+
+Most likely this would result unclear to the user not familiar to the
+implementation details, while the clear Python against Fortran comparison
+suggests an actual performance loss.
+Thus, both of these observations (compiled extensions and JIT) are now present
+in the discussion of the comparison in Table 1.
+
+Furthermore, we acknowledge that the former layout of Appendix A would result
+in a direct comparison of \eko{} and \apfel{}, that we consider not to be
+suitable.
+For this reason, we added a whole new section at the beginning of the appendix,
+introducing the optimal performance we have in mind for \eko{}, considering the
+specific task it is being developed for.
+
+When it comes to actually quoting times, we specified explicitly that the
+difference is not only the \enquote{starting point} (time taken for the
+elementary task), but even in the performance scaling with the number of object
+being evolved.
+Since the differences relies in the characteristics of a curve, there is no
+unique way of telling which program \textit{is better}. Our goal was to
+specifically support in the best way the evolution of a significant number of
+border conditions ($\gtrsim 10$, but mostly $\order{100}$).
+
+This is why we decided to keep not including an extensive time comparison,
+since it would result in a rather complicated outcome.
+Because of the dramatic difference in scaling it is clear when to use which
+tool, and for the intermediate ground any tool is equally good (without the
+need of a fine grained, benchmark dependent comparison).
+
+\end{response}
+
+
+
+\begin{response}{I am also wondering if Table 1 should be more detailed (besides better
+explained). For instance, PEGASUS can return x-space distributions, and I think
+HOPPET can do backward VFNS. C++ interfaces to at least some of these codes
+probably exist (I seem to recall an APFEL++). It is also not clear to me what
+the LHAPDF row entails.}
+
+The referee is correct in stating that \pegasus{} can return evolved \pdf{}s directly in 
+$x$-space. However, this is possible only for distribution with a fixed parametrization
+(see section 3.3 of \cite{Vogt:2004ns}) and the program is not interfaced with \lhapdf{} 
+directly, which makes the code hard to use in the context of \pdf{}s fitting.
+
+We believe that \eko{} is the first program able to perform backward \vfns{}, while
+with all the others codes (\apfel{}, \qcdnum{}, \pegasus{}, \hoppet{}) only backward \ffns{}
+is allowed. Actually, the former is trivial and only requires to swap the
+evolution integration bounds, but the latter is not because matching conditions at 
+the heavy quark thresholds need to be inverted and properly joined together.
+
+We are aware of the existence \apfelpp{}, but we decided not to include this program
+in our comparison. \apfelpp{} is a C++ replacement of \apfel{}
+that improves the code structure and maintainability, 
+together with performance optimization.
+However is currently developed targeting GPDs and TDMs fitting, being used both in 
+\href{https://github.com/MapCollaboration/NangaParbat}{\texttt{NangaParbat}}. 
+and \href{https://github.com/MapCollaboration/MontBlanc}{\texttt{MontBlanc}}
+(see also the official \apfelpp{} \href{https://github.com/vbertone/apfelxx}{\texttt{Readme}}).
+On contrary \apfel{} and \eko{} target only \pdf{}s evolution.
+Furthermore \apfelpp{} has not yet reached the feature-equality with \apfel{}:
+for instance \qed{} evolution, a flag feature of \apfel{}, is not implemented. 
+Despite of being feasible, we don't expect that a comparison with \apfelpp{}
+will add any new insight with respect to the one with \apfel{}.
+
+In this respect the following actions have been taken. Updates on Table 1: 
+\begin{itemize}
+ \item We added a new row \enquote{input space} to explain the possibility of
+ having $x$-space, or $N$-space \pdf{}s inputs.
+ \item We added a new row \enquote{backward \ffns{}} to explain the possibility of
+ performing \ffns{} backward evolution.
+ \item We renamed the row \enquote{\lhapdf{}} to \enquote{produce \lhapdf{} grids}
+ \item We added to the table and caption an explanation about the ability of \pegasus{} 
+ of having inputs/delivery in $x$-space.
+\end{itemize}
+We recalled in the text body the difference between \ffns{} and \vfns{} backward evolution.
+We mentioned in the text body the criterion used to select the tools in Table 1
+\end{response}
+
+
+
+\begin{response}{A few minor points further illustrate the need for at least a revision. Among
+others, in the Introduction ``introspection'' may not be the word that the
+authors were looking for, ``MHOU'' is first used on page 6 and then 13, but only
+properly defined on page 17, and ``deserved'' on page 19 may again not be the
+most appropriate choice of word.}
+
+We swapped \enquote{introspection} with \enquote{inspection}.
+We moved the definition of \mhou{} to page 4.
+We swapped \enquote{deserved} with \enquote{required}.
+
+\end{response}
+
+
+
+\begin{response}{In conclusion, I am not sure to what extent this paper belongs in a physics
+journal. At the very least, it should be extensively revised so as to ensure
+that the information that is given, and that is original and specific to this
+work, is complete and it is not drowned under more general, and fragmentary,
+information. I think that the description of other codes, and the comparisons
+with them, could also be reinforced, and made more quantitative at least in
+terms of run times.}
+
+As we said at the very beginning, the choice of the article type has
+been an oversight on our side, since we really meant to write a paper to
+present a new code, and we believe the most original contributions will come in
+the future. This does not mean that there is no original physics implemented by
+\eko{}. It is worth to stress the \eko{} novelties:
+\begin{enumerate}
+  \item It is the first program to work fully in $N$-space,
+    addressing the need of a completely flexible $x$-space delivery
+  \begin{itemize}
+    \item $N$-space turns all convolutions in products, leaving an ordinary
+      differential equation to be solved. In this way the problem is decoupled
+      in two stages: this make it possible to deal with the 
+      solution of the $Q^2$ differential equation in a much simpler way,
+      and allows for a clean implementation of multiple solutions (like it has
+      been done in \pegasus{})
+    \item the pQCD ingredients (anomalous dimensions and operators matrix
+      elements) are usually first available in $N$-space, making it possible
+      for \eko{} to directly consuming them, without the need for an extra
+      transformation step before
+  \end{itemize}
+  \item We believe backward \vfns{} evolution has been first implemented in \eko{}, including the
+    contributions of intrinsic heavy quarks, that allows for the determination
+    of the \pdf{} in any flavor number scheme, regardless of the stability of
+    the perturbative matching (since it is compensated by the adaptive fitting
+    process)
+  \item We focus on an optimized operators delivery, that, as already argued, comes with great
+    benefit for the \pdf{} fitting procedure
+\end{enumerate}
+
+It has been previously explained that a quantitative comparisons on run times
+would not be much meaningful, while we agreed on the general comparison remark,
+that's why we extensively expanded the discussion of Table 1 in the
+conclusions, and the table itself.
+
+\end{response}
+
+
+
+\bibliographystyle{../styles/JHEP}
+\bibliography{../bibliography/eko.bib,../bibliography/refs.bib}
+
+\listoffixmes
+
+\end{document}

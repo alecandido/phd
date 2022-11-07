@@ -9,6 +9,9 @@
 % smart references
 \RequirePackage[sort]{cleveref}
 
+% better array structure
+\RequirePackage{array}
+
 % fixed width tables
 \RequirePackage{tabularx}
 
@@ -30,6 +33,19 @@
 
 % pseudo-text
 % \RequirePackage[language=english]{lipsum}
+
+% Particles names
+\RequirePackage{hepnames}
+
+% ??? from EKO
+\RequirePackage{wasysym}
+
+% International units
+% \RequirePackage[cdot, thickqspace, squaren]{SIunits}
+\RequirePackage{siunitx}
+\sisetup{
+    retain-unity-mantissa = false
+}
 
 % glossaries (after hyperref)
 \RequirePackage[acronym,automake,nomain,section=section]{glossaries}

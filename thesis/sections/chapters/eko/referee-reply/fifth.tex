@@ -1,0 +1,230 @@
+\documentclass[a4paper,11pt]{article}
+% \pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{../styles/jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+\usepackage{lmodern}
+
+\usepackage{../styles/main}
+\usepackage{../styles/defs}
+
+
+\usepackage{microtype,xparse,tcolorbox}
+\newenvironment{reviewer-comment }{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment }{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\newcounter{comment}[section]
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {\refstepcounter{comment}
+  \IfValueT {#1} {
+    \begin{reviewer-comment~}
+      \noindent
+      \textbf{Comment\hspace{1mm}\thecomment :\hspace{2mm}} \ttfamily #1 
+    \end{reviewer-comment~}
+  }
+  \par\noindent\ignorespaces
+} { \bigskip\par\par }
+\ExplSyntaxOff
+
+
+\begin{document} 
+%\maketitle
+%\flushbottom
+
+
+We thank the referee for reviewing our manuscript once more, 
+providing suggestions / comments for improvement.
+
+In the following, we arrange the referee's comments into a series of items and 
+will address them one by one.
+
+\begin{response}{
+  I have run the new example provided in the paper. I get $x*g(x)= 1.32630e3$
+  at $x=10^{-7}$ and $Q=100$~GeV. This result differs slightly from the
+  benchmark value $1.3272e3$. Am I supposed to get something close to, and
+  compatible with, the benchmark value (but within what uncertainty?), or
+  exactly that value? The authors do not say precisely. They should certainly
+  make it clear what value one should get when running the code. If I am not
+  getting the expected value, then something is wrong somewhere and deserves
+  investigation.
+}
+The referee is correct pointing out that we were missing to report the
+expected output value. Indeed, here is quite relevant, since the user want to
+be sure to be running with the correct options and version. For this reason, we
+are now providing the expected output in the comment in the listing.
+
+The number found by the referee is the correct one, and it corresponds to an
+error slightly smaller than 1\textperthousand{} which is compatible with
+Fig.~1.
+The main shift from the benchmark is probably coming from interpolation itself
+(absent in the input \pdf, since it is not provided by \lhapdf, but present in
+the \eko, and thus in the output).
+\end{response}
+
+\begin{response}{
+  The authors spend quite some time in their resubmission letter explaining
+  that they have carefully tested their code against existing ones, and that
+  their code is a library and not a program. Please understand that I am not
+  disputing this, and I am sure that they have done a very careful and thorough
+  job. What I am complaining about, instead, is the usability of their library
+  for an external user. Even after the last round of improvements, it is my
+  belief that such usability remains poor.
+}
+We are also concerned about poor usability: we are going to improve it in our
+library, and through the documentation.
+For sure, something has been already introduced during the review process,
+since - thanks to the referee - we are now providing tutorials to get started. 
+We acknowledge them to be still not ideal, and most likely they might not cover
+all the most common use cases. We will try to collect as many feedback as
+possible (through the online repository, and related channels) in order to
+continuously improve.
+\end{response}
+
+\begin{response}{
+  I will note the following:
+
+  \begin{itemize}
+    \item Out of curiosity I installed the version of EKO that pip is providing
+      by default (which happened to be the 0.10.2). The example given in the
+      paper does not run with this version (KeyError: 'order').
+  \end{itemize}
+}
+Indeed, this is due to an ongoing parallel development which is beyond the
+scope of this paper.
+This is only a problem in the input, but noticing this we decided to review the
+user interface, and finally stabilize it.
+As mentioned in the manual appendix we will keep the online tutorials 
+up to date in order to provide consistent examples.
+\end{response}
+
+\begin{response}{
+  \begin{itemize}
+    \item Version 0.8.5 (the one suggested in the paper) does not seem to be able
+      to run the example with LHAPDF (6.5.1) and CT14llo given in the online
+      documentation. (ModuleNotFoundError: No module named 'ekobox')
+  \end{itemize}
+}
+We are sorry for the inconvenience, but this is not a problem of compatibility
+with \lhapdf: it is for sure originated from the multiple installations of \eko.
+Indeed, \href{https://github.com/N3PDF/eko/tree/master/src}{\texttt{ekobox}} is
+just a package inside the \eko{} distribution,
+\href{https://github.com/N3PDF/eko/tree/v0.8.5/src}{missing in the
+\texttt{0.8.5} release}, but present in \texttt{0.10.2}.
+
+We are happy to help with this kind of issues, through the bug tracker on the
+repository.
+\end{response}
+
+\begin{response}{
+  All this is potentially confusing. Are the authors breaking backward compatibility
+  even before a paper with an example is published? If they insist on 0.8.5, they
+  should at least warn users that the example given in the paper cannot run on more
+  recent versions (and provide an equivalent minimal, quick-start, example in the
+  online documentation), and probably say that 0.8.5 cannot run the examples in the
+  online documentation.
+}
+In this case, we want to remind that the documentation is actually versioned
+together with the code, so in the optimal case the current status of the online
+docs should refer to the latest version, that is not any longer \texttt{v0.8.5}.
+
+In theory, this means that we could improve over the documentation of
+\texttt{v0.8.5}, continuing the \texttt{v0.8.x} series, in which we only update
+the documentation and keep the same code.
+We believe that the proposed version is fully working, and able to do the task
+we are talking about, so we would not need to improve the code in parallel, but
+just the docs.
+In practice, we do not have (m)any user(s), so we are trying to learn from the
+shortcomings of this version to improve the future ones.
+
+You can consider \texttt{v0.8.x} and \texttt{v0.10.y} as being two completely
+different programs, so they can follow an independent life-cycle (that is what
+a major change is in the end). Simply, it is not much useful at the moment to
+insist on the \texttt{v0.8.x} program. But the moment it would be, we could
+resume the development from that tag.
+For this reason, we accept the critic about the lack of clarity, and we
+published online the
+\href{https://eko.readthedocs.io/en/v0.8.5}{\texttt{v0.8.5} version of the
+docs}, we will point out the difference in the newest version of the docs.
+Being a fairly common platform with a uniform interface, we believe potential
+users to be familiar with the concept.
+\end{response}
+
+\begin{response}{
+  I think that this paper is a borderline case, since while not providing
+  original physics insight it describe nonetheless careful and useful work, but
+  it fails to some extent to convey appropriate information to readers. Since a
+  lot of time has already been spent by everyone involved on iterating this
+  paper, and the marginal utility of continuing these iterations is clearly
+  approaching zero, I recommend its publication at this stage.
+
+  I have also a few words of advice for the authors.
+
+  \begin{itemize}
+    \item In order to give a wider user base access to their (preliminary)
+      work, one does not need a published paper. An arXiv preprint is perfectly
+      appropriate for this goal, and it can actually better evolve following
+      the development of the code, and a paper can be published as soon as a
+      stable version is reached.
+  \end{itemize}
+}
+As mentioned before we believe that \eko{} \texttt{0.8.5} is complete enough to reproduce 
+the existing codes with its own original strategy.
+We thank the referee for this suggestion and we will consider this option
+for future works.
+
+\end{response}
+
+\begin{response}{
+  \begin{itemize}
+    \item There are many packages that make a good or at least decent job of
+      providing useful usage examples, be it in a paper and/or an online
+      documentation and/or with the distributed package. The authors may for
+      instance consult, among many others, Pythia, FastJet, or even LHAPDF.
+  \end{itemize}
+}
+We don't feel the comparison with the mentioned programs is really fair
+since they exist for a significant longer time (Pythia more then 40 years!)
+and they target a different audience (specifically mostly experimentalists)
+so they could iterate much more. In fact, we hope \eko{} has a similar life cycle
+and we are sure our documentation will improve along the way. Instead, we rather
+prefer to compare our documentation with those of similar tools, such as
+\apfel{} and \pegasus{}, from which we are not shying away.
+\end{response}
+
+\begin{response}{
+  \begin{itemize}
+    \item Even sticking to the viewpoint that ``EKO is designed as a library
+      and not as a program'', this does not mean that meaningful and simple
+      examples cannot be provided. For instance, even working exclusively with
+      the evolution operator on its grid (and therefore foregoing access to an
+      evolved PDF at any $x$ and $Q$ point), the example provided might have
+      shown its departure from the initial conditions at $Q0$ for increasing
+      $Q$, at different values of $x$ and at different perturbative orders. It
+      is just an example among many, but it would have concretely shown a user
+      how to access the content of the evolution operator, and allowed for an
+      appreciation of the numerical results.
+  \end{itemize}
+}
+As already mentioned, we will try to provide more and more examples with the
+collected feedback.
+We also remind that, indeed, the main advantage of \eko{} is to have access to
+the evolution kernel operator and not the evolved PDF. However, the evolution
+of PDFs is a very common task in the community and the main benchmark we have,
+so it is a natural point of focus. 
+In fact, in the actual use case, we mainly use the operator to produce \fk{}
+tables.
+\end{response}
+
+
+% \bibliographystyle{../styles/JHEP}
+% \bibliography{../bibliography/eko.bib,../bibliography/refs.bib}
+
+% \listoffixmes
+
+\end{document}

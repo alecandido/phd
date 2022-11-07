@@ -1,0 +1,22 @@
+The presence of the derivative on the left-hand-side and the convolution on the
+right-hand-side turns \cref{eq:dglap} into a set of coupled
+integro-differential equations which are non-trivial to solve.
+
+A possible strategy in solving \cref{eq:dglap} is by tackling the problem
+head-on and iteratively solve the integrals and the derivative by taking small
+steps: we refer to this as \enquote{$x$-space solution}, as the solution uses
+directly momentum space and this approach is adopted, e.g., by \apfel{}~\cite{Bertone:2013vaa},
+\hoppet{}~\cite{Salam:2008qg}, and \qcdnum{}~\cite{Botje:2010ay}.
+However, this approach becomes quite cumbersome when dealing with higher-order
+corrections, as the solutions becomes more and more involved.
+
+We follow a different strategy and apply the Mellin transformation $\Md$
+\begin{equation}
+    \tilde g(N) = \Md\qty[g(x)](N) = \int\limits_0^1\!\dd{x} x^{N-1} g(x)
+\end{equation}
+where, as well here as in the following, we denote objects in Mellin space by a
+tilde.
+This approach is also adopted by \pegasus{}~\cite{Vogt:2004ns} and \fk{}~\cite{Ball:2008by,Ball:2010de,DelDebbio:2007ee}.
+The numerically challenging step is then shifted to the treatment of the Mellin
+inverse $\Md^{-1}$, as we eventually seek for results in $x$-space (see
+\cref{sec:theory:interpolation}).

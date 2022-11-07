@@ -1,0 +1,119 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{../styles/jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+\usepackage{lmodern}
+
+\usepackage{../styles/main}
+\usepackage{../styles/defs}
+
+
+\usepackage{microtype,xparse,tcolorbox}
+\newenvironment{reviewer-comment }{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment }{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\newcounter{comment}[section]
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {\refstepcounter{comment}
+  \IfValueT {#1} {
+    \begin{reviewer-comment~}
+      \noindent
+      \textbf{Comment\hspace{1mm}\thecomment :\hspace{2mm}} \ttfamily #1 
+    \end{reviewer-comment~}
+  }
+  \par\noindent\ignorespaces
+} { \bigskip\par\par }
+\ExplSyntaxOff
+
+
+\begin{document} 
+%\maketitle
+%\flushbottom
+
+
+\begin{response}{
+  The authors have performed minor corrections to the text of the paper and, more
+importantly, added an appendix B where they show explicitly how to get started
+with their code. This addition is welcome and answers at least in part my
+concerns.
+
+Here follow some comments about the changes.
+
+}
+
+We thank the referee for reviewing our manuscript and providing suggestions / comments for improvement.
+
+In the following, we arrange the referee's comments into a series of items and 
+will address them one by one.
+\end{response}
+
+\begin{response}{
+  Concerning footnote "a" added on page 18, I may speculate that the reason why
+  APFEL and HOPPET do not provide an interface to write out and read in the
+  evolution operator is that it's probably faster to recalculate it on the fly.
+  I'm not suggesting that the authors make changes, but I would advise not to
+  stress too much this point as a supposed advantage of EKO with respect to those
+  packages.
+}
+As we explain in the second paragraph of that page and Appendix A they are indeed faster for the evolution of a single \pdf{}.
+Instead, with \eko{} we address the case of \pdf{} fitting where a repeated evolution is needed and where we gain an advantage.
+Moreover, we do need a dedicated interface to produce \fk{} tables.
+\end{response}
+
+\begin{response}{
+  The addition of appendix B is most welcome. I was able to install and,
+  eventually, run the code. I think this \enquote{quick start} guide is however still too
+  minimal. A user is left with an \enquote{evolution\_operator} but no way to know what to
+  do with it. He or she is referred to an online documentation, which however is
+  not only partially incompatible (e.g.\ different th\_card, different op\_card), but
+  also not much more complete. \enquote{Explore the output} also leaves the user without
+  an explicit way to access to the content of \enquote{evolution\_operator} (I should
+  also mention that I could extract nothing but zeros from it. But since I am no
+  python expert, I won't exclude an error on my part).
+  
+  I think that Appendix B, and the online documentation, should include at least a
+  full example, e.g. giving a PDF and performing its evolution with a calculated
+  operator, outputting in the meantime the alpha\_strong values at the relevant
+  scales. Such example should come with input cards that are sufficiently
+  documented that one knows what each parameter refers to, and an output that one
+  can compare his or her own to.
+}
+We adjusted Appendix B to explicitly evolve a \pdf{} and output the value of $\alpha_s$.
+We added a brief description to each entry of the theory setting and the operator settings.
+We also added an explicit sentence to clarify that Appendix B only refers to the version released
+together with this paper (\texttt{v0.8.5}).
+Instead, for the instructions for the current version we refer to the online documentation which we adjusted in the same way.
+
+We can reassure the referee that the paper does describe the \eko{} library and the evolution
+operator contains non-zero elements in such a way to match, e.g., the Les Houches benchmark (see Fig. 1).
+\end{response}
+
+\begin{response}{
+  I can recommend publication of the paper after such a minimal but complete
+  example has been provided.
+  
+  The authors are also certainly aware that the online documentation still needs
+  quite some work. There is, for instance, very little curation showing what the
+  most  important methods are, how to best perform at least the basic tasks, etc.\
+  I invite them to put some effort in improving this important resource.
+}
+We agree with the referee that a good documentation is a very valuable document and this statement was one of the main motivations
+to develop \eko{}. However, the library was, is, and for some time will be under development and so we are hesitant to document
+a syntax which we know is temporary. In this respect we stress again that the paper describes the version released with it
+and future versions are expected to expose a different behavior.
+We keep a dedicated effort to add new documentation upon the development of new features or code refactor.
+\end{response}
+
+% \bibliographystyle{../styles/JHEP}
+% \bibliography{../bibliography/eko.bib,../bibliography/refs.bib}
+
+% \listoffixmes
+
+\end{document}

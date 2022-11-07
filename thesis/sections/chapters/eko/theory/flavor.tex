@@ -1,0 +1,35 @@
+Next, we address the separation in flavor space: formally we can define the
+flavor space $\Fd$ as the linear span over all partons (which we consider to be
+the canonical one):
+\begin{equation}
+    \Fd = \Fd_{fl} = \vspan\qty(g, u, \bar u, d, \bar d, s, \bar s, c, \bar c, b, \bar b, t, \bar t)
+\end{equation}
+
+The splitting functions $\vb P$ become block-diagonal in the \enquote{Evolution
+Basis}, a suitable decomposition of the flavor space: the singlet sector $\vb
+P_S$ remains the only coupled sector over $\qty{\Sigma, g}$, while the full
+valence combination $P_{ns,v}$ decouples completely (i.e.\ it is only coupling
+to $V$), and the non-singlet singlet-like sector $P_{ns,+}$ is diagonal over
+$\qty{T_3,T_8,T_{15},T_{24},T_{35}}$, and the non-singlet valence-like sector
+$P_{ns,-}$ is diagonal over $\qty{V_3,V_8,V_{15},V_{24},V_{35}}$.
+The respective distributions are given by their usual definition.
+
+This Evolution Basis is isomorphic to our canonical choice
+\begin{equation}
+    \Fd \sim \Fd_{ev} = \vspan(g, \Sigma, V, T_{3}, T_{8}, T_{15}, T_{24}, T_{35}, V_{3}, V_{8}, V_{15}, V_{24}, V_{35})
+\end{equation}
+but, it is not a normalized basis. When dealing with intrinsic evolution, i.e.\
+the evolution of \pdf{}s below their respective mass scale, the Evolution Basis
+is not sufficient. In fact, for example, $T_{15} = u^{+} + d^{+} +
+s^{+} - 3c^{+}$ below the charm threshold $\mu_c^2$ contains both running and static
+distributions which need to be further disentangled.
+
+We are thus considering a set of \enquote{Intrinsic Evolution Bases} $\Fd_{iev,
+n_f}$, where we retain the intrinsic flavor distributions as basis vectors.
+The basis definition depends on the number of light flavors $n_f$ and, e.g.\
+for $n_f=4$, we find
+\begin{equation}
+    \Fd \sim \Fd_{iev,4} = \vspan(g, \Sigma_{(4)}, V_{(4)}, T_{3}, T_{8}, T_{15}, V_{3}, V_{8}, V_{15}, b^+, b^-, t^+, t^-)
+\end{equation}
+with $\Sigma_{(4)} = \sum\limits_{j=1}^4 q_j^+$ and $V_{(4)} =
+\sum\limits_{j=1}^4 q_j^-$.

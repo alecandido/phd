@@ -1,0 +1,211 @@
+\documentclass[a4paper,11pt]{article}
+% \pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{../styles/jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+\usepackage{lmodern}
+
+\usepackage{../styles/main}
+\usepackage{../styles/defs}
+
+
+\usepackage{microtype,xparse,tcolorbox}
+\newenvironment{reviewer-comment }{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment }{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\newcounter{comment}[section]
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {\refstepcounter{comment}
+  \IfValueT {#1} {
+    \begin{reviewer-comment~}
+      \noindent
+      \textbf{Comment\hspace{1mm}\thecomment :\hspace{2mm}} \ttfamily #1 
+    \end{reviewer-comment~}
+  }
+  \par\noindent\ignorespaces
+} { \bigskip\par\par }
+\ExplSyntaxOff
+
+
+\begin{document} 
+%\maketitle
+%\flushbottom
+
+
+\begin{response}{
+  The authors have added a more complete usage example in Appendix B.2, as
+requested. I am going to make a few more suggestions. While I value, and do not
+shy away  from, the task of a referee to provide advice to the authors, these
+multiple iterations concerning fairly technical or trivial details seem to me to
+be, to quote a fellow physicist, a suboptimal use of my time. The authors should
+please try to get it right on the next iteration, putting themselves in the
+shoes of a prospective user of their code.
+}
+We thank the referee for reviewing our manuscript and providing suggestions / comments for improvement.
+
+In the following, we arrange the referee's comments into a series of items and 
+will address them one by one.
+\end{response}
+
+\begin{response}{
+  The example in Appendix B.2 runs correctly with my Python 3.9 installation.
+  However, it depends on a successful  installation of LHAPDF and its Python
+  interface. This is not always a trivial task. For instance, I could install it
+  on my oldish Mac using versions 6.3.0 and 6.5.1, but not 6.4.0. This sensitivity
+  to LHAPDF versions is of course not the authors' fault or responsibility, but it
+  suggests that including LHAPDF in what should by a minimal ``quick-start''
+  example is probably not a good idea.
+}
+We agree with the referee that indeed the LHAPDF management is not our responsibility, but
+instead should be discussed with the LHAPDF authors. However, we would like to point out that
+we are not dependent on the actual version (and e.g.\ one of us is running successfully LHAPDF with version 6.4.0).
+Still, any prospective user is most likely using the LHAPDF interface. In this context we like to point out again
+that EKO is designed as a library and not as a program: there is no explicit dependence on LHAPDF inside EKO since the goal of the
+library is to be PDF independent.
+
+Concerning the example, we adjusted the example given in the paper to redo the official benchmark described in
+Ref.~[45]. We would like to recall that the benchmark settings are in fact the only possibility to do
+PDF evolution without LHAPDF, in a common context (custom functions are possible, but not very meaningful, nor user-friendly).
+\end{response}
+
+\begin{response}{
+  Moreover, after managing to run the example using LHAPDF I found that,
+  after evolution with EKO, I could not reproduce the pdf values directly
+  obtained from the LHAPDF package, even after adjusting to the best of
+  my understanding all EKO parameters.
+}
+While the actual example is discussed in the reply to Comment 5, we briefly review here the benchmarking
+process that was established during the development of EKO.
+
+First, we mention that the EKO development has been conducted with an explicit emphasis on benchmarking, since
+several other evolution program were already available, and adopted by the community. Therefore, a significant
+amount of time has been invested in this part.
+In fact, we developed a full benchmarking system (supported by the \texttt{banana-hep} package) that we use
+routinely to check our code against other codes.
+This benchmarking system, however, is not discussed in the paper, since the paper is just presenting the EKO library, 
+while the benchmarking system is mostly intended for internal use (as its use requires an advanced
+installation from the repository).
+
+Amongst the available benchmarks, we explicitly provide a system to benchmark to arbitrary PDF sets available
+through LHAPDF (currently e.g.\ to CT18 and NNPDF4.0). However, as is well known, the usage of the LHAPDF
+interface has limited precision in the border region of the respective PDF grid. Also the problems discussed in
+Comment 2 can be a limiting factor. Instead, a stronger check can be established by comparing directly to other
+evolution codes.
+
+As mentioned in the reply to Comment 2, the benchmarks in Refs.~[45,46] are usually considered a sufficient check
+for a new evolution code (and, in fact, all other evolution programs so far did pass that check - consider that
+HOPPET and PEGASUS where used to established the benchmark): we present this check in Fig.~1.
+As can be seen explicitly in this plot the official benchmark only consists of a few point. Indeed, a stronger
+check can be imposed by directly comparing to other evolution codes as is done here for PEGASUS and APFEL which instead
+are compared on a significant larger number of points. This limitation of precision due to limited number of points
+also applies to any LHAPDF set which on top applies an additional interpolation.
+
+We like to stress that using our benchmarking system we can do (and repeat) a benchmark with arbitrary settings and arbitrary boundary
+conditions to any program, provided only, of course, both programs support the settings. To the best of our knowledge this is
+the first implementation of such a benchmarking system (which in effect can be used with a single command) and that is very useful
+in achieving the goal of reproducibility.
+
+We would also like to point out that our strongest check is the successful recomputation of all datasets used in the NNPDF4.0
+analysis~[5], since this tests a huge kinematic range - see Fig.~2.1 of Ref.~[5].
+
+In addition, on a more technical level, we also like to point out that EKO implements a significant amount of unit tests
+(at the time of writing 216) that check atomic properties of code, mathematical properties or invariants. These tests do cover
+100\% of the EKO code basis.
+\end{response}
+
+\begin{response}{
+  I therefore suggest that the authors:
+  
+  1. provide a fully self-contained quick-start example, as well as its expected
+  output. I could for instance produce one using the toy PDF provided via "from
+  banana import toy". In the same example, they may wish to be a bit more generous
+  in showing how to access both the initial and the evolved PDF, also considering
+  that the online documentation is not very helpful.
+}
+As said in the reply to Comment 2, we adjusted the example in the paper to the official benchmark
+using the toy PDF as defined by Ref.~[45] and as implemented in \texttt{banana}.
+The extension to the full benchmark described in Ref.~[45] is simple.
+
+As said in the example the \texttt{pdf} variable is a LHAPDF-like object and in the previous revision
+it was actually a true LHAPDF object. Instead, \texttt{toy.mkPDF} only implements the fundamental methods
+such as \texttt{xfxQ2} to query for the initial PDF (for a full list, please refer to the respective online documentation).
+We like to recall explicitly that the toy PDF is only defined at the initial scale (see definition in Ref. [45]),
+so it doesn't depend on any $Q^2$ scale.
+
+Concerning the access to the evolved PDF we repeat the relevant part of the snippet
+\begin{lstlisting}[language=Python]
+# then e.g. print the evolved gluon (pid = 21) at Q2 = 10000 GeV^2 for the first point x=1e-7
+print(evolved_pdfs[10000.]["pdfs"][21][0])
+\end{lstlisting}
+and we point out explicitly that the first index to \texttt{evolved\_pdfs} refers to the final scale (here \texttt{10000.}),
+the second index is to be kept fixed,
+the third index refers to the Monte Carlo parton identifier (here \texttt{21} which means gluon), and the fourth index refers to the index
+in the interpolation grid (here \texttt{0} which refers to \texttt{1e-7}).
+Note that the final PDF can only be accessed on the interpolation grid (as this is the purpose of the library) and to overcome
+this limitation we provide also a re-export to LHAPDF as is discussed in the online documentation\footnote{\url{https://eko.readthedocs.io/en/latest/overview/tutorials/pdf.html\#Method-2:-Using-ekobox}}.
+\end{response}
+
+\begin{response}{  
+  2. provide an example that uses LHAPDF, and explicitly shows that one
+  can reproduce, using EKO, the values of the pdfs that one can obtain
+  from the LHAPDF package. This second example may also go in the online
+  documentation if the authors do not wish to make the paper longer.
+}
+As suggested, we added an explicit example on how to compare to an existing PDF set in the online documentation\footnote{\url{https://eko.readthedocs.io/en/latest/overview/tutorials/pdf.html\#A-more-Realistic-Example:-Benchmark-to-CT14llo}}.
+\end{response}
+
+\begin{response}{
+  3. Speaking of the online documentation, I'm afraid it's still in quite
+  a sorry state. If not incomplete, it's at least very difficult to
+  navigate, one does not have a real sense of what the main methods are,
+  if the list of the API is complete, what are the parameters to be set
+  (and/or their best values, if they can be determined). To give just one
+  example of the incompleteness of the online documentation it suffices
+  to look at https://eko.readthedocs.io/en/latest/code/IO.html. If one
+  wanted to know what PTO value to use for NNLO evolution, one could only
+  guess it by extrapolating it to PTO=2. The list of the parameters is,
+  of course, also largely incomplete, as the full content of th\_card in
+  the example shows. My opinion is that this online documentation should
+  also be improved before publication, and not asymptotically after it.
+  If improving it across the board is too big a task, at least make it
+  more useful by including a few full and concrete examples, that make
+  use of the most important methods.
+}
+Once again, we would like to point out that the content in the paper describes the version in the paper,
+whereas the online documentation refers to the current version (which is not the version in the paper).
+
+We also ensure the referee that the API is in fact complete and describes all public visible methods
+(note that the concept of visibility in Python is different from e.g.\ C++).
+Moreover, to the best of our knowledge, we are the only evolution program that provides such a complete list
+and, in addition, since we provide the list in an online documentation we can and do provide many cross links.
+
+The main method to use is the one described in the example (again we stress that EKO is a library).
+The use of any additional method is mainly intended for other programmers that develop or use evolution codes, such as
+anomalous dimensions which can simply be found under this exact name in the API. We stress this is not for the common
+user.
+
+The list of parameters to set for the paper version is exactly the list given in the paper. As we explain in the paragraph
+before the example, we do not provide any default value, but instead leave it to the users responsibility to choose
+the correct and consistent values suitable for his application. We further clarified in the example that indeed by
+\enquote{perturbative order} we mean perturbative order of evolution and that the mapping 0=LO, 1=NLO, 2=NNLO holds.
+
+Instead, for the online documentation we updated the page mentioned by the referee with a full list and description of
+all parameters. We stress that the list is a complete list of the relevant parameters and any additional parameters
+that might be present in the theory card are simply ignored (e.g.\ masses of gauge bosons or CKM matrix elements).
+The presence of these additional parameters is simply due to the fact that we are bound to provide an interface to the
+NNPDF ecosystem (see e.g.\ Ref.~[5] and references therein).
+
+\end{response}
+
+% \bibliographystyle{../styles/JHEP}
+% \bibliography{../bibliography/eko.bib,../bibliography/refs.bib}
+
+% \listoffixmes
+
+\end{document}

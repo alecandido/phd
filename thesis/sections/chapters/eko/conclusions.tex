@@ -1,0 +1,143 @@
+In this paper we presented a new \qcd{} tool to perform perturbative \dglap{}
+evolution.
+In \cref{sec:theory} we reviewed some theory aspects that are relevant
+for this paper. In \cref{sec:pheno} we presented a few applications
+of the implemented \eko{} features.
+
+Most of the work done to develop \eko{} has been devoted to reproduce known
+results from other programs (and slightly extending or amending them to have a
+consistent behavior), in order to have a more flexible framework where to
+implement new essential features for physics study (more on this in the Outlook
+at the end of this section).
+Benchmarks with already existing and widely used codes are shown in
+\cref{sec:pheno:bench}, and demonstrated to be successful.
+Further, the multiple options and configurations available are presented in
+subsequent sections and discussed, all leading to known and understood
+behaviors.
+
+This does not mean that the current status of \eko{} does not expose any
+novelty. \cref{tab:comp} summarizes a general comparison on specific features
+between several evolution programs; we list only tools targeting the same scope
+of \eko{}, that is unpolarized \pdf{} fitting.
+It is exactly for this target (\pdf{} fitting) that \eko{} is optimized, and
+among the others three specific features are outstanding: the solution in
+$N$-space, the backward \vfns{} evolution, and the operator-oriented nature.
+
+\eko{} is the first code to solve \dglap{} in Mellin space that has been
+explicitly designed to be used for PDF fitting, and while this may seem
+irrelevant, it has been explicitly picked as an improvement for \eko{} over the
+similar codes.
+There are multiple solutions that are only available in $x$-space by applying
+numerical approximated procedures, making the exact solution the most reliable
+one. In $N$-space this is not required, and the choice of the solution is
+left completely up to the user, with no numerical deterioration among the
+alternatives (as it was already for \pegasus{}), and thus it can be based on
+theory considerations.
+Moreover, the perturbative \qcd{} ingredients used in the evolution (like
+anomalous dimensions) are often first computed in $N$-space, making them
+available for \eko{} immediately, while a further complex transformation is
+needed for usage in the other codes.
+
+All the programs listed are able to preform backward evolution in \ffns{}, that
+consists in swapping the integral evolution bounds, but the \vfns{} backward
+evolution is a unique feature of \eko{}, which involves the non-trivial
+inversion of the matching matrix, as outlined in \cref{sec:theory:matching}.
+
+The reason why \eko{} is an operator-first framework is discussed in detail in
+\cref{app:code:motiv}, but essentially it makes \eko{} particularly suited for
+our target: repeated evaluation of evolution for \pdf{} fitting.
+Producing only operators makes \eko{} less competitive for single one-shot
+applications, but the optimal scaling with the size of the task (practically
+constant, since the time consumed is dominated by the operator calculation)
+makes it extremely good for massive evolution (and already good when evolving
+$\order{10}$ elements).
+
+It should be observed that while the choice of Python as programming language
+particularly stands out among the other programs (all written in Fortran,
+either 77 or 95), this is only a benefit from the point of view of project
+management (being Python much expressive) and third parties contributions
+(since its syntax is familiar to many).
+Indeed, we make sure not to experience Python infamous performances, when it
+comes to the most demanding tasks (like complex kernels evaluation, or Mellin
+inverse integration) as they either use compiled extensions (e.g.\ those available
+in \href{https://scipy.org/}{\texttt{scipy}}~\cite{2020SciPy-NMeth}) or they are compiled Just In
+Time (JIT), using the \href{https://numba.pydata.org/}{\texttt{numba}}~\cite{numba} package.
+
+
+\renewcommand{\thefootnote}{\alph{footnote}}
+\begin{table}
+    \centering
+    \begin{tabular}{l|llllll}
+    Feature & \eko{} & \apfel{}~\cite{Bertone:2013vaa} & \pegasus{}~\cite{Vogt:2004ns} & \hoppet{}~\cite{Salam:2008qg} & \qcdnum{}~\cite{Botje:2010ay} \\
+    \hline
+    input space & $x$ & $x$ & $N,x^{*}$ & $x$ & $x$ \\
+    solution space & $N$ & $x$ & $N$ & $x$ & $x$ \\
+    delivery space & $x$ & $x$ & $N,x$ & $x$ & $x$ \\
+    delivery & $\vb E$ & $\vb f$\footnotemark[1] & $\vb {\tilde f},\vb f$ & $\vb f$\footnotemark[1] & $\vb f$ \\
+    backward \ffns{} & \checkmark & \checkmark & \checkmark  & \checkmark & \checkmark \\
+    backward \vfns{} & \checkmark & & & (\checkmark)\footnotemark[2] \\
+    intrinsic evolution & \checkmark \\
+    \hline
+    prog. language & Python & Fortran 77 & Fortran 77 & Fortran 95 & Fortran 77\\
+    produce \lhapdf{} grids & \checkmark & \checkmark  \\
+    interpolation grids & \checkmark & \checkmark
+    \end{tabular}
+    \caption{Comparison between several evolution programs.
+    The upper part of refers to some physical features: 
+    by $x$ we mean the momentum fraction, $N$ the Mellin variables,
+    $x^{*}$ denotes that \pegasus{} is able to deal with $x$-space input, 
+    but only for fixed \pdf{} parametrization (see \cite{Vogt:2004ns}).
+    $\vb E$ and $\vb f$ stands for evolution operators and \pdf{}s 
+    respectively. 
+    The lower part refers to program aspects, such as program language
+    and interface with \lhapdf{}.
+    }
+    \label{tab:comp}
+\end{table}
+\footnotetext[1]{
+    Both, \apfel{} and \hoppet{}, have an interface to access an evolution
+    operator, but no one of the two can be used to store it and reuse it later on
+    (this would require a dedicated interface).
+}
+\footnotetext[2]{
+    \hoppet{} is able by default to do backward \vfns{}, but is not
+    implementing intrinsic matching conditions (i.e.\ the contributions
+    associated with the presence of an heavy flavor \pdf{}) nor the shifted
+    matching scale.
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+While the main purpose of \eko{} is to evolve \pdf{}s, other \qcd{} ingredients
+are required to perform the main task, like evolving the strong coupling
+$\alpha_s$, running quark masses, or dealing with different flavor bases: they are
+all provided to the end user, and for this reason actual results are shown in
+this paper.
+
+We remark that \eko{} is an open and living framework,
+providing all ingredients as a public library, and accepting community
+contributions, bug reports and feature requests, available through the public
+\eko{} \href{https://github.com/N3PDF/eko/}{repository}.
+
+\paragraph{Outlook} As outlined above \eko{} implements mostly well-known physics,
+but we expect a series of upcoming project to build on the provided framework that will extend
+the current knowledge on \pdf{}s.
+Several features are already scheduled to be implemented,
+and a few of them are already at an advanced stage:
+the \nnnlo{} solution will be included as
+soon as it becomes available~\cite{Moch:2021qrk}, while \nnnlo{} matching
+conditions and strong coupling are already implemented and used in the
+recent determination of the intrinsic charm content of the proton~\cite{Ball:2022qks}.
+
+Another main goal of \eko{} is to provide a backbone in the determination of
+\mhou{}, in the first place by allowing
+the variation of the various scales used in the determination of evolved \pdf{}s,
+that can be considered as an approximation to higher orders, implementing the
+strategies described in \cite{AbdulKhalek:2019ihb}.
+The variation of matching scales involved in \vfns{}
+is already implemented and available.
+
+Other planned features include: polarized evolution~\cite{Vogt:2008yw,Vogt:2014pha,Blumlein:2021ryt},
+evolution of fragmentation functions~\cite{Mitov:2006ic,Moch:2007tx,Almasy:2011eq},
+and the \qed$\otimes$\qcd{} evolution of
+the photon-in-hadron distribution~\cite{Bertone:2017bme,Xie:2021equ,Cridge:2021pxm},
+to estimate the impact of electro-weak corrections onto precision predictions. 

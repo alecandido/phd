@@ -1,0 +1,40 @@
+In the context of \pdf{} evolution, the most used treatment of heavy quarks masses are the pole masses,
+where the physical values are specified as input and do not depend on any scale.
+However for specific applications, such as the determination of \mhou{} due to heavy quarks contribution 
+inside the proton~\cite{Ball:2016neh}, \msbar{} masses can also be used.
+In particular, in~\cite{Alekhin:2010sv} it is found that higher order corrections on heavy quark production
+in \dis{} are more stable upon scale variation when using the \msbar{} scheme.
+\eko{} allows for this option as it is discussed briefly in the following paragraphs.
+
+Whenever the initial condition for the mass is not given at a scale coinciding with
+the mass itself (i.e. $\mu_{h,0} \neq m_{h,0}$, being $m_{h,0}$ the given initial condition
+at the scale $\mu_{h,0}$),
+\eko{} computes the scale at which the running mass $m_{h}(\mu_h^2)$ intersects
+the identity function.
+Thus for each heavy quark $h$ we solve:
+%
+\begin{equation}
+    m_{\overline{MS},h}(m_h^2) = m_h
+\end{equation}
+The value $m_h(m_h)$ is then used as a reference to define the evolution thresholds.
+
+The evolution of the \msbar{} mass is given by:
+%
+\begin{equation}
+    m_{\overline{MS},h}(\mu_h^2) = m_{h,0} \exp\qty[ - \int\limits_{a_s(\mu_{h,0}^2)}^{a_s(\mu_h^2)} \frac{\gamma_m(a_s')}{\beta(a_s')} \dd{a_s'} ]
+    \label{eq:msbarsolution}
+\end{equation}
+%
+with $\gamma_m(a_s)$ the \qcd{} anomalous mass dimension available up to 
+\nnnlo{}~\cite{Vermaseren:1997fq,Schroder:2005hy,Chetyrkin:2005ia}.
+
+Note that to solve \cref{eq:msbarsolution} $a_s(\mu_R^2)$ must be evaluated in 
+a \ffns{} until the threshold scales are known. Thus it is important
+to start computing the \msbar{} masses of the quarks which are closer to the
+the scale $\mu_{R,0}$ at which the initial reference value $a_s(\mu_{R,0}^2)$ is given. 
+
+Furthermore, to find consistent solutions the boundary condition of the
+\msbar{} masses must satisfy $m_h(\mu_h) \ge \mu_h$ for heavy quarks involving
+a number of active flavors greater than the number of quark flavors $n_{f,0}$ at $\mu_{R,0}$, implying that we find
+the intercept between the \rge{} and the identity in the forward direction ($m_{\overline{MS},h} \ge \mu_h$).
+The opposite holds for scales related to fewer active flavors.

@@ -1,0 +1,210 @@
+An \eko{} is effectively a rank $5$ tensor $E_{\mu,i \alpha j \beta}$, that
+evolves a PDF set from one given scale to a user specified list of final scales
+$\mu$:
+\begin{equation}
+    f_{\mu,i\alpha} = E_{\mu,i \alpha j \beta} f^{(0)}_{j \beta}
+\end{equation}
+where $i$ and $j$ are indices on flavor, and $\alpha$ and $\beta$ are indices on the $x$-grid.
+
+The computation of each rank $4$ tensor is almost independent:
+In a \ffns{} for each target $\mu_F^2$ an operator $\vb{\tilde E}(\mu_{F,0}^2 \to \mu_F^2)$ is computed separately.
+Instead, in a \vfns{} first a set of operators is computed, to evolve from the
+initial scale to any matching scales (we call these \textit{threshold
+operators}). Then, for each target $\mu_F^2$, an operator is computed
+from the last intermediate matching scale to $\mu_F^2$; finally
+they are composed together.
+
+\subsection{Performance Motivations and Operator Specificity}
+\label{app:code:motiv}
+
+Before diving into the details of \eko{} performances there is a fundamental
+point that has to be taken into account: \eko{} is somehow unique as an
+evolution program, because its main and only output consists in evolution
+\textit{operators}.
+
+For this reason, a close comparison on performances with other evolution codes
+(whose main purpose is the evolution of individual \pdf{}s) would be rather
+unfair: evolving a single \pdf{} is comparable to the generation of the
+transformation of a single direction in the \pdf{} space, while the operator acts
+on the whole function space.
+
+The motivation to primarily look for the operator itself relies on the specific
+needs of a \pdf{} fit itself.
+Indeed, a fit requires repeated usage of evolution for the $\chi^2$ evaluation
+for each fit candidate, and a final evolution step for the generation of the
+\pdf{} grids to deliver, as those used by \lhapdf{}~\cite{Buckley:2014ana}.
+The first step has been automated long ago, by the generation of the
+\fk{} tables (formerly done with \apfel{} evolution, through
+\href{https://github.com/NNPDF/apfelcomb}{\apfelcomb}, inspired to
+\cite{Bertone:2016lga}), that store \pdf{} evolution into the grids for
+predictions, while the second was repeated at any fit, since for each fit is a
+one-time operation (even though it is actually repeated for the number of Monte
+Carlo replicas, or Hessian eigenvectors, whose typical sizes are reported in
+\cref{tab:pdfmem}).
+
+\begin{table}
+    \centering
+    \begin{tabular}{lr}
+        \pdf{} set name & members \\
+        \hline
+        \texttt{CT18NNLO}~\cite{Hou:2019efy} & 59\\
+        \texttt{MSHT20nnlo\_as118}~\cite{Bailey:2020ooq} & 65\\
+        \texttt{NNPDF40\_nnlo\_as\_01180}~\cite{NNPDF:2021njg} & 101
+    \end{tabular}
+    \caption{Selected \pdf{} sets with their respective number of members}
+    \label{tab:pdfmem}
+\end{table}
+
+Actually, both the operations of including evolution in theory grids and \pdf{}
+grids generation can be further optimized, considering that the evolution only
+depends on a small number of theory parameters, and so the operator does, such
+that it can be generated only once, and then used over and over.
+
+On top of replicas generation, the search towards an optimal fitting
+methodology is an iterative process, that involves a large number number of fits.
+Moreover, whatever program supports the generation of \fk{} tables has to
+create some kind of evolution operator on its own (since the goal of \fk{}
+tables is exactly to be \pdf{} agnostic).
+
+So, the \eko{} work-flow is not a complete novelty, since it was preceded by
+\apfel{} in-memory operator generation, but it is a further and strong
+improvement in that direction: being operator-oriented from the beginning,
+optimizations have been performed for this specific task\footnote{
+E.g.\ internally integrating the minimal amount of anomalous dimensions required
+for the operator determination, while still providing a flexible delivery on
+all the output dimensions (re-interpolating the $x$ dependencies, or rotating
+into different flavor bases).
+}, and maintaining an
+actual operator format, the operators reuse is possible even across the
+boundary of \fk{} tables generation, and applied with benefit, e.g., for the
+massive replicas set evolution (consider
+\texttt{NNPDF40\_nnlo\_as\_01180\_1000}, that is a single set consisting of
+1000 replicas, that can be evolved with a single operator instead of running
+1000 times an evolution program, like all the other similar sets), but even
+repeated fits.
+
+While the benefit is limited for other use cases, any other highly iterative
+phenomenological study, in which \pdf{} evolution is repeatedly evaluated from
+different border conditions, would benefit from being backed by \eko{}, since
+the cost of \dglap{} evaluation is paid only once (even though we are conscious
+that this is mainly beneficial for \pdf{} fitting).
+
+\subsection{Computation time}
+\label{app:code:time}
+
+As we said above the computation almost happens independently for each target $\mu_F^2$
+and the amount of time required scales almost linearly with the number of requested
+$\mu_F^2$, except for the thresholds operators in \vfns{} that are computed only once.
+
+We call computing an operator with a fixed number of flavors \enquote{evolving
+in a single patch}, since in a \vfns{} the evolution might span multiple patches.
+When more than a single patch is involved, operators have to be joined at
+matching scales $\mu_h$ with a non-trivial matching, that has to be
+computed separately (these are part of the threshold operators).
+
+Typical times required for these calculations in \eko{} are presented in
+\cref{tab:time}.
+As expected the complexity of the calculation grows with perturbative order,
+and so even the time taken increases.
+At \lo{} no matching conditions are needed, while for \nlo{} and
+\nnlo{} they are computed once for each matching scale. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|cc}
+        & patch & matching \\
+        \hline
+        \lo{} & $\SI{10}{s}$ & $\varnothing$ \\
+        \nlo{} & $\SI{45}{s}$ & $\SI{65}{s}$ \\
+        \nnlo{} & $\SI{60}{s}$ & $\SI{75}{s}$ \\
+    \end{tabular}
+    \caption{Rough estimates of times taken by \eko{}, with an average sized
+    $x$-grid of $50$ points and single core.}
+    \label{tab:time}
+\end{table}
+
+We consider these time performances satisfactory, even though it is not
+straightforward to compare \eko{} with the other evolution codes, as mentioned
+in \cref{app:code:motiv}. As an example, \nnlo{}
+evolution in $\mu_F^2 = \SI[parse-numbers=false]{1.65^2}{Gev^2} \to
+\SI{100}{GeV^2}$ crossing the bottom matching at
+$\SI[parse-numbers=false]{4.92^2}{Gev^2}$ takes $\sim \SI{60}{s} + \SI{135}{s}$
+in \eko{} ($\SI{135}{s}$ for the thresholds operators initialization,
+$\SI{60}{s}$ for the last patch). \apfel{} takes $\sim\SI{25}{s}$ on the same
+custom interpolation $x$-grid (\apfel{} is able to perform significantly better
+on a pre-defined, built-in grid).
+
+This comparison shows that on the evolution of a single PDF \eko{} is not
+really competitive, but the ratio is limited to $\sim 7.5$. 
+However, we already pointed out that the two programs perform a rather
+different task: computing a whole operator against a single \pdf{} evolution
+(on which the benchmarking is done, only because both programs are able to
+perform this simple task, but it is a worthless task for \eko{} usage).
+
+The comparison is technically possible, but we do not encourage this kind of
+benchmarks, because the typical task is actually different, and this motivates
+the different performances.
+\eko{} perform bad in the case of the single task, but with a perfect scaling
+(negligible work needed for repeated evolution, practically constant), while
+any other program would perform better for the atomic task, but with a linear
+scaling in the number of objects to be evolved.
+
+Each program should be selected having in mind the specific usage. \eko{} is
+recommended for \pdf{} fitting, and repeated evolution in general.
+
+The time measures in \cref{tab:time} and the rest of this
+section have been obtained on a regular consumer laptop:
+\begin{verbatim}
+OS: Linux 5.13 Ubuntu 21.10 21.10 (Impish Indri)
+CPU: (4) x64 Intel(R) Core(TM) i5-6267U CPU @ 2.90GHz
+Memory: 7.56 GB
+\end{verbatim}
+None one of them is a careful benchmark, i.e.\ repeated multiple times, but is mainly
+meant to show an order of magnitudes comparison.
+
+\subsection{Memory footprint}
+\label{app:code:memory}
+
+Memory usage is dominated by the size of the final object produced,
+since a much smaller internal representation is used during the computation.
+The final object holds information about the rank $5$ operator, so it is
+strictly dependent on the size of the interpolation $x$-grid and the amount of
+target $\mu_F^2$ values.
+
+For an average sized $x$-grid of $50$ points, and a single target $\mu_F^2$ the
+size of the object in memory is of $\sim \SI{7.5}{MB}$, which scales linearly
+with the amount of $\mu_F^2$ requested.
+The dependency on the size of the $x$-grid is roughly quadratic.
+
+\subsection{Storage}
+\label{app:code:storage}
+
+For permanent storage similar considerations applies with respect to the
+memory object.
+The main difference is that the object dumped by the \eko{} functions is always
+compressed, leading to a size of $\sim \SI{500}{kB}$ for a single $\mu_F^2$,
+which does not necessarily scales linearly with the amount $\mu_F^2$ since the
+full rank $5$ tensor is compressed all-together (a linear scaling is just
+the worst case).
+Similar considerations applies to the dependency on the size of the $x$-grid.
+
+\subsection{Possible Improvements}
+
+There are a few easy directions to boost the current performances
+of \eko{}, leveraging the $\mu_F^2$ splitting.
+
+\paragraph{Jobs} To improve the speed of the computation, all the ingredients
+of the final tensor (patches \& matching) can be computed by separate jobs, and
+dispatched to different processors.
+They just need to be joined at the very end in a simple linear algebra step.
+
+Notice that the time measures presented in \cref{app:code:time} are obtained
+with a fully sequential computation on a single processor, the only one
+available at present time.
+
+\paragraph{Memory} Since both the computation and the consumption of an \eko{}
+can be done one $\mu_F^2$ at a time, it is possible to store each rank 4 tensor
+on disk as soon as it is computed, and to load them in memory only while
+applying them.\\
+
+Both of these improvements are in the process of being implemented in \eko{}.

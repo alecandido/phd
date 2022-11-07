@@ -1,0 +1,97 @@
+As we are entering the era of high-energy precision physics, theorists strive
+to keep up with the experimental precision~\cite{Gao:2017yyd}.
+The determination of parton distribution functions (\pdf{}s) is becoming
+a major limiting factor and theory groups come up with more and more
+involved procedures to improve the extraction~\cite{NNPDF:2017mvq,Hou:2019efy,Bailey:2020ooq}
+eventually aiming for a one percent accuracy~\cite{NNPDF:2021njg}.
+In order to achieve this goal a thorough treatment of theoretical
+uncertainties is required~\cite{AbdulKhalek:2019ihb},
+that so far was challenging with the current
+state-of-the-art codes.
+In this paper, we present \eko{} a new \qcd{} evolution library that matches
+the requirements and desiderata of this new era.
+
+\eko{} solves the evolution
+equations~\cite{Altarelli:1977zs,Gribov:1972ri,Dokshitzer:1977sg} in Mellin
+space (see \cref{sec:theory:mellin}) to allow for simpler solution algorithms
+(both iterative and approximated).
+Yet, it provides result in momentum fraction space (see
+\cref{sec:theory:interpolation}) to allow an easy interface with existing
+codes.
+
+\eko{} computes evolution kernel operators (EKO) which are independent of
+the initial boundary conditions but only depend on the given theory settings.
+The operators can thus be computed once, stored on disk and then reused in the
+actual application. This method can lead to a significant speed-up when \pdf{}s
+are repeatedly being evolved, as it is customary in \pdf{} fits.
+This approach has been introduced by \fk{}~\cite{Ball:2008by,Ball:2010de,DelDebbio:2007ee}
+and it is further developed here.
+
+\eko{} is open-source, allowing easy interaction with users
+and developers.
+The project comes with a clean, modular, and maintainable codebase that guarantees
+easy inspection and ensures it is future-proof.
+We provide both a user and a developer documentation. So, not only a user
+manual, but even the internal documentation is published, with an effort to make
+it as clear as possible.
+
+\eko{} currently implements the leading order (\lo{}),
+next-to-leading order (\nlo{}) and next-to-next-to-leading order (\nnlo{})
+solutions~\cite{Vogt:2004mw,Moch:2004pa,Blumlein:2021enk}.
+However, it is organized in such a way that the addition of higher order corrections,
+such as the next-to-next-to-next-to-leading order (\nnnlo{})~\cite{Moch:2021qrk},
+can be achieved with relative ease.
+This accuracy is needed to match the precision in the determination of the
+matrix elements for several processes at LHC (see e.g.\ \cite{Duhr:2021vwj} and
+references therein).
+We also expose the associated variations of the various scales.
+
+\eko{} correctly treats intrinsic heavy quark distributions,
+required for studies of the heavy quark content of the nucleon~\cite{Ball:2022qks}.
+While the treatment of intrinsic distributions in the evolution equations is
+mathematically simple, as they decouple in a specific basis, their integration
+into the full solution, including matching conditions, is non-trivial.
+We also implement backward evolution, again including the non-trivial
+handling of matching conditions.
+
+\eko{} is another corner stone in a suite of tools that aims to
+provide new handles to the theory predictions in the \pdf{} fitting
+procedure. To obtain the theory predictions in a typical fitting procedure,
+first, one needs to evolve a candidate \pdf{} up to the process scale,
+and then convolute it with the respective coefficient function.
+The process specific coefficient function can be stored in the
+\pineappl{} format~\cite{Carrazza_2020,christopher_schwan_2022_5846421}.
+\eko{} is interfaced with \pineappl{} to produce
+interpolation grids that can be directly used in a \pdf{} fit,
+avoiding to do the evolution on the fly, but beforehand.
+\eko{} is also powering \yadism{}~\cite{yadism} a new \dis{}
+coefficient function library.
+
+\eko{} adopts Python as a programming language opting for a high-level language
+which is easy to understand for newcomers.
+In particular, with the advent of Data Science and Machine Learning, Python has
+become the language of choice for many scientific applications, mainly driven
+by the large availability of packages and frameworks.
+We decided to write a code that can be used by everyone who needs \qcd{}
+evolution, and to make it possible for applications that are not supported yet
+to be built on top of the provided tools and ingredients.
+For this reason the code is developed mainly as a library, that contains
+physics, math, and algorithmic tools, such as those needed for managing or
+storing the computed operators. As an example we also expose a runner, making
+use of the built library to deliver an actual evolution application. 
+We apply modern best practices for software development, such as automated
+tests, Continuous Integration (CI), and Continuous Deployment (CD), to ensure a
+high quality of coding standard and a routinely checked code basis.
+
+\paragraph{References} The open-source repository is available at:
+\begin{center}
+\url{https://github.com/N3PDF/eko}
+\end{center}
+In the following we do not attempt to give a complete overview over all
+provided features and options, but limit ourselves to a brief review. The
+full documentation instead can be accessed at:
+\begin{center}
+\url{https://eko.readthedocs.io/en/latest/}
+\end{center}
+This document is also regularly updated and extended upon the
+implementation of new features.

@@ -1,0 +1,142 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{../styles/jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+\usepackage{lmodern}
+
+\usepackage{../styles/main}
+\usepackage{../styles/defs}
+
+
+\usepackage{microtype,xparse,tcolorbox}
+\newenvironment{reviewer-comment }{}{}
+\tcbuselibrary{skins}
+\tcolorboxenvironment{reviewer-comment }{empty,
+  left = 1em, top = 1ex, bottom = 1ex,
+  borderline west = {2pt} {0pt} {black!20},
+}
+\newcounter{comment}[section]
+\ExplSyntaxOn
+\NewDocumentEnvironment {response} { +m O{black!20} } {\refstepcounter{comment}
+  \IfValueT {#1} {
+    \begin{reviewer-comment~}
+      \noindent
+      \textbf{Comment\hspace{1mm}\thecomment :\hspace{2mm}} \ttfamily #1 
+    \end{reviewer-comment~}
+  }
+  \par\noindent\ignorespaces
+} { \bigskip\par\par }
+\ExplSyntaxOff
+
+
+\begin{document} 
+%\maketitle
+%\flushbottom
+
+
+\begin{response}{
+  The authors have addressed many of the points that I had raised in my first
+  report and have upgraded their manuscript accordingly. The changes go in the
+  right direction, and the information that the paper is being submitted to the
+  "Tools" section certainly makes it more acceptable.
+}
+
+We thank the referee for reviewing our manuscript and providing suggestions / comments for improvement.
+
+In the following, we arrange the referee's comments into a series of items and 
+will address them one by one.
+\end{response}
+
+\begin{response}{
+  I am still not entirely sure about statements like ``EKO is the first
+  production-ready code to solve DGLAP in Mellin space'', which the authors may
+  wish to explain better, as I think that other codes use Mellin Space.
+}
+
+The statements itself is valid, to the best of our knowledge, since the other
+two DGLAP codes in Mellin space,
+\href{https://www.nikhef.nl/~avogt/pegasus.html}{\pegasus{}} and
+\href{https://github.com/vbertone/MELA}{\mela{}}, have never been used for PDF
+fitting.
+
+Nevertheless, we acknowledge that the \textit{production-ready} statement is
+too generic and misleading, so we replaced with a more specific one.
+\end{response}
+
+\begin{response}{
+  The big remaining issue, as I see it, is the accessibility and usability of
+  the code. The paper, and the reply to the referee, contain sentences that
+  make it abundantly clear that at least some of the authors are real experts
+  in computing and python. However, the paper doesn't explain at all how to use
+  the code. It refers, for documentation,  to a web site where, however, it's
+  equally impossible to find examples to help one  get started (or even just a
+  "Hello world!" example.
+
+  In fact, using the instructions I could install the code using pip (which, by
+  itself, may not be 100\% obvious for the average physicist like myself), and
+  the github route is even harder, given the needed separate installation of
+  poetry). However, after installation I could not find any clear instruction
+  about how to proceed and how to test and use the code. The page
+  https://eko.readthedocs.io/en/latest/overview/examples.html appears to be
+  empty.
+
+  A paper, and the documentation of a code, are meant to communicate to other
+  people useful information. I believe that very relevant things are missing
+  here. Since this work does not introduce new physics, it should at least
+  properly present the code and show how to use it. As it is, this paper
+  represents an advertisement of a new code but fails to make it accessible and
+  therefore useful.
+}
+
+The referee is correct in raising this point, that we recognize as a weak point
+of the submitted paper, and the \eko{} package itself.
+
+For this reason, we added one more appendix, with a very brief guide to user
+installation and usage, and paired it with a more detailed work-through in the
+online documentation (in the section \enquote{Getting Started}).
+
+This is not yet the best possible status of the User Manual, but we plan to
+improve in the near future, leveraging on comments and any kind of feedback
+received from our early users.
+The current status should be enough to allow a generic user to install the
+package, run a DGLAP calculation, and make use of the given result.
+\end{response}
+
+\begin{response}{
+  Table 1 states that only the EKO code can carry out backwards VFNS. HOPPET is
+  also able to do this as standard, to the same perturbative accuracy as for
+  forwards VFNS.  Furthermore, HOPPET also has the option of calculating
+  interpolation grids (though the public version of the code does not provide
+  functionality for writing them out) and evolution operators.
+}
+
+We were genuinely not aware about these two features of \hoppet{}, mostly
+because we are still lacking a careful comparison with it (as we did for the
+other codes).
+
+The ability to produce evolution operators is certainly relevant, but we
+believe it to be comparable with the analogue \apfel{} feature, so it would
+require a dedicated interface to consume it in a PDF fit.
+
+On the other hand, the backward \vfns{} it is lacking proper support to
+intrinsic flavors, that would lead to approximated results when PDF are
+determined with a higher number of active flavors.
+Moreover, while in the documentation this feature is indirectly mentioned at
+the end of Section 6.2.1, it is never properly discussed, and that is the
+main reason why we were not aware in the first place.
+
+In any case, they are both relevant features of \hoppet{}, and we are now
+acknowledging both of them in Table 1, while briefly mentioning in the
+footnotes the differences with respect to those provided in \eko{}.
+\end{response}
+
+% \bibliographystyle{../styles/JHEP}
+% \bibliography{../bibliography/eko.bib,../bibliography/refs.bib}
+
+% \listoffixmes
+
+\end{document}
