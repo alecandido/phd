@@ -1,6 +1,11 @@
 % !TeX root = ../main.tex
 \usepackage{xspace}
 
+\def\acrcommand#1#2#3{
+	\newacronym{#1}{#2}{#3}
+	\csdef{#1}{\acrshort{#1}\xspace}
+}
+
 \input{definitions/typography}
 
 % physics and related
