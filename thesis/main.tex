@@ -49,19 +49,20 @@
     % Main Matter
     %******************************************************************
     \pagenumbering{arabic}
-    \part{Fundamentals}
     \input{sections/chapters/qcd/index}
     \part{Theory}
-    \input{sections/chapters/positivity/index}
+    \label{part:th}
     \input{sections/chapters/dis/index}
     \input{sections/chapters/eko/index}
     \input{sections/chapters/pineline/index}
     \part{Applications}
+    \label{part:app}
     \input{sections/chapters/ic/index}
     \input{sections/chapters/neutrinos/index}
     \input{sections/chapters/afb/index}
-    % TODO: separate part?
-    % https://github.com/AleCandido/phd/issues/1
+    \part{Properties and Methodology}
+    \label{part:meth}
+    \input{sections/chapters/positivity/index}
     \input{sections/chapters/gp/index}
 
     % conclusions

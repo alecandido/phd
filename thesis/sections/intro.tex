@@ -11,24 +11,30 @@
 \markboth{\spacedlowsmallcaps{Introduction}}%
 	{\spacedlowsmallcaps{Introduction}}
 
-\historiated{D}{uring} my doctorate, I have been involved in projects regarding
-different topics, all related to the common theme of \acrfull{pdf}, and their
-ecosystem, half-way between theoretical and experimental \acrfull{hep}, but
-whose challenges extend to statistics, and deeply into the world of software.
+\historiated{T}{he} common thread of this thesis are \acrfull{pdf} and their
+ecosystem, half-way between theoretical and experimental \acrfull{hep}: being
+strongly data-driven, they greatly depend on experiments precision and results
+availability.
+But theory is also crucial for the extraction, since \pdf{}s are determined to
+best fit data with theoretical predictions.
 
-As it is possible to infer from the thesis structure, the main subject
-consists in constructing suitable theory predictions, in order to allow some
-new studies in the \acrlong{nnpdf}, and creating a consistent and improved
-framework, by designing extensible tools, that will simplify the inclusion of
-new physical observables and improved theory calculations.
-This will be discussed extensively in the \textit{first part} of the thesis.
+As it is possible to infer from the thesis structure, the main subject consists
+in constructing suitable predictions, in order to allow some new studies
+in the \acrlong{nnpdf}, and creating a consistent and improved framework, by
+designing extensible tools, that will simplify the inclusion of new physical
+observables and improved theory calculations.
+This will be discussed extensively in the \textit{first part} of the thesis
+\nameref{part:th}, and it will include a package dedicated to the solution of
+\dglap equations \cref{ch:eko}, another providing \acrfull{dis} predictions and
+grids \cref{ch:dis}, and the discussion of the full framework cited
+\cref{ch:pine}, where the two packages are integrated in.
 
 While this has been the main focus for a long time, when me and my
 collaborators started approaching the completion of the first prototype
 framework, and the integration in the main workflow of \acrshort{nnpdf}, some
-new options for dedicated studies became immediately available.
-These applications are collected and discussed in the \textit{second part} of
-the thesis.
+new options for dedicated studies became immediately available. These
+applications are collected and discussed in the \textit{second part} of the
+thesis.
 Most of them are connected not only to the availability of the tools we
 created, but also to the many achievements and past works of \acrshort{nnpdf},
 that created a unique foundation for many studies, given the flexibility of its
@@ -36,3 +42,26 @@ novel methodology and the unparalleled precision reached with its extensive
 datasets, including experiments spanning multiple decades, and several
 different processes, from lepton-hadron and hadron-hadron colliders and
 fixed-target experiments.
+
+Moreover, extracting \pdf{}s is deeply connected to the statistical methods
+applied.
+This is more or less true for any investigation based on quantitative
+experimental data, but it is particularly relevant for the case of \pdf{}s
+because of the functional nature of the objected extracted, that exacerbates
+the dependency of the result on the methodology.
+From this perspective, the \nnpdf methodology is already a novelty, since it
+required a suitable extension of the usual statistical treatment, based on a
+given parametrization, in order to access more complex model developed by the
+Machine Learning community, where direct control of parameter space is
+difficult, and not very useful.
+The whole procedure has been recently innovated, even if I have not taken part
+directly to this process, that finally led to the release of \nnpdfr{4.0}
+\cite{NNPDF:2021njg}, I investigated some limitations of the current approach,
+especially considering the perspective of the full distribution, that in the
+\nnpdf methodology is only arising at the end of the whole fit, but not used in
+the individual optimization steps.
+This led to the proposal of a new candidate methodology, that would replace the
+current usage of a \acrfull{nn} with different techniques.
+Nevertheless, we currently conjecture the final result to be mostly compatible,
+but at the time of writing the proposal is still at an early stage, so no full
+check has yet been performed.
