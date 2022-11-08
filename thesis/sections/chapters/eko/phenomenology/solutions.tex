@@ -1,5 +1,5 @@
 As already mentioned in \cref{sec:theory:solutions}, due to
-the coupled integro-differential structure of \cref{eq:dglap}, 
+the coupled integro-differential structure of \cref{eq:eko/dglap}, 
 solving the equations requires in practice some approximations to which we refer as different
 solution strategies. \eko{} currently implements 8 different strategies,
 corresponding to different approximations.
@@ -15,10 +15,10 @@ detailed descriptions see the
 \begin{itemize}
     \item \texttt{iterate-exact}:
         In the non-singlet sector we take the analytical solution
-        of \cref{eq:dglap2} up to the order specified.
+        of \cref{eq:eko/dglap2} up to the order specified.
         In the singlet sector we split the evolution path into segments
         and linearize the exponential in each segment~\cite{Bonvini:2012sh}.
-        This provides effectively a straight numerical solution of \cref{eq:dglap2}.
+        This provides effectively a straight numerical solution of \cref{eq:eko/dglap2}.
         In \cref{fig:solutions} we adopt this strategy as a reference.
     \item \texttt{perturbative-exact}:
         In the non-singlet sector it coincides with \texttt{iterate-exact}.
@@ -27,7 +27,7 @@ detailed descriptions see the
         iteratively determine the perturbative coefficients of $\textbf{U}$.
     \item \texttt{iterate-expanded}:
         In the singlet sector we follow the strategy of \texttt{iterate-exact}.
-        In the non-singlet sector we expand \cref{eq:dglap2} first to the order
+        In the non-singlet sector we expand \cref{eq:eko/dglap2} first to the order
         specified, before solving the equations.
     \item \texttt{truncated}: 
         In both sectors, singlet and non-singlet, we make an ansatz to determine the solution as a
