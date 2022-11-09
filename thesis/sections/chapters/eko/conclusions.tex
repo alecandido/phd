@@ -68,7 +68,7 @@ Time (JIT), using the \href{https://numba.pydata.org/}{\texttt{numba}}~\cite{num
 \begin{table}
     \centering
     \begin{tabular}{l|llllll}
-    Feature & \eko{} & \apfel{}~\cite{Bertone:2013vaa} & \pegasus{}~\cite{Vogt:2004ns} & \hoppet{}~\cite{Salam:2008qg} & \qcdnum{}~\cite{Botje:2010ay} \\
+	Feature & \eko{} & \citelink{Bertone:2013vaa}{\apfel} & \citelink{Vogt:2004ns}{\pegasus} & \citelink{Salam:2008qg}{\hoppet} & \citelink{Botje:2010ay}{\qcdnum} \\
     \hline
     input space & $x$ & $x$ & $N,x^{*}$ & $x$ & $x$ \\
     solution space & $N$ & $x$ & $N$ & $x$ & $x$ \\
@@ -78,10 +78,14 @@ Time (JIT), using the \href{https://numba.pydata.org/}{\texttt{numba}}~\cite{num
     backward \vfns{} & \checkmark & & & (\checkmark)\footnotemark[2] \\
     intrinsic evolution & \checkmark \\
     \hline
-    prog. language & Python & Fortran 77 & Fortran 77 & Fortran 95 & Fortran 77\\
-    produce \lhapdf{} grids & \checkmark & \checkmark  \\
+    prog. language & Python & F77 & F77 & F95 & F77\\
+    \lhapdf{} grids & \checkmark & \checkmark  \\
     interpolation grids & \checkmark & \checkmark
     \end{tabular}
+    \begin{tabular}{cc}
+		F77 = Fortan 77 & F95 = Fortran 95
+    \end{tabular}
+	\vspace*{5pt}
     \caption{Comparison between several evolution programs.
     The upper part of refers to some physical features: 
     by $x$ we mean the momentum fraction, $N$ the Mellin variables,
