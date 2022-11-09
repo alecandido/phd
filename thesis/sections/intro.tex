@@ -31,9 +31,9 @@ and grids \cref{ch:dis}, and the discussion of the full framework cited
 
 While this has been the main focus for a long time, when me and my
 collaborators started approaching the completion of the first prototype
-framework, and the integration in the main workflow of \acrshort{nnpdf}, some
-new options for dedicated studies became immediately available. These
-applications are collected and discussed in the
+framework, and the integration in the main \acrshort{nnpdf} workflow, some new
+options for dedicated studies became immediately available.
+These applications are collected and discussed in the
 \hyperref[part:app]{\textit{second part}} of the thesis.
 Most of them are connected not only to the availability of the tools we
 created, but also to the many achievements and past works of \acrshort{nnpdf},
@@ -45,10 +45,10 @@ fixed-target experiments.
 
 Moreover, extracting \pdf{}s is deeply connected to the statistical methods
 applied.
-This is more or less true for any investigation based on quantitative
-experimental data, but it is particularly relevant for the case of \pdf{}s
-because of the functional nature of the objected extracted, that exacerbates
-the dependency of the result on the methodology.
+This is more or less true for any analysis based on quantitative experimental
+data, but it is particularly relevant for the case of \pdf{}s, because of the
+functional nature of the objected extracted, that exacerbates the dependency of
+the result on the methodology.
 From this perspective, the \nnpdf methodology is already a novelty, since it
 required a suitable extension of the usual statistical treatment, based on a
 given parametrization, in order to access more complex model developed by the
@@ -60,8 +60,34 @@ directly to this process, that finally led to the release of \nnpdfr{4.0}
 especially considering the perspective of the full distribution, that in the
 \nnpdf methodology is only arising at the end of the whole fit, but not used in
 the individual optimization steps.
-This led to the proposal of a new candidate methodology, that would replace the
-current usage of a \acrfull{nn} with different techniques.
+This led to the proposal of a new candidate methodology, described in
+\cref{ch:gp}, that would replace the current usage of a \acrfull{nn} with
+different techniques.
 Nevertheless, we currently conjecture the final result to be mostly compatible,
 but at the time of writing the proposal is still at an early stage, so no full
 check has yet been performed.
+
+This topic is collected in the \hyperref[part:meth]{\textit{third part}},
+together with an investigation about the positivity of certain \pdf{}s,
+described in \cref{ch:pos}.
+The reason why the two things are bundled together is that they both affect the
+final extraction methodology, even if in two very different ways.
+In \nnpdf itself, three main lines of development have always been identified:
+data implementation, theory computation and extension, and methodological
+improvements.
+If the first part is  mainly devoted to the theory, this one is instead
+connected to the methodology.
+
+A final remark is required: software development has been a big share of the
+main effort.
+While in the first part this is manifest, it is actually underlying any work
+described, even though not  always to the same extent.
+The whole \nnpdf architecture, and collaboration's main results, are deeply
+connected to the development of increasingly more reliable tools.
+Eventually, the main code has been published \cite{NNPDF:2021uiq}, in order to
+support full transparency, and to make it available for more studies.
+Potentially, even by authors external to the collaboration.
+Following this philosophy, all the projects I took part in have been developed
+open immediately, and they are available in the \ghurl{NNPDF} GitHub
+organization (a few minor ones still in the \ghurl{N3PDF} organization), with
+special care for usability and maintainability, to the best of our abilities.
