@@ -1,0 +1,67 @@
+% !TeX root = ../../../main.tex
+
+Components have applications on their own, and part of them have already been
+used (or are being used) to support other works.
+Even though here it appears incidental, this is an important design feature: we
+are building a framework, not just a pipeline application. The
+various components should be focused on dedicated tasks and easy to integrate
+in different architecture (or, more realistically, stand-alone projects), for
+similar but different goals.
+
+A first example is the study on evidence
+for an intrinsic charm component in the proton \cite{Ball:2022qks}, based on
+the \nnpdf 4.0 \pdf set, latest release of the \nnpdf family, and \eko
+\cite{Candido:2022tld}, the evolution code described in the previous
+\cref{sec:pine/arch}.
+The role of \eko has been to unfold the intrinsic component from the so-called
+fitted charm, in the 4 flavor number scheme (default scheme at fitting scale
+for \nnpdf), by backward evolving with \dglap equation in a 3 flavor number
+scheme \pdf set at a lower scale.
+On top of the required backward evolution, and the proper treatment of
+intrinsic components,
+\eko implemented the \nnnlo matching conditions
+between the 4 and 3 flavor schemes, that have been relevant to estimate the
+perturbative stability of the result obtained.
+
+Another application is the study of the forward backward asymmetry in the
+Drell--Yan process with a high cut in the invariant mass of the
+lepton pair \cite{Ball:2022qtp}.
+In particular, the work focuses on the comparison between results obtained with
+the \nnpdf 4.0 \pdf set and other contemporary \pdf sets from different
+collaborations. We find that a certain shape in the high cut setting is
+related to the specific shape of the \pdf{}s in the large-$x$ extrapolation
+region, and so very sensitive to the possible bias of extending behaviors
+typical of the central data region.
+In this context, it has been crucial to have \pineappl \cite{Carrazza:2020gss}
+\cite{christopher_schwan_2022_7145377} grids pre-computed to reproduce the
+results, iterating on the \pdf set to investigate different features of the
+\pdf, and trying to trace back the distribution behavior to \pdf features.
+
+Finally, a study of the low energy neutrino structure functions is ongoing,
+where the low $Q^2$ experimental data is reconciled to the known
+perturbative calculation at higher energies, based on the \pdf{}s.
+Here, we use \yadism, a general inclusive DIS provider
+interfaced with \pineappl, to produce perturbative \qcd calculation for the
+structure functions that get matched to experimental data.
+
+\subsection{Missing Higher Order Corrections}
+\label{sec:pine/mhou}
+
+Status report on MHOU, possibly discussing:
+\begin{itemize}
+	\item short and incomplete survey on possible options
+	\begin{itemize}
+		\item scale variations
+		\item Cacciari-Hudeau
+		\item  Stefano's https://inspirehep.net/literature/1273674
+		\item abc model https://inspirehep.net/literature/1867838
+		\item MCscales https://inspirehep.net/literature/2115313)
+	\end{itemize} 
+	\item brief history of MHOU in PDF fitting
+	\item theory covmat recap
+	\item what we updated wrt to NNPDF3.1th ($\alpha_s$ function vs value, and
+		how ren scale vars where entering DGLAP)
+	\item what is missing for a new theory covmat
+\end{itemize}
+
+

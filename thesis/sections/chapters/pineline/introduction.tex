@@ -1,0 +1,68 @@
+% !TeX root = ../../../main.tex
+
+Performing a \pdf fit requires to integrate several elements to be gathered
+from many different sources: data from several experiments, ranging over
+multiple decades and formats, and competitive theory predictions, coming
+from different providers.
+Finally, a fitting methodology has to be selected and engineered to implement
+theory constraints, and to limit not physically motivated bias.
+
+While data is a \textit{static} component in the fit, the theory predictions
+depend on the candidate \pdf, since they are the mapping that connect the
+unobserved \pdf space, to the observed data space.
+During the fit, this map will be used a large number of times (at least once for
+every minimization step), so it is paramount to have an efficient way to
+evaluate it, otherwise it can become a serious bottleneck.
+
+For this reason, a few interfaces to \pdf independent theory predictions have
+already been implemented
+\cite{Carli:2010rw,Britzger:2012bs,Britzger:2022lbf,Carrazza:2020gss}, and they
+are used in different contexts.
+They propose different file formats to store the output of a Monte Carlo
+generator, splitting them by luminosity component, perturbative order, and
+observables binning.
+This output can be optimized as an \textit{interpolation grid}, leveraging the
+fact that the \pdf itself is only defined over a finite set of points, and thus
+including the interpolation basis in the factorized cross-section.
+Essentially, this recast the partonic cross sections predictions as
+a \textit{theory array}, for which the Mellin convolution is replaced by a
+linear algebra contraction over a single or multiple \pdf set.
+This idea can be broadened to apply to any factorized function, describing the
+structure of an external hadron (both incoming and outgoing).
+
+However, this picture does not exhaust the needs of a \pdf fit (or any other
+hadronic one), because, while the \pdf dependence on flavor and $x$ value is
+folded on the grid, that on factorization scale has to be fixed to the process
+dependent value.
+This dependence is not fitted, since it is only determined by perturbative
+\qcd.
+In order to obtain it, it is required to solve the \dglap equation with the
+border condition provided by the fit.
+But being \dglap a set of integro-differential equations \textit{linear} in the
+\pdf, this can be converted in the application of a suitable \textit{evolution
+operator}, solving the same equation.
+Since the evolution operator can also be computed ahead of time, it is possible
+to combine the two ingredients (the operator and the grid) in a single fast
+array interface, that will directly produce the required theory predictions
+once contracted on the \pdf candidate.
+Thus, the map from \pdf space to data space discussed above, is reduced to a
+linear algebra product (or more than one, when multiple hadrons are involved).
+During this operation, there is no loss of generality, since the interpolation
+basis used for the conversion of the analytic convolutions is already present
+in many \pdf applications due to their non-perturbative nature.
+Such an interface is called a \enquote{Fast Kernel table} (shortened to
+\textit{FK table}) in the context of the \nnpdf collaboration.
+
+To produce the \textit{\fktab{}s} an evolution operator provider is required,
+and needs to be interfaced with the grids. This was originally done in \nnpdf
+by an internal tool (\fkgen), and then systematized in the \apfelgrid
+\cite{Bertone:2016lga} package (leveraging the \apfel~\cite{Bertone:2013vaa}
+evolution library), later reworked once more taking the name of \apfelcomb
+\cite{APFELcomb}.
+
+An array interface is extremely useful, since it allows to treat the theory map
+in the context of many software frameworks, just relying on the data structure
+of an array. Especially relevant for machine
+learning software frameworks, but not limited to them, e.g.\ it allows to
+create a Bayesian inference-based methodology, without the need of the
+treatment of further complex functions.
