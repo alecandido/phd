@@ -1,81 +1,5 @@
-\appendix
+% !TeX root = ../../../main.tex
 
-\setcounter{page}{1}
-
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}[h]
-%  \includegraphics[width=0.32\textwidth]{nnpdf_logo_official.pdf}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\vspace{-2.0cm}
-%\begin{flushright}
-%Edinburgh 2021/28\\
-%Nikhef 2021-032\\
-%TIF-UNIMI-2021-21
-%\end{flushright}
-%\vspace{0.3cm}
-
-%\vspace{1.1cm}
-\begin{center}
-
-{\bf \LARGE Supplementary Information }\\[0.8cm]
-
-
-  {{\LARGE \bf Evidence for intrinsic charm quarks in the proton}}
-
-
-  
-  \vspace{1.1cm}
-
-  {\small
-    {\bf  The NNPDF Collaboration:} \\[0.2cm]
-     Richard D. Ball,$^{1}$
-  Alessandro Candido,$^{2}$
-Juan Cruz-Martinez,$^{2}$
-Stefano Forte,$^{2}$
-Tommaso Giani,$^{3,4}$\\[0.1cm]
-Felix Hekhorn,$^{2}$
-Kirill Kudashkin,$^{2}$
-Giacomo Magni,$^{3,4}$ and
-Juan Rojo$^{3,4}$\daggerfootnote{Corresponding author (\href{mailto:ic/j.rojo@vu.nl}{j.rojo@vu.nl}).}
-  }\\
-
-
-
- \vspace{0.7cm}
- 
- {\it \small
-
- ~$^1$The Higgs Centre for Theoretical Physics, University of Edinburgh,\\
-   JCMB, KB, Mayfield Rd, Edinburgh EH9 3JZ, Scotland\\[0.1cm]
-    ~$^2$Tif Lab, Dipartimento di Fisica, Universit\`a di Milano and\\
-   INFN, Sezione di Milano, Via Celoria 16, I-20133 Milano, Italy\\[0.1cm]
-    ~$^3$Department of Physics and Astronomy, Vrije Universiteit, NL-1081 HV Amsterdam\\[0.1cm]
-~$^4$Nikhef Theory Group, Science Park 105, 1098 XG Amsterdam, The Netherlands\\[0.1cm]
-}
-
- \vspace{1cm}
-
-
- 
-
-
-\end{center}
-
-%In this Supplementary Information, references that already appear in the main manuscript
-%use the same number, and new references are provided at the end of the document.
-
-\tableofcontents
-
-\clearpage
-
-% Introduction to EKO
-\clearpage
 \section{The EKO evolution framework}
 \label{app:ic/eko}
 
@@ -86,20 +10,20 @@ conditions implementing the 3FNS to
 the 4FNS transformation.
 %
 This inversion is not available in the open-source NNPDF
-code~\citesupp{NNPDF:2021uiq} and it is performed here by means of a novel code
+code~\cite{NNPDF:2021uiq} and it is performed here by means of a novel code
 for QCD evolution, 
- {\sc\small EKO} (Evolution Kernel Operators), that we use to take the
+ \textsc{\small EKO} (Evolution Kernel Operators), that we use to take the
  PDF set determined at the reference scale $Q_0$ and evolve it to a
  matching scale $Q_c$ where it is transformed to the 3FNS.
 %
-Here we provide a brief summary of {\sc\small
+Here we provide a brief summary of \textsc{\small
 EKO}, some details of the way the direct and inverse matching
-conditions are implemented, and some benchmarks between {\sc\small
-EKO} and other existing QCD evolution codes, including the  {\sc\small
-APFEL}~\citesupp{Bertone:2013vaa} evolution code that is used by the
+conditions are implemented, and some benchmarks between \textsc{\small
+EKO} and other existing QCD evolution codes, including the  \textsc{\small
+APFEL}~\cite{Bertone:2013vaa} evolution code that is used by the
 NNPDF code.
-{\sc\small EKO} is written in {\sc\small Python} and is available
-open source from its {\sc\small GitHub} repository
+\textsc{\small EKO} is written in \textsc{\small Python} and is available
+open source from its \textsc{\small GitHub} repository
 \begin{center}
 \url{https://github.com/N3PDF/eko}
 \end{center}
@@ -108,7 +32,7 @@ in its online documentation
 \begin{center}
 \url{https://eko.readthedocs.io/en/latest/}
 \end{center}
-as well as in a dedicated publication~\citesupp{Candido:2022tld}.
+as well as in a dedicated publication~\cite{Candido:2022tld}.
 
 The scale dependence of PDFs in QCD is determined by solving a set
 of coupled integro-differential equations (evolution equations) in two
@@ -119,9 +43,9 @@ One possibility is to treat the (integral) dependence on $x$ of the
 PDFs and evolution kernels by
 sampling it on a grid of points.
 %
-This is the strategy adopted by, among others, the  {\sc\small APFEL}~\citesupp{Bertone:2013vaa},
-{\sc\small HOPPET}~\citesupp{Salam:2008qg},
-and {\sc\small QCDNUM}~\citesupp{Botje:2010ay} evolution codes.
+This is the strategy adopted by, among others, the  \textsc{\small APFEL}~\cite{Bertone:2013vaa},
+\textsc{\small HOPPET}~\cite{Salam:2008qg},
+and \textsc{\small QCDNUM}~\cite{Botje:2010ay} evolution codes.
 %
 An alternative possibility is to perform an integral transform (Mellin
 transform) with
@@ -130,26 +54,26 @@ coupled ordinary differential equations. These can then be solved
 analytically, but the integral transform has to be inverted numerically
 to arrive at a final result.
 %
-This approach is adopted by {\sc\small PEGASUS}~\citesupp{pegasus} as well as by the
-internal PDF evolution code {\sc\small FastKernel} used in earlier NNPDF analyses
-and described in~\citesupp{DelDebbio:2007ee,Ball:2008by,Ball:2010de}.
+This approach is adopted by \textsc{\small PEGASUS}~\cite{pegasus} as well as by the
+internal PDF evolution code \textsc{\small FastKernel} used in earlier NNPDF analyses
+and described in~\cite{DelDebbio:2007ee,Ball:2008by,Ball:2010de}.
 %
-One limitation of {\sc\small PEGASUS} is that it requires the analytic
+One limitation of \textsc{\small PEGASUS} is that it requires the analytic
 computation of the Mellin transforms of
 the PDFs, which is generally not possible, specifically if PDFs are
 parametrized as neural networks.
 %
 
-This restriction is bypassed in {\sc\small FastKernel} by transforming only the
+This restriction is bypassed in \textsc{\small FastKernel} by transforming only the
 evolution kernel (i.e. the evolution operator, solution of differential
 equations, evaluated on a given interpolation basis), which can be then
 convoluted with the $x$-space PDFs at the input evolution scale $Q_0$.
-Following a similar strategy, {\sc\small EKO}
+Following a similar strategy, \textsc{\small EKO}
 solves evolution equations in Mellin space and then produces PDF-independent
 evolution kernel operators (EKO) which can be convoluted with input 
 PDFs.
 %
-Variable flavor number scheme evolution (VFNS) is implemented in {\sc\small EKO}, with
+Variable flavor number scheme evolution (VFNS) is implemented in \textsc{\small EKO}, with
 the possibility of freely choosing the value of the matching scales
 $Q_{h}$ between the $N$-flavor number scheme (NFNS) in which heavy quark $h$
 is not included in QCD evolution, and the $(N+1)$-flavor number
@@ -157,13 +81,13 @@ scheme in which it is included.
 %
 Schematically, for evolution between $Q_0$ and $Q_1$ if no matching
 scales are crossed $\left(Q_{h}^2 < Q_0^2 , Q_1^2 < Q_{h'}^2\right)$ one has:
-\be
+\begin{equation}
 \label{eq:ic/EKO1}
 {\mathbf{f}}^{(n_f)}(Q^2_1)= {\mathbf{E}}^{(n_f)}(Q^2_1\leftarrow Q^2_0) \otimes {\mathbf{f}}^{(n_f)}(Q^2_0) \, ,
-\ee
+\end{equation}
 where
-${\mathbf{E}}^{(n_f)}$ is the  NFNS {\sc\small EKO},
-and $\otimes$ is the Mellin convolution operation. Note that {\sc\small EKO}
+${\mathbf{E}}^{(n_f)}$ is the  NFNS \textsc{\small EKO},
+and $\otimes$ is the Mellin convolution operation. Note that \textsc{\small EKO}
 can perform both ``forward'' ($Q_0< Q_1$)  and ``backward'' ($Q_1< Q_0$)
 evolution.
 %
@@ -172,11 +96,11 @@ in the $(2n_f+1)$-dimensional flavor space.
 If instead a single matching scale $Q_h$ is crossed, assuming for definiteness $Q_0< Q_1$,  
 $Q_{h'}^2 < Q_0^2 < Q_{h}^2 < Q_1^2 < Q_{h''}^2$,
 one has
-\be
+\begin{equation}
 \label{eq:ic/EKO2}
-{\mathbf{f}}^{(n_f+1)}(Q^2_1)= \lc {\mathbf{E}}^{(n_f+1)}(Q^2_1\leftarrow Q_{h}^2)  
-{\mathbf{A}}^{(n_f)}(Q_{h}^2) {\mathbf{E}}^{(n_f)}(Q_{h}^2\leftarrow Q^2_0) \rc \otimes {\mathbf{f}}^{(n_f)}(Q^2_0) \, ,
-\ee
+{\mathbf{f}}^{(n_f+1)}(Q^2_1)= \left[ {\mathbf{E}}^{(n_f+1)}(Q^2_1\leftarrow Q_{h}^2)  
+{\mathbf{A}}^{(n_f)}(Q_{h}^2) {\mathbf{E}}^{(n_f)}(Q_{h}^2\leftarrow Q^2_0) \right] \otimes {\mathbf{f}}^{(n_f)}(Q^2_0) \, ,
+\end{equation}
 where $\mathbf{A}^{(n_f)}(Q_{h}^2)$ is the scheme transformation
 between the NFNS and (N+1)FNS, given as a perturbatively computable
 series expansion in $\alpha_s$. 
@@ -188,7 +112,7 @@ one threshold is crossed.
 %
 Also, the scales $Q_0$ and $Q_1$ can be ordered in any way, because both direct
 and inverse scheme transformations are implemented in
-{\sc\small EKO}. Furthermore, the inverse scheme change  is implemented both
+\textsc{\small EKO}. Furthermore, the inverse scheme change  is implemented both
 perturbatively (i.e.\ as a series expansion in $\alpha_s$ to the same
 accuracy as the direct scheme change) or exactly (i.e.\ as the numerical
 inverse, completely equivalent to the analytic one within the numeral accuracy
@@ -198,28 +122,28 @@ If the heavy quark $h$ has no intrinsic component, then below $Q_h$
 its PDF is identically zero, and above $Q_h$ it is determined by
 $\mathbf{A}^{(n_f)}(Q_{h}^2)$. If it does have an intrinsic
 component, then  below $Q_h$ its PDF is scale-independent, but nonzero.
-While  {\sc\small EKO} is currently an NNLO code, on
+While  \textsc{\small EKO} is currently an NNLO code, on
 top of the standard~\cite{pdfnnlo} NNLO scheme change for this work
 an N$^3$LO scheme change has been implemented, based on recent higher-order computations
 of the relevant operator matrix elements~\cite{Bierenbaum:2009zt,Bierenbaum:2009mv,Ablinger:2010ty,Ablinger:2014vwa,Ablinger:2014uka,Behring:2014eya,Blumlein:2017wxd,Ablinger_2014,Ablinger:2014nga}
-and the work of~\citesupp{zanoli}.
+and the work of~\cite{zanoli}.
 
-The  {\sc\small EKO} implementation of QCD evolution has been
+The  \textsc{\small EKO} implementation of QCD evolution has been
 benchmarked against the Les Houches PDF evolution
-benchmarks~\citesupp{Dittmar:2005ed,Giele:2002hx} and with
-{\sc\small APFEL} and {\sc\small PEGASUS},
+benchmarks~\cite{Dittmar:2005ed,Giele:2002hx} and with
+\textsc{\small APFEL} and \textsc{\small PEGASUS},
 finding excellent agreement beyond the per-mille level.
 %
 The implementation of the  matching conditions
-has been benchmarked up to N$^3$LO against the independent {\sc\small Mathematica}-based calculation 
-presented in~\citesupp{zanoli} finding also good agreement.
+has been benchmarked up to N$^3$LO against the independent \textsc{\small Mathematica}-based calculation 
+presented in~\cite{zanoli} finding also good agreement.
 %
 To illustrate some of these benchmarks, Fig.~\ref{fig:ic/EKObench} displays
-the absolute and relative difference between {\sc\small EKO},
-{\sc\small APFEL}, and {\sc\small PEGASUS}
+the absolute and relative difference between \textsc{\small EKO},
+\textsc{\small APFEL}, and \textsc{\small PEGASUS}
 for NNLO VFNS evolution
 carried out
-following the settings of~\citesupp{Dittmar:2005ed,Giele:2002hx}.
+following the settings of~\cite{Dittmar:2005ed,Giele:2002hx}.
 %
 A toy PDF set at $Q_0=\sqrt{2}$ GeV is evolved up to $Q=100$ GeV
 for equal values of the factorization and renormalization scales, $Q_f=Q_r=Q$.
@@ -229,9 +153,9 @@ the  total valence quark  $V$
 and the quark singlet $\Sigma$ distributions.
 %
 Excellent agreement is found, in particular
-with {\sc\small PEGASUS} which also perform QCD
+with \textsc{\small PEGASUS} which also perform QCD
 evolution in Mellin space, with relatively differences
-at most at the $\mathcal{O}\lp 10^{-4}\rp$ level.
+at most at the $\mathcal{O}\left( 10^{-4}\right)$ level.
 %
 A similar level of agreement is found
 for the gluon and for the other quark PDF combinations.
@@ -239,13 +163,13 @@ for the gluon and for the other quark PDF combinations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
     \begin{center}
-        \includegraphics[width=0.47\linewidth]{plots/eko_bench_V.pdf}
-        \includegraphics[width=0.47\linewidth]{plots/eko_bench_S.pdf}
+        \includegraphics[width=0.47\linewidth]{ch-ic/eko_bench_V.pdf}
+        \includegraphics[width=0.47\linewidth]{ch-ic/eko_bench_S.pdf}
         \caption{\small Absolute (upper) and relative (bottom) differences between 
         the outcome of NNLO QCD evolution
         as implemented in
-        {\sc\small EKO} and the
-        corresponding results from {\sc\small APFEL} and {\sc\small PEGASUS}.
+        \textsc{\small EKO} and the
+        corresponding results from \textsc{\small APFEL} and \textsc{\small PEGASUS}.
 We adopt the settings of the Les Houches PDF evolution benchmarks: we
 consider  VFNS evolution from $Q_0=\sqrt{2}$ GeV up to $Q=100$ GeV,
 and we show  results for the total valence quark distribution $V$ (left)
@@ -256,7 +180,7 @@ and the quark singlet distribution $\Sigma$ (right).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\clearpage
+
 \section{The perturbative charm PDF}
 \label{app:ic/consistency}
 
@@ -307,8 +231,8 @@ default (intrinsic) result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\linewidth]{plots/pch_vs_fitted_forward.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/pch_vs_fitted_forward_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward_MHOU.pdf}
     \caption{\small Left: the perturbative charm PDF at $Q=1.51$~GeV
   obtained from NNLO PDFs using NNLO and N$^3$LO matching
     conditions.
@@ -348,7 +272,7 @@ only see evidence of intrinsic charm for large $x\gsim 0.2$, while for
 smaller $x$ our result for the charm PDF is compatible with zero, as demonstrated by
 Fig.~\ref{fig:ic/charm_content_3fns}~(right) in the main manuscript.
 
-\clearpage
+
 \section{Stability of the 4FNS charm PDF}
 \label{app:ic/charm_stability_4fns}
 
@@ -405,7 +329,7 @@ Tevatron and LHC); and by removing the LHCb  $W$ and $Z$ production data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
   \begin{center}
-    \includegraphics[width=0.99\linewidth]{plots/pdfplot-abscharm-dataset_dep.pdf}
+    \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-dataset_dep.pdf}
     \caption{\small The dependence of the 4FNS charm PDF at $Q=1.65$ GeV on
       the input dataset.
       %
@@ -466,12 +390,12 @@ now using the flavor basis, see Sect.~3.1 of~\cite{Ball:2021leu}, in which
 each of the  neural network output neurons now correspond to individual quark
 flavors, so in particular,
 instead of Eq.~(\ref{eq:ic/fitted_charm_param}),  one has
-\be
+\begin{equation}
 \label{eq:ic/fitted_charm_param_flavour}
 xc^+(x,Q_0;{\boldsymbol \theta}) =
- (1-x)^{\beta_{c^+}} {\rm NN}_{c^+}(x,{\boldsymbol \theta}) \, ,
-\ee
-where ${\rm NN}_{c^+}(x,{\boldsymbol \theta})$
+ (1-x)^{\beta_{c^+}} \textrm{ NN}_{c^+}(x,{\boldsymbol \theta}) \, ,
+\end{equation}
+where $\textrm{ NN}_{c^+}(x,{\boldsymbol \theta})$
 indicates the value of the output neuron associated to the charm PDF $c^+$.
 %
 The 4FNS charm PDFs determined using either basis are compared 
@@ -484,7 +408,7 @@ of parametrization basis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
   \begin{center}
-    \includegraphics[width=0.60\linewidth]{plots/pdfplot-abscharm-basisdep.pdf}
+    \includegraphics[width=0.60\linewidth]{ch-ic/pdfplot-abscharm-basisdep.pdf}
     \caption{\small The default 4FNS charm PDF at $Q=1.65$ GeV
     compared to a result obtained by parametrizing PDFs in the flavor
     basis instead of the evolution basis. 
@@ -509,8 +433,8 @@ physical value of the charm mass).
 In order to study this mass dependence, we have repeated our determination using different values for the charm mass.
 The definition of the charm mass which is relevant for kinematic
 thresholds is the pole mass, for which we adopt the value recommended
-by the Higgs cross-section working group~\citesupp{deFlorian:2016spz}
-based on the study of~\citesupp{Bauer:2004ve}, namely
+by the Higgs cross-section working group~\cite{deFlorian:2016spz}
+based on the study of~\cite{Bauer:2004ve}, namely
  $m_c = 1.51 \pm 0.13$~GeV. 
 %
 Results are shown in Fig.~\ref{fig:ic/charm_fitted_mcdep}, where
@@ -546,7 +470,7 @@ intrinsic component, is very stable.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.99\linewidth]{plots/pdfplot-abscharm-mcdep.pdf}
+    \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-mcdep.pdf}
     \caption{\small The 4FNS charm PDF determined
     using three different values of the charm mass. The absolute
     result (left) is shown at $Q=1.65$ GeV, while the ratio to the 
@@ -560,7 +484,7 @@ intrinsic component, is very stable.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.99\linewidth]{plots/pdfplot-abscharm-mcdep-highQ.pdf}
+    \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-mcdep-highQ.pdf}
     \caption{\small The same as Fig.~\ref{fig:ic/charm_fitted_mcdep} but now
     for the perturbative charm PDF.
   \label{fig:ic/charm_pert_mcdep} }
@@ -587,7 +511,7 @@ intrinsic component, is very stable.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.65\linewidth]{plots/pdfplot-abscharm-40-vs-31meth.pdf}
+    \includegraphics[width=0.65\linewidth]{ch-ic/pdfplot-abscharm-40-vs-31meth.pdf}
     \caption{\small Same as Fig.~\ref{fig:ic/charm_basisdep}, comparing
       the baseline determination of the 4FNS charm PDF, based
       on NNPDF4.0, with that obtained
@@ -599,7 +523,7 @@ intrinsic component, is very stable.
 
 
 
-\clearpage
+
 \section{Stability of the 3FNS charm calculation}
 \label{app:ic/charm_stability_3fns}
 
@@ -662,14 +586,14 @@ which are not accounted for in global PDF determinations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\linewidth]{plots/EMC_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/DIS_only_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/collider_only_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/noLHCb_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/noHERA_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/noATLASCMSDY_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/nojets_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/noZpT_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/EMC_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/DIS_only_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/collider_only_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/noLHCb_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/noHERA_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/noATLASCMSDY_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/nojets_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/noZpT_Quad_MHOU.pdf}
     \caption{\small Same as Fig.~\ref{fig:ic/charm_dataset_dep}
       for the intrinsic charm (3FNS) PDF (top four plots), now also including
       four additional dataset variations:  no ATLAS and CMS $W, Z$
@@ -702,7 +626,7 @@ challenging fitting environment in this basis (see the discussion in~\cite{Ball:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t!]
   \begin{center}
-    \includegraphics[width=0.54\linewidth]{plots/Flavor_Basis_Quad_MHOU.pdf}
+    \includegraphics[width=0.54\linewidth]{ch-ic/Flavor_Basis_Quad_MHOU.pdf}
     \caption{\small Same as Fig.~\ref{fig:ic/charm_basisdep}
     for the intrinsic (3FNS) charm.
   \label{fig:ic/charm_basisdep_3FNS} }
@@ -726,8 +650,8 @@ indeed the dependence on the charm mass has all but disappeared.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
   \begin{center}
-\includegraphics[width=0.49\linewidth]{plots/mass_variations_Quad_MHOU.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/mass_variations_ratio_Quad_MHOU.pdf}
+\includegraphics[width=0.49\linewidth]{ch-ic/mass_variations_Quad_MHOU.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/mass_variations_ratio_Quad_MHOU.pdf}
 \caption{\small      
  Same as Fig.~\ref{fig:ic/charm_fitted_mcdep}, now for
       the intrinsic (3FNS) charm PDF. Note that the intrinsic charm
@@ -737,16 +661,16 @@ indeed the dependence on the charm mass has all but disappeared.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\clearpage
+
 \section{The charm momentum fraction}
 \label{app:ic/charm_mom_frac}
 
 The fraction of the proton momentum carried by charm quarks
 is given by
-\be
+\begin{equation}
 \label{eq:ic/charm_momentum_fraction}
-\lc c\rc = \int_0^1dx\, x c^+(x,Q^2) \, .
-\ee
+\left[ c\right] = \int_0^1dx\, x c^+(x,Q^2) \, .
+\end{equation}
 Model predictions, as mentioned, are typically provided up to an
 overall normalization, which in turn determines the charm momentum fraction.
 %
@@ -811,23 +735,23 @@ perturbative charm.
     \renewcommand{\arraystretch}{1.30}
 \begin{tabularx}{\textwidth}{C{2.0cm}C{2.3cm}C{2.2cm}C{2.2cm}C{5.6cm}}
   \toprule
-  Scheme  & $Q$ & Charm PDF & $m_c$  &  $\lc c\rc~\lp\%\rp$ \\
+  Scheme  & $Q$ & Charm PDF & $m_c$  &  $\left[ c\right]~\left(\%\right)$ \\
   \midrule
   \midrule
- 3FNS  & --  &default  &  1.51 GeV  &   $ 0.62\pm0.28_{\rm pdf}\pm 0.54_{\rm mhou} $ \\
- 3FNS  & --  &default  &  1.38 GeV  &   $ 0.47\pm0.27_{\rm pdf}\pm 0.62_{\rm mhou} $ \\
- 3FNS  & --  &default  &  1.64 GeV  &    $ 0.77\pm0.28_{\rm
-  pdf}\pm 0.48_{\rm mhou} $ \\
+ 3FNS  & --  &default  &  1.51 GeV  &   $ 0.62\pm0.28_\textrm{ pdf}\pm 0.54_\textrm{ mhou} $ \\
+ 3FNS  & --  &default  &  1.38 GeV  &   $ 0.47\pm0.27_\textrm{ pdf}\pm 0.62_\textrm{ mhou} $ \\
+ 3FNS  & --  &default  &  1.64 GeV  &    $ 0.77\pm0.28_\textrm{
+  pdf}\pm 0.48_\textrm{ mhou} $ \\
   \midrule
 
- 4FNS  & 1.65 GeV  & default  &  1.51 GeV  &   $0.87 \pm 0.23_{\rm pdf}$  \\
- 4FNS  & 1.65 GeV  & default &  1.38 GeV  &   $0.94 \pm 0.22_{\rm pdf}$  \\
- 4FNS  & 1.65 GeV  & default   &  1.64 GeV  &  $0.84 \pm 0.24_{\rm pdf}$  \\
+ 4FNS  & 1.65 GeV  & default  &  1.51 GeV  &   $0.87 \pm 0.23_\textrm{ pdf}$  \\
+ 4FNS  & 1.65 GeV  & default &  1.38 GeV  &   $0.94 \pm 0.22_\textrm{ pdf}$  \\
+ 4FNS  & 1.65 GeV  & default   &  1.64 GeV  &  $0.84 \pm 0.24_\textrm{ pdf}$  \\
   \midrule
  \midrule
- 4FNS  & 1.65 GeV   & perturbative  &  1.51 GeV  &   $0.346\pm 0.005_{\rm pdf}\pm 0.44_{\rm mhou}$ \\
- 4FNS  & 1.65 GeV   & perturbative  &  1.38 GeV  &    $0.536\pm 0.006_{\rm pdf}\pm 0.49_{\rm mhou}$ \\
- 4FNS  & 1.65 GeV   & perturbative  &  1.64 GeV  &    $0.172\pm 0.003_{\rm pdf}\pm 0.41_{\rm mhou}$ \\
+ 4FNS  & 1.65 GeV   & perturbative  &  1.51 GeV  &   $0.346\pm 0.005_\textrm{ pdf}\pm 0.44_\textrm{ mhou}$ \\
+ 4FNS  & 1.65 GeV   & perturbative  &  1.38 GeV  &    $0.536\pm 0.006_\textrm{ pdf}\pm 0.49_\textrm{ mhou}$ \\
+ 4FNS  & 1.65 GeV   & perturbative  &  1.64 GeV  &    $0.172\pm 0.003_\textrm{ pdf}\pm 0.41_\textrm{ mhou}$ \\
 \bottomrule
 \end{tabularx}
 \vspace{0.3cm}
@@ -846,7 +770,7 @@ indicate separately the PDF and the MHO uncertainties.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
   \begin{center}
-     \includegraphics[width=0.60\linewidth]{plots/charm_momfrac_qdep.pdf}
+     \includegraphics[width=0.60\linewidth]{ch-ic/charm_momfrac_qdep.pdf}
     \caption{\small 
       The 4FNS charm momentum fraction in NNPDF4.0 as a function of scale $Q$,
       both for the default and perturbative charm cases,
@@ -884,8 +808,8 @@ for perturbative charm are seen to persist up to large scales.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.49\linewidth]{plots/charm_momfrac_qdep_mc.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/charm_momfrac_qdep_mc_pert.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/charm_momfrac_qdep_mc.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/charm_momfrac_qdep_mc_pert.pdf}
     \caption{\small
     Same as Fig.~\ref{fig:ic/comparison_IC_models} for different values
     of the charm mass. Note that the 3FNS momentum fraction for
@@ -900,20 +824,20 @@ the momentum fraction carried by intrinsic charm. To this purpose, we
 have computed  the truncated momentum integral, i.e. 
   Eq.~(\ref{eq:ic/charm_momentum_fraction}) but only integrated down to
   some  lower
-  integration limit $x_{\rm min}$:
-  \be
+  integration limit $x_\textrm{ min}$:
+  \begin{equation}
 \label{eq:ic/charm_momentum_fraction_truncated}
-\lc c\rc_{\rm tr}(x_{\rm min}) \equiv \int_{x_{\rm min}}^1dx\, x c^+(x,Q^2) \, .
-\ee
+\left[ c\right]_\textrm{ tr}(x_\textrm{ min}) \equiv \int_{x_\textrm{ min}}^1dx\, x c^+(x,Q^2) \, .
+\end{equation}
 Note than in the 3FNS   $x
 c^+(x)$ does not depend on scale, so  this becomes
 a scale-independent quantity.
 %
 The result for our default intrinsic charm determination is displayed
 in Fig.~\ref{fig:ic/charm_momfrac_xmin_dep}, as a function of
-of the lower integration limit $x_{\rm min}$.
+of the lower integration limit $x_\textrm{ min}$.
 %
-It is clear that for $x_{\rm min} \gtrsim 0.2$ the truncated momentum
+It is clear that for $x_\textrm{ min} \gtrsim 0.2$ the truncated momentum
 fraction  differs significantly from zero, thereby providing evidence
 for intrinsic charm with similar statistical  significance as the
 local pull shown in Fig.~\ref{fig:ic/Zc} bottom left.
@@ -933,10 +857,10 @@ current data and theory.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
   \begin{center}
-    \includegraphics[width=0.65\linewidth]{plots/charm_momfrac_xmin_dep_3fns.pdf}
+    \includegraphics[width=0.65\linewidth]{ch-ic/charm_momfrac_xmin_dep_3fns.pdf}
     \caption{\small The value of the truncated charm momentum integral,
       Eq.~(\ref{eq:ic/charm_momentum_fraction_truncated}), as a function
-      of the lower integration limit $x_{\rm min}$
+      of the lower integration limit $x_\textrm{ min}$
       for our baseline determination of the 3FNS intrinsic charm PDF.
       %
       We display separately the PDF and the total (PDF+MHOU) uncertainties.
@@ -946,7 +870,7 @@ current data and theory.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\clearpage
+
 \section{Comparison with  CT14IC}
 \label{app:ic/ct}
 
@@ -970,9 +894,10 @@ the BHPS model but with  normalization fixed to the upper  90\% CL limit (called
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\linewidth]{plots/pdfplot-abs-lin-charm-q1p65gev.pdf}
-    \includegraphics[width=0.49\linewidth]{plots/pdfplot-abscharm-q1p65gev.pdf}    \includegraphics[width=0.49\linewidth]{plots/pdfplot-abscharm-q100gev.pdf}	
-    \includegraphics[width=0.49\linewidth]{plots/charm_momfrac_qdep_ct.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/pdfplot-abs-lin-charm-q1p65gev.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/pdfplot-abscharm-q1p65gev.pdf}
+    \includegraphics[width=0.49\linewidth]{ch-ic/pdfplot-abscharm-q100gev.pdf}	
+    \includegraphics[width=0.49\linewidth]{ch-ic/charm_momfrac_qdep_ct.pdf}
     \caption{\small The 4FNS charm PDF
     from~\cite{Hou:2017khm} compared to our result (also in the 4FNS) 
      at $Q=1.65$~GeV on
@@ -1050,7 +975,7 @@ that corresponds to perturbative charm.
 The upper edge  of the prediction from~\cite{Hou:2017khm} is instead
 ruled out at more than $5\sigma$. 
 
-\clearpage
+
 \section{$Z$+charm production in the forward region}
 \label{sec:ic/zcharm}
 
@@ -1067,11 +992,11 @@ by LHCb~\cite{LHCb:2021stx} follow the
  settings described in~\cite{Boettcher:2015sqn}.
 %
 $Z$+jet events at NLO QCD theory are generated for $\sqrt{s}= 13$ TeV  using the $Zj$ package of the
-{\sc\small POWHEG-BOX}~\cite{Alioli:2010xd}.
+\textsc{\small POWHEG-BOX}~\cite{Alioli:2010xd}.
 %
-The parton-level events produced by {\sc\small POWHEG}
-are then interfaced to {\sc\small Pythia8}~\cite{Sjostrand:2007gs}
-with the Monash 2013 tune~\citesupp{Skands:2014pea} for showering,
+The parton-level events produced by \textsc{\small POWHEG}
+are then interfaced to \textsc{\small Pythia8}~\cite{Sjostrand:2007gs}
+with the Monash 2013 tune~\cite{Skands:2014pea} for showering,
 hadronization, and simulation of the underlying event and multiple
 parton interactions.
 %
@@ -1082,25 +1007,25 @@ Selection criteria on these particle-level events are imposed
 to match the LHCb acceptance~\cite{LHCb:2021stx}.
 %
 $Z$ bosons are reconstructed in the dimuon final state by
-requiring $60~{\rm GeV}\le m_{\mu\mu} \le 120~{\rm GeV}$,
+requiring $60~\textrm{ GeV}\le m_{\mu\mu} \le 120~\textrm{ GeV}$,
 and
 only events where these muons satisfy
-    $p_T^\mu \ge 20~{\rm GeV}$ and $2.0 \le \eta_{\mu}\le 4.5$
+    $p_T^\mu \ge 20~\textrm{ GeV}$ and $2.0 \le \eta_{\mu}\le 4.5$
     are retained.
 %
 Stable visible hadrons within the LHCb acceptance of
 $2.0 \le \eta \le 4.5$ are clustered with
 the anti-$k_T$ algorithm with radius parameter
-of $R=0.5$~\citesupp{Cacciari:2008gp}.
+of $R=0.5$~\cite{Cacciari:2008gp}.
 %
 Only events with a hardest jet satisfying
-  $ 20~{\rm GeV} \le p_T^{\rm jet} \le 100~{\rm GeV}$
-and $2.2 \le \eta_{\rm jet}\le 4.2$ are retained.
+  $ 20~\textrm{ GeV} \le p_T^\textrm{ jet} \le 100~\textrm{ GeV}$
+and $2.2 \le \eta_\textrm{ jet}\le 4.2$ are retained.
 %
 Charm jets are defined as jets containing
 a charmed hadron, specifically  jets satisfying
-$\Delta R(j, c{\rm-hadron})\le 0.5$ for a charmed
-hadron with $p_T(c{\rm-hadron})\ge 5~{\rm GeV}$.
+$\Delta R(j, c\textrm{-hadron})\le 0.5$ for a charmed
+hadron with $p_T(c\textrm{-hadron})\ge 5~\textrm{ GeV}$.
 %
 Jets and muons are required to be separated
 in rapidity and azimuthal angle, so
@@ -1113,11 +1038,11 @@ The physical observable measured by LHCb is the ratio of the fraction of $Z$+jet
     events with and without a charm tag,
     \begin{equation}
     \label{eq:ic/Rcj}
-        \mathcal{R}_j^c \equiv \frac{\sigma(pp\to Z+{\rm charm~ jet})}{\sigma(pp \to Z+{\rm jet})}=
-         \frac{N(c{\rm -tag})}{ 
-        N({\rm jets})} \, .
+        \mathcal{R}_j^c \equiv \frac{\sigma(pp\to Z+\textrm{ charm~ jet})}{\sigma(pp \to Z+\textrm{ jet})}=
+         \frac{N(c\textrm{ -tag})}{ 
+        N(\textrm{ jets})} \, .
     \end{equation}
- Here  $N(c{\rm -tag})$ and $N({\rm jets})$ are, respectively, the number
+ Here  $N(c\textrm{ -tag})$ and $N(\textrm{ jets})$ are, respectively, the number
     of charm-tagged and un-tagged jets, for a  $Z$ boson rapidity interval
     that satisfies the selection and acceptance criteria.
     %
@@ -1137,7 +1062,7 @@ explicitly checked that our results are essentially independent of the
 value of the charm mass.
 %
 We have evaluated MHOUs and PDF uncertainties using the
-output of the {\sc\small POWHEG+Pythia8} calculations.
+output of the \textsc{\small POWHEG+Pythia8} calculations.
 We have checked that MHOUs, evaluated with the standard
 seven-point prescription, essentially cancel in the ratio
 Eq.~(\ref{eq:ic/Rcj}). Note that 
@@ -1152,8 +1077,8 @@ partonic subchannels in the numerator and denominator are not the same.
     \renewcommand{\arraystretch}{1.45}
 \begin{tabularx}{\textwidth}{C{3.5cm}C{2.5cm}C{2.5cm}C{2.5cm}C{2.5cm}}
   \toprule
- \multirow{2}{*}{ $\chi^2/N_{\rm dat}$}  &   \multicolumn{2}{c}{ default charm}   &\multicolumn{2}{c}{perturbative charm} \\
-                       &  $\rho_{\rm sys}=0$   & $\rho_{\rm sys}=1$ &  $\rho_{\rm sys}=0$ &   $\rho_{\rm sys}=1$ \\
+ \multirow{2}{*}{ $\chi^2/N_\textrm{ dat}$}  &   \multicolumn{2}{c}{ default charm}   &\multicolumn{2}{c}{perturbative charm} \\
+                       &  $\rho_\textrm{ sys}=0$   & $\rho_\textrm{ sys}=1$ &  $\rho_\textrm{ sys}=0$ &   $\rho_\textrm{ sys}=1$ \\
   \midrule
  Prior        &  1.85   &  3.33      &   3.54  & 3.85      \\
  \midrule
@@ -1161,11 +1086,11 @@ partonic subchannels in the numerator and denominator are not the same.
 \bottomrule
 \end{tabularx}
 \vspace{0.3cm}
-\caption{\label{tab:ic/chi2_zcharm} The values of $\chi^2/N_{\rm dat}$
+\caption{\label{tab:ic/chi2_zcharm} The values of $\chi^2/N_\textrm{ dat}$
  for the LHCb $Z$+charm data before (prior) and after (reweighted)
  their inclusion in the PDF fit. Results are given for two 
  experimental correlation models, denoted as
- $\rho_{\rm sys}=0$ and $\rho_{\rm sys}=1$. We also report values
+ $\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$. We also report values
  before inclusion for the perturbative charm PDFs.
 }
 \end{table}
@@ -1173,7 +1098,7 @@ partonic subchannels in the numerator and denominator are not the same.
 
 We first compare the quality of the description of the LHCb data
 before their inclusion. In Table~\ref{tab:ic/chi2_zcharm} we show the
-values of $\chi^2/N_{\rm dat}$ for the LHCb $Z$+charm data
+values of $\chi^2/N_\textrm{ dat}$ for the LHCb $Z$+charm data
 both with default and perturbative charm.
 %
 Since the experimental covariance matrix is not available for the LHCb
@@ -1181,9 +1106,9 @@ data we determine the $\chi^2$ values assuming two limiting scenarios
 for the correlation of experimental systematic uncertainties.
 %
 Namely, 
-we either add in quadrature statistical and systematic errors ($\rho_{\rm sys}=0$),
+we either add in quadrature statistical and systematic errors ($\rho_\textrm{ sys}=0$),
 or alternatively we assume that the total systematic uncertainty
-is fully correlated between $y_Z$ bins ($\rho_{\rm sys}=1$). Fit
+is fully correlated between $y_Z$ bins ($\rho_\textrm{ sys}=1$). Fit
 quality is always significantly better in our default intrinsic charm
 scenario than with perturbative charm.
 %
@@ -1195,8 +1120,8 @@ Fig.~\ref{fig:ic/Zc}, top right).
 
 The LHCb $Z$+charm data are then included in the PDF determination
 through
-Bayesian reweighting~\citesupp{Ball:2010gb,Ball:2011gg}. The
-$\chi^2/N_{\rm dat}$ values obtained using the PDFs found after their
+Bayesian reweighting~\cite{Ball:2010gb,Ball:2011gg}. The
+$\chi^2/N_\textrm{ dat}$ values obtained using the PDFs found after their
 inclusion are given in
 Table~\ref{tab:ic/chi2_zcharm}.
 %
@@ -1205,10 +1130,10 @@ experimental covariance matrix so both sources of uncertainty are
 included --- as mentioned above, MHOUs are negligible.
 The fit quality is seen to improve only
 mildly, and the effective number of
-replicas~\citesupp{Ball:2010gb,Ball:2011gg} after reweighting
-is only moderately reduced, from the prior $N_{\rm rep}=100$ to $N_{\rm
-eff}=92$ or $N_{\rm eff}=84$ in the
-$\rho_{\rm sys}=0$ and $\rho_{\rm sys}=1$ scenarios respectively.
+replicas~\cite{Ball:2010gb,Ball:2011gg} after reweighting
+is only moderately reduced, from the prior $N_\textrm{ rep}=100$ to $N_\textrm{
+eff}=92$ or $N_\textrm{ eff}=84$ in the
+$\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$ scenarios respectively.
 %
 This
 demonstrates that the inclusion of the LHCb $Z$+charm measurements  affects
@@ -1219,7 +1144,7 @@ data has essentially no impact on the shape of the charm PDF, but
 it moderately reduces its uncertainty in the region of the valence peak.
 
 
-\clearpage
+
 \section{Parton luminosities}
 \label{sec:ic/lumis}
 
@@ -1242,34 +1167,34 @@ luminosities that are relevant for the computation of the
 $Z$+charm process in the LHCb kinematics, see SI Sect.~\ref{sec:ic/zcharm}.
 
 The parton luminosity without any restriction on the rapidity $y_X$ of the final state is
-\be
+\begin{equation}
 \label{eq:ic/lumi1D}
-\mathcal{L}_{ab}(m_X)= \frac{1}{s}\int_{\tau}^1 \frac{dx}{x}f_a \lp x,m_X^2\rp
-f_b\lp \tau/x,m_X^2\rp \, ,\qquad
+\mathcal{L}_{ab}(m_X)= \frac{1}{s}\int_{\tau}^1 \frac{dx}{x}f_a \left( x,m_X^2\right)
+f_b\left( \tau/x,m_X^2\right) \, ,\qquad
 \tau=\frac{m_X^2}{s} \, ,
-\ee
+\end{equation}
 where $a,b$ label the species of incoming partons, $\sqrt{s}$ is the center-of-mass energy of
 the hadronic collision, and $m_X$ is the final state invariant mass.
 %
 For the more realistic situation where the final state rapidity
-is restricted, $y_{\rm min}\le y_X\le y_{\rm max}$,
+is restricted, $y_\textrm{ min}\le y_X\le y_\textrm{ max}$,
 Eq.~(\ref{eq:ic/lumi1D}) is modified as
-\be
+\begin{equation}
 \label{eq:ic/lumi1D_restricted}
-\mathcal{L}_{ab}(m_X)= \frac{1}{s}\int_{\tau}^1 \frac{dx}{x}f_a \lp x,m_X^2\rp
-f_b\lp \tau/x,m_X^2\rp \theta\lp y_X-y_{\rm min}  \rp
-\theta\lp y_{\rm max}-y_X  \rp\, , 
-\ee
-where $y_X = \lp \ln x^2/\tau \rp /2$.
+\mathcal{L}_{ab}(m_X)= \frac{1}{s}\int_{\tau}^1 \frac{dx}{x}f_a \left( x,m_X^2\right)
+f_b\left( \tau/x,m_X^2\right) \theta\left( y_X-y_\textrm{ min}  \right)
+\theta\left( y_\textrm{ max}-y_X  \right)\, , 
+\end{equation}
+where $y_X = \left( \ln x^2/\tau \right) /2$.
 
 We consider in particular the quark-gluon and the charm-gluon luminosities, defined as
-\be
+\begin{equation}
 \label{eq:ic/lumis}
-\mathcal{L}_{qg}(m_X)\equiv \sum_{i=1}^{n_f} \lp \mathcal{L}_{q_ig}(m_X)+
-\mathcal{L}_{\bar{q}_ig}(m_X) \rp\, , \quad
-\mathcal{L}_{cg}(m_X)\equiv  \lp \mathcal{L}_{cg}(m_X)+
-\mathcal{L}_{\bar{c}g}(m_X) \rp\, , 
-\ee
+\mathcal{L}_{qg}(m_X)\equiv \sum_{i=1}^{n_f} \left( \mathcal{L}_{q_ig}(m_X)+
+\mathcal{L}_{\bar{q}_ig}(m_X) \right)\, , \quad
+\mathcal{L}_{cg}(m_X)\equiv  \left( \mathcal{L}_{cg}(m_X)+
+\mathcal{L}_{\bar{c}g}(m_X) \right)\, , 
+\end{equation}
 where $n_f$ is the number of active quark flavors for a given value of $Q=m_X$
 with a maximum value of $n_f=5$.
 %
@@ -1281,9 +1206,9 @@ denominator
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
   \begin{center}
-    \includegraphics[width=0.99\linewidth]{plots/cglumi-nnpdf40-ATLAScuts.pdf}
-    \includegraphics[width=0.99\linewidth]{plots/cglumi-nnpdf40-LHCbcuts-central.pdf}
-    \includegraphics[width=0.99\linewidth]{plots/cglumi-nnpdf40-LHCbcuts-forward.pdf}
+    \includegraphics[width=0.99\linewidth]{ch-ic/cglumi-nnpdf40-ATLAScuts.pdf}
+    \includegraphics[width=0.99\linewidth]{ch-ic/cglumi-nnpdf40-LHCbcuts-central.pdf}
+    \includegraphics[width=0.99\linewidth]{ch-ic/cglumi-nnpdf40-LHCbcuts-forward.pdf}
     \caption{\small The quark-gluon (left) and charm-gluon (right)
       parton luminosities in the  $m_X$ region
       relevant for $Z$+charm production and  three different
@@ -1296,7 +1221,7 @@ denominator
 
 The luminosities are displayed in Fig.~\ref{fig:ic/charm_luminosities},
 in the  invariant mass region,
-$40~{\rm GeV}\le m_X \le 200~{\rm GeV}$ which is most relevant for
+$40~\textrm{ GeV}\le m_X \le 200~\textrm{ GeV}$ which is most relevant for
 $Z$+charm production.
 %
 Results are shown 
@@ -1329,12 +1254,3 @@ most forward rapidity  bin.
 %
 This observation provides a qualitative explanation of
 the results of SI Sect.~\ref{sec:ic/zcharm}.
-
-\clearpage
-
-%\bibliographysupp{nnpdf40charm}
-\input{nnpdf40charm.bbl}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
