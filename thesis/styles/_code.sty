@@ -1,0 +1,133 @@
+% !TeX root = ../main.tex
+
+%*********************************************************************************
+% listings settings - code snippets
+%*********************************************************************************
+\RequirePackage{listings}
+
+\definecolor{CodeBlack}{HTML}{101018}
+\definecolor{CodeGrey}{HTML}{404040}
+\definecolor{CodeRed}{HTML}{bf212a}
+\definecolor{CodeOrange}{HTML}{d08770}
+\definecolor{CodeGreen}{HTML}{0b6500}
+\definecolor{CodeBlue}{HTML}{4360a8}
+\definecolor{codered}{rgb}{0.71,0.2,0.11}
+\definecolor{codeblue}{rgb}{0.0,0.4,0.58}
+\definecolor{codeblack}{rgb}{0.13,0.13,0.14}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstset{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    showlines=false
+}
+
+% ----------------------
+% TeX/LaTeX language
+% ----------------------
+
+\lstset{language=[LaTeX]Tex,
+    basicstyle=\small\ttfamily,
+    stringstyle=\rmfamily,
+    numbers=none,
+    stepnumber=5,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ftff,
+    frame=single
+} 
+
+\lstset{language=[LaTeX]Tex,
+  keywordstyle=\color{CodeBlue}\bfseries,
+  basicstyle=\small\color{CodeBlack}\ttfamily,
+  identifierstyle=\color{black},
+  commentstyle=\color{CodeGrey}\ttfamily,
+  stringstyle=\color{CodeGreen},
+  numbers=left,
+  numberstyle=\color{CodeGrey}\footnotesize,
+  stepnumber=5,
+  numbersep=8pt,
+  showstringspaces=false,
+  breaklines=true,
+  frameround=ftff,
+  frame=leftline,%lines,
+  belowcaptionskip=.75\baselineskip,
+  literate=*%
+    {0}{{{\color{CodeRed}0}}}1
+    {1}{{{\color{CodeRed}1}}}1
+    {2}{{{\color{CodeRed}2}}}1
+    {3}{{{\color{CodeRed}3}}}1
+    {4}{{{\color{CodeRed}4}}}1
+    {5}{{{\color{CodeRed}5}}}1
+    {6}{{{\color{CodeRed}6}}}1
+    {7}{{{\color{CodeRed}7}}}1
+    {8}{{{\color{CodeRed}8}}}1
+    {9}{{{\color{CodeRed}9}}}1
+}
+
+% ----------------------
+% Python language
+% ----------------------
+
+\lstdefinelanguage{myPython}[]{Python}{
+    keywords={
+      False,None,True,and,as,assert,async,await,break,class,continue,def,del,elif,else,
+      except,finally,for,from,global,if,import,in,is,lambda,nonlocal,not,or,pass,raise,
+      return,try,while,with,yield
+    },
+}
+
+% ----------------------
+% INI language
+% ----------------------
+\lstdefinelanguage{ini}
+{
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    morecomment=[s][\color{codegreen}]{"}{"},
+    morecomment=[l]{\#},
+    morecomment=[l]{;},
+    commentstyle=\color{gray}\ttfamily,
+    morekeywords={},
+    otherkeywords={=,:},
+    keywordstyle={\color{codepurple}\bfseries}
+}
+
+% ----------------------
+% YAML language
+% ----------------------
+\newcommand\YAMLcolonstyle{\color{codered}}
+\newcommand\YAMLvaluestyle{\color{codeblue}}
+\expandafter\expandafter\expandafter\lstdefinelanguage
+\expandafter{yaml}
+{
+  keywords={true,false,null,y,n},
+  sensitive=false,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  moredelim=[l][\color{orange}]{\&},
+  moredelim=[l][\color{magenta}]{*},
+  % switch to value style at :
+  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},
+  morestring=[b]',
+  morestring=[b]",
+  literate =    {>}{{\textcolor{codeblue}\textgreater}}1     
+                {|}{{\textcolor{codeblue}\textbar}}1 
+}
+
