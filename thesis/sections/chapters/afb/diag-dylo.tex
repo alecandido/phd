@@ -1,0 +1,27 @@
+\begin{figure}[t]
+\centering
+
+\begin{tikzpicture}
+\begin{feynman}
+  \tikzfeynmanset{large}
+
+  \vertex (b);
+  \vertex [above left=of b] (a) {\(q\)};
+  \vertex [below left=of b] (f1) {\(\bar{q}\)};
+  \vertex [right=of b] (c);
+  \vertex [above right=of c] (f2) {\(\ell\)};
+  \vertex [below right=of c] (f3) {\(\bar{\ell}\)};
+
+  \diagram* {
+  (a) -- [fermion, momentum=\(\hat{k}_1\)] (b) -- [fermion, rmomentum=\(\hat{k}_2\)] (f1),
+  (b) -- [boson, edge label'=\(\gamma / Z\), momentum=\(q\)] (c),
+  (c) -- [anti fermion, momentum=\(p_{\ell}\)] (f2),
+  (c) -- [fermion, momentum=\(p_{\bar{\ell}}\)] (f3),
+  };
+
+\end{feynman}
+\end{tikzpicture}
+
+\caption{Neutral-current Drell-Yan production at LO in the quark-antiquark channel.}
+\label{fig:lo-dy}
+\end{figure}
