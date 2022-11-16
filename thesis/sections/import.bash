@@ -25,6 +25,11 @@ for texinput in $@; do
   sd '\\be\b' '\\begin{equation}' $input
   sd '\\ee\b' '\\end{equation}' $input
 
+  # revert Juan's alias for begin and end equation
+  for kind in {bf,it,tt,sc}; do
+    sd '\{\\'$kind'\b(.*?)\}' '\\text'$kind'{$1}' $input
+  done
+
   echo "finished processing $texinput"
 done
 
