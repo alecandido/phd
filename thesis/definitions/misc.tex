@@ -4,7 +4,20 @@
 
 \acrcommand{nn}{NN}{Neural Network}
 
-
+% uniform link/cross-ref styles
 \newcommand{\citelink}[2]{\hyperlink{cite.\therefsection @#1}{#2}}
-
 \newcommand{\ghurl}[1]{\href{https://github.com/#1}{\texttt{#1}}\xspace}
+
+% shortening 
+\newcommand{\footmark}[1]{\footnotemark[#1]}
+
+% tables
+\newcommand{\grcell}{\cellcolor{green!25}}
+\newcommand{\grokcell}{\cellcolor{green!25}\checkmark}
+\newcommand{\blcell}{\cellcolor{blue!25}}
+\newcommand{\ylcell}{\cellcolor{yellow!25}}
+\newcommand{\rdcell}{\cellcolor{red!25}}
+\newcommand{\rdxcell}{\cellcolor{red!25}\ding{55}}
+% footnote markers, for table usage
+\newcounter{mysym}
+\newcommand{\fnsym}[1]{\setcounter{mysym}{#1}$^{\fnsymbol{mysym}}$}
