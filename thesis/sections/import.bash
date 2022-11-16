@@ -25,7 +25,15 @@ for texinput in $@; do
   sd '\\be\b' '\\begin{equation}' $input
   sd '\\ee\b' '\\end{equation}' $input
 
-  # revert Juan's alias for begin and end equation
+  # revert Juan's alias for brackets
+  sd '\\lp\b' '\\left(' $input
+  sd '\\rp\b' '\\right)' $input
+  sd '\\lc\b' '\\left[' $input
+  sd '\\rc\b' '\\right]' $input
+  sd '\\la\b' '\\left\\langle' $input
+  sd '\\ra\b' '\\right\\rangle' $input
+
+  # upgrade old syntax for font styles
   for style in {bf,it,tt,sc}; do
     sd '\{\\'$style'\b(.*?)\}' '\\text'$style'{$1}' $input
   done

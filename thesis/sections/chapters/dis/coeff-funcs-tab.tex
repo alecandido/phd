@@ -1,0 +1,64 @@
+\newcommand{\grcell}{\cellcolor{green!25}}
+\newcommand{\grokcell}{\cellcolor{green!25}\checkmark}
+\newcommand{\blcell}{\cellcolor{blue!25}}
+\newcommand{\ylcell}{\cellcolor{yellow!25}}
+\newcommand{\rdcell}{\cellcolor{red!25}}
+\newcommand{\rdxcell}{\cellcolor{red!25}\ding{55}}
+\newcommand{\ftm}[1]{\footnotemark[#1]}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcounter{numfootnote}
+\setcounter{numfootnote}{\value{footnote}}
+\setcounter{footnote}{0}
+
+\newcounter{mysym}
+\newcommand{\fnsym}[1]{\setcounter{mysym}{#1}$^{\fnsymbol{mysym}}$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}
+  \label{tab:coefffuncs}
+  \centering
+   \renewcommand{\arraystretch}{1.60}
+   \begin{tabular}{c | c c c c}
+     \toprule
+    $\qquad$ NLO$\qquad$ & $\qquad$light$\qquad$ & $\qquad$heavy$\qquad$ & $\qquad$intrinsic$\qquad$ &$\qquad$ asymptotic $\qquad$ \\
+    \hline
+    NC & \grokcell & \grokcell & \grokcell & \grokcell\\
+    CC & \grokcell & \grokcell & \grokcell & \grokcell\\
+    \midrule
+    NNLO & & &\\
+    \hline
+    NC & \grokcell & \grokcell & \rdxcell & \grokcell\\
+    CC & \grokcell & \ylcell tabulated\ftm{1} & \rdxcell & \grokcell\\
+    \midrule
+    N3LO & & &\\
+    \hline
+    NC & \grokcell &  \rdxcell\ftm{2} & \rdxcell & \rdxcell\ftm{3} \\
+    CC & \grokcell &  \rdxcell\ftm{2} & \rdxcell & \rdxcell \\
+    \bottomrule
+   \end{tabular}
+  {
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{r l}
+      \fnsym{1} & Already available as $K$-factors~\cite{Gao:2017kkx}, now being integrated in the grid format.\\
+      \fnsym{2} & Full calculation not available but an approximated expression can
+      be constructed from partial results~\cite{niccolo}.\\
+      \fnsym{3} & Calculation available, to be implemented.
+    \end{tabular}
+  }
+  \vspace{0.2cm}
+  \caption{Overview of the different types and accuracy of the DIS coefficient
+    functions currently implemented in \yadism. For each perturbative order (NLO, NLO, and N3LO)
+    we indicate  the light-to-light (``light''), light-to-heavy (``heavy''), heavy-to-light
+    and heavy-to-heavy (``intrinsic'') and ``asymptotic'' ($Q^2 \gg m_h^2$ limit)  coefficients functions
+    which have been implemented and benchmarked.
+    %
+    The NNLO heavy quark coefficient functions for CC scattering are available in $K$-factor format
+    and are being implemented into the \yadism grid formalism.  \label{tab:coefffuncs}
+  }
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{\value{numfootnote}}
