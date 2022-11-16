@@ -30,6 +30,11 @@ for texinput in $@; do
     sd '\{\\'$style'\b(.*?)\}' '\\text'$style'{$1}' $input
   done
 
+  for sw in {eko,yadism,pineappl,pineko,apfel}; do
+    sd -f i '\\text.*?\{\\\w*? *('$sw') *\}' '\\$1' $input
+    sed -e 's@\(\\'$sw'\)@\L\1@gi' -i $input
+  done
+
   echo "finished processing $texinput"
 done
 

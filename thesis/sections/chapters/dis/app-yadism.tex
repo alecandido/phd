@@ -4,7 +4,7 @@
 \label{app/dis:yadism}
 
 Deep-inelastic structure functions can be evaluated with several public codes
-such as \textsc{\small APFEL}~\cite{Bertone:2013vaa} and \textsc{\small
+such as \apfel~\cite{Bertone:2013vaa} and \textsc{\small
 QCDNUM}~\cite{Botje:2010ay}.
 %
 These various available DIS codes differ in the accuracy with which structure
@@ -26,18 +26,18 @@ together with an detailed documentation, tutorials, and user-friendly examples
   \url{https://yadism.readthedocs.io/}
 \end{center}  
 One of the main advantages of \yadism is that it is integrated with the fast
-interpolation grid toolbox \textsc{\small PineAPPL}~\cite{Carrazza:2020gss},
+interpolation grid toolbox \pineappl~\cite{Carrazza:2020gss},
 and hence DIS structure functions can be treated on the same footing as
 hadronic observables from the point of view of PDF fitting and related
 applications.
 %
-\textsc{\small PineAPPL} provides a unique grid format, with application
+\pineappl provides a unique grid format, with application
 programming interfaces (APIs) for different programming languages and a
 user-friendly command-line interface to manage the grid files.
 %
 Furthermore, \yadism implements the available N$^3$LO DIS coefficient
 functions, which combined with (approximate)  N$^3$LO evolution and heavy quark
-matching conditions available in \textsc{\small EKO} provide theoretical
+matching conditions available in \eko provide theoretical
 calculations required to carry out a N$^3$LO PDF determination.
 %
 \yadism will be described in detail in an upcoming publication~\cite{yadism},
@@ -167,18 +167,18 @@ the results of~\cite{NNPDF:2019ubu}, finding good agreement.
 \paragraph{Benchmarking.}
 %
 The DIS structure function predictions provided by \yadism have been thoroughly
-benchmarked  with those from {\sc\small APFEL} and \textsc{\small QCDNUM}.
+benchmarked  with those from \apfel and \textsc{\small QCDNUM}.
 %
-Specifically, we have verified that we can reproduce the \textsc{\small APFEL}
+Specifically, we have verified that we can reproduce the \apfel
 predictions for those coefficient functions listed in
-Table~\ref{tab/dis:coefffuncs} which are available in \textsc{\small APFEL}.
+Table~\ref{tab/dis:coefffuncs} which are available in \apfel.
 %
 Excellent agreement is found in all cases considered, with some residual
 differences well understood as will be discussed in more detail
 in~\cite{yadism}.
 %
 To illustrate this good agreement, Fig.~\ref{fig/dis:benchmark-apfel-yadism}
-displays the comparison of the \textsc{\small YADISM} predictions for DIS
+displays the comparison of the \yadism predictions for DIS
 structure functions at NNLO with the corresponding ones from \textsc{\small
 APFEL}.
 %
@@ -210,9 +210,9 @@ A similar level of agreement is obtained for other bins of DIS datasets.
     plots/matched_datasets_from_dataspecs2_dataset_report_Datanorm_plot_fancy_dataspecs_0.pdf
   }
   \caption{
-    Comparison of the \textsc{\small YADISM} predictions for DIS structure
+    Comparison of the \yadism predictions for DIS structure
     functions and reduced cross-sections at NNLO with the corresponding ones
-    from \textsc{\small APFEL} for the same choice of input settings.
+    from \apfel for the same choice of input settings.
     %
     We display  predictions for four $x$ bins of representative DIS datasets
     included in the NNPDF4.0 global analysis: fixed-target neutral-current DIS
