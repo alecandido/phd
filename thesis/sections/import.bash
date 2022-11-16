@@ -21,6 +21,10 @@ for texinput in $@; do
   # revert accidental multiple applications of scope
   sd '(\\.*?(ref|label)\{.*?)(/dis)*:' '$1/'$CHAPTER':' $input
 
+  # revert Juan's alias for begin and end equation
+  sd '\\be\b' '\\begin{equation}' $input
+  sd '\\ee\b' '\\end{equation}' $input
+
   echo "finished processing $texinput"
 done
 

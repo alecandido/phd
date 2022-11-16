@@ -50,11 +50,11 @@ As indicated by Eq.~(\ref{eq/dis:sfs_pqcd}), in the perturbative
 regime DIS structure functions are given by the factorised
 convolution of process-dependent partonic scattering cross-sections and
 of process-independent parton distribution functions,
-\be
+\begin{equation}
 \label{eq/dis:sfs_pqcd_app}
 F_i(x,Q^2) = \sum_{j}\int_x^1 \frac{dz}{z}\, C_{i,j}(z,\alpha_s(Q^2))f_j\lp \frac{x}{z},Q^2\rp \equiv
 C_{j; i} \otimes f_j\, ,
- \ee
+ \end{equation}
  where $j$ is an index that runs over all possible partonic initial states
  and $C_{i,j}$ is the process-dependent, but target-independent, coefficient function,
  given by an expansion in the QCD coupling $\alpha_s(Q^2)$.
@@ -65,18 +65,18 @@ C_{j; i} \otimes f_j\, ,
 As standard for fast interpolation techniques developed
 in the context of PDF fits~\cite{Carli:2010rw,Carrazza:2020gss,Wobisch:2011ij,Bertone:2014zva},
 the PDFs can be expanded
-over an interpolation basis \be
+over an interpolation basis \begin{equation}
 f_j(\xi) = \sum_\alpha p_\alpha(\xi) f(\xi_\alpha) \equiv p_\alpha(\xi) f_\alpha \, ,
 \qquad \xi = \frac x z \, ,
-\ee
+\end{equation}
 with $p_\alpha(x)$ some suitable polynomial basis.
 %
 This way the convolution in Eq.~(\ref{eq/dis:sfs_pqcd_app}) can be replaced by a simple contraction
-\be
+\begin{equation}
 \label{app/dis:grid_formalism}
 F_i = C_{j; i} \otimes f_j = C_{j \alpha; i} \cdot f_\alpha \, ,\qquad
 C_{j \alpha; i} = C_{j; i} \otimes p_\alpha \, ,
-\ee
+\end{equation}
 in terms of PDFs evaluated at fixed grid points $\xi_\alpha$ and precomputed
 coefficients $C_{j \alpha; i}$.
 %
