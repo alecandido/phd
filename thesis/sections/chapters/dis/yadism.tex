@@ -16,7 +16,7 @@ EKO}~\cite{Candido:2022tld} DGLAP evolution code.
 %
 The open source \yadism code can be obtained from its GitHub repository
 \begin{center}
-  \url{https://github.com/NNPDF/yadism/}
+  \ghurl{NNPDF/yadism}
 \end{center}  
 together with an detailed documentation, tutorials, and user-friendly examples
 \begin{center}
@@ -25,7 +25,7 @@ together with an detailed documentation, tutorials, and user-friendly examples
 One of the main advantages of \yadism is that it is integrated with the fast
 interpolation grid toolbox \pineappl~\cite{Carrazza:2020gss},
 and hence DIS structure functions can be treated on the same footing as
-hadronic observables from the point of view of PDF fitting and related
+hadronic observables from the point of view of \pdf{} fitting and related
 applications.
 %
 \pineappl provides a unique grid format, with application
@@ -35,7 +35,7 @@ user-friendly command-line interface to manage the grid files.
 Furthermore, \yadism implements the available N$^3$LO DIS coefficient
 functions, which combined with (approximate)  N$^3$LO evolution and heavy quark
 matching conditions available in \eko provide theoretical
-calculations required to carry out a N$^3$LO PDF determination.
+calculations required to carry out a N$^3$LO \pdf{} determination.
 %
 \yadism will be described in detail in an upcoming publication~\cite{yadism},
 and here we summarise its main features, in particular those relevant to the
@@ -59,9 +59,9 @@ C_{j; i} \otimes f_j\, ,
  In the third term of Eq.~(\ref{eq/dis:sfs_pqcd_app}) and in the following, sum
  over repeated indices is implicit.
  
-As standard for fast interpolation techniques developed in the context of PDF
+As standard for fast interpolation techniques developed in the context of \pdf{}
 fits~\cite{Carli:2010rw,Carrazza:2020gss,Wobisch:2011ij,Bertone:2014zva}, the
-PDFs can be expanded over an interpolation basis \begin{equation}
+\pdf{}s can be expanded over an interpolation basis \begin{equation}
 f_j(\xi) = \sum_\alpha p_\alpha(\xi) f(\xi_\alpha) \equiv p_\alpha(\xi) f_\alpha \, ,
 \qquad \xi = \frac x z \, ,
 \end{equation}
@@ -74,7 +74,7 @@ a simple contraction
 F_i = C_{j; i} \otimes f_j = C_{j \alpha; i} \cdot f_\alpha \, ,\qquad
 C_{j \alpha; i} = C_{j; i} \otimes p_\alpha \, ,
 \end{equation}
-in terms of PDFs evaluated at fixed grid points $\xi_\alpha$ and precomputed
+in terms of \pdf{}s evaluated at fixed grid points $\xi_\alpha$ and precomputed
 coefficients $C_{j \alpha; i}$.
 %
 In \yadism the polynomial interpolation basis is  provided by \textsc{\small
@@ -88,7 +88,7 @@ among other effects.
 %
 Isospin modifications, required to evaluate the neutron, deuteron, or heavy
 nuclear structure functions, can be accounted for either at the coefficient
-function level or at the input PDF level.
+function level or at the input \pdf{} level.
 
 The grid formalism summarised schematically in
 Eq.~(\ref{app/dis:grid_formalism}) requires as input the corresponding DIS
@@ -131,7 +131,7 @@ the renormalisation and factorisation scales in the calculation.
 %
 The code follows the definitions of scale variations
 from~\cite{vanNeerven:2000uj,vanNeerven:2001pe}, which are consistent with the
-broader picture of scale variations relevant for PDF fits
+broader picture of scale variations relevant for \pdf{} fits
 from~\cite{NNPDF:2019ubu} where they also affect the DGLAP evolution.
 %
 There are two kinds of scale variations: renormalization scale $Q_R$
@@ -140,7 +140,7 @@ factorization scale $Q_F$ dependence, related to the subtraction of collinear
 logarithms in the adopted factorization scheme.
 %
 The factorization scale $Q_F$ sets  the boundary between the coefficient
-functions and the DGLAP-evolved PDFs.
+functions and the DGLAP-evolved \pdf{}s.
 %
 Scale variations at a given perturbative order can be constructed from
 combining ingredients already present at the previous perturbative order, and
@@ -151,14 +151,8 @@ Within \yadism, the scale variation contributions to the DIS structure
 functions are stored in separate grids such that the values of the scale ratios
 $\mu_F^2=Q_F^2/Q^2$ and $\mu_R^2=Q_R^2/Q^2$ can be evaluated a posteriori.
 
-As discussed in Sect.~\ref{sec/dis:fitting}, in our analysis the \yadism
-structure function pseudo-data included in the fit to constrain the large-$Q^2$
-limit of the neural network parametrisation is weighted by the corresponding
-PDF and MHO theory uncertainties, the latter evaluated from scale variations
-using the 9-point prescription.
-%
 The calculation of scale variations provided by \yadism and the subsequent
-determination of the MHOU theory covariance matrix has been benchmarked with
+determination of the \mhou theory covariance matrix has been benchmarked with
 the results of~\cite{NNPDF:2019ubu}, finding good agreement.
 
 \paragraph{Benchmarking.}
@@ -180,7 +174,7 @@ structure functions at NNLO with the corresponding ones from \textsc{\small
 APFEL}.
 %
 The same input theory settings are used in both calculations, in particular the
-PDFs (in this case NNPDF4.0 NNLO), strong coupling constant
+\pdf{}s (in this case NNPDF4.0 NNLO), strong coupling constant
 ($\alpha_s(m_Z)=0.118$), and GM-VFN (FONLL-C).
 %
 We display results for four bins of representative DIS datasets included in the

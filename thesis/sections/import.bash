@@ -12,7 +12,13 @@ for texinput in $@; do
 
   rg newcommand -- $input
   if [ $? == 0 ]; then
-    continue
+    # ask user for confirmation: switch commented lines to silence
+    read -p "Command definitions detected. Are you sure to continue? " -n 1 -r
+    # REPLY='y'
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+      continue
+    fi
   fi
 
   # scope all labels and references
@@ -38,10 +44,14 @@ for texinput in $@; do
     sd '\{\\'$style'\b(.*?)\}' '\\text'$style'{$1}' $input
   done
 
+  # replace some software names with corresponding macros
   for sw in {eko,yadism,pineappl,pineko,apfel}; do
     sd -f i '\\text.*?\{\\\w*? *('$sw') *\}' '\\$1' $input
     sed -e 's@\(\\'$sw'\)@\L\1@gi' -i $input
   done
+
+  # replace common patterns
+  sd '\bPDF(s?)\b' '\pdf{}$1' $input
 
   echo "finished processing $texinput"
 done
