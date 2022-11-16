@@ -15,7 +15,11 @@ for texinput in $@; do
     continue
   fi
 
-  sd -p '(\\label\{.*):' '$1/dis:' $input
+  # scope all labels and references
+  sd '(\\label\{.*?):' '$1/'$CHAPTER':' $input
+  sd '(\\.?ref\{.*?):' '$1/'$CHAPTER':' $input
+  # revert accidental multiple applications of scope
+  sd '(\\.*?(ref|label)\{.*?)(/dis)*:' '$1/'$CHAPTER':' $input
 
   echo "finished processing $texinput"
 done
