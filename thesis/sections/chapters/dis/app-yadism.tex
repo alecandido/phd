@@ -3,75 +3,75 @@
 \section{\yadism: DIS structure functions made easy}
 \label{app/dis:yadism}
 
-Deep-inelastic structure functions can be evaluated with several
-public codes such as \textsc{\small APFEL}~\cite{Bertone:2013vaa} and
-\textsc{\small QCDNUM}~\cite{Botje:2010ay}.
+Deep-inelastic structure functions can be evaluated with several public codes
+such as \textsc{\small APFEL}~\cite{Bertone:2013vaa} and \textsc{\small
+QCDNUM}~\cite{Botje:2010ay}.
 %
-These various available DIS codes differ in the accuracy with which structure functions can be computed,
-whether they are based on the $x$-space or the $N$-space formalism,
-the treatment of heavy quark mass effects and of target mass corrections, the availability
-of polarised and time-like coefficient functions, and
-the inclusion of QED corrections among  other considerations.
+These various available DIS codes differ in the accuracy with which structure
+functions can be computed, whether they are based on the $x$-space or the
+$N$-space formalism, the treatment of heavy quark mass effects and of target
+mass corrections, the availability of polarised and time-like coefficient
+functions, and the inclusion of QED corrections among  other considerations.
 
-This appendix describes \yadism, a new framework
-for the evaluation of DIS structure functions from the same family
-as the \textsc{\small EKO}~\cite{Candido:2022tld} DGLAP evolution code.
+This appendix describes \yadism, a new framework for the evaluation of DIS
+structure functions from the same family as the \textsc{\small
+EKO}~\cite{Candido:2022tld} DGLAP evolution code.
 %
 The open source \yadism code can be obtained from its GitHub repository
 \begin{center}
   \url{https://github.com/NNPDF/yadism/}
-  \end{center}  
+\end{center}  
 together with an detailed documentation, tutorials, and user-friendly examples
 \begin{center}
-\url{https://yadism.readthedocs.io/}
+  \url{https://yadism.readthedocs.io/}
 \end{center}  
-One of the main advantages of \yadism is that it is integrated
-with the fast interpolation grid toolbox \textsc{\small PineAPPL}~\cite{Carrazza:2020gss},
-and hence DIS structure functions can be treated on the same footing as hadronic observables
-from the point of view of PDF fitting and related applications.
+One of the main advantages of \yadism is that it is integrated with the fast
+interpolation grid toolbox \textsc{\small PineAPPL}~\cite{Carrazza:2020gss},
+and hence DIS structure functions can be treated on the same footing as
+hadronic observables from the point of view of PDF fitting and related
+applications.
 %
-\textsc{\small PineAPPL} provides a unique grid format, with application programming interfaces (APIs)
-for different programming languages
-and a user-friendly command-line interface to manage the grid files.
+\textsc{\small PineAPPL} provides a unique grid format, with application
+programming interfaces (APIs) for different programming languages and a
+user-friendly command-line interface to manage the grid files.
 %
-Furthermore, \yadism implements the available N$^3$LO DIS coefficient functions,
-which combined with (approximate)  N$^3$LO evolution
-and heavy quark matching conditions available in \textsc{\small EKO} provide
-theoretical calculations required to carry out a N$^3$LO PDF determination.
+Furthermore, \yadism implements the available N$^3$LO DIS coefficient
+functions, which combined with (approximate)  N$^3$LO evolution and heavy quark
+matching conditions available in \textsc{\small EKO} provide theoretical
+calculations required to carry out a N$^3$LO PDF determination.
 %
 \yadism will be described in detail in an upcoming publication~\cite{yadism},
-and here we summarise its main features, in particular those
-relevant to the present study, and highlight benchmarking
-studies carried out.
+and here we summarise its main features, in particular those relevant to the
+present study, and highlight benchmarking studies carried out.
 
 \paragraph{Grid formalism.}
 %
-As indicated by Eq.~(\ref{eq/dis:sfs_pqcd}), in the perturbative
-regime DIS structure functions are given by the factorised
-convolution of process-dependent partonic scattering cross-sections and
-of process-independent parton distribution functions,
+As indicated by Eq.~(\ref{eq/dis:sfs_pqcd}), in the perturbative regime DIS
+structure functions are given by the factorised convolution of
+process-dependent partonic scattering cross-sections and of process-independent
+parton distribution functions,
 \begin{equation}
 \label{eq/dis:sfs_pqcd_app}
 F_i(x,Q^2) = \sum_{j}\int_x^1 \frac{dz}{z}\, C_{i,j}(z,\alpha_s(Q^2))f_j\lp \frac{x}{z},Q^2\rp \equiv
 C_{j; i} \otimes f_j\, ,
  \end{equation}
- where $j$ is an index that runs over all possible partonic initial states
- and $C_{i,j}$ is the process-dependent, but target-independent, coefficient function,
- given by an expansion in the QCD coupling $\alpha_s(Q^2)$.
+ where $j$ is an index that runs over all possible partonic initial states and
+ $C_{i,j}$ is the process-dependent, but target-independent, coefficient
+ function, given by an expansion in the QCD coupling $\alpha_s(Q^2)$.
  %
- In the third term of Eq.~(\ref{eq/dis:sfs_pqcd_app}) and in the following, sum over repeated indices is
- implicit.
+ In the third term of Eq.~(\ref{eq/dis:sfs_pqcd_app}) and in the following, sum
+ over repeated indices is implicit.
  
-As standard for fast interpolation techniques developed
-in the context of PDF fits~\cite{Carli:2010rw,Carrazza:2020gss,Wobisch:2011ij,Bertone:2014zva},
-the PDFs can be expanded
-over an interpolation basis \begin{equation}
+As standard for fast interpolation techniques developed in the context of PDF
+fits~\cite{Carli:2010rw,Carrazza:2020gss,Wobisch:2011ij,Bertone:2014zva}, the
+PDFs can be expanded over an interpolation basis \begin{equation}
 f_j(\xi) = \sum_\alpha p_\alpha(\xi) f(\xi_\alpha) \equiv p_\alpha(\xi) f_\alpha \, ,
 \qquad \xi = \frac x z \, ,
 \end{equation}
 with $p_\alpha(x)$ some suitable polynomial basis.
 %
-This way the convolution in Eq.~(\ref{eq/dis:sfs_pqcd_app}) can be replaced by a simple contraction
+This way the convolution in Eq.~(\ref{eq/dis:sfs_pqcd_app}) can be replaced by
+a simple contraction
 \begin{equation}
 \label{app/dis:grid_formalism}
 F_i = C_{j; i} \otimes f_j = C_{j \alpha; i} \cdot f_\alpha \, ,\qquad
@@ -80,47 +80,48 @@ C_{j \alpha; i} = C_{j; i} \otimes p_\alpha \, ,
 in terms of PDFs evaluated at fixed grid points $\xi_\alpha$ and precomputed
 coefficients $C_{j \alpha; i}$.
 %
-In \yadism the polynomial interpolation basis is  provided by \textsc{\small EKO}.
+In \yadism the polynomial interpolation basis is  provided by \textsc{\small
+EKO}.
 %
-The same grid structure can be generalised to accomodate extensions of
-the basic structure function calculation in 
-Eq.~(\ref{eq/dis:sfs_pqcd_app}) such as heavy quark mass effects,
-renormalisation and factorisation
-scale variations~\cite{NNPDF:2019vjt,NNPDF:2019ubu},
-and target mass corrections, among other effects.
+The same grid structure can be generalised to accomodate extensions of the
+basic structure function calculation in Eq.~(\ref{eq/dis:sfs_pqcd_app}) such as
+heavy quark mass effects, renormalisation and factorisation scale
+variations~\cite{NNPDF:2019vjt,NNPDF:2019ubu}, and target mass corrections,
+among other effects.
 %
-Isospin modifications, required to evaluate the neutron, deuteron, or heavy nuclear
-structure functions, can be accounted for either at the coefficient function
-level or at the input PDF level.
+Isospin modifications, required to evaluate the neutron, deuteron, or heavy
+nuclear structure functions, can be accounted for either at the coefficient
+function level or at the input PDF level.
 
-The grid formalism summarised schematically in Eq.~(\ref{app/dis:grid_formalism})
-requires as input the corresponding DIS coefficient functions.
+The grid formalism summarised schematically in
+Eq.~(\ref{app/dis:grid_formalism}) requires as input the corresponding DIS
+coefficient functions.
 %
-Table~\ref{tab/dis:coefffuncs} provides an overview of the different types and accuracy of the DIS coefficient
-functions currently implemented in \yadism.
+Table~\ref{tab/dis:coefffuncs} provides an overview of the different types and
+accuracy of the DIS coefficient functions currently implemented in \yadism.
 %
-For each perturbative order (NLO, NLO, and N3LO)
-we indicate  the neutral-current
-and charged-current light-to-light (``light''), light-to-heavy (``heavy''), heavy-to-light
-and heavy-to-heavy (``intrinsic'') and ``asymptotic'' ($Q^2 \gg m_h^2$ limit)  coefficients functions
-which have been implemented and benchmarked.
+For each perturbative order (NLO, NLO, and N3LO) we indicate  the
+neutral-current and charged-current light-to-light (``light''), light-to-heavy
+(``heavy''), heavy-to-light and heavy-to-heavy (``intrinsic'') and
+``asymptotic'' ($Q^2 \gg m_h^2$ limit)  coefficients functions which have been
+implemented and benchmarked.
 %
-The NNLO heavy quark coefficient functions for CC scattering are available in $K$-factor format
-and are being implemented into the \yadism grid formalism.
+The NNLO heavy quark coefficient functions for CC scattering are available in
+$K$-factor format and are being implemented into the \yadism grid formalism.
 %
-We note that the full calculation of the N3LO NC massive
-coefficient functions is not available but an approximated expression can
-be constructed from partial results~\cite{niccolo}.
+We note that the full calculation of the N3LO NC massive coefficient functions
+is not available but an approximated expression can be constructed from partial
+results~\cite{niccolo}.
 %
-Heavy quark structure functions can be evaluated in the FONLL
-general-mass variable flavour number scheme (GM-VFN)~\cite{Forte:2010ta},
-as well as in the fixed-flavour number (FFN) and zero-mass variable-flavour
-number (ZM-VFN) schemes.
+Heavy quark structure functions can be evaluated in the FONLL general-mass
+variable flavour number scheme (GM-VFN)~\cite{Forte:2010ta}, as well as in the
+fixed-flavour number (FFN) and zero-mass variable-flavour number (ZM-VFN)
+schemes.
 %
-We point out that the list in Table~\ref{tab/dis:coefffuncs} is going to be updated
-as new features are added, and therefore the interested user is encouraged
-to consult the online documentation for an up-to-date states
-of available coefficient functions.
+We point out that the list in Table~\ref{tab/dis:coefffuncs} is going to be
+updated as new features are added, and therefore the interested user is
+encouraged to consult the online documentation for an up-to-date states of
+available coefficient functions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{coeff-funcs-tab}
@@ -128,94 +129,97 @@ of available coefficient functions.
 
 \paragraph{Scale variations.}
 %
-As done by other public DIS tools, \yadism also provides
-the option of varying the renormalisation and factorisation
-scales in the calculation.
+As done by other public DIS tools, \yadism also provides the option of varying
+the renormalisation and factorisation scales in the calculation.
 %
-The code follows
-the definitions of scale variations from~\cite{vanNeerven:2000uj,vanNeerven:2001pe},
-which are consistent with the broader picture of scale
-variations relevant for PDF fits from~\cite{NNPDF:2019ubu} where they also affect the
-DGLAP evolution.
+The code follows the definitions of scale variations
+from~\cite{vanNeerven:2000uj,vanNeerven:2001pe}, which are consistent with the
+broader picture of scale variations relevant for PDF fits
+from~\cite{NNPDF:2019ubu} where they also affect the DGLAP evolution.
 %
-There are two kinds of scale variations: renormalization scale $Q_R$ dependence, related to
-the ultraviolet renormalization scheme, and factorization scale $Q_F$ dependence, 
-related to the subtraction of collinear logarithms in the adopted factorization scheme.
+There are two kinds of scale variations: renormalization scale $Q_R$
+dependence, related to the ultraviolet renormalization scheme, and
+factorization scale $Q_F$ dependence, related to the subtraction of collinear
+logarithms in the adopted factorization scheme.
 %
-The factorization scale $Q_F$ sets  the boundary between
-the coefficient functions and the DGLAP-evolved PDFs.
+The factorization scale $Q_F$ sets  the boundary between the coefficient
+functions and the DGLAP-evolved PDFs.
 %
-Scale variations at a given perturbative order can be constructed from combining
-ingredients already present at the previous perturbative order, and hence
-for this reason they
-represent a suitable predictor of potentially unknown missing higher orders.
+Scale variations at a given perturbative order can be constructed from
+combining ingredients already present at the previous perturbative order, and
+hence for this reason they represent a suitable predictor of potentially
+unknown missing higher orders.
 %
 Within \yadism, the scale variation contributions to the DIS structure
 functions are stored in separate grids such that the values of the scale ratios
 $\mu_F^2=Q_F^2/Q^2$ and $\mu_R^2=Q_R^2/Q^2$ can be evaluated a posteriori.
 
 As discussed in Sect.~\ref{sec/dis:fitting}, in our analysis the \yadism
-structure function pseudo-data included in the fit to constrain the
-large-$Q^2$ limit of the neural network parametrisation is weighted
-by the corresponding PDF and MHO theory uncertainties, the latter
-evaluated from scale variations using the 9-point prescription.
+structure function pseudo-data included in the fit to constrain the large-$Q^2$
+limit of the neural network parametrisation is weighted by the corresponding
+PDF and MHO theory uncertainties, the latter evaluated from scale variations
+using the 9-point prescription.
 %
 The calculation of scale variations provided by \yadism and the subsequent
-determination of the MHOU theory covariance matrix has been benchmarked
-with the results of~\cite{NNPDF:2019ubu}, finding good agreement.
+determination of the MHOU theory covariance matrix has been benchmarked with
+the results of~\cite{NNPDF:2019ubu}, finding good agreement.
 
 \paragraph{Benchmarking.}
 %
-The DIS structure function predictions provided by \yadism
-have been thoroughly benchmarked  with those from {\sc\small
-  APFEL} and \textsc{\small QCDNUM}.
+The DIS structure function predictions provided by \yadism have been thoroughly
+benchmarked  with those from {\sc\small APFEL} and \textsc{\small QCDNUM}.
 %
-Specifically, we have verified that we can reproduce
-the \textsc{\small APFEL} predictions for those coefficient functions listed
-in Table~\ref{tab/dis:coefffuncs} which are available in \textsc{\small APFEL}.
+Specifically, we have verified that we can reproduce the \textsc{\small APFEL}
+predictions for those coefficient functions listed in
+Table~\ref{tab/dis:coefffuncs} which are available in \textsc{\small APFEL}.
 %
 Excellent agreement is found in all cases considered, with some residual
-differences well understood as will be discussed in more detail in~\cite{yadism}.
+differences well understood as will be discussed in more detail
+in~\cite{yadism}.
 %
-To illustrate this good agreement,
-Fig.~\ref{fig/dis:benchmark-apfel-yadism} displays
-the comparison of the \textsc{\small YADISM} predictions for DIS structure functions at NNLO
-with the corresponding ones from \textsc{\small APFEL}.
+To illustrate this good agreement, Fig.~\ref{fig/dis:benchmark-apfel-yadism}
+displays the comparison of the \textsc{\small YADISM} predictions for DIS
+structure functions at NNLO with the corresponding ones from \textsc{\small
+APFEL}.
 %
-The same input theory settings are used in both calculations,
-in particular the PDFs (in this case NNPDF4.0 NNLO), strong coupling constant ($\alpha_s(m_Z)=0.118$),
-and GM-VFN (FONLL-C).
+The same input theory settings are used in both calculations, in particular the
+PDFs (in this case NNPDF4.0 NNLO), strong coupling constant
+($\alpha_s(m_Z)=0.118$), and GM-VFN (FONLL-C).
 %
-We display results for four bins of representative DIS datasets included
-in the NNPDF4.0 global analysis: fixed-target neutral-current DIS on a deuteron target
-from BCDMS, fixed-target charged-current DIS on a lead target
-from CHORUS, collider neutral-current positron-proton DIS from HERA,
-and collider charged-current electron-proton DIS from HERA.
+We display results for four bins of representative DIS datasets included in the
+NNPDF4.0 global analysis: fixed-target neutral-current DIS on a deuteron target
+from BCDMS, fixed-target charged-current DIS on a lead target from CHORUS,
+collider neutral-current positron-proton DIS from HERA, and collider
+charged-current electron-proton DIS from HERA.
 %
-A similar level of agreement is obtained for other bins
-of DIS datasets.
+A similar level of agreement is obtained for other bins of DIS datasets.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!t]
- \centering
- \includegraphics[width=0.48\linewidth]{plots/matched_datasets_from_dataspecs14_dataset_report_Datanorm_plot_fancy_dataspecs_11.pdf}
- \includegraphics[width=0.48\linewidth]{plots/matched_datasets_from_dataspecs14_dataset_report_Datanorm_plot_fancy_dataspecs_23.pdf}
- \includegraphics[width=0.48\linewidth]{plots/matched_datasets_from_dataspecs4_dataset_report_Datanorm_plot_fancy_dataspecs_0.pdf}
- \includegraphics[width=0.48\linewidth]{plots/matched_datasets_from_dataspecs2_dataset_report_Datanorm_plot_fancy_dataspecs_0.pdf}
- \caption{Comparison of the \textsc{\small YADISM} predictions for DIS structure functions
-   and reduced cross-sections
-   at NNLO with the corresponding ones from \textsc{\small APFEL} for the same choice of input settings.
-   %
-   We display  predictions for four $x$ bins of representative DIS datasets included
-   in the NNPDF4.0 global analysis: fixed-target neutral-current DIS on a deuteron target
-   from BCDMS, fixed-target charged-current DIS on a lead target
-   from CHORUS, collider neutral-current positron-proton DIS from HERA,
-   and collider charged-current electron-proton DIS from HERA.}    
- \label{fig/dis:benchmark-apfel-yadism}
+  \centering
+  \includegraphics[width=0.48\linewidth]{
+    plots/matched_datasets_from_dataspecs14_dataset_report_Datanorm_plot_fancy_dataspecs_11.pdf
+  }
+  \includegraphics[width=0.48\linewidth]{
+    plots/matched_datasets_from_dataspecs14_dataset_report_Datanorm_plot_fancy_dataspecs_23.pdf
+  }
+  \includegraphics[width=0.48\linewidth]{
+    plots/matched_datasets_from_dataspecs4_dataset_report_Datanorm_plot_fancy_dataspecs_0.pdf
+  }
+  \includegraphics[width=0.48\linewidth]{
+    plots/matched_datasets_from_dataspecs2_dataset_report_Datanorm_plot_fancy_dataspecs_0.pdf
+  }
+  \caption{
+    Comparison of the \textsc{\small YADISM} predictions for DIS structure
+    functions and reduced cross-sections at NNLO with the corresponding ones
+    from \textsc{\small APFEL} for the same choice of input settings.
+    %
+    We display  predictions for four $x$ bins of representative DIS datasets
+    included in the NNPDF4.0 global analysis: fixed-target neutral-current DIS
+    on a deuteron target from BCDMS, fixed-target charged-current DIS on a lead
+    target from CHORUS, collider neutral-current positron-proton DIS from HERA,
+    and collider charged-current electron-proton DIS from HERA.
+  }    
+  \label{fig/dis:benchmark-apfel-yadism}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
