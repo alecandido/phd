@@ -1,23 +1,31 @@
 # Schedule
 
-## 15
+## Backlog
 
 - Import AFB
+- Import yadism from docs, and move part of it in general QCD
+- Include MHOU note on prescriptions
+- MHOU initial discussion (NNPDFth)
+- Write GP section
+
+## 15
+
+- ~~Import AFB~~
   - if possible scripting it with `sed` (or even better `sd`) to update with new
     version, as soon as it comes
 - Import yadism (from neutrinos)
 
 ## 16
 
-- Import yadism from docs, and move part of it in general QCD
+- ~~Import yadism from docs, and move part of it in general QCD~~
 - Add also DY process, and maybe other few common processes in the QCD section
 - Briefly introduce also DGLAP in QCD
-- Include MHOU note on prescriptions
+- ~~Include MHOU note on prescriptions~~
 
 ## 17
 
-- MHOU initial discussion (NNPDFth)
-- Write GP section
+- ~~MHOU initial discussion (NNPDFth)~~
+- ~~Write GP section~~
 - Review QCD
 
 ## 18
