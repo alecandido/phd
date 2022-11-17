@@ -14,8 +14,17 @@ for texinput in $@; do
   sed -e 's@\\#\(.*\)@\\\L\1@g' -i $input
 
   # translate inline math
-  sd ':math:`(.*?)`' '$ $1$' $input
+  sd ':math:`(.*?)`' '$ $1$ ' $input
   sd '\$ ' '$' $input
+
+  # translate display math
+  sd -f ms '.. math::\n\n(.*?)\n\n' '\\begin{align}\n$1\n\\end{align}\n\n' $input
+
+  # translate sections
+  sd -f m '\n(.*?)\n--+' '\n\\subsection{$1}' $input
+
+  # translate admonitions
+  sd -f ms '.. admonition:: ([^\n]*)\n\n(.*?)\n\n' '\\subparagraph{$1} $2\n' $input
 
   echo "finished processing $texinput"
 done
