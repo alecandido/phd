@@ -35,7 +35,7 @@ jobs:
         run: |
           outdir=$(sed "s@\$out_dir *= *'\(\w*\)';@\1@p" -n .latexmkrc 2>/dev/null || true)
           echo "outdir=${outdir}" >> $GITHUB_OUTPUT
-          echo "outdir=${outdir}"
+          cat $GITHUB_OUTPUT
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
