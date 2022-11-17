@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.dir }}
-          path: ${{ matrix.dir }}/${{ step.set-latex-outdir.outputs.outdir }}/main.pdf
+          path: ${{ matrix.dir }}/${{ steps.set-latex-outdir.outputs.outdir }}/main.pdf
 
   pages:
     runs-on: ubuntu-latest
