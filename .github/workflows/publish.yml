@@ -33,10 +33,9 @@ jobs:
       - name: Set possible outdir
         working-directory: ${{ matrix.dir }}
         run: |
-          ls -a
           outdir=$(sed "s@\$out_dir *= *'\(\w*\)';@\1@p" -n .latexmkrc 2>/dev/null || true)
-          echo $outdir
-          echo "outdir=$outdir" >> $GITHUB_OUTPUT
+          echo "outdir=${outdir}" >> $GITHUB_OUTPUT
+          echo "outdir=${outdir}"
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
