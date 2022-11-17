@@ -30,11 +30,15 @@ jobs:
         with:
           root_file: ${{ matrix.dir }}/main.tex
           work_in_root_file_dir: true
+      - name: Set possible outdir
+        run: |
+          outdir=$(sed "s@\$out_dir *= *'\(\w*\)';@\1@p" -n .latexmkrc 2>/dev/null)
+          echo "outdir=$outdir" >> $GITHUB_OUTPUT
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.dir }}
-          path: ${{ matrix.dir }}/main.pdf
+          path: ${{ matrix.dir }}/${{ env.outdir }}/main.pdf
 
   pages:
     runs-on: ubuntu-latest
