@@ -3,7 +3,7 @@
 ## Backlog
 
 - Import AFB
-- Import yadism from docs, and move part of it in general QCD
+- Import yadism from docs
 - Include MHOU note on prescriptions
 - MHOU initial discussion (NNPDFth)
 - Write GP section
@@ -17,7 +17,7 @@
 
 ## 16
 
-- ~~Import yadism from docs, and move part of it in general QCD~~
+- ~~Import yadism from docs,~~ and move part of it in general QCD
 - Add also DY process, and maybe other few common processes in the QCD section
 - Briefly introduce also DGLAP in QCD
 - ~~Include MHOU note on prescriptions~~
