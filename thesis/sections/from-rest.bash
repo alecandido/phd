@@ -24,7 +24,11 @@ for texinput in $@; do
   sd -f m '\n(.*?)\n--+' '\n\\subsection{$1}' $input
 
   # translate admonitions
-  sd -f ms '.. admonition:: ([^\n]*)\n\n(.*?)\n\n' '\\subparagraph{$1} $2\n' $input
+  sd -f ms '.. admonition:: ([^\n]*)\n\n(.*?)\n\n' '\\paragraph{$1} $2\n' $input
+
+  # translate admonitions
+  sd -f ms '\*\*(.*?)\*\*' '\\textbf{$1}' $input
+  sd -f ms '\*(.*?)\*' '\\textit{$1}' $input
 
   echo "finished processing $texinput"
 done
