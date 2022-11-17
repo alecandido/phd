@@ -17,18 +17,43 @@ for texinput in $@; do
   sd ':math:`(.*?)`' '$ $1$ ' $input
   sd '\$ ' '$' $input
 
-  # translate display math
-  sd -f ms '.. math::\n\n(.*?)\n\n' '\\begin{align}\n$1\n\\end{align}\n\n' $input
+  # translate citations
+  sd ':cite:`(.*?)`' '\\cite{$1}' $input
+
+  # translate list items
+  sd '^( *)- ' '$1\\item ' $input
+
+  # multiline syntax
+  # ----------------
+
+  # translate text styles
+  sd -f ms '\*\*(.*?)\*\*' '\\textbf{$1}' $input
+  sd -f ms '\*(.*?)\*' '\\textit{$1}' $input
+  sd -f ms '``(.*?)``' '\\texttt{$1}' $input
 
   # translate sections
   sd -f m '\n(.*?)\n--+' '\n\\subsection{$1}' $input
 
-  # translate admonitions
-  sd -f ms '.. admonition:: ([^\n]*)\n\n(.*?)\n\n' '\\paragraph{$1} $2\n' $input
+  # translate display math
+  sd -f ms '.. math ?::\n?\n(.*?)\n\n' \
+'\\begin{align}
+  $1
+\\end{align}
+\n' $input
 
   # translate admonitions
-  sd -f ms '\*\*(.*?)\*\*' '\\textbf{$1}' $input
-  sd -f ms '\*(.*?)\*' '\\textit{$1}' $input
+  for directive in {admonition,note}; do
+  sd -f ms '.. '$directive' ?:: ?([^\n]*)\n\n(.*?)\n\n' '\\paragraph{$1} $2\n' $input
+  done
+
+  # translate admonitions
+  sd -f ms '.. figure:: ([^\n]*)\n.*?\n\n' \
+'\\begin{figure}
+  \\centering
+  \\includegraphics[width=\\hsize]{$1}
+\\end{figure}
+\n' $input
+
 
   echo "finished processing $texinput"
 done
