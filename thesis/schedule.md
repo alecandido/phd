@@ -26,7 +26,6 @@
 
 - ~~MHOU initial discussion (NNPDFth)~~
 - ~~Write GP section~~
-- Review QCD
 
 ## 18
 
@@ -53,6 +52,7 @@ Buffer
 
 - Write yadism introduction
 - Rearrange AFB
+- Review QCD
 
 ## 23
 
@@ -61,6 +61,7 @@ Buffer
 ## 24
 
 - Import Neutrinos
+- Review GP section
 
 ## 25
 
