@@ -39,27 +39,35 @@
     % \input{sections/initial/title-page}
     \input{sections/initial/colophon}
     % \input{sections/initial/dedica}
+    \cleardoublepage
     \input{sections/initial/indices}
     %\input{sections/initial/abstract}
+    \cleardoublepage
     \input{sections/intro}
 
+    \cleardoublepage
+    \null
     \cleardoublepage
 
     %******************************************************************
     % Main Matter
     %******************************************************************
     \pagenumbering{arabic}
+    \setcounter{chapter}{-1}
     \input{sections/chapters/qcd/index}
+
     \part{Theory}
     \label{part:th}
     \input{sections/chapters/dis/index}
     \input{sections/chapters/eko/index}
     \input{sections/chapters/pineline/index}
+
     \part{Applications}
     \label{part:app}
     \input{sections/chapters/ic/index}
     \input{sections/chapters/neutrinos/index}
     \input{sections/chapters/afb/index}
+
     \part{Properties and Methodology}
     \label{part:meth}
     \input{sections/chapters/positivity/index}
@@ -71,11 +79,14 @@
     \appendix
     \part*{Appendices}
     \input{sections/appendices/bench/index}
+    \input{sections/appendices/sw/index}
 
     % *****************************************************************
     % Back matter
     %******************************************************************
     \input{sections/final/glossari}
+    \clearpage
+    \input{sections/final/indices}
     \input{sections/final/bibliography}
     \input{sections/final/acknowledgements}
 

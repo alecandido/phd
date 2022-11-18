@@ -3,34 +3,10 @@
 %*******************************************************
 % Indici
 %*******************************************************
-\cleardoublepage
 \pdfbookmark{\contentsname}{tableofcontents}
 \tableofcontents
 \adjustmtc
 \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}} 
-\clearpage
-
-\begingroup 
-    \let\clearpage\relax
-    \let\cleardoublepage\relax
-    %*******************************************************
-    % Elenco delle figure
-    %*******************************************************    
-    \phantomsection
-    \pdfbookmark{\listfigurename}{lof}
-    \listoffigures
-
-    \vspace*{5cm}
-
-    %*******************************************************
-    % Elenco delle tabelle
-    %*******************************************************
-    \phantomsection
-    \pdfbookmark{\listtablename}{lot}
-    \listoftables
-       
-\endgroup
-\vfill
 
 %\pagebreak
 %\phantomsection
@@ -59,5 +35,3 @@
 %\selectlanguage{italian}
 %
 %\endgroup			
-
-\cleardoublepage
