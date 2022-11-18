@@ -1,6 +1,6 @@
 Mellin space has the theoretical advantage that the analytical solution of the
 equations becomes simpler, but the practical disadvantage that it requires
-\pdf{}s in Mellin space. 
+\pdfs in Mellin space. 
 This constraint is in practice a serious limitation since most matrix element
 generators~\cite{Buckley:2011ms} as well as the various generated coefficient
 function grids (e.g.\ \pineappl{}~\cite{Carrazza_2020,christopher_schwan_2022_5846421},
@@ -13,7 +13,7 @@ However, this is not sufficiently flexible to accommodate more complex analytic
 forms, or even parametrizations in form of neural networks.
 
 We are bypassing this limitation by introducing a Lagrange-interpolation~\cite{LagrangeInterpol,suli2003introduction} of the
-\pdf{}s in $x$-space on arbitrarily user-chosen grids $\mathbb G$:
+\pdfs in $x$-space on arbitrarily user-chosen grids $\mathbb G$:
 \begin{equation}
     f(x) \sim \bar f(x) = \sum_{j} f(x_j) p_j(x),  \quad \text{with}\,x_j\in \mathbb G
 \end{equation}

@@ -63,12 +63,12 @@ the article type \enquote{Regular Article}, where instead we wanted to submit as
 Now, it is indeed true that the paper mostly does not include any new physics content as
 \dglap{} evolution equations are known for a long time. Instead, the aim of the paper
 is to make the community aware of a new software tool that is tailored to address the specific needs in a common
-task in the determination of \pdf{}s. Moreover, while this paper does (mostly) not include
+task in the determination of \pdfs. Moreover, while this paper does (mostly) not include
 new physics, instead we expect future development based on this work to discuss
 genuinely new physics. In the paper we mention explicitly: (a) the determination of
 intrinsic charm in the proton, (b) the determination of missing higher order
-uncertainties in \pdf{}, and (c) the determination of \nnnlo{} \pdf{}s. Each of these
-items we consider a major improvement in the determination of \pdf{}s.
+uncertainties in \pdf{}, and (c) the determination of \nnnlo{} \pdfs. Each of these
+items we consider a major improvement in the determination of \pdfs.
 We added a sentence to the outlook in conclusions to stress this point.
 
 \end{response}
@@ -194,10 +194,10 @@ HOPPET can do backward VFNS. C++ interfaces to at least some of these codes
 probably exist (I seem to recall an APFEL++). It is also not clear to me what
 the LHAPDF row entails.}
 
-The referee is correct in stating that \pegasus{} can return evolved \pdf{}s directly in 
+The referee is correct in stating that \pegasus{} can return evolved \pdfs directly in 
 $x$-space. However, this is possible only for distribution with a fixed parametrization
 (see section 3.3 of \cite{Vogt:2004ns}) and the program is not interfaced with \lhapdf{} 
-directly, which makes the code hard to use in the context of \pdf{}s fitting.
+directly, which makes the code hard to use in the context of \pdfs fitting.
 
 We believe that \eko{} is the first program able to perform backward \vfns{}, while
 with all the others codes (\apfel{}, \qcdnum{}, \pegasus{}, \hoppet{}) only backward \ffns{}
@@ -213,7 +213,7 @@ However is currently developed targeting GPDs and TDMs fitting, being used both 
 \href{https://github.com/MapCollaboration/NangaParbat}{\texttt{NangaParbat}}. 
 and \href{https://github.com/MapCollaboration/MontBlanc}{\texttt{MontBlanc}}
 (see also the official \apfelpp{} \href{https://github.com/vbertone/apfelxx}{\texttt{Readme}}).
-On contrary \apfel{} and \eko{} target only \pdf{}s evolution.
+On contrary \apfel{} and \eko{} target only \pdfs evolution.
 Furthermore \apfelpp{} has not yet reached the feature-equality with \apfel{}:
 for instance \qed{} evolution, a flag feature of \apfel{}, is not implemented. 
 Despite of being feasible, we don't expect that a comparison with \apfelpp{}
@@ -222,7 +222,7 @@ will add any new insight with respect to the one with \apfel{}.
 In this respect the following actions have been taken. Updates on Table 1: 
 \begin{itemize}
  \item We added a new row \enquote{input space} to explain the possibility of
- having $x$-space, or $N$-space \pdf{}s inputs.
+ having $x$-space, or $N$-space \pdfs inputs.
  \item We added a new row \enquote{backward \ffns{}} to explain the possibility of
  performing \ffns{} backward evolution.
  \item We renamed the row \enquote{\lhapdf{}} to \enquote{produce \lhapdf{} grids}
