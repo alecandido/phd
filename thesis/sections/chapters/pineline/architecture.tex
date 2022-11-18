@@ -15,14 +15,12 @@ but when the authors decided to begin the full rework of the architecture, it
 has been clear that a dedicated tool, with this exact goal in mind, would have
 been an ideal solution.
 For this reason, the software package \eko \cite{Candido:2022tld} has been
-created, providing a framework to solve \dglap equations in Mellin space,
-similarly to \cite{Vogt:2004ns}, but generating an output in $x$-space, i.e.\
-the one usually employed by the fit.
-Moreover, while not being the first tool to provide evolution operators
-\cite{Bertone:2013vaa,Salam:2008sz}, it produces them as the default output,
-optimizing the process as much as possible, storing them in a dedicated file
-format, designed to be easily available from different programming languages.
-
+created, described in details in \cref{ch:eko}.
+It is important to recall that, while \eko is not the first tool to provide
+evolution operators \cite{Bertone:2013vaa,Salam:2008sz}, it produces them as
+the default output, optimizing the process as much as possible, storing them in
+a dedicated file format, designed to be easily available from different
+programming languages.
 
 \eko is very different from \apfel, the tool on which the NNPDF framework has
 until now relied. For instance \apfelgrid (then \apfelcomb), the tool which
@@ -109,3 +107,16 @@ any hadronic function fitting\footnote{
   Generalization of \pineappl to support fragmentation functions and polarized
   \pdfs is work in progress.
 }.
+
+We dubbed this pipeline our \textit{theory \textbf{pineline}}, that has its own
+dedicated repository (\url{https://github.com/NNPDF/pinealine}), providing a
+single Python package, acting as a meta-package, in the sense that it does not
+have any content, but its own version, and it is used as a single front-end for
+the user of the whole pipeline, reconciling the versions of the individual
+components.
+Installation instructions and tutorials are provided on the \textit{pineline}
+web-page, that is intended to provide a useful introduction and resources for
+all kind of users:
+\begin{center}
+  \url{https://nnpdf.github.io/pineline/}
+\end{center}

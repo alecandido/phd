@@ -3,16 +3,16 @@
 Components have applications on their own, and part of them have already been
 used (or are being used) to support other works.
 Even though here it appears incidental, this is an important design feature: we
-are building a framework, not just a pipeline application. The
-various components should be focused on dedicated tasks and easy to integrate
-in different architecture (or, more realistically, stand-alone projects), for
-similar but different goals.
+are building a framework, not just a \enquote{pipeline application}.
+The various components should be focused on dedicated tasks and easy to
+integrate in different architecture (or, more realistically, stand-alone
+projects), for similar but different goals.
 
 A first example is the study on evidence
-for an intrinsic charm component in the proton \cite{Ball:2022qks}, based on
-the \nnpdf 4.0 \pdf set, latest release of the \nnpdf family, and \eko
-\cite{Candido:2022tld}, the evolution code described in the previous
-\cref{sec:pine/arch}.
+for an intrinsic charm component in the proton \cite{Ball:2022qks} (cf.\
+\cref{ch:ic}), based on the \nnpdf 4.0 \pdf set, latest release of the \nnpdf
+family, and \eko \cite{Candido:2022tld}, the evolution code described in the
+previous \cref{sec:pine/arch}.
 The role of \eko has been to unfold the intrinsic component from the so-called
 fitted charm, in the 4 flavor number scheme (default scheme at fitting scale
 for \nnpdf), by backward evolving with \dglap equation in a 3 flavor number
@@ -25,13 +25,13 @@ perturbative stability of the result obtained.
 
 Another application is the study of the forward backward asymmetry in the
 Drell--Yan process with a high cut in the invariant mass of the
-lepton pair \cite{Ball:2022qtp}.
+lepton pair \cite{Ball:2022qtp} (cf.\ \cref{ch:afb}).
 In particular, the work focuses on the comparison between results obtained with
 the \nnpdf 4.0 \pdf set and other contemporary \pdf sets from different
-collaborations. We find that a certain shape in the high cut setting is
-related to the specific shape of the \pdfs in the large-$x$ extrapolation
-region, and so very sensitive to the possible bias of extending behaviors
-typical of the central data region.
+collaborations. We find that a certain shape in the high cut setting is related
+to the specific shape of the \pdfs in the large-$x$ extrapolation region, and
+so very sensitive to the possible bias of extending behaviors typical of the
+central data region.
 In this context, it has been crucial to have \pineappl \cite{Carrazza:2020gss}
 \cite{christopher_schwan_2022_7145377} grids pre-computed to reproduce the
 results, iterating on the \pdf set to investigate different features of the
@@ -43,3 +43,4 @@ perturbative calculation at higher energies, based on the \pdfs.
 Here, we use \yadism, a general inclusive DIS provider
 interfaced with \pineappl, to produce perturbative \qcd calculation for the
 structure functions that get matched to experimental data.
+The detailed description of this study is the subject of \cref{ch:neutrino}.
