@@ -1,14 +1,14 @@
 % !TeX root = ../../../main.tex
 
 Performing a \pdf fit requires to integrate several elements to be gathered
-from many different sources: data from several experiments, ranging over
-multiple decades and formats, and competitive theory predictions, coming
-from different providers.
+from many different sources: \textit{data} from several experiments, ranging
+over multiple decades and formats, and competitive \textbf{theory predictions},
+coming from different providers.
 Finally, a fitting methodology has to be selected and engineered to implement
 theory constraints, and to limit not physically motivated bias.
 
 While data are a \textit{static} component in the fit, the theory predictions
-depend on the candidate \pdf, since they are the mapping that connect the
+depend on the candidate \pdf, since they are the map that connect the
 unobserved \pdf space, to the observed data space.
 During the fit, this map will be used a large number of times (at least once
 for every minimization step), so it is paramount to have an efficient way to
@@ -40,11 +40,12 @@ In order to obtain it, it is required to solve the \dglap equation with the
 border condition provided by the fit.
 But being \dglap a set of integro-differential equations \textit{linear} in the
 \pdf, this can be converted in the application of a suitable \textit{evolution
-operator}, solving the same equation.
+operator}, solving the same equation, as discussed in
+\cref{sec:qcd/dglap,ch:eko}.
 Since the evolution operator can also be computed ahead of time, it is possible
 to combine the two ingredients (the operator and the grid) in a single fast
 array interface, that will directly produce the required theory predictions
-once contracted on the \pdf candidate.
+once contracted with the \pdf candidate.
 Thus, the map from \pdf space to data space discussed above, is reduced to a
 linear algebra product (or more than one, when multiple hadrons are involved).
 During this operation, there is no loss of generality, since the interpolation
@@ -64,5 +65,5 @@ An array interface is extremely useful, since it allows to treat the theory map
 in the context of many software frameworks, just relying on the data structure
 of an array. Especially relevant for machine
 learning software frameworks, but not limited to them, e.g.\ it allows to
-create a Bayesian inference-based methodology, without the need of the
-treatment of further complex functions.
+create a Bayesian inference-based methodology (cf.\ \cref{ch:gp}), without the
+need of the treatment of further complex functions.
