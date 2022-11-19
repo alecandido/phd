@@ -8,6 +8,7 @@
 - MHOU initial discussion (NNPDFth)
 - Write GP section
 - positivity introductions
+- Write banana
 
 ## 15
 
@@ -37,7 +38,7 @@
 ## 19
 
 - Write MHOU recent remarks
-- Write banana
+- ~~Write banana~~
 
 ## 20
 
