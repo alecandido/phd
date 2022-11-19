@@ -60,14 +60,80 @@ FONLL-B scheme).
 The goal of \mhou studies is to give an estimate of the impact of the missing
 part of the perturbative series, in order to assess the size theory uncertainty
 propagated on physical observables.
+%
+There are two categories of possible approaches: use all-order information
+coming from theoretical knowledge of the perturbative series (or properties
+that applies to the all-order result) and extrapolating from the behavior of
+the known orders.
+
+The first category makes use of a similar information of that consumed in
+\textit{resummation}, with a different goal: resumming the perturbative series
+produces a new expansion with a better convergence, while in \mhou studies the
+goal is to estimate the missing part of the initial truncated series.
+%
+The prominent example of this category is the widespread adoption of
+\textbf{scale variations} as theory uncertainties on perturbative calculations.
+The physical motivation relies in Callan-Symanzik equations, the same used to
+obtain \dglap (cf.\ \cref{sec:qcd/dglap}).
+%
+These equations encode a property of physical observables: they can not depend
+on unphysical scales.
+But this property holds only for the all-order physical observables, and it is
+spoilt by the perturbative truncation.
+Therefore, measuring the dependence of the final result on the variation of
+unphysical scales, it is possible to extract the magnitude of this violation. 
+%
+It is not possible to reconstruct from the exact value of an observable from
+this information: many missing terms do not belong to the same \textit{class}
+of known ones, since it is possible to group terms in such a way that
+Callan-Symanzik equations are respected for each group, but only the sum of all
+groups value is the value of the full series.
+%
+Nevertheless, as said before the goal of \mhou investigations is not to upgrade
+a truncated result to a full one, so capturing the order of magnitude is
+sufficient.
+%
+There are cases in which the scale variations approach is known to fail, giving
+an unreliable estimate also of the order of magnitude.
+However, most of these cases can be predicted by simple enough properties of
+the perturbative series.
+E.g.\ at low enough orders some partonic channels might not be present yet,
+like \dis at \lo has no gluon channel (and at \nlo no quark singlet
+contribution).
+%
+There is not a single scale to be varied, but two: the renormalization and the
+factorization scales, they have been briefly introduced in
+\cref{sec:qcd/dglap}, and they also appeared in \cref{ch:dis,ch:eko}.
+They are linked to the two perturbative truncations described above, so the two
+of them have to be varied to obtain a complete estimate.
+The way the two variations are coordinated is called a scale variations
+\textit{prescription} and it is illustrated in more details in
+\cref{sec:pine/mhou-scvar-note}. 
+
+The main criticism to \textit{scale variations} is not to capture only a subset
+of missing terms, that is mostly common to all approaches since the available
+information is coming from the finite amount of computed terms.
+Instead, it is the \textit{arbitrariness} connected to the prescriptions
+themselves.
+%
+Even for single scale variation there is already a completely free parameter:
+the amount of the variation.
+%
+The conventional solution, based on the logarithmic nature of the scale
+dependence, is to double and halve the value of the scale, usually set to a
+process scale, to minimize \enquote{spurious} contributions (but the chosen
+scale is also somewhat arbitrary, for the same reason).
+%
+This does not solve the arbitrariness that remains in the connection between
+the estimate and the real value, but it gives a way to compare the impact on
+different calculations, since the two estimates will share the same arbitrary
+value.
 
 \vspace*{20pt}
 \noindent
 \rule{\hsize}{1pt}
 
-Short and incomplete survey on possible options
 \begin{itemize}
-	\item scale variations
 	\item Cacciari-Hudeau
 	\item  Stefano's https://inspirehep.net/literature/1273674
 	\item abc model https://inspirehep.net/literature/1867838
