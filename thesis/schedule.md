@@ -7,6 +7,7 @@
 - Include MHOU note on prescriptions
 - MHOU initial discussion (NNPDFth)
 - Write GP section
+- positivity introductions
 
 ## 15
 
@@ -30,7 +31,7 @@
 ## 18
 
 - Rerrange pineline
-- positivity introductions
+- ~~positivity introductions~~
 - Improve pineline
 
 ## 19
