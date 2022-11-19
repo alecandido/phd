@@ -2,14 +2,6 @@
 
 ## Backlog
 
-- Import AFB
-- Import yadism from docs
-- Include MHOU note on prescriptions
-- MHOU initial discussion (NNPDFth)
-- Write GP section
-- positivity introductions
-- Write banana
-
 ## 15
 
 - ~~Import AFB~~
@@ -42,7 +34,10 @@
 
 ## 20
 
-Buffer
+_Buffer_
+
+- Include MHOU note on prescriptions
+- MHOU initial discussion (NNPDFth)
 
 ## 21
 
@@ -53,34 +48,42 @@ Buffer
 ## 22
 
 - Write yadism introduction
-- Rearrange AFB
 - Review QCD
+- Write GP section
 
 ## 23
 
-Buffer
+_Buffer_
+
+- Import yadism from docs
 
 ## 24
 
-- Import Neutrinos
-- Review GP section
+- Import AFB
 
 ## 25
 
+- Import Neutrinos
 - Write QED mention
-- Rearrange Neutrinos
+- Review GP section
 
 ## 26
 
-Buffer
+_Buffer_
+
+- positivity introductions
+- Rearrange AFB
 
 ## 27
 
 - Write Conclusions
+- Rearrange Neutrinos
 
 ## 28
 
-Buffer
+_Buffer_
+
+- Write banana
 
 ## 29
 
