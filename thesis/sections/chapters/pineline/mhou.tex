@@ -3,21 +3,114 @@
 The first fundamental application of the integrated pineline will actually the
 inclusion of \acrfull{mhou} at \nnlo in the \nnpdfr{4.0} fit.
 
-Status report on MHOU, possibly discussing:
+\pdfs are non-perturbative objects, so it may seem counter-intuitive that their
+accuracy depends on perturbative series truncation.
+%
+This is a direct consequence of extracting them from high energy collisions
+data: they are completely determined by physics that happens in the
+perturbative regime, and the map discussed at the beginning of this chapter
+(the one that connects data to \pdfs) is completely determined by \pqft
+calculations.
+%
+So, the origin of the perturbative order of \pdf sets is exactly determined by
+the theory predictions used during the extraction: a \nnlo set is a \pdf set
+that has been fitted using theory predictions at \nnlo.
+%
+A \pdf set directly computed with non-perturbative methods would have no
+perturbative order associated, even when used in a perturbative calculation
+\footnote{
+	From that point of view would be an \textit{all-order} object, even though
+	it might be subject to other kinds of approximations.
+}\footnote{
+	Also consider that \dglap evolution is perturbative, so, once evolved, it
+	acquires again a dependency on the perturbative truncation.
+}.
+
+The perturbative series enters in the \pdf in two different places: the
+partonic cross section calculations (those encoded in \textit{grids}) and the
+\dglap evolution\footnote{
+	That technically is used twice: during the fit, to bridge data with the
+	boundary condition candidate, and to evolve the final boundary condition to
+	all scales.
+	But considering the \pdf a function of two variables ($z$ and $\mu_F^2$)
+	consistently, the abstract evolution flow used is a single one.
+}.
+%
+In principle, these are two different perturbative orders, thus there is not a
+single truncation, but two of them, and they can happen at two different
+orders.
+%
+Still, the two objects are not completely decoupled: \dglap evolution arise
+from collinear divergences, subtracted by the chosen factorization scheme.
+These collinear logarithms appear as well in the partonic cross sections, so it
+is important to properly account for them, avoiding double counting.
+%
+The whole picture of collinear subtractions is deeply connected to treatment of
+quark masses, better discussed in \cref{ch:dis}, since a finite value of the
+mass regulates the collinear divergence on its own.
+%
+Therefore, the double perturbative order already appears in the partonic cross
+sections calculations, where the \fns chosen can account for light and heavy
+quarks at two distinct orders (cf. \cite{Forte:2010ta}, in particular the
+FONLL-B scheme).
+
+\subsection{Estimates}
+\label{sec:pine/mhou-estimate}
+
+The goal of \mhou studies is to give an estimate of the impact of the missing
+part of the perturbative series, in order to assess the size theory uncertainty
+propagated on physical observables.
+
+\vspace*{20pt}
+\noindent
+\rule{\hsize}{1pt}
+
+Short and incomplete survey on possible options
 \begin{itemize}
-	\item short and incomplete survey on possible options
-	\begin{itemize}
-		\item scale variations
-		\item Cacciari-Hudeau
-		\item  Stefano's https://inspirehep.net/literature/1273674
-		\item abc model https://inspirehep.net/literature/1867838
-		\item MCscales https://inspirehep.net/literature/2115313)
-	\end{itemize} 
+	\item scale variations
+	\item Cacciari-Hudeau
+	\item  Stefano's https://inspirehep.net/literature/1273674
+	\item abc model https://inspirehep.net/literature/1867838
+	\item MCscales https://inspirehep.net/literature/2115313)
+\end{itemize} 
+
+\subsection{Theory uncertainties in \pdf fits}
+\label{sec:pine/mhou-pdf}
+
+\vspace*{20pt}
+\noindent
+\rule{\hsize}{1pt}
+
+\begin{itemize}
 	\item brief history of MHOU in PDF fitting
 	\item theory covmat recap
+	\item scheme B and fact scale in evolution
+\end{itemize}
+
+\subsection{New developments}
+\label{sec:pine/mhou-pdf-new}
+
+\vspace*{20pt}
+\noindent
+\rule{\hsize}{1pt}
+
+\begin{itemize}
+	\item actual scheme B implementation in \eko - as opposed to exponentiated
+		in \apfel, i.e.\ same as \pegasus but used for B: not an issue, but it
+		differs more from C, common in \mc generators
 	\item what we updated wrt to NNPDF3.1th ($\alpha_s$ function vs value, and
 		how ren scale vars where entering DGLAP)
 	\item what is missing for a new theory covmat
+	\item generate ren scale dependency in grids
 \end{itemize}
 
+\subsection{A note on scale variations prescriptions}
+\label{sec:pine/mhou-scvar-note}
 
+\vspace*{20pt}
+\noindent
+\rule{\hsize}{1pt}
+
+Insert here the prescriptions note, if possible: flattened (single sections,
+maybe still using \lstinline{\paragraph} for a broad subdivision) and shortened
+(removing redundant or unnecessary parts).
