@@ -43,7 +43,6 @@ _Buffer_
 
 - Rearrange EKO
 - Write EKO introduction
-- Rearrange yadism
 
 ## 22
 
@@ -60,6 +59,7 @@ _Buffer_
 ## 24
 
 - Import AFB
+- Rearrange yadism
 
 ## 25
 
