@@ -110,6 +110,13 @@ iterative).
 	\label{fig:mhou/scvar-shifts}
 \end{figure}
 
+The final result for a fit including the combined covariance matrix is shown in
+\cref{fig:mhou/3.1th}.
+%
+This set is the \nnpdfr[3.1th+]{3.1th} release, and it is available on the
+\nnpdf website and as an \lhapdf website, on the respective website,
+\url{https://lhapdf.hepforge.org/pdfsets}.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.49\hsize]{ch-mhou/xg-Global-NLO-CovMatTH-EXP-vsTH}
@@ -121,6 +128,27 @@ iterative).
 	}
 	\label{fig:mhou/3.1th}
 \end{figure}
+
+It is important to remark that the combined covariance matrix has to be used in
+all the places in which the experimental covariance matrix was used, i.e.\ all
+the places in which the distribution enters.
+%
+Indeed, the effect of the theory distribution, under the assumptions in
+\cite{NNPDF:2019ubu} discussed above, is to modify the covariance matrix in the
+distribution, and so in all its instances in the \pdf fit.
+%
+In particular, the distribution (and so the covariance matrix) is used in two
+places:
+\begin{enumerate}[label=\roman*.]
+  \item the definition of the $\chi^2$ to be minimized
+  \item the generation of pseudo-data, part of the \nnpdf methodology (better
+    explained in \cref{ch:gp}, or in \nnpdf literature, such as
+    \cite{Ball:2008by})
+\end{enumerate}
+%
+The effect of using the combined covariance in a single instance, while keeping
+the experimental one for the other (as in the baseline), is shown in
+\cref{fig:mhou/3.1th-tests}.
 
 \begin{figure}
 	\centering
