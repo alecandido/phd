@@ -11,7 +11,7 @@ We will show the actual results of the obtained prescriptions for the
 on-diagonal, $S_{11}$, and off-diagonal, $S_{12}$ cases.
 
 Notice that, with respect to \cite{NNPDF:2019ubu}, here we have not yet
-introduced the factor $s$, but it would still be allowed by \cref{eq:N-norm}.
+introduced the factor $s$, but it would still be allowed by \cref{eq:mhou/prescr/N-norm}.
 In order to make the comparison with \cite{NNPDF:2019ubu} easier, in this
 section we'll define the actual normalization including this factor, so: 
 \begin{equation}
@@ -30,7 +30,7 @@ cases with only two process, $p = 2$, are the following:
             S_{11} &= \sum_{\vec{\kappa} \in \mathcal{V}} \Delta_1(\vec{\kappa}) \Delta_1(\vec{\kappa}) =\\
                    &= \frac{s_m}{3 \cdot m} \sum_{\vec{\kappa} \in \mathcal{V}_m^1} \delta_1(\vec{\kappa})^2 =\\
                    &= \frac{s_m}{m} \sum_{\substack{(\kappa_F, \kappa_{R,1}) \in v_m^1 }} \delta_1(\kappa_F, \kappa_{R, 1}, 0)^2
-            \label{eq:main-explicit-diag}
+            \label{eq:mhou/prescr/main-explicit-diag}
         \end{align}
         where in the last step a single value has been chosen for $\kappa_{R,
         2}$, since $\delta_1$ does not depend on this scale.
@@ -41,7 +41,7 @@ cases with only two process, $p = 2$, are the following:
             S_{12} &= \sum_{\vec{\kappa} \in \mathcal{V}} \Delta_1(\vec{\kappa}) \Delta_2(\vec{\kappa}) =\\
                    &= \frac{s_m}{3 \cdot m} \sum_{\vec{\kappa} \in \mathcal{V}_m^1\cap\mathcal{V}_m^2} \delta_1(\vec{\kappa}) \delta_2(\vec{\kappa})\\
                    &= \frac{s_m}{3 \cdot m} \sum_{\vec{\kappa} \in \mathcal{V}_m^1\cap\mathcal{V}_m^2} \delta_{12}(\vec{\kappa})
-            \label{eq:main-off-diag}
+            \label{eq:mhou/prescr/main-off-diag}
         \end{align}
         where in the last step we defined $\delta_{12}(\vec{\kappa}) \equiv \delta_1(\vec{\kappa})\delta_2(\vec{\kappa})$.
 \end{description}
@@ -52,7 +52,7 @@ The easiest prescription is the \textit{so-called} 9 points prescription,
 because it corresponds to consider the whole two dimensional space as
 $\mathcal{V}_9^i$, thus the two elements to be fixed are:
 \begin{align}
-    \label{eq:9specs}
+    \label{eq:mhou/prescr/9specs}
     v_9 &= \{-, 0, +\}^2\\
     N_9 &= \frac{8 \cdot 3}{2} = 12
 \end{align}
@@ -138,11 +138,11 @@ $c_i(\vec{\kappa})$, missing terms are explicitly marked with zeros.
 Another interesting prescription is the 5 points one, since it is a rather
 minimal prescription involving both renormalization and factorization scale. 
 \begin{align}
-    \label{eq:5specs}
+    \label{eq:mhou/prescr/5specs}
     v_5 &= \{(-, 0), (0, -), (+, 0), (0, +)\}\\
     N_5 &= \frac{4 \cdot 3}{2} = 6
 \end{align}
-with $s_5 = 2$ (same reason of \cref{eq:9specs}).
+with $s_5 = 2$ (same reason of \cref{eq:mhou/prescr/9specs}).
 
 \begin{description}
     \item[diagonal] for this prescription, we effectively have only 4 shifts,
@@ -214,7 +214,7 @@ dimensional volume, but a different geometry.
     v_5 &= \{(-, -), (-, +), (+, -), (+, +)\}\\
     N_5 &= \frac{4 \cdot 3}{2}  = 6
 \end{align}
-with $s_{\bar{5}} = 2$ (same reason of \cref{eq:9specs}).
+with $s_{\bar{5}} = 2$ (same reason of \cref{eq:mhou/prescr/9specs}).
 
 \begin{description}
     \item[diagonal] for this prescription, we effectively have only 4 shifts,

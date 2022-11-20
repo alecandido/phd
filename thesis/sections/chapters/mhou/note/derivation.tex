@@ -38,14 +38,14 @@ shifts on those scales that was not present in the unnormalized shifts.
 Thus:
 
 \begin{equation}
-    \label{eq:2dim-norm}
+    \label{eq:mhou/prescr/2dim-norm}
     c_i(\vec{\kappa}) \equiv c_i(\kappa_F, \kappa_{R,i})
 \end{equation}
 
 \paragraph{Per-pair space} Next, we claim that the space $\mathcal{V}_{ij}$ can
 not actually depend on the element $ij$ of the covariance matrix been
 constructed. Indeed this stems directly for the necessity to prove
-\cref{eq:pos} that is done in the following way:
+\cref{eq:mhou/prescr/pos} that is done in the following way:
 
 \begin{align}
     \sum_{i,j} v_i S_{ij} v_j &= \sum_{i,j} \sum_{\vec{\kappa} \in \mathcal{V}_{ij}} v_i \Delta_i(\vec{\kappa})\Delta_j(\vec{\kappa}) v_j  =\\
@@ -98,7 +98,7 @@ In practice, the basic one dimensional space will be always the same\footnote{
     well.
 }:
 \begin{equation}
-    \label{eq:1dim-space}
+    \label{eq:mhou/prescr/1dim-space}
     v = \{-\log(2), 0, \log(2)\} \equiv \{-, 0, +\}
 \end{equation}
 and the overall space will be just the product:
@@ -112,7 +112,7 @@ With our simple choice of the space there is no reason to choose complex
 coefficients, thus we will define the following prescriptions:
 
 \begin{equation}
-\label{eq:norm_coeff}
+\label{eq:mhou/prescr/norm_coeff}
     c_i(\vec{\kappa}) = 
     \begin{cases}
         1 / \sqrt{N_m}     \qquad &\kappa \in \mathcal{V}^i_m\\
@@ -136,6 +136,6 @@ $v_m$ and $v$ with an hypothetically large number of point: since we don't want
 the normalization of the theory covariance matrix to depend on the number of
 points being in the prescription, we'll choose
 \begin{equation}
-    \label{eq:N-norm}
+    \label{eq:mhou/prescr/N-norm}
     N_m \propto \abs{v_m} \cdot \abs{v} = m \cdot 3^{p-1}
 \end{equation}

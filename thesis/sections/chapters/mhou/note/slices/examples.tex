@@ -1,5 +1,5 @@
 In this case as well, for better comparison with \cite{NNPDF:2019ubu}, we
-introduce the factor of $s$ in the normalization of \cref{eq:sliced-norm}, thus
+introduce the factor of $s$ in the normalization of \cref{eq:mhou/prescr/sliced-norm}, thus
 \begin{equation}
     c_i(\vec{\kappa})^2 = \frac{s_m}{m \cdot \abs{v(\kappa_F)}^{p-1}}
 \end{equation}
@@ -30,7 +30,7 @@ following:
             S_{11} &= \sum_{\vec{\kappa} \in \mathcal{V}} \Delta_1(\vec{\kappa}) \Delta_1(\vec{\kappa}) =\\
                    &= \sum_{\kappa_F \in v_F} \frac{s_m}{\abs{v(\kappa_F)} \cdot m} \sum_{\vec{\kappa}_R \in \mathcal{V}(\kappa_F)}\delta_1(\vec{\kappa})^2 =\\
                    &= \frac{s_m}{m} \sum_{\kappa_F \in v_F} \sum_{\kappa_{R,1} \in v(\kappa_F) } \delta_1(\kappa_F, \kappa_{R, 1}, 0)^2
-            \label{eq:slices-explicit-diag}.
+            \label{eq:mhou/prescr/slices-explicit-diag}.
         \end{align}
         where in the last step a single value has been chosen for $\kappa_{R,
         2}$, since $\delta_1$ does not depend on this scale (this trivial sum
@@ -39,7 +39,7 @@ following:
         Notice that the last sum $\sum_{\kappa_F \in v_F} \sum_{\kappa_{R,1}} =
         \sum_{\substack{(\kappa_F, \kappa_{R,1}) \in v_m^1 }}$, thus the
         finally formula for the diagonal case is the same of
-        \cref{eq:main-explicit-diag}.
+        \cref{eq:mhou/prescr/main-explicit-diag}.
         While this is not a proof of the general case, it is simple to show (in
         essentially the same way of above) that this is the formula obtained for
         any number of processes $p$.
@@ -49,7 +49,7 @@ following:
             S_{12} &= \sum_{\vec{\kappa} \in \mathcal{V}} \Delta_1(\vec{\kappa}) \Delta_2(\vec{\kappa}) =\\
                    &= \sum_{\kappa_F \in v_F} \frac{s_m}{\abs{v(\kappa_F)} \cdot m} \sum_{\vec{\kappa}_R \in \mathcal{V}(\kappa_F)}\delta_1(\vec{\kappa})\delta_2(\vec{\kappa})\\
                    &= \frac{s_m}{m} \sum_{\kappa_F \in v_F} \frac{1}{\abs{v(\kappa_F)}} \sum_{\vec{\kappa}_R \in \mathcal{V}(\kappa_F)}\delta_{12}(\kappa_F, \kappa_{R,1}, \kappa_{R,2})
-            \label{eq:slices-explicit-off-diag}.
+            \label{eq:mhou/prescr/slices-explicit-off-diag}.
         \end{align}
 \end{description}
 
@@ -82,7 +82,7 @@ where:
 The specification of this prescription is almost the same of the corresponding
 one for the first class:
 \begin{align}
-    \label{eq:5specs-slices}
+    \label{eq:mhou/prescr/5specs-slices}
     v_9(-) &= v_9(+) = \{-, 0, +\}\\
     v_9(0) &= \{-, +\}\\
 \end{align}
@@ -98,12 +98,12 @@ For this prescription, the difference is a bit more relevant, mainly in terms
 of the overall factor, since no one of the $v_5(\kappa_F)$ spaces has the
 maximal allowed cardinality, i.e. $3$\footnote{
     Of course even 3 is completely arbitrary, as explained in
-    \cref{eq:1dim-space}, and the related note, but both classes of
+    \cref{eq:mhou/prescr/1dim-space}, and the related note, but both classes of
     prescriptions are perfectly \textit{adaptive} w.r.t.\ this value,
     i.e.\ their definitions work perfectly fine in the general case.
 }
 \begin{align}
-    \label{eq:9specs-slices}
+    \label{eq:mhou/prescr/9specs-slices}
     v_5(-) &= v_9(+) = \{0\}\\
     v_5(0) &= \{-, +\}\\
 \end{align}
@@ -120,7 +120,7 @@ enough to exemplify the regular cases, but this one is slightly
 \textit{degenerate}.
 Indeed, one of the spaces is actually empty.
 \begin{align}
-    \label{eq:5bar-specs-slices}
+    \label{eq:mhou/prescr/5bar-specs-slices}
     v_5(-) &= v_9(+) = \{-, +\}\\
     v_5(0) &= \{\}\\
 \end{align}

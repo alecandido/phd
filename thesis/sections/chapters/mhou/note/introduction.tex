@@ -49,15 +49,15 @@ matrix of our theory prior distribution.
 
         \begin{align}
             \Delta_i(\vec{\kappa}) &= c_i(\vec{\kappa}) \left(T_i(\vec{\kappa}) - T_i(\vec{\kappa}_0)\right)
-            \label{eq:shifts}\\
+            \label{eq:mhou/prescr/shifts}\\
             S_{ij} &= \sum_{\vec{\kappa} \in \mathcal{V}_{ij}} \Delta_i(\vec{\kappa})\Delta_j(\vec{\kappa})
-            \label{eq:thcovmat}
+            \label{eq:mhou/prescr/thcovmat}
         \end{align}
     \item We want it to be \textbf{positive semi-definite}, as required for any
         covariance matrix
 
         \begin{equation}
-            \label{eq:pos}
+            \label{eq:mhou/prescr/pos}
             v_i S_{ij} v_j > 0 \qquad \forall v \in \R^{\nd} 
         \end{equation}
 \end{enumerate}

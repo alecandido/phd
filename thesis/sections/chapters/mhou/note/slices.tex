@@ -2,7 +2,7 @@ In \cref{sec:mhou/prescr/deriv} we made a set choices for the degrees of
 arbitrariness exposed at the beginning.
 All of them were yield by a strict requirement (needed to obtain a property,
 like $S_{ij} \ge 0$) or by a reasonable request (e.g.\ not adding further
-dependencies with normalizations, which led to \cref{eq:2dim-norm}).
+dependencies with normalizations, which led to \cref{eq:mhou/prescr/2dim-norm}).
 Only in one single case we made an assumption based on an unneeded simplicity:
 the choice of the space as fully factorized.
 
@@ -20,24 +20,24 @@ on $\kappa_F$\footnote{
 
 Thus, we can have a different factorized space for each different value of $\kappa_F$:
 \begin{align}
-    \label{eq:sliced-space}
+    \label{eq:mhou/prescr/sliced-space}
     \mathcal{V} &= \bigsqcup_{\kappa_F \in v_F} \mathcal{V}(\kappa_F)\\
-    \label{eq:1f-factorized}
+    \label{eq:mhou/prescr/1f-factorized}
     \mathcal{V}(\kappa_F) &\equiv v(\kappa_F)^p
 \end{align}
 where $v_F$ is the space of possible values of $\kappa_F$ (usually it will be
-just $v$ of \cref{eq:1dim-space}), and $v(\kappa_F)$ is instead the space of
+just $v$ of \cref{eq:mhou/prescr/1dim-space}), and $v(\kappa_F)$ is instead the space of
 renormalization scales related to that single value of the factorization scale.
 
 In this case also the definition of the normalizations $c_i(\vec{\kappa})$
-should change with respect to those defined in \cref{eq:norm_coeff} in order to
+should change with respect to those defined in \cref{eq:mhou/prescr/norm_coeff} in order to
 account for this, since the different spaces contain different numbers of
 points.
 We decide to normalize the elements such that once the full space is projected
 over each of the two dimensional spaces $(\kappa_F, \kappa_{R,i})$, the
 coefficients of the various shifts are equal to one, thus:
 \begin{equation}
-    \label{eq:sliced-norm}
+    \label{eq:mhou/prescr/sliced-norm}
     c_i(\vec{\kappa})^2 \propto \frac{1}{\sum_{\kappa_F'}v(\kappa_F')} \frac{\abs{v(\kappa_F)}}{\abs{\mathcal{V}(\kappa_F)}}
         = \frac{1}{m \cdot \abs{v(\kappa_F)}^{p-1}}
 \end{equation}
