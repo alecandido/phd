@@ -1,3 +1,41 @@
+% !TeX root = ../../../../main.tex
+
+As introduced in \cref{sec:mhou/estimates}, in the \textit{scale variations}
+approach the scales to be varied are actually two: the \textit{renormalization}
+and the \textit{factorization} scales.
+
+More precisely, only the kind of scales to be varied are two, but there is one
+renormalization scale associated to each \textit{process}\footnote{
+  Unfortunately, also the process definition is not unambiguous, being
+  essentially a way to gather in groups experimental data point.
+  An indication is given by the theory predictions associated, and the
+  intuitive idea is that each group is identified by a different \lo Feynman
+  diagram.
+  Because of this, it might happen that some processes correspond to \nlo or
+  further contributions to other simpler processes.
+}, so the amount of scales is essentially $p + 1$, where $p$ is the amount of
+processes in the dataset.
+Thus, a consistent way of varying together all these scales is required in a
+global \qcd fit, like those for collinear \pdfs, because the amount of
+processes might quickly scale, and rough choices for prescriptions might result
+in undesirable features for the theory covariance matrix generated.
+Also consider that, while dealing with a large number of data points (even for
+a small amount of processes), covariances become crucial, since they scale as
+$\order{\nd^2}$, while the variances are just $\nd$.
+The specific choices for a coordinated choices of scale values is called a
+\textit{point prescriptions}, because consist in the selection of a finite set
+of points (and related weights) in the space of possible values for the
+unphysical scales, use to estimate the whole observable dependence.
+
+In the following, we present the derivation of suitable point prescriptions,
+that can be used in the construction of a positive semi-definite theory
+covariance matrix.
+It turns out that two classes of prescriptions are possible, both requiring
+milder or stronger generalization of equations in \cite{NNPDF:2019ubu}.
+The actual result claimed in the paper can be obtained within the broader
+generalization, ensuring the positive semi-definiteness of the covariance
+matrix computed with that class of prescriptions.
+
 There are two conditions that we want to satisfy in constructing the theory
 covariance matrix, in order to support the interpretation as the covariance
 matrix of our theory prior distribution.
