@@ -1,5 +1,8 @@
 % !TeX root = ../main.tex
 
+% pseudo-text
+% \RequirePackage[language=english]{lipsum}
+
 % quotes
 \RequirePackage[font=small]{quoting}
 
@@ -41,20 +44,8 @@
 \RequirePackage{datetime2}
 \RequirePackage{datetime2-calc}
 
-% bibliography;
-% make citing style author-year;
-% the style "numeric-comp" makes numeric references;
-\RequirePackage[style=philosophy-modern,url=false,
-	hyperref,square,backend=biber]{biblatex}
-
-% pseudo-text
-% \RequirePackage[language=english]{lipsum}
-
 % Particles names
 \RequirePackage{hepnames}
-
-% ??? from EKO
-\RequirePackage{wasysym}
 
 % International units
 % \RequirePackage[cdot, thickqspace, squaren]{SIunits}
@@ -63,6 +54,15 @@
 	retain-unity-mantissa = false
 }
 % \AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% ??? from EKO
+\RequirePackage{wasysym}
+
+% bibliography;
+% make citing style author-year;
+% the style "numeric-comp" makes numeric references;
+\RequirePackage[style=philosophy-modern,url=false,
+	hyperref,square,backend=biber]{biblatex}
 
 % glossaries (after hyperref)
 \RequirePackage[acronym,automake,nomain,section=section]{glossaries}
