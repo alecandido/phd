@@ -54,7 +54,7 @@ sections calculations, where the \fns chosen can account for light and heavy
 quarks at two distinct orders (cf. \cite{Forte:2010ta}, in particular the
 FONLL-B scheme).
 
-\subsection{Estimates}
+\section{Estimates}
 \label{sec:pine/mhou-estimate}
 
 The goal of \mhou studies is to give an estimate of the impact of the missing
@@ -140,7 +140,7 @@ value.
 	\item MCscales https://inspirehep.net/literature/2115313)
 \end{itemize} 
 
-\subsection{Theory uncertainties in \pdf fits}
+\section{Theory uncertainties in \pdf fits}
 \label{sec:pine/mhou-pdf}
 
 \begin{figure}
@@ -211,7 +211,7 @@ value.
 	\item scheme B and fact scale in evolution
 \end{itemize}
 
-\subsection{New developments}
+\section{New developments}
 \label{sec:pine/mhou-pdf-new}
 
 \vspace*{20pt}
@@ -228,7 +228,7 @@ value.
 	\item generate ren scale dependency in grids
 \end{itemize}
 
-\subsection{A note on scale variations prescriptions}
+\section{A note on scale variations prescriptions}
 \label{sec:pine/mhou-scvar-note}
 
 \vspace*{20pt}
@@ -238,3 +238,28 @@ value.
 Insert here the prescriptions note, if possible: flattened (single sections,
 maybe still using \lstinline{\paragraph} for a broad subdivision) and shortened
 (removing redundant or unnecessary parts).
+
+We describe the derivation of suitable point prescriptions, that can be
+used in the construction of a positive semi-definite theory covariance
+matrix.
+It turns out that two classes of prescriptions are possible, both requiring
+milder or stronger generalization of equations in \cite{NNPDF:2019ubu}.
+The actual result claimed in the paper can be obtained within the broader
+generalization, ensuring the positive semi-definiteness of the covariance
+matrix computed with that class of prescriptions.
+
+\subsection{Introduction}
+\label{sec:intro}
+\input{sections/chapters/pineline/note/introduction}
+
+\subsection{Derivation}
+\label{sec:deriv}
+\input{sections/chapters/pineline/note/derivation}
+
+\subsection{Alternative space: $\kappa_F$ slices}
+\label{sec:slices}
+\input{sections/chapters/pineline/note/slices}
+
+\subsection{Conclusions}
+\label{sec:concl}
+\input{sections/chapters/pineline/note/conclusions}

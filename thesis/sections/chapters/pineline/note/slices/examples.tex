@@ -1,0 +1,133 @@
+In this case as well, for better comparison with \cite{NNPDF:2019ubu}, we
+introduce the factor of $s$ in the normalization of \cref{eq:sliced-norm}, thus
+\begin{equation}
+    c_i(\vec{\kappa})^2 = \frac{s_m}{m \cdot \abs{v(\kappa_F)}^{p-1}}
+\end{equation}
+
+Furthermore, same as in \cref{sec:main-ex} (on purpose, to stress comparison)
+we consider the case of only two data points (1 and 2) belonging to two
+distinct processes.
+With this limited case it is harder to appreciate the difference in the
+constructions of \cref{sec:deriv} and \cref{sec:slices}, since it actually lies
+in the way the different three dimensional shapes for pair of processes are
+reconciled in the full $p+1$-dimensional space.
+However, this difference has already been stressed in the abstract construction
+of the two classes of prescriptions, thus the purpose of this examples is
+different: to showcase the different expressions obtained fully explicitly.
+For this aim the choice of considering just two points is fully satisfactory.
+
+For this second set of examples there is no need to rewrite the full set of
+terms: they are the exact same of \cref{sec:main-ex}, the only difference will
+be in the coefficients, that now might depend on the value of $\kappa_F$
+because of the space structure (and they will always depend on it).
+
+Thus, the expressions for the \textit{diagonal} and \textit{off-diagonal} cases
+with only two process, $p = 2$, in this second class of prescriptions are the
+following:
+\begin{description}
+    \item[diagonal] effectively two-dimensional, since both the shifts depend only on two scales
+        \begin{align}
+            S_{11} &= \sum_{\vec{\kappa} \in \mathcal{V}} \Delta_1(\vec{\kappa}) \Delta_1(\vec{\kappa}) =\\
+                   &= \sum_{\kappa_F \in v_F} \frac{s_m}{\abs{v(\kappa_F)} \cdot m} \sum_{\vec{\kappa}_R \in \mathcal{V}(\kappa_F)}\delta_1(\vec{\kappa})^2 =\\
+                   &= \frac{s_m}{m} \sum_{\kappa_F \in v_F} \sum_{\kappa_{R,1} \in v(\kappa_F) } \delta_1(\kappa_F, \kappa_{R, 1}, 0)^2
+            \label{eq:slices-explicit-diag}.
+        \end{align}
+        where in the last step a single value has been chosen for $\kappa_{R,
+        2}$, since $\delta_1$ does not depend on this scale (this trivial sum
+        cancels with the factor of $\abs{v(\kappa_F)}$ in the denominator).
+
+        Notice that the last sum $\sum_{\kappa_F \in v_F} \sum_{\kappa_{R,1}} =
+        \sum_{\substack{(\kappa_F, \kappa_{R,1}) \in v_m^1 }}$, thus the
+        finally formula for the diagonal case is the same of
+        \cref{eq:main-explicit-diag}.
+        While this is not a proof of the general case, it is simple to show (in
+        essentially the same way of above) that this is the formula obtained for
+        any number of processes $p$.
+    \item[off-diagonal] effectively three-dimensional, that only for this
+        specific problem coincide with the whole space
+        \begin{align}
+            S_{12} &= \sum_{\vec{\kappa} \in \mathcal{V}} \Delta_1(\vec{\kappa}) \Delta_2(\vec{\kappa}) =\\
+                   &= \sum_{\kappa_F \in v_F} \frac{s_m}{\abs{v(\kappa_F)} \cdot m} \sum_{\vec{\kappa}_R \in \mathcal{V}(\kappa_F)}\delta_1(\vec{\kappa})\delta_2(\vec{\kappa})\\
+                   &= \frac{s_m}{m} \sum_{\kappa_F \in v_F} \frac{1}{\abs{v(\kappa_F)}} \sum_{\vec{\kappa}_R \in \mathcal{V}(\kappa_F)}\delta_{12}(\kappa_F, \kappa_{R,1}, \kappa_{R,2})
+            \label{eq:slices-explicit-off-diag}.
+        \end{align}
+\end{description}
+
+Since the space of this second class is engineered to give the same terms of
+the first one (both diagonal and off-diagonal), and the normalizations are
+chosen such to obtain uniform coefficients for the diagonal case (and then they
+are the exact same of the first class, as noted above), the only difference
+will be in the \textbf{coefficients of the off-diagonal} case, and they can
+only depend on the factorization scale $\kappa_F$.
+For this reason, we will not repeat the full construction of the previous
+section, but just adopt a concise notation to make the different coefficients
+explicit in the off-diagonal expressions:
+\begin{equation}
+    S_{12} = \frac{s_m}{m \cdot k_m} \left(c_m(-) \deltagroup{-} +
+        c_m(0) \deltagroup{0} + c_m(+) \deltagroup{+}\right)
+\end{equation}
+where:
+\begin{itemize}
+    \item $k_m$ is the least common multiple of the $\abs{v(\kappa_F)}$, in
+        order to leave integer coefficients in the sum
+    \item $c_m(\kappa_F)$ is the leftover the $1/\abs{v(\kappa_F)}$ once
+        $1/k_m$ has been factored out
+    \item $\deltagroup{\kappa_F}$ is a placeholder for all the terms with that
+        value of $\kappa_F$, as they have been spelled out in the corresponding
+        prescription in \cref{sec:main-ex}
+\end{itemize}
+
+\subsubsection{9 points}
+
+The specification of this prescription is almost the same of the corresponding
+one for the first class:
+\begin{align}
+    \label{eq:5specs-slices}
+    v_9(-) &= v_9(+) = \{-, 0, +\}\\
+    v_9(0) &= \{-, +\}\\
+\end{align}
+Therefore, the resulting \textit{off-diagonal} expression is:
+\begin{align}
+    S_{12} &= \frac{2}{8 \cdot 6} \left(2\ \deltagroup{+} + 2\ \deltagroup{-} + 3\ \deltagroup{0}\right)\\
+        &= \frac{1}{24} \left(2\ \deltagroup{+} + 2\ \deltagroup{-} + 3\ \deltagroup{0}\right)
+\end{align}
+
+\subsubsection{5 points}
+
+For this prescription, the difference is a bit more relevant, mainly in terms
+of the overall factor, since no one of the $v_5(\kappa_F)$ spaces has the
+maximal allowed cardinality, i.e. $3$\footnote{
+    Of course even 3 is completely arbitrary, as explained in
+    \cref{eq:1dim-space}, and the related note, but both classes of
+    prescriptions are perfectly \textit{adaptive} w.r.t.\ this value,
+    i.e.\ their definitions work perfectly fine in the general case.
+}
+\begin{align}
+    \label{eq:9specs-slices}
+    v_5(-) &= v_9(+) = \{0\}\\
+    v_5(0) &= \{-, +\}\\
+\end{align}
+Therefore, the resulting \textit{off-diagonal} expression is:
+\begin{align}
+    S_{12} &= \frac{2}{4 \cdot 2} \left(2\ \deltagroup{+} + 2\ \deltagroup{-} + \deltagroup{0}\right)\\
+        &= \frac{1}{4} \left(2\ \deltagroup{+} + 2\ \deltagroup{-} + \deltagroup{0}\right)
+\end{align}
+
+\subsubsection{$\bar{5}$ points}
+
+It is worth to analyze separately also this prescription: the former two are
+enough to exemplify the regular cases, but this one is slightly
+\textit{degenerate}.
+Indeed, one of the spaces is actually empty.
+\begin{align}
+    \label{eq:5bar-specs-slices}
+    v_5(-) &= v_9(+) = \{-, +\}\\
+    v_5(0) &= \{\}\\
+\end{align}
+We need to generalize a bit the definition given above: $k_m$ is chosen to be
+the least common multiple of all \textbf{non-zero} coefficients.
+Finally, the \textit{off-diagonal} expression for this prescription is:
+\begin{align}
+    S_{12} &= \frac{2}{4 \cdot 2} \left(\deltagroup{+} + \deltagroup{-}\right)\\
+        &= \frac{1}{4} \left(\deltagroup{+} + \deltagroup{-}\right)
+\end{align}
