@@ -14,16 +14,25 @@
 \RequirePackage{array}
 
 % fixed width tables
+\RequirePackage{booktabs}
 \RequirePackage{tabularx}
 \RequirePackage{multirow}
 \RequirePackage{colortbl}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
+% lists
+\RequirePackage{enumerate}
+\RequirePackage{enumitem}
+\setlist[description]{font=\quad\normalfont\itshape\space}
+
 % images
 \RequirePackage{graphicx}
+\RequirePackage{subfig}
 
 % symbols
 \RequirePackage{pifont}
+\let\checkmark\relax
+\RequirePackage{dingbat}
 
 % sub-figures and sub-tables
 \RequirePackage{subfig}
