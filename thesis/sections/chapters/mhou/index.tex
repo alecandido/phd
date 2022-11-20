@@ -13,22 +13,49 @@
 \label{sec:mhou/estimates}
 \input{sections/chapters/mhou/estimates}
 
+\vspace*{20pt}
+\noindent
+\rule{\hsize}{1pt}
+
+\begin{itemize}
+	\item Cacciari-Hudeau
+	\item  Stefano's https://inspirehep.net/literature/1273674
+	\item abc model https://inspirehep.net/literature/1867838
+	\item MCscales https://inspirehep.net/literature/2115313)
+\end{itemize} 
+
 \section{Theory uncertainties in \pdf fits}
 \label{sec:mhou/pdf}
 \input{sections/chapters/mhou/pdf}
-
-\section{New developments}
-\label{sec:mhou/new}
-\input{sections/chapters/mhou/news}
-
-\section{A note on scale variations prescriptions}
-\label{sec:mhou/prescriptions}
-\input{sections/chapters/mhou/prescriptions}
 
 \vspace*{20pt}
 \noindent
 \rule{\hsize}{1pt}
 
-Insert here the prescriptions note, if possible: flattened (single sections,
-maybe still using \lstinline{\paragraph} for a broad subdivision) and shortened
-(removing redundant or unnecessary parts).
+\begin{itemize}
+	\item brief history of MHOU in PDF fitting (cite NNPDF3.1th)
+	\item theory covmat recap (take theory covmat plots from the paper)
+	\item scheme B and fact scale in evolution
+\end{itemize}
+
+\section{New developments}
+\label{sec:mhou/new}
+\input{sections/chapters/mhou/news}
+
+\vspace*{20pt}
+\noindent
+\rule{\hsize}{1pt}
+
+\begin{itemize}
+	\item actual scheme B implementation in \eko - as opposed to exponentiated
+		in \apfel, i.e.\ same as \pegasus but used for B: not an issue, but it
+		differs more from C, common in \mc generators
+	\item what we updated wrt to NNPDF3.1th ($\alpha_s$ function vs value, and
+		how ren scale vars where entering DGLAP)
+	\item what is missing for a new theory covmat
+	\item generate ren scale dependency in grids
+\end{itemize}
+
+\section{Scale variations prescriptions}
+\label{sec:mhou/prescriptions}
+\input{sections/chapters/mhou/prescriptions}
