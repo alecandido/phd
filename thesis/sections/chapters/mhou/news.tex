@@ -61,12 +61,45 @@ function of factorization scale.
 This usage led to a clash in the options used, and a slightly wrong result when
 both variations were applied, and it has been fixed in the current pineline.
 
-Moreover, scheme C can also be obtained without requiring any information about
-scale variations from the generators used.
-\dots
+Moreover, both renormalization scales variations (always coming from the
+partonic cross-sections) and full scheme C (i.e.\ including also factorization)
+can also be accomplished without requiring any information about scale
+variations from the generators used.
+The structure of the scale variations contributions consists substantially in
+scale ratios logarithms multiplying lower order cross-sections, and the
+coefficients of the perturbative expansion of the beta function of the strong
+coupling $\beta(\alpha_s)$ (renormalization) or the splitting
+functions/anomalous dimensions $P(x, \alpha_s)$.
+%
+If the interpolation grid is stored separately by order, it is then possible to
+reconstruct the missing dependence on the two scales, as described in section
+2.3 of \cite{Carli:2010rw}.
+%
+However, the reconstruction of factorization scale dependence requires
+convolutions with increasingly complex distributions (with the perturbative
+order), i.e.\ more or less the same complexity of a \dis coefficient functions
+integration, as it is performed by \yadism.
+But they are also the universal ingredient.
+%
+So, we decided for a mixed approach: keep using scheme B there is no need for
+factorization scale dependence to be stored in or computed from the grids (the
+original reason to advocate for this scheme, over the C option), but we can
+reconstruct the renormalization scale dependence, just relying on a fixed set
+of numerical coefficients ($\beta$ function expansion), completely removing the
+need to obtain scale variations from external providers.
 
 Finally, using both the ingredients provided by the \eko and \yadism libraries,
 we benchmarked our implementations of scale variations with some analytical
-benchmarks, based on the expressions for some specific \dis contributions, at
-order by order and for specific partonic channels.
-\dots
+results, based on the expressions for some specific \dis contributions, order
+by order and for specific partonic channels.
+%
+This already allowed us to resolve the small differences between scheme B and
+C, and confirm that they are always higher order contributions, even though the
+difference in the actual values is only negligible in most of the cases, but
+not all of them, becoming sizeable in specific kinematic corners (from few
+percent up to $\sim 20\%$).
+%
+A few channels are still missing at \nnlo, and the full benchmark will be
+presented in a separate publication about the \mhou treatment with the new
+pineline, possibly the release of the first \nnlo \nnpdf set accounting for
+\mhou.
