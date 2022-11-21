@@ -40,7 +40,7 @@ The first step has been automated long ago, by the generation of the
 predictions, while the second was repeated at any fit, since for each fit is a
 one-time operation (even though it is actually repeated for the number of Monte
 Carlo replicas, or Hessian eigenvectors, whose typical sizes are reported in
-\cref{tab:pdfmem}).
+\cref{tab:eko/pdfmem}).
 
 \begin{table}
     \centering
@@ -52,7 +52,7 @@ Carlo replicas, or Hessian eigenvectors, whose typical sizes are reported in
         \texttt{NNPDF40\_nnlo\_as\_01180}~\cite{NNPDF:2021njg} & 101
     \end{tabular}
     \caption{Selected \pdf{} sets with their respective number of members}
-    \label{tab:pdfmem}
+    \label{tab:eko/pdfmem}
 \end{table}
 
 Actually, both the operations of including evolution in theory grids and \pdf{}
@@ -103,7 +103,7 @@ matching scales $\mu_h$ with a non-trivial matching, that has to be
 computed separately (these are part of the threshold operators).
 
 Typical times required for these calculations in \eko{} are presented in
-\cref{tab:time}.
+\cref{tab:eko/time}.
 As expected the complexity of the calculation grows with perturbative order,
 and so even the time taken increases.
 At \lo{} no matching conditions are needed, while for \nlo{} and
@@ -120,7 +120,7 @@ At \lo{} no matching conditions are needed, while for \nlo{} and
     \end{tabular}
     \caption{Rough estimates of times taken by \eko{}, with an average sized
     $x$-grid of $50$ points and single core.}
-    \label{tab:time}
+    \label{tab:eko/time}
 \end{table}
 
 We consider these time performances satisfactory, even though it is not
@@ -152,7 +152,7 @@ scaling in the number of objects to be evolved.
 Each program should be selected having in mind the specific usage. \eko{} is
 recommended for \pdf{} fitting, and repeated evolution in general.
 
-The time measures in \cref{tab:time} and the rest of this
+The time measures in \cref{tab:eko/time} and the rest of this
 section have been obtained on a regular consumer laptop:
 \begin{verbatim}
 OS: Linux 5.13 Ubuntu 21.10 21.10 (Impish Indri)
