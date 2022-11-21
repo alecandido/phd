@@ -1,2 +1,72 @@
 % !TeX root = ../../../main.tex
 
+The investigation in \cite{NNPDF:2019ubu} stopped at \nlo, because of various
+technical limitations, and the lack of a proper benchmark to assess the
+reliability of available implementations.
+%
+An \nnlo fit based on the theory covariance matrix formalism is still missing,
+and this specific target will be achieved with the tools offered by the new
+theory pineline (cf. \cref{ch:pine}).
+
+A first update regards the actual implementation of scheme B, introduced in
+\cref{sec:mhou/pdf}.
+Indeed, scale variations in scheme A-like fashion has been the first and
+default way they appeared in the evolution programs, starting with programs
+like \pegasus.
+In order to apply them, the \pdf anomalous dimensions have to be evaluated at a
+scale shifted from the usual one, and a few extra terms appears.
+%
+But, being implemented at the anomalous dimensions level, these contributions
+are resummed by the solution of the differential equations, and essentially
+exponentiated (the solution of a linear differential equation is a path ordered
+exponential of the associated kernel).
+%
+But this is not the contribution required by scheme B, and violates the scheme
+C equivalence.
+To get the expanded result, an extra piece has to be multiplied to the evolved
+\pdf, so after solving the differential equation.
+%
+For this reason, \eko ships both the kind of factorization scale variations
+(the only scale variations on the evolution side), dubbed
+\textit{exponentiated} and \textit{expanded}, and the user can choose an actual
+solution conformal to the scheme B prescriptions.
+%
+Since \eko does not produce evolved \pdfs, but evolution operators, the extra
+piece appearing in the expanded case is also implemented at the anomalous
+dimensions level, Mellin inverted, and included as an extra factor in the final
+operator returned as output (i.e.\ it is not returned individually).
+
+Another delicate point is the role of the strong coupling $\alpha_s$ in the
+computation of factorization scale variations.
+Indeed $\alpha_s$ appears in two places: as the parameter of the perturbative
+series, evaluated at the scale of the process, and in the solution of \dglap
+equations.
+%
+Indeed, the running coupling $\alpha_s(Q^2)$ is a monotonically decreasing
+function of the scale, and contains the only scale dependence in the anomalous
+dimensions.
+Therefore, it is convenient to change variable, and solve \dglap as function of
+$\alpha_s$, instead of the factorization scale.
+%
+This usage might suggest a relation between the strong coupling and the
+factorization scale, and then the value used should be affected by the
+related variations.
+Instead, this is only used as a monotonic function, so for its mathematical
+properties and the role in the equation (stemming from anomalous dimensions
+perturbative expansion), and there is no implication about a physical relation.
+%
+Essentially, $\alpha_s$ value is only sensitive to renormalization scale
+variations, that does not affect evolution at all, but it is used there as a
+function of factorization scale.
+This usage led to a clash in the options used, and a slightly wrong result when
+both variations were applied, and it has been fixed in the current pineline.
+
+Moreover, scheme C can also be obtained without requiring any information about
+scale variations from the generators used.
+\dots
+
+Finally, using both the ingredients provided by the \eko and \yadism libraries,
+we benchmarked our implementations of scale variations with some analytical
+benchmarks, based on the expressions for some specific \dis contributions, at
+order by order and for specific partonic channels.
+\dots
