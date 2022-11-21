@@ -1,33 +1,43 @@
 % !TeX root = ../../../main.tex
 
-As we are entering the era of high-energy precision physics, theorists strive
-to keep up with the experimental precision~\cite{Gao:2017yyd}.
-The determination of parton distribution functions (\pdfs) is becoming
-a major limiting factor and theory groups come up with more and more
-involved procedures to improve the extraction~\cite{NNPDF:2017mvq,Hou:2019efy,Bailey:2020ooq}
-eventually aiming for a one percent accuracy~\cite{NNPDF:2021njg}.
-In order to achieve this goal a thorough treatment of theoretical
-uncertainties is required~\cite{AbdulKhalek:2019ihb},
-that so far was challenging with the current
-state-of-the-art codes.
-In this paper, we present \eko{} a new \qcd{} evolution library that matches
-the requirements and desiderata of this new era.
+As briefly introduced in \cref{sec:qcd/dglap}, a central element of a \pdf fit
+consists in \dglap evolution.
+%
+This will be used in two contexts: 
+\begin{enumerate}[label=\roman*.]
+  \item upgrading grids to the so called \fktab{}s (cf. \cref{ch:pine}), to
+    obtain theory predictions at many different scales (matching the
+    experimental results), starting from the \pdf candidate being minimized at
+    a single fitting scale\footnote{
+      Or, equivalently, evolving online during the fit at all those scales.
+    }
+  \item evolving the result of the fit, to distribute \pdf grids for the users
+    already at all the potentially useful scales (interpolating among a finite
+    sets of values)
+\end{enumerate}
 
-\eko{} solves the evolution
-equations~\cite{Altarelli:1977zs,Gribov:1972ri,Dokshitzer:1977sg} in Mellin
-space (cf.\ \cref{sec:theory:mellin}) to allow for simpler solution algorithms
-(both iterative and approximated).
-Yet, it provides result in momentum fraction space (cf.\
+While working on new \pdf fits and related issues, a certain set of limitations
+of the existing \dglap evolution libraries has been collected, and for this
+reason we decided to write a new \qcd{} evolution library that matches the
+requirements of a \pdf fitting collaboration, and similar fits as well.
+
+We called it \acrfull{eko}, because of the main focus is not to compute
+evolution kernel operators (EKO) which are independent of the initial boundary
+conditions but only depend on the given theory settings.
+In such manner, the operators can thus be computed once, stored on disk and
+then reused in the actual application. This method can lead to a significant
+speed-up when \pdfs are repeatedly being evolved, as it is customary in \pdf{}
+fits.
+This approach has been introduced by
+\fk{}~\cite{Ball:2008by,Ball:2010de,DelDebbio:2007ee} and it is further
+developed here.
+%
+Furthermore, we decided to solve the evolution equations~ in Mellin space (cf.\
+\cref{sec:theory:mellin}) to allow for simpler solution algorithms (both
+iterative and approximated).
+Yet, \eko provides result in momentum fraction space (cf.\
 \cref{sec:theory:interpolation}) to allow an easy interface with existing
 codes.
-
-\eko{} computes evolution kernel operators (EKO) which are independent of
-the initial boundary conditions but only depend on the given theory settings.
-The operators can thus be computed once, stored on disk and then reused in the
-actual application. This method can lead to a significant speed-up when \pdfs
-are repeatedly being evolved, as it is customary in \pdf{} fits.
-This approach has been introduced by \fk{}~\cite{Ball:2008by,Ball:2010de,DelDebbio:2007ee}
-and it is further developed here.
 
 \eko{} is open-source, allowing easy interaction with users
 and developers.
@@ -89,9 +99,10 @@ high quality of coding standard and a routinely checked code basis.
 \begin{center}
 \url{https://github.com/N3PDF/eko}
 \end{center}
-In the following we do not attempt to give a complete overview over all
-provided features and options, but limit ourselves to a brief review. The
-full documentation instead can be accessed at:
+The \eko documentation contains the full \api reference, tutorials to get
+started with \eko calculations, and far more complete discussion about the
+underlying theory and numerical techniques adopted.
+It can be accessed at:
 \begin{center}
 \url{https://eko.readthedocs.io/en/latest/}
 \end{center}
