@@ -71,3 +71,55 @@ This does not solve the arbitrariness that remains in the connection between
 the estimate and the real value, but it gives a way to compare the impact on
 different calculations, since the two estimates will share the same arbitrary
 value.
+
+The second category began with \cite{Cacciari:2011ze}, that formulated a
+Bayesian model to extrapolate the prediction value for unknown orders, updating
+it with the known ones.
+%
+There are two main goals for this kind of approaches: getting rid of the
+scale variations arbitrariness, and extract more information than a single
+shift estimate.
+Indeed, the result of Bayesian inference is always a posterior distribution of
+some quantities, or something derived from it.
+%
+The probability density in principle contains more information, and it does not
+have to rely on some Gaussian assumption (as will be done for example in
+\cref{sec:mhou/pdf}), that while reasonable in most situations, can drastically
+fail for some edge cases.
+%
+But in order to infer these quantities, two inputs are required: a prior
+distribution and a conditional likelihood, and unless some theoretical
+knowledge about the perturbative series is consumed in their definition, they
+are arbitrary as well.
+
+In that work in particular, the authors assume that the one and only link
+between different perturbative orders is a common upper bound, dubbed
+$\bar{c}$.
+They assume a certain distribution for the orders, dependent uniquely on this
+parameter, and motivated only by its simplicity (admittedly forced because of
+the simplification of the result), and assume a flat non-normalizable prior in
+$\log(\bar{c})$, and try to estimate the unknown orders passing through the
+distribution of the $\bar{c}$ parameter.
+%
+An entire section is spent motivating the various choices, but the guiding
+principles are just simplicity and technical benefits.
+So they avoid the choice of quantitative arbitrary parameters, but trading for
+the choice of qualitatively arbitrary functions.
+%
+This approach has been further investigated by other authors, proposing
+empirical Bayes methods to set the optimal scale of the parameter $\bar{c}$
+\cite{Forte:2013mda}, considering different models, with more constraining
+assumptions, or consuming the same information contained in scale variations
+approach \cite{Bonvini:2020xeo}.
+Another option is always to increase the number of parameters
+\cite{Duhr:2021mfd}, to obtain a different compromise between flexibility and
+simplicity.
+
+All these approaches are designed to be applied on observables predictions, but
+they need some further methodological developments to be propagated on the \pdf
+determination.
+In the following, I will focus on the \textit{theory covariance matrix}
+method, introduced by the \nnpdf collaboration, but this is not the only option
+available, since recently other approaches have been proposed, based on
+probabilistic reweighting and post-fit selection \cite{Kassabov:2022orn} or the
+introduction of nuisance parameters in the fit \cite{McGowan:2022nag}.
