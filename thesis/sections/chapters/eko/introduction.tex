@@ -3,13 +3,13 @@
 As briefly introduced in \cref{sec:qcd/dglap}, a central element of a \pdf fit
 consists in \dglap evolution.
 %
-This will be used in two contexts: 
+During a fit, this will be used in two contexts: 
 \begin{enumerate}[label=\roman*.]
   \item upgrading grids to the so called \fktab{}s (cf. \cref{ch:pine}), to
     obtain theory predictions at many different scales (matching the
     experimental results), starting from the \pdf candidate being minimized at
     a single fitting scale\footnote{
-      Or, equivalently, evolving online during the fit at all those scales.
+      Or, equivalently, evolving online (i.e.\ during the fit) at all those scales.
     }
   \item evolving the result of the fit, to distribute \pdf grids for the users
     already at all the potentially useful scales (interpolating among a finite
@@ -21,31 +21,23 @@ of the existing \dglap evolution libraries has been collected, and for this
 reason we decided to write a new \qcd{} evolution library that matches the
 requirements of a \pdf fitting collaboration, and similar fits as well.
 
-We called it \acrfull{eko}, because of the main focus is not to compute
-evolution kernel operators (EKO) which are independent of the initial boundary
-conditions but only depend on the given theory settings.
-In such manner, the operators can thus be computed once, stored on disk and
+We called it \acrfull{eko}, because of the main focus is not to compute such
+operators which are independent of the initial boundary conditions, and only
+depend on the given theory parameters.
+In such manner, the operators can be computed only once, stored on disk and
 then reused in the actual application. This method can lead to a significant
 speed-up when \pdfs are repeatedly being evolved, as it is customary in \pdf{}
 fits.
 This approach has been introduced by
-\fk{}~\cite{Ball:2008by,Ball:2010de,DelDebbio:2007ee} and it is further
-developed here.
+\fk~\cite{Ball:2008by,Ball:2010de,DelDebbio:2007ee} and it is further developed
+here (with \fktab{}s cited above being the output of \fk).
 %
 Furthermore, we decided to solve the evolution equations~ in Mellin space (cf.\
 \cref{sec:theory:mellin}) to allow for simpler solution algorithms (both
 iterative and approximated).
-Yet, \eko provides result in momentum fraction space (cf.\
+Yet, results are provided in momentum fraction space (cf.\
 \cref{sec:theory:interpolation}) to allow an easy interface with existing
 codes.
-
-\eko{} is open-source, allowing easy interaction with users
-and developers.
-The project comes with a clean, modular, and maintainable codebase that guarantees
-easy inspection and ensures it is future-proof.
-We provide both a user and a developer documentation. So, not only a user
-manual, but even the internal documentation is published, with an effort to make
-it as clear as possible.
 
 \eko{} currently implements the leading order (\lo{}),
 next-to-leading order (\nlo{}) and next-to-next-to-leading order (\nnlo{})
@@ -56,46 +48,47 @@ can be achieved with relative ease.
 This accuracy is needed to match the precision in the determination of the
 matrix elements for several processes at LHC (see e.g.\ \cite{Duhr:2021vwj} and
 references therein).
-We also expose the associated variations of the various scales.
-
-\eko{} correctly treats intrinsic heavy quark distributions,
-required for studies of the heavy quark content of the nucleon~\cite{Ball:2022qks}.
-While the treatment of intrinsic distributions in the evolution equations is
+We also expose the associated variations of the various scales (their role in
+\pdfs is exposed in \cref{ch:mhou}, and specifically in \cref{sec:mhou/pdf}).
+%
+Also the correct treatment of intrinsic heavy quark distributions is supplied.
+While the role of this distributions in the evolution equations is
 mathematically simple, as they decouple in a specific basis, their integration
-into the full solution, including matching conditions, is non-trivial.
-We also implement backward evolution, again including the non-trivial
-handling of matching conditions.
+into the full solution, including matching conditions, is non-trivial. We also
+implement backward evolution, again including the non-trivial handling of
+matching conditions.
+Both have been already used for studies of the heavy quark content of the
+nucleon~\cite{Ball:2022qks}, that is exposed in details in \cref{ch:ic}.
 
-\eko{} is another corner stone in a suite of tools that aims to
-provide new handles to the theory predictions in the \pdf{} fitting
-procedure. To obtain the theory predictions in a typical fitting procedure,
-first, one needs to evolve a candidate \pdf{} up to the process scale,
-and then convolute it with the respective coefficient function.
-The process specific coefficient function can be stored in the
-\pineappl{} format~\cite{Carrazza_2020,christopher_schwan_2022_5846421}.
-\eko{} is interfaced with \pineappl{} to produce
-interpolation grids that can be directly used in a \pdf{} fit,
-avoiding to do the evolution on the fly, but beforehand.
-\eko{} is also powering \yadism{}~\cite{yadism} a new \dis{}
-coefficient function library.
+It is also relevant to remark that \eko is another corner stone in a suite of
+tools that aims to provide new handles to the theory predictions in the \pdf
+fitting procedure.
+This consists exactly in the calculation of those \fktab{}s mentioned above,
+and described in \cref{ch:pine}.
+But it is worth explicitly mentioning that \eko is also powering
+\yadism~\cite{yadism}, the \dis coefficient function library described in
+\cref{ch:dis}.
 
-\eko{} adopts Python as a programming language opting for a high-level language
-which is easy to understand for newcomers.
+We adopted Python as the main development language, opting for a high-level one
+which is easy to understand and learn for newcomers.
 In particular, with the advent of Data Science and Machine Learning, Python has
 become the language of choice for many scientific applications, mainly driven
-by the large availability of packages and frameworks.
-We decided to write a code that can be used by everyone who needs \qcd{}
+by the large availability of packages and frameworks, and in particular some
+high-quality and widespread ones.
+We decided to write a code that can be used by everyone who needs \qcd
 evolution, and to make it possible for applications that are not supported yet
-to be built on top of the provided tools and ingredients.
+to be built on top of the shipped tools and ingredients.
 For this reason the code is developed mainly as a library, that contains
 physics, math, and algorithmic tools, such as those needed for managing or
-storing the computed operators. As an example we also expose a runner, making
-use of the built library to deliver an actual evolution application. 
-We apply modern best practices for software development, such as automated
-tests, Continuous Integration (CI), and Continuous Deployment (CD), to ensure a
-high quality of coding standard and a routinely checked code basis.
+storing the computed operators.
+As an example we also expose a runner, making use of the built library to
+deliver an actual evolution application. 
+\newline
 
-\paragraph{References} The open-source repository is available at:
+\eko is open-source, allowing easy interaction with users and developers.
+The project comes with a clean, modular, and maintainable codebase that
+guarantees easy inspection and ensures it is future-proof.
+The repository is publicly available, and located at:
 \begin{center}
 \url{https://github.com/N3PDF/eko}
 \end{center}
