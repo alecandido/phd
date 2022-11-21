@@ -183,12 +183,24 @@ factorization scale variations, described in section 3.3 of
 
 The schemes main feature are:
 \begin{enumerate}[label=\Alph*.]
-	\item including and resumming scale variations in \dglap evolution,
-		refitting the border condition
-	\item including and expanding \dots
-	\begin{itemize}
-		\item pros: \dots
-		\item cons: \dots
-	\end{itemize}
-	\item includinnd expanding \dots
+  \item including and resumming factorization scale variations in \dglap
+    evolution, refitting the border condition
+	\item including them in \dglap evolution, but expanding them out
+  \item keeping the variations in the partonic cross-sections, together with
+    renormalization ones
 \end{enumerate}
+
+The main disadvantage of scheme A is refitting the border condition, that is a
+computationally expensive operation (and possibly a delicate one, because of
+the interplay with fit machinery).
+But both scheme A and B have the advantage of being on the universal side of
+factorization, the \pdf side, while the other one is process dependent.
+%
+Indeed, applying scheme C might require to implement scale variations
+consistently in all the \mc generators used to obtain predictions.
+%
+The default choice of \nnpdf has been scheme B, since it has the same
+advantages of scheme A, concerning universality, but includes expanded scale
+variations, that should be almost equivalent to scheme C ones, because the
+expanded corrections are the same, applied on one or the other side of the
+convolution (\pdf or partonic cross-section).
