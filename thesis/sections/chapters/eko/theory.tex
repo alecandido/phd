@@ -1,42 +1,31 @@
 % !TeX root = ../../../main.tex
 
-We do not attempt to give a full review of the underlying theory
-here as it is known since a long time and discussed extensive elsewhere
-(see e.g.\ \cite{Peskin:1995ev,Ellis:1996mzs} and references therein).
-We refer the interested reader to the specific references given in the following and to
-the accompanying online documentation where instead we give a detailed
-overview. All sections in the following have an equivalent section in
-the online documentation. Also the respective code implementations of the
-various ingredients contain relevant information and are also accessible
-in the documentation via the API section.
-
-The central equations that \eko{} is solving are the
-Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (\dglap) evolution
-equations~\cite{Altarelli:1977zs,Gribov:1972ri,Dokshitzer:1977sg} given by
+The central equations that \eko is solving are the \acrfull{dglap} evolution
+equations, whose full expression is:
 \begin{equation}
-	\muF^2 \dv{\vb f}{\muF^2}{}(x,\muF^2) = \vb P (a_s(\muR^2),\muF^2) \otimes \vb f(\muF^2)
+	\muF^2 \dv{\vb f}{\muF^2}{}(x,\muF^2) = \vb P (a_s(\mu^2),\muF^2) \otimes \vb f(\muF^2)
 	\label{eq:eko/dglap}
 \end{equation}
 where $\vb f(x,\muF^2)$ is a vector of \pdfs over flavor space with $x$ the
 momentum fraction and $\muF^2$ the factorization scale.
 The main ingredients to \cref{eq:eko/dglap} are the Altarelli-Parisi splitting
-functions $\vb P(a_s(\muR^2),x,\muF^2)$~\cite{Moch:2004pa,Vogt:2004mw}, which
+functions $\vb P(a_s(\mu^2),x,\muF^2)$~\cite{Moch:2004pa,Vogt:2004mw}, which
 are matrices over the flavor space.
 Finally, $\otimes$ denotes the multiplicative (or Mellin) convolution.
 
-The splitting functions $\vb P(a_s(\muR^2),x,\muF^2)$ expose a perturbative
-expansion in the strong coupling $a_s(\mu_R^2)$:
+The splitting functions $\vb P(a_s(\mu^2),x,\muF^2)$ expose a perturbative
+expansion in the strong coupling $a_s(\mu^2)$:
 \begin{align}
-	\vb P(a_s(\muR^2),x,\muF^2) = a_s(\muR^2) \vb P^{(0)}(x,\muF^2)
-	+ \qty[a_s(\muR^2)]^2 \vb P^{(1)}(x,\muF^2)
-	+ \qty[a_s(\muR^2)]^3 \vb P^{(2)}(x,\muF^2)
-	+ \ldots
+  \vb P(a_s(\mu^2),x,\muF^2) =& a_s(\mu^2) \vb P^{(0)}(x,\muF^2)\nonumber\\
+  &+ \qty[a_s(\mu^2)]^2 \vb P^{(1)}(x,\muF^2)\nonumber\\
+  &+ \qty[a_s(\mu^2)]^3 \vb P^{(2)}(x,\muF^2)\nonumber\\
+  &+ \order{\qty[a_s(\mu^2)]^4}
 \end{align}
 which is currently known at \nnlo{}~\cite{Moch:2004pa,Vogt:2004mw,Blumlein:2021enk} and is under
 investigation for \nnnlo{}~\cite{Moch:2021qrk}.
-In a first step, the renormalization scale $\muR$ and the factorization scale
-$\muF$ can be assumed to be equal $\muR = \muF$ and the renormalization scale
-dependence can be restored later on. The variation of the ratio $\muR/\muF$ can
+In a first step, the renormalization scale $\mu$ and the factorization scale
+$\muF$ can be assumed to be equal $\mu = \muF$ and the renormalization scale
+dependence can be restored later on. The variation of the ratio $\mu/\muF$ can
 be considered as an estimated to missing higher order
 uncertainties (\mhou{})~\cite{AbdulKhalek:2019ihb}.
 
