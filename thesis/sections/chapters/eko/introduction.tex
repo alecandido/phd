@@ -21,9 +21,9 @@ of the existing \dglap evolution libraries has been collected, and for this
 reason we decided to write a new \qcd{} evolution library that matches the
 requirements of a \pdf fitting collaboration, and similar fits as well.
 
-We called it \acrfull{eko}, because of the main focus is not to compute such
-operators which are independent of the initial boundary conditions, and only
-depend on the given theory parameters.
+We called it \acrfull{eko}, because the main focus is to compute such
+operators, which are independent of the initial boundary conditions, and only
+depend on the selected theory parameters.
 In such manner, the operators can be computed only once, stored on disk and
 then reused in the actual application. This method can lead to a significant
 speed-up when \pdfs are repeatedly being evolved, as it is customary in \pdf{}
@@ -50,13 +50,14 @@ matrix elements for several processes at LHC (see e.g.\ \cite{Duhr:2021vwj} and
 references therein).
 We also expose the associated variations of the various scales (their role in
 \pdfs is exposed in \cref{ch:mhou}, and specifically in \cref{sec:mhou/pdf}).
-%
-Also the correct treatment of intrinsic heavy quark distributions is supplied.
-While the role of this distributions in the evolution equations is
+
+The correct treatment of intrinsic heavy quark distributions is also properly
+taken into account.
+While the role of these distributions in the evolution equations is
 mathematically simple, as they decouple in a specific basis, their integration
-into the full solution, including matching conditions, is non-trivial. We also
-implement backward evolution, again including the non-trivial handling of
-matching conditions.
+into the full solution, including matching conditions, is non-trivial.
+We implement backward evolution too, again including the non-trivial handling
+of all matching conditions.
 Both have been already used for studies of the heavy quark content of the
 nucleon~\cite{Ball:2022qks}, that is exposed in details in \cref{ch:ic}.
 
@@ -69,8 +70,8 @@ But it is worth explicitly mentioning that \eko is also powering
 \yadism~\cite{yadism}, the \dis coefficient function library described in
 \cref{ch:dis}.
 
-We adopted Python as the main development language, opting for a high-level one
-which is easy to understand and learn for newcomers.
+We adopted Python as the main development language, opting for a high-level
+one, which is easy to understand and learn for newcomers.
 In particular, with the advent of Data Science and Machine Learning, Python has
 become the language of choice for many scientific applications, mainly driven
 by the large availability of packages and frameworks, and in particular some
