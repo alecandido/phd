@@ -1,6 +1,6 @@
 To bridge between the desired $x$-space input/output and the internal
 Mellin representation, we do a Lagrange-Interpolation as sketched in
-\cref{sec:theory:interpolation}
+\cref{sec:eko/theory-interpolation}
 (and detailed in the \href{https://eko.readthedocs.io/en/latest/}{online documentation}).
 We recommend a grid of at least 50 points with
 linear scaling in the large-$x$ region ($x \gtrapprox 0.1$) and with logarithmic
@@ -32,5 +32,6 @@ The spikes for $x\to 1$ are not relevant since the \pdfs are intrinsically
 small in this region ($\vb f\to 0$) and thus small numerical differences
 are enhanced.
 
-Also note that the results of \cref{sec:pheno:bench} (i.e.\ \cref{fig:LHAbench,fig:Apfelbench_pto,fig:Pegasusbench_pto}) confirm that
-the interpolation error can be kept below the benchmark accuracy.
+Also note that the results of \cref{sec:eko/pheno-bench} (i.e.\
+\cref{fig:eko/LHAbench,fig:eko/Apfelbench_pto,fig:eko/Pegasusbench_pto})
+confirm that the interpolation error can be kept below the benchmark accuracy.

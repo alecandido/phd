@@ -15,7 +15,7 @@ from the last intermediate matching scale to $\mu_F^2$; finally
 they are composed together.
 
 \subsection{Performance Motivations and Operator Specificity}
-\label{app:code:motiv}
+\label{sec:eko/perf-motiv}
 
 Before diving into the details of \eko{} performances there is a fundamental
 point that has to be taken into account: \eko{} is somehow unique as an
@@ -90,7 +90,7 @@ the cost of \dglap{} evaluation is paid only once (even though we are conscious
 that this is mainly beneficial for \pdf{} fitting).
 
 \subsection{Computation time}
-\label{app:code:time}
+\label{sec:eko/comp-time}
 
 As we said above the computation almost happens independently for each target $\mu_F^2$
 and the amount of time required scales almost linearly with the number of requested
@@ -125,7 +125,7 @@ At \lo{} no matching conditions are needed, while for \nlo{} and
 
 We consider these time performances satisfactory, even though it is not
 straightforward to compare \eko{} with the other evolution codes, as mentioned
-in \cref{app:code:motiv}. As an example, \nnlo{}
+in \cref{sec:eko/perf-motiv}. As an example, \nnlo{}
 evolution in $\mu_F^2 = \SI[parse-numbers=false]{1.65^2}{Gev^2} \to
 \SI{100}{GeV^2}$ crossing the bottom matching at
 $\SI[parse-numbers=false]{4.92^2}{Gev^2}$ takes $\sim \SI{60}{s} + \SI{135}{s}$
@@ -163,7 +163,7 @@ None one of them is a careful benchmark, i.e.\ repeated multiple times, but is m
 meant to show an order of magnitudes comparison.
 
 \subsection{Memory footprint}
-\label{app:code:memory}
+\label{sec:eko/memory}
 
 Memory usage is dominated by the size of the final object produced,
 since a much smaller internal representation is used during the computation.
@@ -177,7 +177,7 @@ with the amount of $\mu_F^2$ requested.
 The dependency on the size of the $x$-grid is roughly quadratic.
 
 \subsection{Storage}
-\label{app:code:storage}
+\label{sec:eko/storage}
 
 For permanent storage similar considerations applies with respect to the
 memory object.
@@ -198,9 +198,9 @@ of the final tensor (patches \& matching) can be computed by separate jobs, and
 dispatched to different processors.
 They just need to be joined at the very end in a simple linear algebra step.
 
-Notice that the time measures presented in \cref{app:code:time} are obtained
-with a fully sequential computation on a single processor, the only one
-available at present time.
+Notice that the time measures presented in \cref{sec:eko/comp-time} are
+obtained with a fully sequential computation on a single processor, the only
+one available at present time.
 
 \paragraph{Memory} Since both the computation and the consumption of an \eko{}
 can be done one $\mu_F^2$ at a time, it is possible to store each rank 4 tensor

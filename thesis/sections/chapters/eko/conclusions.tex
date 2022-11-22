@@ -10,7 +10,7 @@ consistent behavior), in order to have a more flexible framework where to
 implement new essential features for physics study (more on this in the Outlook
 at the end of this section).
 Benchmarks with already existing and widely used codes are shown in
-\cref{sec:pheno:bench}, and demonstrated to be successful.
+\cref{sec:eko/pheno-bench}, and demonstrated to be successful.
 Further, the multiple options and configurations available are presented in
 subsequent sections and discussed, all leading to known and understood
 behaviors.
@@ -41,11 +41,11 @@ needed for usage in the other codes.
 All the programs listed are able to preform backward evolution in \ffns{}, that
 consists in swapping the integral evolution bounds, but the \vfns{} backward
 evolution is a unique feature of \eko{}, which involves the non-trivial
-inversion of the matching matrix, as outlined in \cref{sec:theory:matching}.
+inversion of the matching matrix, as outlined in \cref{sec:eko/theory-matching}.
 
 The reason why \eko{} is an operator-first framework is discussed in detail in
-\cref{app:code:motiv}, but essentially it makes \eko{} particularly suited for
-our target: repeated evaluation of evolution for \pdf{} fitting.
+\cref{sec:eko/perf-motiv}, but essentially it makes \eko{} particularly suited
+for our target: repeated evaluation of evolution for \pdf{} fitting.
 Producing only operators makes \eko{} less competitive for single one-shot
 applications, but the optimal scaling with the size of the task (practically
 constant, since the time consumed is dominated by the operator calculation)
