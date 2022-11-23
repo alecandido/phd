@@ -1,16 +1,15 @@
-\eko{} can perform calculation in a fixed flavor number scheme (\ffns{}) where
-the number of active or light flavors $n_f$ is constant. This means that both
-the beta function $\beta^{(n_f)}(a_s)$ and the anomalous dimension
-$\bm{\gamma}^{(n_f)}(a_s)$ in \cref{eq:eko/dglap2} are constant with respect to
-$n_f$.
+\eko{} can perform calculation in a \acrfull{ffns} where the number of active
+or light flavors $n_f$ is constant. 
+This means that both the beta function $\beta^{(n_f)}(a_s)$ and the anomalous
+dimension $\bm{\gamma}^{(n_f)}(a_s)$ in \cref{eq:eko/dglap2} are constant with
+respect to $n_f$.
 However, this approximation is likely to fail either in the high energy region
 $\muF^2 \to \infty$ for a small number of active flavors, or to fail in the low
 energy region $\muF^2 \to \Lambda_{\text{QCD}}^2$ for a large number of active
 flavors.
 
-This can be overcome by using a variable flavor number scheme (\vfns{}) that
-changes the number of active flavors when the scale $\muF^2$ crosses a
-threshold $\mu_h^2$.
+This can be overcome by using a \acrfull{vfns} that changes the number of
+active flavors when the scale $\muF^2$ crosses a threshold $\mu_h^2$.
 This then requires a matching procedure when changing the number of active
 flavors, and for the \pdfs we find
 \begin{align}
@@ -30,8 +29,9 @@ The inversion of the basis rotation matrices $\mathbf{R}^{(n_f)}$ is simple,
 whereas this is not true for the \ome $\mathbf{\tilde A}^{(n_f)}$ especially
 in case of \nnlo{} or higher order evolution.
 In \eko{} we have implemented two different strategies to perform the inverse
-matching: the first one is a numerical inversion, where the OMEs are inverted
-exactly in Mellin space, while in the second method, called \texttt{expanded},
+matching: the first one is a numerical inversion, where the \acrshortpl{ome}
+are inverted exactly in Mellin space, while in the second method, called
+\texttt{expanded},
 the matching matrices are inverted through a perturbative expansion in $a_s$,
 given by:
 \begin{align}
