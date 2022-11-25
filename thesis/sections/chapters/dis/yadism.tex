@@ -43,20 +43,20 @@ present study, and highlight benchmarking studies carried out.
 
 \paragraph{Grid formalism.}
 %
-As indicated by Eq.~(\ref{eq/dis:sfs_pqcd}), in the perturbative regime DIS
+As indicated by \cref{eq:dis/sfs_pqcd}, in the perturbative regime DIS
 structure functions are given by the factorised convolution of
 process-dependent partonic scattering cross-sections and of process-independent
 parton distribution functions,
 \begin{equation}
-\label{eq/dis:sfs_pqcd_app}
 F_i(x,Q^2) = \sum_{j}\int_x^1 \frac{dz}{z}\, C_{i,j}(z,\alpha_s(Q^2))f_j\left( \frac{x}{z},Q^2\right) \equiv
-C_{j; i} \otimes f_j\, ,
+C_{j; i} \otimes f_j
+\label{eq:dis/sfs_pqcd_app}
  \end{equation}
  where $j$ is an index that runs over all possible partonic initial states and
  $C_{i,j}$ is the process-dependent, but target-independent, coefficient
  function, given by an expansion in the QCD coupling $\alpha_s(Q^2)$.
  %
- In the third term of Eq.~(\ref{eq/dis:sfs_pqcd_app}) and in the following, sum
+ In the third term of \cref{eq:dis/sfs_pqcd_app} and in the following, sum
  over repeated indices is implicit.
  
 As standard for fast interpolation techniques developed in the context of \pdf{}
@@ -67,8 +67,8 @@ f_j(\xi) = \sum_\alpha p_\alpha(\xi) f(\xi_\alpha) \equiv p_\alpha(\xi) f_\alpha
 \end{equation}
 with $p_\alpha(x)$ some suitable polynomial basis.
 %
-This way the convolution in Eq.~(\ref{eq/dis:sfs_pqcd_app}) can be replaced by
-a simple contraction
+This way the convolution in \cref{eq:dis/sfs_pqcd_app} can be replaced by a
+simple contraction
 \begin{equation}
 \label{app/dis:grid_formalism}
 F_i = C_{j; i} \otimes f_j = C_{j \alpha; i} \cdot f_\alpha \, ,\qquad
@@ -81,8 +81,8 @@ In \yadism the polynomial interpolation basis is  provided by \textsc{\small
 EKO}.
 %
 The same grid structure can be generalised to accomodate extensions of the
-basic structure function calculation in Eq.~(\ref{eq/dis:sfs_pqcd_app}) such as
-heavy quark mass effects, renormalisation and factorisation scale
+basic structure function calculation in \cref{eq:dis/sfs_pqcd_app} such as
+heavy quark mass effects, renormalization and factorization scale
 variations~\cite{NNPDF:2019vjt,NNPDF:2019ubu}, and target mass corrections,
 among other effects.
 %
@@ -90,11 +90,10 @@ Isospin modifications, required to evaluate the neutron, deuteron, or heavy
 nuclear structure functions, can be accounted for either at the coefficient
 function level or at the input \pdf{} level.
 
-The grid formalism summarised schematically in
-Eq.~(\ref{app/dis:grid_formalism}) requires as input the corresponding DIS
-coefficient functions.
+The grid formalism summarised schematically in \cref{eq:dis/grid_formalism}
+requires as input the corresponding DIS coefficient functions.
 %
-Table~\ref{tab/dis:coefffuncs} provides an overview of the different types and
+\cref{tab:dis/coefffuncs} provides an overview of the different types and
 accuracy of the DIS coefficient functions currently implemented in \yadism.
 %
 For each perturbative order (NLO, NLO, and N3LO) we indicate  the
@@ -115,19 +114,15 @@ variable flavour number scheme (GM-VFN)~\cite{Forte:2010ta}, as well as in the
 fixed-flavour number (FFN) and zero-mass variable-flavour number (ZM-VFN)
 schemes.
 %
-We point out that the list in Table~\ref{tab/dis:coefffuncs} is going to be
-updated as new features are added, and therefore the interested user is
-encouraged to consult the online documentation for an up-to-date states of
-available coefficient functions.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{sections/chapters/dis/coeff-funcs-tab}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We point out that the list in \cref{tab:dis/coefffuncs} is going to be updated
+as new features are added, and therefore the interested user is encouraged to
+consult the online documentation for an up-to-date states of available
+coefficient functions.
 
 \paragraph{Scale variations.}
 %
 As done by other public DIS tools, \yadism also provides the option of varying
-the renormalisation and factorisation scales in the calculation.
+the renormalization and factorization scales in the calculation.
 %
 The code follows the definitions of scale variations
 from~\cite{vanNeerven:2000uj,vanNeerven:2001pe}, which are consistent with the
@@ -160,15 +155,15 @@ the results of~\cite{NNPDF:2019ubu}, finding good agreement.
 The DIS structure function predictions provided by \yadism have been thoroughly
 benchmarked  with those from \apfel and \textsc{\small QCDNUM}.
 %
-Specifically, we have verified that we can reproduce the \apfel
-predictions for those coefficient functions listed in
-Table~\ref{tab/dis:coefffuncs} which are available in \apfel.
+Specifically, we have verified that we can reproduce the \apfel predictions for
+those coefficient functions listed in \cref{tab:dis/coefffuncs} which are
+available in \apfel.
 %
 Excellent agreement is found in all cases considered, with some residual
 differences well understood as will be discussed in more detail
 in~\cite{yadism}.
 %
-To illustrate this good agreement, Fig.~\ref{fig/dis:benchmark-apfel-yadism}
+To illustrate this good agreement, \cref{fig:dis/benchmark-apfel-yadism}
 displays the comparison of the \yadism predictions for DIS
 structure functions at NNLO with the corresponding ones from \textsc{\small
 APFEL}.
@@ -211,6 +206,6 @@ A similar level of agreement is obtained for other bins of DIS datasets.
     target from CHORUS, collider neutral-current positron-proton DIS from HERA,
     and collider charged-current electron-proton DIS from HERA.
   }    
-  \label{fig/dis:benchmark-apfel-yadism}
+  \label{fig:dis/benchmark-apfel-yadism}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

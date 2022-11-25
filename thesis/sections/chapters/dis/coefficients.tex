@@ -1,2 +1,182 @@
 % !TeX root = ../../../main.tex
 
+Using the collinear factorization theorem of \dis, \cite{Collins:1989gx}, we
+can write any hadronic structure function $F_k$ in terms of \pdf
+$f_j(\xi,\mu_F^2)$ and the coefficient functions $c_{j,k}(z,
+Q^2,\mu_F^2,\mu_R^2)$ (acting as \textit{partonic structure functions}) using a
+convolution over the first argument:
+\begin{equation}
+    F_k^{bb'}(x,Q^2,\mu_F^2,\mu_R^2) = \sum_{p} f_p(\mu_F^2) \otimes_x c_{k,p}^{bb'}(Q^2,\mu_F^2,\mu_R^2)
+\end{equation}
+where the sum runs over all contributing partons $p\in\{g,q,\bar q\}$. In the
+following we will assume that a quark $\hat q$ is hit by the boson. Note that
+this is \textit{independent} of the incoming parton $p$.
+%
+The dependency on the renormalization and factorization scales has to be
+propagated consistently, in order to be able to use them as an estimate for
+\mhou (cf. \cref{ch:mhou}).
+For those cases in which scale variations are not relevant, it is safe to
+consider $\mu_R^2 = \mu_F^2 = Q^2$.
+
+Using \pqcd, it is possible to expand the coefficient functions in powers of
+the strong coupling $a_s(\mu_R^2) = \frac{\alpha_s(\mu_R^2)}{4\pi}$:
+\begin{equation}
+    c_{k,p}^{bb'}(z, Q^2,\mu_F^2,\mu_R^2) = \sum_{l=0} a_s^l(\mu_R^2) c_{k,p}^{bb',(l)}(z, Q^2,\mu_F^2,\mu_R^2)
+\end{equation}
+In practice, different normalization might be used.
+
+Similar to the splitting on the leptonic side we have to split on the partonic
+side again:
+\begin{align}
+    c_{k,p}^{bb'} &= g_{\hat q,b}^V g_{\hat q,b'}^V c_{k,p}^{VV} + g_{\hat q,b}^A g_{\hat q,b'}^A c_{k,p}^{AA} \qquad~ k\in\{1,2,L\} \\
+    c_{3,p}^{bb'} &= g_{\hat q,b}^V g_{\hat q,b'}^A c_{3,p}^{VA}
+\end{align}
+
+The main categories for coefficients the same of Structure Functions, i.e.:
+\begin{itemize}
+\item the \textbf{process} (\em/\nc/\cc)
+\item the \textbf{kind} (F2/L/3)
+\item the \textbf{heavyness} involved; it slightly differ from that of
+  structure functions, since it is referred to individual contributions
+  \begin{itemize}
+    \item \textit{light}, when no mass is involved
+    \item \textit{heavy}, when mass effects are accounted for, with a single
+      quark mass (two mass effects are rather negligible, and very complex to
+      include), since (it is the same for every flavor, just depending on the
+      numerical value of the mass as a parameter)
+    \item \textit{asymptotic}, that are the limit of heavy contributions, to
+      subtract the double counting in \gmvfns schemes, like \fonll
+    \item \textit{intrinsic}, in which the incoming parton is a massive one
+      (can also combine with asymptotic)
+  \end{itemize}
+\item but there is a new one: the \textbf{channel} (ns/ps/g), and it is related to the
+  incoming parton:
+  \begin{itemize}
+    \item if the \ew boson it is coupling to a \textit{quark} line connected to the incoming
+      one, than each PDF it's contributing proportionally to his charge (e.g.:
+      electric charge for the photon); this is called \textbf{non-singlet (ns)}
+    \item otherwise the line to which the \ew boson is coupling it will be detached
+      from the incoming  by \textit{gluonic} lines, and the gluon is flavor blind, so
+      all the charges are summed and all the PDF are contributing the same way;
+      this is called \textbf{pure singlet (ps)}
+    \item eventually: if a \textit{gluon} is entering all the quarks will couple to the \ew
+      boson (if no further restrictions are imposed by the observable, e.g.
+      F2charm), as in the singlet case, and so the charges are summed over; this
+      is called the \textbf{gluon (g)} (because \textit{it is} the gluon...)
+    \item the \textbf{parity structure}
+      (vectorial-vectorial/axial-axial/vectorial-axial), it is relevant only for
+      the NC, and should be taken into account
+  \end{itemize}
+\end{itemize}
+Of course, there the coefficient functions also depends on the
+\textbf{perturbative order} they are computed at.
+
+A recap of the status of coefficient functions as implemented in \yadism (cf.
+\cref{sec:dis/yadism}), is contained in \cref{tab:dis/coefffuncs}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sections/chapters/dis/coeff-funcs-tab}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Treatment of distributions}
+\label{sec:dis/distr}
+
+Coefficient functions are not always pure functions of the partonic variables,
+since in absence of masses, regulating all divergences, the regularization
+itself can generate distributions.
+%
+All distributions disappears once convoluted with the \pdf (or a suitable
+interpolation basis, as a placeholder for a generic \pdf):
+\begin{equation}
+    \sigma = \sum_j f_j \otimes c_j = \sum_j \int\limits_x^1 \frac {dz}{z} f_j(x/z) c_j(z)
+\end{equation}
+so they never survive in physical observables.
+
+A generic coefficient function will allow for three ingredients:
+\begin{itemize}
+  \item \textit{Regular} functions $r(z)$ that are well behaving, i.e. integrable,
+    for all $z \in (0,1]$; these typically contain polynomials, logarithms
+    and dilogarithms
+  \item \textit{Dirac-$\delta$} distributions: $\delta(1-z)$
+  \item \textit{Plus} distributions: $\left[g(z)\right]_+$ which have a
+    regulated singularity at $z\to 1$ and are defined by
+\end{itemize}
+
+\begin{equation}
+  \int\limits_0^1 \!dz\, f(z) \left[g(z)\right]_+ = \int\limits_0^1\!dz\, \left(f(z) - f(1)\right)g(z)
+\end{equation}
+
+The \enquote{plused} function can be a generic function, but in practice will
+almost always be $\log^k(1-z)/(1-z)$.
+The \enquote{plused} function has to be regular at $z=0$.
+These contributions are related to soft and/or collinear singularities in the
+physical process.
+
+In order to do the convolution in a generic way we adopt the \acrfull{rsl}
+scheme: i.e. we categorize them by their behavior under the convolution
+internal.
+%
+This is needed because of the mismatch in the definitions of the convolution
+and the plus prescription. Any coefficient function $c(z)$ can be written
+in the following way:
+\begin{equation}
+  f \otimes c = \int\limits_x^1 \! \frac{dz}{z} \, f(x/z) c^R(z) + \int\limits_x^1 \! dz \, \left(\frac{f(x/z)}{z} - f(x)\right) c^S(z) + f(x) c^L(x)
+\end{equation}
+
+The remapping of the coefficient function ingredients on to the \rsl elements
+is done in the following way:
+\begin{itemize}
+  \item Regular functions $c(z) = r(z)$ contribute only to the regular bit:
+    \begin{equation}
+      c^R(z) = r(z)\,,~ c^S(z) = 0 = c^L(x)
+    \end{equation}
+
+  \item Dirac delta distributions $c(z) = \delta(1-z)$ only contribute to
+    the local bit:
+    \begin{equation}
+      c^R(z) = 0 = c^S(z)\,,~ c^L(x) = 1
+    \end{equation}
+
+  \item "Raw" plus distributions $c(z) = \left[g(z)\right]_+$ contribute to
+    both the singular and the local bit:
+    \begin{equation}
+      c^R(z) = 0\,,~ c^S(z) = g(z)\,,~ c^L(x) = -\int\limits_0^x\!dz\, g(z)
+    \end{equation}
+    derivation
+    \begin{align}
+        f \otimes [g]_+ &= \int\limits_x^1 \frac{dz}{z} f(x/z) \cdot \left[ g(z) \right]_+\\
+          &= \int\limits_0^1 \frac{dz}{z} f(x/z) \cdot \left[ g(z) \right]_+ - \int\limits_0^x \frac{dz}{z} f(x/z) \cdot \left[ g(z) \right]_+\\
+          &= \int\limits_0^1\!dz\, \left(\frac{f(x/z)}{z} - f(x)\right) \cdot g(z) - \int\limits_0^x\!dz\, \frac{f(x/z)}{z} \cdot g(z)\\
+          &= \int\limits_x^1\!dz\, \left(\frac{f(x/z)}{z} - f(x)\right) \cdot g(z) - f(x) \int\limits_0^x\!dz\, g(z)\\
+          &\Rightarrow c^R(z) = 0\,,~ c^S(z) = g(z)\,,~ c^L(x) = -\int\limits_0^x\!dz\, g(z)
+    \end{align}
+
+  \item A product of a regular function and a plus distribution $c(z) = r(z)\left[g(z)\right]_+$
+    contributes to all three bits:
+    \begin{equation}
+      c^R(z) = (r(z)-r(1))g(z)\,,~ c^S(z) = r(1)g(z)\,,~  c^L(x) = -r(1)\int\limits_0^x\!dz\, g(z)
+    \end{equation}
+    derivation
+    \begin{align}
+        f\otimes c &= \int\limits_x^1 \frac{dz}{z} f(x/z) r(z) \cdot \left[ g(z) \right]_+\\
+          &= \int\limits_0^1 \frac{dz}{z} f(x/z) r(z) \cdot \left[ g(z) \right]_+ - \int\limits_0^x \frac{dz}{z} f(x/z) r(z) \cdot \left[ g(z) \right]_+\\
+          &= \int\limits_0^1\! dz \left(\frac{f(x/z)r(z)}{z} - f(x)r(1)\right) \cdot g(z) - \int\limits_0^x\!dz\, \frac{ f(x/z) r(z)}{z} \cdot g(z)\\
+          &= \int\limits_x^1\! dz \left(\frac{f(x/z)r(z)}{z} - f(x)r(1)\right) \cdot g(z) - f(x) r(1) \int\limits_0^xdz~ g(z)\\
+          &= \int\limits_x^1\! dz \left(\frac{f(x/z)(r(z)+r(1)-r(1))}{z} - f(x)r(1)\right) \cdot g(z) - f(x) r(1) \int\limits_0^xdz~ g(z)\\
+          &= \int\limits_x^1\! dz \left(\frac{f(x/z)}{z} - f(x)\right) r(1)\cdot g(z) + \int\limits_x^1\! dz \frac{f(x/z)(r(z)-r(1)))}{z} g(z)  - f(x) r(1) \int\limits_0^x\!dz~ g(z)\\
+          &= \int\limits_x^1 \frac{dz}{ z} f(x/z)  r(1)\cdot \left[g(z)\right]_+ + \int\limits_x^1\! dz \frac{f(x/z)(r(z)-r(1)))}{z} g(z)\\
+          &\Rightarrow c^S(z) = r(1)g(z)\,,~ c^R(z) = (r(z)-r(1))g(z)\,,~  c^L(x) = -r(1)\int\limits_0^x\!dz\, g(z)
+    \end{align}
+
+  \item A plus distribution that contains a regular function and a singular function $c(z) = \left[r(z)g(z)\right]_+$ can be simplified by
+    \begin{equation}
+      \left[r(z)g(z)\right]_+ = r(z) \left[g(z)\right]_+ - \delta(1-z) \int\limits_0^1 dy~ r(y) \left[g(y)\right]_+
+    \end{equation}
+    derivation;
+    \begin{align}
+        \int\limits_0^1 \!dz~ f(z) \left[r(z)g(z)\right]_+ &= \int\limits_0^1 dz \left(f(z) - f(1)\right)r(z)g(z)\\
+          &= \int\limits_0^1 \left(f(z)r(z) - f(1)r(1)\right)g(z)~dz - f(1)\int\limits_0^1\! dz(r(z)-r(1))g(z)\\
+          &= \int\limits_0^1\! dz~ f(z)\left(r(z) \left[g(z)\right]_+\right) - f(z)\left(\delta(1-z)\int\limits_0^1\! dy~ r(y) \left[g(y)\right]_+\right)
+    \end{align}
+\end{itemize}
