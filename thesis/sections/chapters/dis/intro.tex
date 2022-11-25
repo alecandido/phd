@@ -4,7 +4,34 @@ The \acrfull{dis} process has been introduced in \cref{sec:qcd/dis}, briefly
 outlining its relevance in the \pdf determination, and enumerating the various
 experimental source of \dis data for \pdf fits.
 
-In this chapter, the theory of \dis will be described in more details, followed
-by the presentation of \yadism, a new program to compute \dis grids and
-predictions with a wide variety of of options.
+In this chapter, the theory of \dis will be described in more details in
+\cref{sec:dis/defs}, defining the related kinematics and physical observables,
+in a wide variety of variants.
+Then, in \cref{sec:dis/coeffs}, it will follow a brief review of the analytic
+ingredients that is possible to compute in perturbation theory, the so-called
+\textit{coefficients functions}, with a focus on their analytic properties,
+since they are crucial to standardize the presentation, in order to allow fully
+automated numerical integration.
+It follows a summary of \acrlong{fns} in \cref{sec:dis/fns}, since the
+treatment of quark mass effects is crucial to predict the outcome of \dis
+experiments, traditionally operating at not-so-high energies (for which charm
+and bottom mass effects are most relevant).
 
+Finally, \yadism will be presented, a new program to compute \dis grids and
+predictions with a wide variety of of options, that implements all the elements
+discussed in the preceding sections, and a range of further features, including
+extremely relevant ones, like scale variations (that will be described in more
+details in \cref{ch:mhou}, but not specifically in the context of \dis), and
+many other, e.g. \tmc and alternative quark mass definitions schemes.
+
+This chapter is not a full review of \yadism development, since it is partly
+still work in progress, despite the feature parity with predecessors has
+already been reached.
+%
+Together with the other authors, we hope to present the full set in a future
+publications, but the online documentation, intended to be a living document,
+it is already publicly available at:
+\begin{center}
+  \url{https://yadism.readthedocs.io/en/latest/index.html}
+\end{center}
+and contains a superset of (almost) all the material in this chapter.
