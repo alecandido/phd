@@ -42,6 +42,24 @@ called the \textit{leptonic} and the \textit{hadronic tensors}.
 At \lo in \ew corrections, the leptonic side does not couple to \qcd, so the
 higher order corrections in the strong coupling are all on the side of the
 hadronic tensor.
+%
+The fully inclusive \dis cross section $\sigma$ is thus given by
+\begin{equation}
+    \frac{d\sigma^i}{dx dy} = \frac{2\pi y \alpha^2}{Q^4} \sum_b \eta_b L^{\mu\nu}_b W_{\mu\nu}^b
+\end{equation}
+where $i \in \{\text{NC}, \text{CC}\}$ corresponds to the \nc or \cc processes,
+respectively.
+For \nc processes, the summation is over $b \in \{\gamma\gamma,\gamma Z,ZZ\}$,
+whereas for \cc interactions there is only W exchange $b=\{W\}$.
+The normalization factors $\eta_b$ denote the ratios of the corresponding
+propagators and couplings to the photon propagator and coupling squared:
+\begin{align}
+    \eta_{\gamma\gamma} &= 1\\
+    \eta_{\gamma Z} &= \frac{4\sin^2(\theta_w)}{1 - \sin^2(\theta_w)} \cdot \frac{Q^2}{Q^2 + M_Z^2}\\
+    \eta_{ZZ} &= \eta_{\gamma Z}^2\\
+    \eta_W &= \left(\frac{\eta_{\gamma Z}}{2} \frac{1 + Q^2/M_Z^2}{1 + Q^2/M_W^2}\right)^2
+  \label{eq:dis/prop-corr}
+\end{align}
 
 \begin{figure}
 	\centering
@@ -70,6 +88,44 @@ with $\hat P_\mu = P_\mu - (P\cdot q / q^2) q_\mu$, $P$ the 4-momentum of the
 hadron and $q$ the 4-momentum of the scattered boson.
 
 These scalar functions are known as \dis \textit{structure functions}.
+
+Instead, the leptonic tensors $L_b^{\mu\nu}$ can all be written in terms of the photonic
+lepton tensor, because the lepton is assumed massless:
+\begin{align}
+    L^{\gamma\gamma}_{\mu\nu} &= 2\left(k_{\mu}k_{\nu}' + k_{\nu}k_{\mu}' - (k\cdot k') g_{\mu\nu} - i\lambda \epsilon_{\mu\nu\alpha\beta}k^{\alpha}k'^{\beta}\right)\\
+    L^{b}_{\mu\nu} &= \kappa_b ~ L^{\gamma}_{\mu\nu}\\
+    \kappa_{\gamma Z} &= (g_V^e + e\lambda g_A^e)\\
+    \kappa_{ZZ} &= (g_V^e + e\lambda g_A^e)^2\\
+    \kappa_{W} &= (1 + e\lambda)^2
+\end{align}
+with $g_V^e = -\frac 1 2 + 2\sin^2(\theta_w)$ and $g_A^e = -\frac 1 2$ the
+vectorial and axial-vectorial coupling between the Z boson and the lepton with
+charge $e=\pm 1$ and helicity $\lambda=\pm 1$.
+
+Inserting the leptonic and the hadronic tensors into the cross section we obtain
+\begin{align}
+    \frac{d\sigma^i}{dx dy} = \frac{4\pi \alpha^2}{x y Q^2} \eta^i \left\{
+    \left(1-y - \frac{x^2 y^2 M^2}{Q^2}\right)F_2^i
+    + y^2 x F_1^i
+    \pm \left(y - \frac {y^2}{2} \right) x F_3^i
+    \right\}
+\end{align}
+where the $-$ sign in front of :math:$F_3$ is taken for an incoming $e^+$ or
+$\bar \nu$ and the $+$ sign for an incoming $e^-$ or $\nu$.
+The normalization factor $\eta^i$ are given by $\eta^{NC} = 1$ and $\eta^{CC} =
+\kappa_W \eta_W$. So unlike in the \nc process, in the \cc process the leptonic
+couplings and the propagator corrections are not inside the structure functions
+but enter only on a cross section level. 
+This is possible because in \cc there are no interferences between different bosons. 
+The structure functions are given by
+\begin{align}
+    F_k^{CC} &= F_k^W\\
+    F_k^{NC} &= F_k^{\gamma\gamma} - (g_V^e \pm \lambda g_A^e) \eta_{\gamma Z} F_k^{\gamma Z} \nonumber\\
+             &\qquad + \left((g_V^e)^2 + (g_A^e)^2  \pm 2 \lambda g_V^e g_A^e \right) 
+             \eta_{ZZ} F_k^{ZZ} \qquad~ k\in\{1,2,L\} \\
+    x F_3^{NC} &= -(g_A^e \pm g_V^e) \eta_{\gamma Z} x F_3^{\gamma Z}
+    + \left(2g_V^e g_A^e \pm \lambda((g_V^e)^2 + (g_A^e)^2)\right) x F_3^{ZZ}
+\end{align}
 
 \subsection{Process / Currents}
 
