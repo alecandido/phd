@@ -46,49 +46,55 @@ _Buffer_
 
 ## 22
 
-- Write yadism introduction
+- ~~Write yadism introduction~~
 - Review QCD
-- Write GP section
+- ~~Write GP section~~
 
 ## 23
 
 _Buffer_
 
-- Import yadism from docs
+- ~~Import yadism from docs~~
 
 ## 24
 
-- Import AFB
-- Rearrange yadism
+- ~~Import AFB~~
+- ~~Rearrange yadism~~
 
 ## 25
 
-- Import Neutrinos
-- Write QED mention
-- Review GP section
+- Import yadism from docs
+- Write yadism introduction
+- Rearrange yadism
+- Review QCD
+- Write GP section
 
 ## 26
 
 _Buffer_
 
 - positivity introductions
-- Rearrange AFB
+- Rearrange positivity
+- Import AFB
 
 ## 27
 
 - Write Conclusions
-- Rearrange Neutrinos
-- Write Dev appendix
+- Rearrange AFB
+- Review GP section
+- Write banana
 
 ## 28
 
 _Buffer_
 
-- Write banana
+- Write QED mention
 
 ## 29
 
-Buffer
+_Buffer_
+
+- Write Dev appendix
 
 ## 30
 
