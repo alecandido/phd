@@ -1,0 +1,238 @@
+% !TeX root = ../../../main.tex
+
+\fns or Heavy Quark Matching Schemes are dealing with the ambiguity of
+including massive quark contributions to physical cross sections. 
+%
+In general, it is possible to consider two different kinematic regimes that
+require a different handling of the massive contributions: for $Q^2 \lesssim
+m^2$ the heavy quark should be treated with the full mass dependence. 
+$Q^2 \gg m^2$ however the quark should be considered massless, because
+otherwise a resummation of the occurring terms $\log(m^2/Q^2)$ would be
+required.
+
+\subsection[Fixed]{\acrlong{ffns}}
+\label{sec:dis/ffns}
+
+As the name \ffns suggests, we are considering a fixed number of flavors
+$n_f=n_l+1$ with $n_l$ light flavors and \textbf{one} (and \textit{only one})
+heavy flavor\textit{} with a finite mass $m$.
+The number of light quarks $n_l$ is arbitrary but fixed and can range between
+$3$ and $6$. 
+Except for intrinsic contributions we are \textit{not} allowing the heavy \pdf
+to contribute (and those corresponding to flavors not in the scheme as well).
+%
+This scheme is adequate for $Q^2\sim m^2$.
+
+\begin{itemize}
+\item the \textbf{light} structure functions corresponds to the interaction of
+  the purely light partons, i.e.\ the coefficient functions may only be a
+  function of $z,~Q^2$ (and unphysical scales); in particular they can
+  \textit{not} depend on any quark mass.
+  This may be consistently obtained computing contributions for a Lagrangian
+  with all masses set to $0$.
+  \begin{itemize}
+    \item this definition is consistent with
+      \cite{Vermaseren:2005qc,Moch:2004xu,Moch:1999eb,Moch:2007rq,Moch:2008fj},
+      and \qcdnum, \cite{Botje:2010ay}
+    \item but is not consistent with \apfel, \cite{Bertone:2013vaa}, which
+      instead is calling \textit{light} the sum of contributions in which a
+      light quark is coupled to the \ew boson
+  \end{itemize}
+
+\item as noted in \cref{sec:dis/defs}, the \textbf{total} structure functions
+  are \textit{not} the sum of \textbf{light} and the single \textbf{heavy}
+  ones, but contains additional terms \textbf{Fmissing} such as the Compton
+  diagrams in \cite{Hekhorn:2019nlf}; this is the proper physical object,
+  accounting for all contributions coming from the full Lagrangian.
+
+\item the \textbf{heavy} structure functions are defined by having in the
+  Lagrangian \textit{only} the \ew charges that are associated to the specific
+  quark active (the only massive one). In \nc this corresponds to the electric
+  and weak charges of the quarks but in \cc the situation is bit more involved:
+  we divide the \ckm-matrix into several parts:
+  \begin{equation}
+      V_{CKM} =
+      \begin{pmatrix}
+          {\color{Bittersweet}V_{ud}} & {\color{Bittersweet}V_{us}} & {\color{ForestGreen}V_{ub}}\\
+          {\color{blue}V_{cd}} & {\color{blue}V_{cs}} & {\color{ForestGreen}V_{cb}}\\
+          {\color{purple}V_{td}} & {\color{purple}V_{ts}} & {\color{purple}V_{tb}}
+      \end{pmatrix}
+  \end{equation}
+  and associate the {\color{blue}blue} couplings to the charm structure
+  functions, {\color{ForestGreen}green} to bottom and {\color{purple}purple} to top.
+  For $F^{\nu,p}_{2,{\color{blue} c}}$ this in effect amounts to
+  \begin{align}
+    F^{\nu,p}_{2,{\color{blue} c}} &=
+      2x\Big\{C_{2,q}\otimes\Big[{\color{blue}V_{cd}}^2(d+\overline{c}) +
+        {\color{blue}V_{cs}}^2 (s+\overline{c})\Big]\nonumber\\
+      &\qquad\qquad\qquad\qquad\qquad +
+        2\left({\color{blue}V_{cd}}^2+{\color{blue}V_{cs}}^2\right)C_{2,g}\otimes g\Big\}
+  \end{align}
+  Note that even heavier contributions are \textit{not} available.
+  E.g.:
+  \begin{itemize}
+    \item there is no contributions coming from either \textit{bottom} or
+      \textit{top} to $F_{2,{\color{blue} c}}$
+    \item while \textit{charm} would contribute to $F_{2,{\color{ForestGreen}
+      b}}$, but only as a massless flavor.
+  \end{itemize}
+\end{itemize}
+
+
+\subsection[Zero-Mass]{\acrlong{zmvfns}}
+\label{sec:dis/zmvfns}
+
+As the name \zmvfns suggests, this scheme takes into account a variable number
+of light flavors $n_f$ with $n_f = n_f(Q^2)$. 
+%
+There is an \textit{activation} scale $Q_{thr, i}^2$ associated to each
+potentially \enquote{heavy} quark (i.e.\ charm, bottom, and top) and whenever
+$Q^2 \ge Q_{thr, i}^2$ this quark is considered massless, otherwise infinitely
+massive.
+
+This scheme is adequate for $Q^2\gg m^2$.
+
+\begin{itemize}
+\item the \textbf{heavy} structure functions are \textit{not} defined, as quark
+  masses are either $0$ or $\infty$ (so no massive correction is available at
+  all)
+\item \textbf{total} ones thus are equal to \textit{light}
+\item \textbf{light} structure functions corresponds to the interaction of the
+  purely light partons, i.e. the coefficient functions may only be a function
+  of $z,Q^2$ and eventually unphysical scales; so they can \textit{not} depend
+  on any quark mass
+\end{itemize}
+
+\zmvfns dependence on thresholds is simple, they just define the $Q^2$
+patches in which $n_f$ is constant (and they are of course different from
+the quark masses, that are always considered to be zero or infinite).
+Also note that $Q_{thr,i}^2$ are not necessarily, but usually chosen to be, the
+quarks' masses.
+
+\subsection[FONLL]{\acrfull{fonll}}
+\label{sec:dis/fonll}
+
+\fonll \cite{Forte:2010ta} is a \gmvfns that includes parts of the \dglap
+equations into the matching conditions.
+That is: two different schemes are considered, and they are matched at a given
+scale, accounting for the resummation of collinear logarithms, but also for
+power suppressed terms from massive corrections at the same time.
+%
+In the original paper the prescription is only presented for the charm
+contributions, but just as a placeholder of an arbitrary massive quark.
+%
+The prescription defines two separate regimes, below and above the
+\textit{next} heavy quark threshold: $Q_{thr,n_f+2}$.
+%
+As in the case of \zmvfns, these matching thresholds are not necessarily, but
+usually chosen to be, the quarks' masses.
+
+\begin{itemize}
+  \item for \textbf{$Q^2 < Q_{thr,n_f+2}^2$}: the general expression,
+    eqs.~(14-15) of \cite{Forte:2010ta}, is:
+    \begin{align}
+        F^{\text{FONLL}}(x, Q^2) = F^{(d)}(x, Q^2) + F^{(n_f)}(x, Q^2)\\
+        F^{(d)}(x, Q^2) = F^{(n_f + 1)}(x, Q^2) - F^{(n_f, 0)}(x, Q^2)
+        \label{eq:dis/fonll}
+    \end{align}
+
+    Here the scheme change between the schemes with $n_f$ (i.e. the \ffns
+    scheme in which the active flavor is the only one considered to be massive)
+    and $(n_f + 1)$ flavors (i.e. the \ffns scheme with only massless quarks,
+    including the formerly active one) is explicitly included.
+
+    This scheme change is related to the \dglap matching conditions: in
+    particular the massive corrections are only coming from the $n_f$
+    scheme, but the collinear contribution is present in both:
+    \begin{itemize}
+      \item the $n_f$ scheme includes the logarithms of the active mass,
+          while the \pdf of the massive object are scale-independent by definition
+          (since the factorization terms are kept in the matrix element)
+      \item the $(n_f + 1)$ scheme does not account for them in them in the coefficient
+          function, but instead they are resummed in the \pdf evolution through the
+          \dglap equation
+    \end{itemize}
+
+    By matching the two schemes a \gmvfns is obtained, accounting for both the
+    massive corrections and the resummation of collinear logarithms.
+    %
+    The matching is obtained subtracting the asymptotic massless limit of the
+    massive expression, namely $F^{(n_f, 0)}(x, Q^2)$, while adding the
+    $(n_f + 1)$ expression, such that for large $Q^2$ the massive
+    $n_f$ contribution cancels with the asymptotic one, and only the truly
+    light contribution survives.
+    %
+    Actually below the former threshold, so $Q^2 < Q_{thr,n_f+1}^2$, \fns
+    with $n_f$ flavors is employed, i.e. a $\theta(Q^2 - Q_{thr,n_f+1}^2)$ is
+    prepended to $F^{(d)}$.
+
+  \item \textbf{above} this threshold: the \zmvfns is employed and this leads
+    to an inconsistency at this $Q_{thr,n_f+2}$ threshold, but a good
+    approximation nevertheless.
+    %
+    This amounts to simply make an hard cut to the original smooth decay of
+    massive contributions, and to add the subsequent thresholds for the following
+    massive quarks.
+\end{itemize}
+
+\subsubsection{Damping}
+\label{sec:dis/fonll-damp}
+
+Up to \nlo the scheme change (from $n_f - 1$ flavors to $n_f$) is continuous,
+but in general it is not.
+%
+In order to recover the continuous transition a damping procedure may be
+adopted, turning the scheme in the so called \textbf{damp FONLL}.
+
+Continuity on its own is not an issue, but it is one symptom of a feature of
+$F^{(d)}$ \cref{eq:dis/fonll}: while it improves the behavior at large $Q^2$ it
+is unreliable for $Q^2 \sim Q_{thr,n_f+1}^2$.
+%
+For this reason might be a good idea to suppress $F^{(d)}$ near threshold, and
+then this restore continuity.
+%
+The generic shape of this suppression is written in eq.~(17) of
+\cite{Forte:2010ta}, and it is:
+\begin{equation}
+   F^{(d, th)} (x, Q^2) = f_{\textrm{thr}} (x, Q^2) F^{(d)}(x, Q^2)
+\end{equation}
+In particular the following conditions are needed for $f_{\text{thr}} (x, Q^2)$
+to fit the task:
+\begin{itemize}
+  \item be such that $F^{(d, th)} (x, Q^2)$ and $F^{(d)} (x, Q^2)$ is
+    power suppressed for large $Q^2$
+  \item enforce the vanishing of $F^{(d, th)} (x, Q^2)$ at and below threshold
+\end{itemize}
+
+A common shape for $f_{\textrm{thr}} (x, Q^2)$ is then:
+\begin{equation}
+   f_{\textrm{thr}} (x, Q^2) = \theta(Q^2 - m^2) \left(1 -  \frac{Q^2}{m^2}\right)^2
+\end{equation}
+The power used here is $2$, but in general this is arbitrary, and thus it is a
+user choice in \yadism.
+
+\subsubsection{Threshold different from heavy quark mass}
+\label{sec:dis/thr-neq-mass}
+
+The threshold in \fonll plays a relevant role, since it is deciding where (in
+$Q^2$) the match should happen.
+%
+A typical choice is to put the threshold on top of the relevant quark mass (also
+in \zmvfns, mimicking the opening of a new channel). This is \textit{}not
+mandatory\textit{}, as the threshold is just an \fns parameter it can be freely
+chosen.
+%
+If the threshold is then chosen \textit{different} from the quark mass, a new scale
+ratio appears, and the expressions might depend also on this one.
+Notice that the threshold is only a parameter of \fonll, so it can not affect
+the \ffns ingredients of the scheme (which can only depend on the real quark
+masses, through massive propagators).
+Then only the massless limit (the double counting preventing bit) might include
+a threshold dependency, and in practice it will only change the relevant
+logarithm, that:
+\begin{itemize}
+  \item  instead of being the logarithm of the ratio between the process scale
+    and \textit{the mass}
+  \item is a logarithm of the ratio with \textit{the threshold}
+\end{itemize}
+as it is discussed in \cite{Forte:2018ovl}.
