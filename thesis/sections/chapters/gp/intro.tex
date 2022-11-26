@@ -1,2 +1,66 @@
 % !TeX root = ../../../main.tex
 
+As briefly described in the general introduction (cf. \cref{ch:qcd}) \pdf
+fitting has always been a challenging task, and methodology is decisive in
+determining the final outcome, but highly non-trivial, driven several arbitrary
+choices.
+
+Assessing the goodness of methodological choices, and its impact on the final
+result, is an important and serious topic.
+To this goal, several discussions among different \pdf fitting groups have been
+devoted (e.g.\ \cite{DeRoeck:2009zz}), resulting in publications that assess the
+status of \pdf extraction
+\cite{Alekhin:2011sk,Botje:2011sn,Rojo:2016ymp,PDF4LHCWorkingGroup:2022cjn}.
+
+The common ambition would be to pick a methodology that is not \textit{adding
+information}, such that the resulting \pdf is only determined by the data
+constraints, plus theoretical knowledge (such as sum rules).
+%
+While this target is certainly desirable, it is not possible to fulfill it
+completely, because the theory defined object has simply too many degrees of
+freedom.
+%
+Indeed, the undetermined \pdf is the set of functions introduced in
+\cref{eq:qcd/pdfs}, and the theoretical knowledge consists in a finite set of
+linear constraints.
+Thus, and infinite number of degrees of freedom remains unconstrained.
+
+In order to make inference with a finite amount of data, further assumptions
+need to be used, to step from the infinite unconstrained directions, that would
+lead to infinite uncertainty, to a finite space in which optimizing the \pdfs
+distribution for data compatibility with theory predictions.
+%
+The more traditional approach consists in parametrizing the \pdfs with some
+selected polynomials, fitting some exponents as well, for the behavior about
+the domain boundaries.
+%
+This is definitely a sensible choice, and fully compatible with the principle
+that will be exposed in \cref{sec:gp/bayes}, but with one major drawback: there
+is no specific reason to prefer a given polynomial basis, so this procedure
+creates room for some arbitrariness, leading to potential debate about an
+optimal choice.
+
+In this context, the \acrlong{nnpdf} proposed an alternative \pdf
+parametrization, based on a \acrfull{nn}, that will then be trained with its
+intrinsic training algorithm.
+%
+This led to a series of challenges, that will be described in
+\cref{sec:gp/nnpdf}, eventually conducing to release a completely analogue
+object, but with significant discrepant features, originated by the different
+methodology.
+
+A number of issues however arose around \nnpdf sets, some of them
+characteristic of the \nn determined \pdfs, while other shared with other
+determinations.
+%
+Some of them will be described in \cref{sec:gp/issues}.
+
+While attempting to improve the current methodology to address these concerns,
+the inspection suggested that another paradigm shift could give an easier and
+more complete answer, keeping the benefit of all or most of the present
+developments, just minimally (as possible) replacing the fitting
+\textit{\enquote{engine}}.
+%
+This new proposal is the result of the active discussion on improvements inside
+the collaboration, but also arising from external proposals, and it will be
+presented in \cref{sec:gp/bayes}.
