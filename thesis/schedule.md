@@ -74,11 +74,13 @@ _Buffer_
 _Buffer_
 
 - Write GP section
-- positivity introductions
-- Rearrange positivity
+- ~~positivity introductions~~
+- ~~Rearrange positivity~~
 
 ## 27
 
+- positivity introductions
+- Rearrange positivity
 - Write Conclusions
 - Import AFB
 - Rearrange IC
