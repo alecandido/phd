@@ -218,5 +218,135 @@ this task.
 
 \subsection{Minor improvements}
 
-- sampling with negative values
-- fast thcovmat construction
+While it would be desirable that most of the decisions were inspired only by
+physical or statistical reasons, a common enough pattern is that technical
+limitations imposed further constraints.
+
+An example of this is the choice of the training algorithm: \nnpdfr{4.0}
+adopted the \acrfull{sgd}, that incredibly boosted performances with respect to
+the former \acrfull{nga} used by \nnpdfr{3.1}.
+Both the algorithm are very well-known in literature, with \sgd being based on
+the classical idea of \acrfull{gd}, applied in optimization tasks since two
+centuries.
+%
+Nevertheless, the choice here is mainly driven by its performances, improved by
+automatic differentiation techniques (implemented in modern frameworks).
+This allowed further studies, like hyperoptimization cited above, that would
+have not been possible with the former \nga implementation, only because of
+performances.
+
+I proposed a couple of minor improvements in this sense, that is worth to
+briefly report.
+
+\paragraph{Negative sampling} Data replicas generation involves sampling data
+from the joint distribution of measurements, assuming this to be normally
+distributed.
+%
+However, for most of the observables this assumption can only hold
+approximately, since they are known to be positive semi-definite.
+%
+In order to prevent negative values, the current algorithm operates a cut,
+implementing by redrawing the full sample if a value, supposed to be positive,
+has actually been drawn negative.
+%
+Usually this is not causing any issue, since most experimental measurements are
+rather precise, and thus incompatible with zero. But it is still prone to
+terrible performances.
+%
+Indeed, if for any reason there were a fixed rate $r$ for a set of $k$
+measurements to be negative, the probability for all of them to be positive
+would be $(1-r)^k$, and then a number of extractions of order:
+\begin{equation}
+  \frac{1}{(1-r)^k}
+\end{equation}
+would be required on average to obtain a fully positive sample, so they
+increase exponentially with the number of points $k$.
+If $r$ starts approaching $\order{1/2}$, a huge amount of draws would be
+required also for a few points. E.g. for $r = 1/2$ and $k = 10$ one thousand
+extractions would be performed on average, for the full sample.
+
+Following, a list of possible solutions, with related advantages:
+\begin{description}[font=\scshape,leftmargin=2cm,style=nextline]
+  \item[decouple] Since the main problem consists the performance, a simple
+    solution is just to redraw only the samples that happened to be negative,
+    in order to prevent the exponential scaling
+
+    {\small\itshape\noindent
+      Slightly more challenging at a technical level, since the code is based
+      on NumPy, and Python iterations should be avoided as much as possible.
+      But it is sufficient to redraw arrays with a length equal to the amount
+      of negative samples, and apply with a mask.
+    }
+
+    \begin{tabularx}{\linewidth}{cX}
+      $\quad\looparrowright$ & This modifies the distribution to be a truncated
+      Gaussian (obviously rescaled for normalization).
+    \end{tabularx}
+
+  \item[wall] Another option is just to cut all the negative values, and just
+    set them to zero, this limits the procedure to a single draw.
+
+    \begin{tabularx}{\linewidth}{cX}
+      $\quad\looparrowright$ & The resulting distribution is the truncated
+      Gaussian, retaining the original normalization, with a discrete point,
+      $0$, having a finite weight (the integrated value of the negative tail).
+    \end{tabularx}
+
+  \item[reflection] Keeping the single draw, but avoiding the attribution of
+    finite probabilities to a single point, is possible, e.g.\ just taking the
+    absolute value of the drawn sample.
+
+    \begin{tabularx}{\linewidth}{cX}
+      $\quad\looparrowright$ & In this case the distribution would be the sum
+      of the truncated positive Gaussian, and the mirrored negative tail.
+    \end{tabularx}
+
+    This has been experimented, but it produces a distribution that is
+    significantly different from the original one, leading to unexpected
+    features in the fit.
+
+  \item[distortion] To minimally transform the original distribution, it is
+    possible to consider a rescaling that is preserving the right tail of the
+    Gaussian (larger values than average), while smoothly distorting the left
+    one.
+    %
+    Shifting the distribution to be centered in $0$, $x \to y = x - \bar{x}$,
+    this means the left tail should not exceed a minimal threshold value
+    $\hat{y} = -\bar{x}$.
+    %
+    There are many functions that can do this, one possible solution is an
+    \acrfull{elu}:
+    \begin{equation}
+      \tilde{y} =
+      \begin{cases}
+        y \qquad\qquad &\text{if}~y>0,\\
+        \hat{y}\left(\exp(a \cdot y)-1\right) \qquad\qquad &\text{otherwise}
+      \end{cases}
+    \end{equation}
+    Finally yielding a value for the transformed $x$ equal to $\tilde{x} =
+    \tilde{y} + \bar{x}$.
+    The value of the parameter $a$ can be set for example to $1/\hat{y}$, such
+    that the derivative is also continuous, arguably the minimal distortion for
+    this functional form.
+    %
+    Being the transformation simple and analytical, performances would not be
+    impacted.
+    Other transformations with the same properties would be completely
+    equivalent.
+
+    \begin{tabularx}{\linewidth}{cX}
+      $\quad\looparrowright$ & The distribution would be the one described
+      above: a perfect right Gaussian tail, and smoothly warped left one,
+      vanishing for negative values.
+    \end{tabularx}
+
+  \item[no bound] Finally, there are applications for which not any of this
+    compromises is required, since it is possible to treat also negative values
+    for the observables.
+    %
+    In this case, retaining them has the advantage of keeping a cleaner
+    distribution, avoid more complex procedures, and achieving optimal
+    generation performances the same.
+\end{description}
+
+fast thcovmat construction
