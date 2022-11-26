@@ -67,28 +67,30 @@ _Buffer_
 - Write yadism introduction
 - Rearrange yadism
 - Review QCD
-- Write GP section
+- ~~Write GP section~~
 
 ## 26
 
 _Buffer_
 
+- Write GP section
 - positivity introductions
 - Rearrange positivity
-- Import AFB
 
 ## 27
 
 - Write Conclusions
-- Rearrange AFB
+- Import AFB
+- Rearrange IC
 - Review GP section
-- Write banana
 
 ## 28
 
 _Buffer_
 
 - Write QED mention
+- Rearrange AFB
+- Write banana
 
 ## 29
 
