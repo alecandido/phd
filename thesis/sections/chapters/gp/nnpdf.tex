@@ -152,10 +152,69 @@ being performed by \nnpdf members).
 
 \subsection{Generalization}
 
-- tr/vl split
-- hyperopt
-- future tests
-- larger error in extrap region: mention afb
+As in other classical machine learning problems, also for \pdfs there is a
+fundamental concern, that goes beyond the loss function minimization: how much
+does the predictions extend, beyond the region strictly covered by data?
+
+The first instance of this issue is interpolation itself, since an extremely
+aggressive optimization can generate an incredibly noisy result, matching
+anyhow all the points in the dataset.
+%
+This is partially prevented by the structure of the network itself, and its
+training algorithm: in the case of \nnpdf there is no explicit penalty term
+imposing smoothness in the loss function.
+%
+The rest is done by the \textit{training-validation} split. As it is customary
+for many machine learning applications, data are split in the two sets, and
+only one of the two is passed to the optimizer, while the other is observed
+during the training, in order to interrupt the process before learning the
+noise, and prevent \textit{over-fitting}.
+%
+Despite being very common, there is not a full analytical understanding for
+this method, or for the \nn training more in general, and many
+counter-intuitive are still being investigated (e.g.\ double descent, or
+multiple in general).
+So, the final and most reliable proof of good interpolation properties comes
+from the closure tests.
+
+A second instance lies in the extrapolation region. 
+%
+Since this region is not directly controlled by data, or at least very little,
+it is largely undetermined, but it is important for \pdfs uncertainties to be
+reliable also in this region, usually heavily affecting \bsm searches.
+%
+Being reliable means to be large enough to cover unobserved features of the
+\pdfs, without completely forgetting the few constraints coming from the sum
+rules.
+%
+To check the fidelity of these portions of the final product, a different kind
+of tests is employed: the dataset is chronologically segmented, and they are
+incrementally included in the input of the \nn, finally comparing the various
+results.
+%
+This type of checks have been called \textit{future tests}, and the essential
+idea consist to check how faithful are the extrapolation uncertainties, since
+the extrapolation region of a chronologically prior fit will intersect the data
+region of a later one.
+%
+In practice, despite \nnpdfr{4.0} being significantly smaller than those in the
+other \pdf set, this is mostly limited to the data region, and the increased
+flexibility prevents an extreme extrapolation, decoupling the two regions, as
+much as it is allowed by sum rules.
+This is shown and exemplified quite well in the Drell--Yan forward-backward
+asymmetry study, presented in \cref{ch:afb}.
+
+It is worth to remark once more that there are many possible variations, whose
+results can span wide space of solutions.
+In order to avoid arbitrary choices, inspired by subjective opinions or
+\textit{human experience} (potentially reliable, but certainly hard to quantify
+and systematically improve), in \nnpdfr{4.0} a large enough space of
+hyperparameters has been considered, and they have been hyperoptimized (also
+standard practice, though computationally expensive) based on a grid search.
+%
+This also contribute to improve the generalization power of the full procedure,
+since also the methodology parameters have been systematically optimized for
+this task.
 
 \subsection{Minor improvements}
 
