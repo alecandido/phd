@@ -266,7 +266,7 @@ required also for a few points. E.g. for $r = 1/2$ and $k = 10$ one thousand
 extractions would be performed on average, for the full sample.
 
 Following, a list of possible solutions, with related advantages:
-\begin{description}[font=\scshape,leftmargin=2cm,style=nextline]
+\begin{description}[font=\normalfont\sffamily\scshape,leftmargin=2cm,style=nextline]
   \item[decouple] Since the main problem consists the performance, a simple
     solution is just to redraw only the samples that happened to be negative,
     in order to prevent the exponential scaling
@@ -349,4 +349,19 @@ Following, a list of possible solutions, with related advantages:
     generation performances the same.
 \end{description}
 
-fast thcovmat construction
+\paragraph{Theory covariance matrix construction} Another performance issue
+encountered in the current implementation of \nnpdf methodology concerns the
+construction of the theory covariance matrix.
+%
+The problem also here consists in extra unneeded iterations. 
+The really superfluous part can just be dropped, while further optimizations
+are possible if a fully factorized prescription is adopted, in place of the
+current sliced one (cf.\ \cref{sec:mhou/prescriptions}).
+%
+Since this is rather technical, with no impact on anything but performances (as
+opposed to the former one, also affecting significantly the distribution of a
+few points), no further details will be provided here, and the interested
+reader can directly read the documentation of the new proposed implementation:
+\begin{center}
+  \ghurl{AleCandido/thcovmat}
+\end{center}
