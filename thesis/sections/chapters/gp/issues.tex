@@ -1,7 +1,56 @@
 % !TeX root = ../../../main.tex
 
-- further metric beyond chi2
-- determining distribution, not replicas
-- extrapolation
-- insights
+A number of concerns arose during the development of \nnpdf, partially from
+other \pdf groups and external parties, the rest from inside the collaboration
+itself.
 
+A first point is still related to the partial loss of explainability due to the
+\nn, already addressed by closure tests and hyperoptimization.
+%
+Unfortunately, all the techniques adopted until now always relies on the
+$\chi^2$ of some subsets of data, that might be a poor quantifier of
+over-fitting and other possible issues.
+%
+So, an open question has been posed to the collaboration, whether it is
+possible to quantify this properties with an alternative metric, that could
+also be used in the methodology hyperoptimization.
+%
+A basic idea would be to rely on the arc-length of the \pdf replica: if the
+\pdf oscillates more (contains more wiggles) its arc-length is increased, thus
+minimizing would yield less wiggly \pdfs, privileging smoother replicas.
+%
+While on one side this is already done by the \nn itself, on the other it might
+be worrying to explicitly penalize the arc-length, since the \pdf should always
+be able to reproduce physical oscillations.
+%
+Some metrics definitions are currently being discussed, based on the
+statistical properties of replicas ensembles, or refining the idea of detecting
+wild oscillations, e.g.\ measuring the local oscillation rate, to detect
+anomalous regions (this local quantifier has been called \textit{kinetic
+energy}, for the similarly with the expression of this quantity for a moving
+particle).
+
+Another direction for improvements lies in the uncertainty propagation itself.
+At the moment, each replica is determined on its own, irrespectively of the
+other replicas, and only gathering all of them together at the end will
+generate the final \pdfs distribution.
+%
+Since the object sought is the distribution, there might be a more direct way
+to extract it, and once the full distribution (or a part of it) is available
+during training, more features would be available to the algorithm to construct
+a better optimization path.
+
+Another subject is the treatment of extrapolation. While \acrshortpl{nn} are
+extremely good at interpolating, the extrapolation assumptions remain hidden,
+and it is more difficult to directly assess the goodness of the extrapolation,
+and recognize a fit with spurious extrapolation.
+%
+This is connected to the general lack of analytical insights, but this
+condition is not intrinsic to the more problem, but rather to the adopted
+solution.
+%
+Start thinking this way, it is possible and appropriate to consider if there
+are more suitable techniques that can make use of the original fully analytical
+formulation of the problem (some well-behaving functions over a simple real
+domain), that instead is traditionally lacking in most machine learning
+applications.
