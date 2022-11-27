@@ -258,11 +258,110 @@ complete information than the output of hyper-optimization itself.
 Following, the description of the current attempt to achieve approximate
 Bayesian \pdfs is presented.
 Everything included in this section, and part of the previous one, is actually
-a summary of the work-in-progress draft \cite{petrillo2022}, available online.
+a summary of the work-in-progress draft, available online \cite{petrillo2022}.
+
+The core of a Gaussian Process regression is rather simple: given some $(x_i,
+f_i)$ data pairs, and some $x'_j$ points of interest, the posterior
+distributions for the $x'_j$ set is obtained \textit{conditioning} the joint
+prior multi-Gaussian on the observed values (basically slicing the
+distribution in the $i$ dimensions at the $f_i$ values, and normalizing the
+result).
+%
+This procedure is exact, and only requires some linear algebra to determine the
+posterior average and covariance, since the posterior as well will be a
+Gaussian distribution.
+
+Applying linear transformation changes the Gaussian parameters, but preserves
+Gaussianity. Thus the fit would be exact also in the case of observations
+living in a different space, but with a linear map connecting the two spaces.
+%
+This is exactly the case of \dis data, since a single \pdf is involved, and is
+mapped to data space through convolution, i.e.\ a linear operation.
+%
+Sum rules are also linear in the \pdfs, and imposed on the primitive. So, a
+full \dis-only fit, including sum rules, can be performed just:
+\begin{enumerate}
+  \item picking a suitable kernel function (defining the prior)
+  \item conditioning the process on observations
+  \item evaluating on point of interests\footnote{
+      In practice, this operation is included in the former one.
+    }
+\end{enumerate}
+as already explained in \cite{DelDebbio:2021whr}.
+
+There are two categories of data for which it is not possible to apply the
+exact algorithm: quadratic and compound data.
+%
+The first category corresponds to data collected in double hadronic collisions
+(cf. \cref{sec:qcd/dy}).
+Since two \pdfs are involved, the \pdf space and data space are not connected
+by linear transformations.
+%
+The same is also true for those data, including \dis ones, that are obtained by
+applying some operations on the elementary cross-sections, e.g.\ taking the
+ratio of two corresponding types of events.
+%
+A solution that allows for these data is a standard least squares fit, in which
+the problem is solved iteratively, roughly: linearizing locally, determining
+the linear solution, and then repeating from there.
+
+The computationally complexity of the fit is dominated by the matrix inversion,
+required to evaluate the new mean and covariance.
+%
+Matrix inversion basic complexity is $\order{n^3}$, for a generic $n \times n$
+matrix.
+Being an extremely widespread task, there are optimized algorithms achieving
+better performances, but the best improvements are obtained restricting to
+specific classes of matrices.
+%
+While this approach might seem quite restrictive, it should be noted that the
+matrices involved are coming from the evaluation of kernel functions, and they
+usually involve multiple properties. 
+At the very least they are symmetric and positive semi-definite.
+
+The program implementing the linear and approximate solution is not exclusively
+developed for this work, but is a generic library to implement least squares
+fits based on Gaussian processes.
+Its source is openly available:
+\begin{center}
+  \ghurl{Gattocrucco/lsqfitgp}
+\end{center}
+and the documentation, user manual, and several examples can be found at:
+\begin{center}
+  \url{https://gattocrucco.github.io/lsqfitgp/docs/}
+\end{center}
+
+\subsection{Status of the project}
+\label{sec:gp/status}
+
+At the moment of writing, the status of the project is rather inhomogeneous:
+while the core machinery in \lsqfitgp is mostly available, and rather advanced,
+the general fit is still at the level of a proof of concept, since still being
+developed on fake data.
+%
+On the other hand, data and theory predictions are available to be consumed,
+even though some final improvements are still required.
+%
+Final evolution and grid generation will be performed in the same way of the
+\nnpdf current fit.
+
+The whole project is public, and available at:
+\begin{center}
+  \ghurl{NNPDF/mcpdf}
+\end{center}
 
 
-Gaussian Process regression.
-
-Still exact with linear transformation
-
-Approximate for different transformations (quadratic and composite)
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{ch-gp/fit-pdf-new}
+	\includegraphics[width=0.55\textwidth]{ch-gp/fit-hyper-new}
+  \caption{
+    Current \lsqfitgp results on fake data.
+    The lines are the underlying (fake) PDFs used to generate the fake data,
+    while the bands are the $\pm 1\sigma$ intervals of the posterior.
+    The vertical dashed lines mark the start of the $x$ values that are linked to the data. 
+    The lower plot shows the inference over the hyperparameters, with the gray
+    band representing the $\pm 1\sigma$ intervals of the prior.
+  }
+	\label{fig:gp/mcpdf}
+\end{figure}
