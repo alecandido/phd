@@ -7,26 +7,40 @@
 \minitoc
 \adjustmtc
 
-\noindent
 As defined in the parton model, \pdf are essentially probability densities, and
 thus they are positive semi-definite functions over their whole domain.
-
+%
 This picture is modified by the factorization scheme, required for \nlo or
 higher order calculations, redefining the \pdf object, in such a way that it
 can assume negative values as well, according to the specific scheme chosen.
 
 While violating the initial intuition associated to the parton model, this is
-not spoiling any desirable physical property, since \pdf are unphysical object
-as defined by a factorization scheme (as much as the factorization scale is not
-a physical scale).
-Positivity of physical observables (cross sections and related) is preserved. 
-
+not spoiling any desirable physical property, since \pdfs are not observables,
+but their definition is bound to a factorization scheme (as much as the
+factorization scale, which is an unphysical scale).
+Therefore, positivity of physical observables (cross sections and related) is
+preserved. 
+%
 Nevertheless, might be an interesting question, though academic, to check which
 schemes yield positive or non-positive \pdf, and whether is possible to tell
 something about well-known and widespread schemes.
 
+\section{Background and Motivations}
+\label{sec:pos/motiv}
 \input{sections/chapters/positivity/intro}
+
+\section{Early Attempts}
+\label{sec:pos/early}
 \input{sections/chapters/positivity/early}
+
+\section{Positivity of partonic cross sections}
+\label{sec:pos/subtr}
 \input{sections/chapters/positivity/partonic-xs}
+
+\section{A positive factorization scheme}
+\label{sec:pos/scheme}
 \input{sections/chapters/positivity/fact-scheme}
+
+\section{Final Remarks}
+\label{sec:pos/conc}
 \input{sections/chapters/positivity/concl}
