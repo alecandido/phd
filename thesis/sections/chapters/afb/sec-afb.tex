@@ -4,13 +4,13 @@ After the qualitative discussion of the previous sections, here we
 present results for the $\cos\theta^*$
 distributions Eq.~(\ref{eq:dsigma-dcos}) and the
 forward-backward asymmetry Eq.~(\ref{eq:forward-backward-asymmetry}), with
-NLO QCD and electroweak corrections included and
+\nlo QCD and electroweak corrections included and
 with realistic selection and acceptance cuts for the LHC at $\sqrt{s} = 14$~TeV
 and different values of the invariant mass $\mll$ relevant for SM
 studies and BSM searches.
 
-Computations are performed using {\sc\small MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca},
-interfaced to {\sc\small PineAPPL}~\cite{Carrazza:2020gss,christopher_schwan_2022_7023438} to generate
+Computations are performed using \mgamc~\cite{Alwall:2014hca},
+interfaced to \pineappl~\cite{Carrazza:2020gss,christopher_schwan_2022_7023438} to generate
 fast interpolation grids.
 %
 In order to account for realistic detector acceptances,
@@ -35,7 +35,7 @@ As in Sect.~\ref{sec:largexpdfs}, we compare results obtained using
 the  ABMP16, CT18, MSHT20, and \nnpdfr{4.0} PDF sets.
 %
 In all cases, we
-use the  NNLO sets corresponding to the value $\alpha_s(m_Z)=0.118$
+use the  \nnlo sets corresponding to the value $\alpha_s(m_Z)=0.118$
 of the strong coupling.
 %
 Results obtained using the NNPDF3.1 PDF set are reported in App.~\ref{app:nnpdf31}.
@@ -49,10 +49,10 @@ Eqn.~(\ref{eq:dsigma-dyll}),
 for dilepton invariant masses of $\mll > 5$~TeV
 for neutral current Drell-Yan production at the
 LHC 14 TeV,
-obtained using ABMP16, CT18, MSHT20, and \nnpdfr{4.0} NNLO PDFs with $\alpha_s(m_Z)=0.118$.
+obtained using ABMP16, CT18, MSHT20, and \nnpdfr{4.0} \nnlo PDFs with $\alpha_s(m_Z)=0.118$.
 %
 All
-uncertainties shown are 68\% CL PDF uncertainties, computed at NLO
+uncertainties shown are 68\% CL PDF uncertainties, computed at \nlo
 in the QCD and EW couplings with realistic cuts (see text).
 We show the absolute distributions (top), relative uncertainties (normalized
 to the central curve of each set, middle) and the pull with respect to the
@@ -153,7 +153,7 @@ sharp drop-off at the edges $|\cos\theta^*| \approx  1$, appearing in
 all plots in this section, is a consequence of the phase-space cuts which
 limit the phase-space volume.
 %
-Indeed, using  LO kinematics
+Indeed, using  \lo kinematics
 \begin{equation}
 | \cos\theta^* | = \tanh \left| \frac{\eta_\ell - \eta_{\bar{\ell}}}{2} \right| = \sqrt{1 - \frac{4 (p_T^\ell)^2}{\mll^2}} \text{,}
 \end{equation}

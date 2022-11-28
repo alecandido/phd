@@ -2,32 +2,30 @@
 
 The aim of this  section is to scrutinize the PDF dependence of the
 neutral-current \acrlong{dy} differential cross-section and of the associated
-forward-backward asymmetry by
-reviewing the \lo kinematics, determining LO analytic expressions, and finally
-comparing these analytical calculations to the results of \lo and \nlo 
-numerical simulations obtained  using \textsc{\small
-MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca} interfaced to {\sc\small
-PineAPPL}~\cite{Carrazza:2020gss,christopher_schwan_2022_7023438}.
+forward-backward asymmetry by reviewing the \lo kinematics, determining \lo
+analytic expressions, and finally comparing these analytical calculations to
+the results of \lo and \nlo  numerical simulations obtained using \mgamc,
+\cite{Alwall:2014hca}, interfaced to \pineappl,
+\cite{Carrazza:2020gss,christopher_schwan_2022_7023438}.
 %
-Specifically, we will relate the behavior of the differential
-distribution and asymmetry to the relevant parton luminosities.
+Specifically, we will relate the behavior of the differential distribution and
+asymmetry to the relevant parton luminosities.
 
-\subsection{Drell-Yan kinematics and cross-sections at LO}
+\subsection{Drell-Yan kinematics and cross-sections at \lo}
 \label{sec:dylo}
 
-We consider dilepton production via the exchange of an electroweak
-neutral gauge boson $Z/\gamma^*$
-in proton-proton collisions:
+We consider dilepton production via the exchange of an electroweak neutral
+gauge boson $Z/\gamma^*$ in proton-proton collisions:
 \begin{equation}
   \label{eq:DYprocess}
   \mathrm{p}(k_1) + \mathrm{p}(k_2) \to Z/\gamma^*(q) \to \ell(p_{\ell}) + \bar{\ell}(p_{\bar{\ell}}) + X \text{.}
 \end{equation}
-The hadronic differential cross-section $\d\sigma^{\mathrm{p}\mathrm{p}\to\llb}$  is factorized in
+The hadronic differential cross-section $\dd\sigma^{\mathrm{p}\mathrm{p}\to\llb}$  is factorized in
 terms of PDFs $f_i$ and the partonic cross sections
-$\d\hat\sigma_{ij}$ for incoming partons of species $i,\,j$ as
+$\dd\hat\sigma_{ij}$ for incoming partons of species $i,\,j$ as
 \begin{equation}
-  \d\sigma^{\mathrm{p}\mathrm{p}\to\llb} = \sum_{ij} \int\limits_0^1\!\d x_1 \d
-  x_2 f_i(x_1,\mu_F^2) f_j(x_2,\mu_F^2) \d\hat\sigma_{ij}(\hat k_1 = x_1
+  \dd\sigma^{\mathrm{p}\mathrm{p}\to\llb} = \sum_{ij} \int\limits_0^1\!\dd x_1 \dd
+  x_2 f_i(x_1,\mu_F^2) f_j(x_2,\mu_F^2) \dd\hat\sigma_{ij}(\hat k_1 = x_1
   k_1, \hat k_2 = x_2 k_2).
   \label{eq:factorization}
 \end{equation}
@@ -35,16 +33,16 @@ In the sequel we will set the  factorization scale $\mu_F$ to the
 invariant mass of the gauge boson, i.e.\ the dilepton
 invariant mass, so $\mu^2_F = \mll^2=(p_\ell + p_{\bar{\ell}})^2$.
 %
-The kinematics and Feynman diagram of the LO partonic process
+The kinematics and Feynman diagram of the \lo partonic process
 in the quark-antiquark channel are shown in \cref{fig:lo-dy}.
 We do not consider photon-initiated processes, as they do not affect
 the qualitative features of our discussion.
 
-%----------------------
-\input{diag-dylo}
-%----------------------
+%--------------------------------------
+\input{sections/chapters/afb/diag-dylo}
+%--------------------------------------
 
-At LO, the momentum fractions of the two incoming partons are fully
+At \lo, the momentum fractions of the two incoming partons are fully
 fixed by knowledge of the invariant mass and rapidity of the gauge
 boson, i.e.\ of the dilepton pair  $\yll = (y_\ell + y_{\bar{\ell}})/2$: 
 \begin{equation}
@@ -53,17 +51,17 @@ boson, i.e.\ of the dilepton pair  $\yll = (y_\ell + y_{\bar{\ell}})/2$:
   \mll}{\sqrt{s}}\exp(-\yll) \, ,
 \end{equation}
 where the center of mass energy of the hadronic collision is
-$s=(k_1+k_2)^2$ and at LO
+$s=(k_1+k_2)^2$ and at \lo
 $\mll^2 = \hat s = x_1 x_2 s$. The absolute dilepton
 rapidity thus lies in the range $|\yll|\le \ln (\sqrt{s}/\mll)$.
-Beyond LO there might be extra radiation in the final state, so the LO
+Beyond \lo there might be extra radiation in the final state, so the \lo
 kinematics provides a lower bound on the momentum fractions of the
 incoming partons, and all values of the momentum
 fractions such that $x_{1,2}\ge \mll/\sqrt s$ are allowed.
 
 It is useful to define the so-called  Collins-Soper
-angle $\theta^*$~\cite{Collins:1977iv}, which in the hadronic center-of-mass
-(CoM) frame is defined as
+angle $\theta^*$~\cite{Collins:1977iv}, which in the hadronic \acrfull{com}
+frame is defined as
 \begin{equation}
 \begin{split}
   \cos\theta^* &= \sign (\yll) \cos\theta \, ,\\
@@ -72,43 +70,38 @@ angle $\theta^*$~\cite{Collins:1977iv}, which in the hadronic center-of-mass
 \end{split}
 \end{equation}
 It is easy to show that the Collins-Soper angle $\theta^*$ coincides with the
-scattering angle of the lepton in the partonic CoM frame, $\bar\theta$.
+scattering angle of the lepton in the partonic \com frame, $\bar\theta$.
 %
-The latter is  
-defined in terms of the lepton momentum as 
+The latter is defined in terms of the lepton momentum as 
 \begin{equation}
  \cos\bar\theta \equiv \frac{p^z_\ell}{\mll} \,, \label{eq:coscm}
 \end{equation}
-where the $z$ axis is along the direction of the incoming
-quark-antiquark pair.
+where the $z$ axis is along the direction of the incoming quark-antiquark pair.
 %
-In the partonic CoM frame, of course,
-$p^z_\ell=-p^z_{\bar \ell}$ and $\yll =0$, so
+In the partonic \com frame, of course, $p^z_\ell=-p^z_{\bar \ell}$ and $\yll
+=0$, so
 \begin{equation}
 p^\pm_\ell=p^{\mp}_{\bar{\ell}}=  \mll \left( 1\pm \cos{\bar\theta} \right)\, ,
 \end{equation}
-and substituting in
-\cref{eq:cosine-cs-angle} it immediately follows that, taking
-the convention 
+and substituting in \cref{eq:cosine-cs-angle} it immediately follows that,
+taking the convention 
 $\sign (\yll)=\sign(0)=+1$, 
 $\cos\theta^*=\cos\theta=\cos{\bar\theta}$.
 %
-The expression of $\cos\theta$ in \cref{eq:cosine-cs-angle} is
-manifestly invariant upon boosts along the $z$ axis, so the
-identification of $\theta$ with the CoM scattering angle $\bar\theta$
-remains true in any reference frame.
+The expression of $\cos\theta$ in \cref{eq:cosine-cs-angle} is manifestly
+invariant upon boosts along the $z$ axis, so the identification of $\theta$
+with the \com scattering angle $\bar\theta$ remains true in any reference
+frame.
 
-Note that the definition
-\cref{eq:coscm} requires a choice for the positive direction of
-the $z$ axis, which is usually taken along the direction of the
+Note that the definition \cref{eq:coscm} requires a choice for the positive
+direction of the $z$ axis, which is usually taken along the direction of the
 incoming fermion (quark).
 %
 This direction is  not experimentally accessible in proton-proton collisions,
-so the Collins-Soper angle is defined by always
-taking the positive $z$ axis in the direction of the boosted dilepton
-pair, i.e., at LO, along the direction of the incoming quark with
-largest momentum fraction, i.e.\ by supplementing in the definition
-a factor $\sign(\yll)$.
+so the Collins-Soper angle is defined by always taking the positive $z$ axis in
+the direction of the boosted dilepton pair, i.e., at \lo, along the direction of
+the incoming quark with largest momentum fraction, i.e.\ by supplementing in
+the definition a factor $\sign(\yll)$.
 %
 Hence $\cos\theta^*=\cos{\bar\theta}$ ($\cos\theta^*=-\cos{\bar\theta}$)  if
 the momentum fraction of the incoming quark (antiquark) is the largest.
@@ -129,14 +122,14 @@ the pure photon and pure $Z$ contributions to the cross-section are
 necessarily  even in $\cos\theta^*$ while the interference term is
 odd.
 
-Specifically, at LO the fully differential hadronic cross-section can
+Specifically, at \lo the fully differential hadronic cross-section can
 be obtained from the well-known result~\cite{Peskin:1995ev} for
 $e^+e^-\to\mu^+\mu^-$ by replacing the incoming lepton charges  with
 those of the quarks, and accounting for the PDFs, with
 the result
 \begin{align}
-    \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} &= \frac{\pi \alpha^2}{3 \mll s} \left((1+\cos^2({\theta^*})) \sum_q S_q \left[f_q(x_1,\mll^2) f_{\barq}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\barq}(x_1,\mll^2) \right] \right. \nonumber\\
-    &\hspace*{15pt} + \left. \cos\theta^* \sum_q A_q \sign (\yll) \left[ f_q(x_1,\mll^2) f_{\barq}(x_2,\mll^2) - f_q(x_2,\mll^2) f_{\barq}(x_1,\mll^2)\right] \right) \, ,
+    \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} &= \frac{\pi \alpha^2}{3 \mll s} \left((1+\cos^2({\theta^*})) \sum_q S_q \left[f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2) \right] \right. \nonumber\\
+    &\hspace*{15pt} + \left. \cos\theta^* \sum_q A_q \sign (\yll) \left[ f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) - f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2)\right] \right) \, ,
     \label{eq:lo-triple-diff}
 \end{align}
 where  $\alpha$ is the QED coupling and the even (symmetric) and
@@ -198,7 +191,7 @@ In a proton-proton collision the initial state is completely
 symmetric, so the quark and antiquark contributions to the
 cross-section \cref{eq:lo-triple-diff} are necessarily symmetric
 upon the interchange of the incoming quark and antiquark, with the
-corresponding momentum fractions fixed at LO by
+corresponding momentum fractions fixed at \lo by
 \cref{eq:x_fractions}.
 %
 However, as mentioned, there
@@ -220,9 +213,9 @@ to rewrite the PDF combinations that contribute to the differential
 cross-section \cref{eq:lo-triple-diff} in terms of symmetric and
 antisymmetric parton luminosities, defined as
 \begin{align}
-  \mathcal{L}_{S,q}(\mll, \yll) &\equiv f_q(x_1,\mll^2) f_{\barq}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\barq}(x_1,\mll^2) \, ,
+  \mathcal{L}_{S,q}(\mll, \yll) &\equiv f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2) \, ,
   \nonumber\\
-  \mathcal{L}_{A,q}(\mll, \yll) &\equiv \sign (\yll) \left[ f_q(x_1,\mll^2) f_{\barq}(x_2,\mll^2) - f_q(x_2,\mll^2) f_{\barq}(x_1,\mll^2)\right] \, , \label{eq:symm_asymm_lumis}
+  \mathcal{L}_{A,q}(\mll, \yll) &\equiv \sign (\yll) \left[ f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) - f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2)\right] \, , \label{eq:symm_asymm_lumis}
 \end{align}
 where the momentum fractions $x_1$ and $x_2$ are given in terms of $\mll$, $\yll$,
 and $\sqrt{s}$ in \cref{eq:x_fractions}.
@@ -233,7 +226,7 @@ In terms of these luminosities, the triple differential cross-section \cref{eq:l
 takes the compact form
 \begin{equation}
   \label{eq:lo-triple-diff-lumis}
-  \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} =
+  \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} =
   \frac{\pi \alpha^2}{3 \mll s} \left( (1+\cos^2({\theta^*})) \sum_q S_q \mathcal{L}_{S,q}(\mll, \yll)
   + \cos\theta^* \sum_q A_q \mathcal{L}_{A,q}(\mll, \yll)  \right) \, ,
 \end{equation}
@@ -249,7 +242,7 @@ in terms of the sum and difference of quark and antiquark PDFs,
   f_{q}^\pm \left( x, Q\right) = f_{q} \left( x, Q\right) \pm f_{\bar{q}} \left( x, Q\right) \, ,
 \end{equation}
 where $f_{q}^-$ is usually called the valence PDF combination,
-and $f_{q}^+$  the total quark PDF\@. Note that at LO, and more
+and $f_{q}^+$  the total quark PDF\@. Note that at \lo, and more
 generally in factorization schemes in which PDFs are
 positive, such as $\msbar$ \cite{Candido:2020yat}, $f^+_q$
 is positive while $f_q^-$
@@ -292,7 +285,7 @@ In particular, the single-differential distribution in the
 Collins-Soper angle $\theta^*$ is given by
 \begin{equation}
   \label{eq:dsigma-dcos}
-  \frac{\d\sigma}{\d\cos\theta^*} = \int\limits_{\mll^{\text{min}}}^{\sqrt s}\!\d\mll\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\d\yll\, \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} \, ,
+  \frac{\dd\sigma}{\dd\cos\theta^*} = \int\limits_{\mll^{\text{min}}}^{\sqrt s}\!\dd\mll\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\dd\yll\, \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} \, ,
 \end{equation}
 where $\mll^{\text{min}}$ is a lower kinematic cut in the dilepton invariant mass.
 %
@@ -307,23 +300,23 @@ affect the  $\cos\theta^*$ dependence, and the single-differential
 cross section \cref{eq:dsigma-dcos} takes the simple form 
 \begin{equation}
   \label{eq:dsigma-dcos-v2}
-  \frac{\d\sigma}{\d\cos\theta^*} = (1+\cos^2\theta^*)\sum_q g_{S,q} + \cos\theta^*\sum_q g_{A,q} \, ,
+  \frac{\dd\sigma}{\dd\cos\theta^*} = (1+\cos^2\theta^*)\sum_q g_{S,q} + \cos\theta^*\sum_q g_{A,q} \, ,
 \end{equation}
 where the symmetric and antisymmetric coefficients $g_{S,q}$ and $g_{A,q}$ depend on the quark flavor
 and on the invariant mass cut $\mll^{\text{min}}$, but not on the
 Collins-Soper angle itself.
 %
 The contributions relevant for the forward-backward asymmetry, $g_{A,q}$,
-are given at LO by
+are given at \lo by
 \begin{equation}
 \label{eq:gAq_integrated_1}
-g_{A,q} =\frac{\pi \alpha^2}{3 s} \int\limits_{\mll^{\text{min}}}^{\sqrt s}\frac{\d\mll}{\mll}A_{q}(\mll)\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\d\yll\, \mathcal{L}_{A,q}(\mll,\yll) \, ,
+g_{A,q} =\frac{\pi \alpha^2}{3 s} \int\limits_{\mll^{\text{min}}}^{\sqrt s}\frac{\dd\mll}{\mll}A_{q}(\mll)\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\dd\yll\, \mathcal{L}_{A,q}(\mll,\yll) \, ,
 \end{equation}
 which in the large-$\mll$ region,
  expressing the longitudinal momentum integration in terms of
 $x_1$ (assuming $x_1~\ge x_2$), becomes
 \begin{equation}
-  g_{A,q} = \frac{\pi \alpha^2\bar A_q}{3 s} \int\limits_{\mll^{\text{min}}}^{\sqrt s}\frac{\d\mll}{\mll}
+  g_{A,q} = \frac{\pi \alpha^2\bar A_q}{3 s} \int\limits_{\mll^{\text{min}}}^{\sqrt s}\frac{\dd\mll}{\mll}
   \!\!\int\limits_{\mll/\sqrt s}^{1}\!\!\frac{\text{d}x_1}{x_1}\, 
   \mathcal{L}_{A,q}(\mll,x_1)+\mathcal{O} \left(\frac{m_Z^2}{\mll^2}\right) \, ,
   \label{eq:gAq_integrated}
@@ -337,7 +330,7 @@ antisymmetric contribution vanishes: so for instance the
 rapidity distribution
 \begin{equation}
   \label{eq:dsigma-dyll}
-  \frac{\d\sigma}{\d\yll} = \int\limits_{\mll^{\text{min}}}^{\sqrt s}\!\d\mll \int\limits_{-1}^{1}\!\!\d\cos\theta^*\, \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} \, ,
+  \frac{\dd\sigma}{\dd\yll} = \int\limits_{\mll^{\text{min}}}^{\sqrt s}\!\dd\mll \int\limits_{-1}^{1}\!\!\dd\cos\theta^*\, \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} \, ,
 \end{equation}
 does not depend on terms proportional to $A_q$.
 %
@@ -349,13 +342,13 @@ asymmetry is especially relevant.
 This observable is
 defined at the differential level as
 \begin{equation}
-  A_{\text{fb}}(\cos\theta^*) \equiv \frac{ \frac{\d\sigma}{\d\cos\theta^*}(\cos\theta^*)
-  - \frac{\d\sigma}{\d\cos\theta^*}(-\cos\theta^*)}{ \frac{\d\sigma}{\d\cos\theta^*}(\cos\theta^*)
-  + \frac{\d\sigma}{\d\cos\theta^*}(-\cos\theta^*) } \, ,\quad \cos\theta^*>0 \, ,
+  A_{\text{fb}}(\cos\theta^*) \equiv \frac{ \frac{\dd\sigma}{\dd\cos\theta^*}(\cos\theta^*)
+  - \frac{\dd\sigma}{\dd\cos\theta^*}(-\cos\theta^*)}{ \frac{\dd\sigma}{\dd\cos\theta^*}(\cos\theta^*)
+  + \frac{\dd\sigma}{\dd\cos\theta^*}(-\cos\theta^*) } \, ,\quad \cos\theta^*>0 \, ,
   \label{eq:forward-backward-asymmetry}
 \end{equation}
 which in terms of the coefficients introduced in
-\cref{eq:dsigma-dcos-v2} is given at LO by
+\cref{eq:dsigma-dcos-v2} is given at \lo by
 \begin{equation}
   \label{eq:afb_lo}
   A_{\text{fb}}(\cos\theta^*)   = \frac{\cos\theta^*}{(1+\cos^2(\theta^*))}\frac{\sum_q g_{A,q} }{\sum_{q'} g_{S,q'}} \, ,\quad \cos\theta^*>0 \,.
@@ -376,16 +369,16 @@ Note that the overall sign of $A_{\text{fb}}$ remains in general undetermined.
   \caption{The single-inclusive differential distribution in
     the Collins-Soper angle $\cos\theta^*$,
     \cref{eq:dsigma-dcos},
-    and the corresponding forward-backward asymmetry computed at LO,
+    and the corresponding forward-backward asymmetry computed at \lo,
     where the analytic calculation  \cref{eq:forward-backward-asymmetry}
     is compared with the numerical simulation based on 
-    {\sc\small MadGraph5\_aMC@NLO}
+    \mgamc
     interfaced to \pineappl.
     %
     The bottom panels display the relative difference between the analytic and
     numerical calculations.
     %
-    One of the replicas of the \nnpdfr{4.0} NNLO PDF set is used as input
+    One of the replicas of the \nnpdfr{4.0} \nnlo PDF set is used as input
     to the calculation.
   }    
   \label{fig:lo-diff-cos}
@@ -397,19 +390,16 @@ in \cref{fig:lo-diff-cos} we display the
 single-inclusive differential distribution in $\cos\theta^*$,
 \cref{eq:dsigma-dcos},
 and the corresponding forward-backward asymmetry,
-\cref{eq:forward-backward-asymmetry} evaluated at LO
+\cref{eq:forward-backward-asymmetry} evaluated at \lo
 for $\mll^{\text{min}}=\SI{5}{\TeV}$. The single-differential rapidity
-distribution Eq.~(\ref{eq:dsigma-dyll}) is also shown for reference in Fig.~\ref{fig:lo-diff-yll}.
+distribution \cref{eq:dsigma-dyll}) is also shown for reference in Fig.~\ref{fig:lo-diff-yll}.
 %
-We display both a numerical  evaluation based on
- {\sc\small MadGraph5\_aMC@NLO}
-interfaced to {\sc\small
-  PineAPPL},
-as well as analytic results found using the form \cref{eq:lo-triple-diff-lumis} of the triple
-differential luminosity, with all the values of the parameters
-entering \crefrange{eq:coup}{eq:propzz} set to the values used in
-the {\sc\small MadGraph5\_aMC@NLO} runcard, and performing  numerically
-the integrals in \cref{eq:dsigma-dcos,eq:dsigma-dyll}.
+We display both a numerical evaluation based on \mgamc interfaced to \pineappl,
+as well as analytic results found using the form \cref{eq:lo-triple-diff-lumis}
+of the triple differential luminosity, with all the values of the parameters
+entering \crefrange{eq:coup}{eq:propzz} set to the values used in the \mgamc
+runcard, and performing  numerically the integrals in
+\cref{eq:dsigma-dcos,eq:dsigma-dyll}.
 %
 For validation purposes, no kinematic cuts are applied to the rapidities and
 transverse momenta of final-state leptons.
@@ -448,9 +438,8 @@ independent of the value of $\cos\theta^*$.
   \centering
   \includegraphics[width=0.49\linewidth]{plots/sigma_lo_nlo-MLL_5000_COSTH-r3.pdf}
   \includegraphics[width=0.49\linewidth]{plots/afb_lo_nlo-MLL_5000_COSTH-r3.pdf}
-  \caption{Same as \cref{fig:lo-diff-cos} now comparing the LO result
-    to the \nlo \qcd result obtained using
-    \textsc{\small MadGraph5\_aMC@NLO}.
+  \caption{Same as \cref{fig:lo-diff-cos} now comparing the \lo result
+    to the \nlo \qcd result obtained using \mgamc.
     %
     The $K$-factor is shown in the lower panel.
   }
