@@ -137,18 +137,18 @@ and \msbar{} schemes are related by
   +\frac{\alpha_s}{2\pi}
   {{{\bar{C}}^{(1)}}_q{}}^{\mmsbar}\otimes\right]\left[{q^{\NS}}\right]^{\mmsbar}(Q^2) \,,
 \end{equation}
-where again we have dropped the $\xi$ dependence of the convolution
-on the right-hand side,
-as in \crefrange{eq:pos/dismsbar,eq:pos/dismsbar2}.
+where again we have dropped the $\xi$ dependence of the convolution on the
+right-hand side, as in \crefrange{eq:pos/dismsbar}{eq:pos/dismsbar2}.
 
 The \msbar{} PDFs can be obtained in terms of the DIS ones by inverting
 \cref{eq:pos/msbartodis}: perturbative inversion of course gives
-\begin{equation}\label{eq:pos/distomsbar}
-\left[{q^{\NS}}\right]^{\mmsbar}(\xi,Q^2)=
-\left[1-\frac{\alpha_s}{2\pi} {\Delta^{(1)}_q}^{\mmsbar}
-  -\frac{\alpha_s}{2\pi}  {\bar
-    C^{(1)}_q{}}^{\mmsbar}\otimes\right]\left[{q^{\NS}}\right]^{\textrm{DIS}}(Q^2)
-+O(\alpha_s^2) \,.
+\begin{equation}
+  \left[{q^{\NS}}\right]^{\mmsbar}(\xi,Q^2)=
+  \left[1-\frac{\alpha_s}{2\pi} {\Delta^{(1)}_q}^{\mmsbar}
+    -\frac{\alpha_s}{2\pi}  {\bar
+      C^{(1)}_q{}}^{\mmsbar}\otimes\right]\left[{q^{\NS}}\right]^{\textrm{DIS}}(Q^2)
+  +O(\alpha_s^2) \,.
+  \label{eq:pos/distomsbar}
 \end{equation}
 One may worry that therefore the \msbar{} PDFs may turn negative in the
 large $\xi$ region, where $\alpha_s\ln(1-\xi)\gtrsim 1$ and the last term
@@ -478,17 +478,19 @@ diagonal:
       0 \\0 & {{{C^{g}}_g}^{(1)}}^{\textrm{POS}} \end{array}\right)\left[1+O(1-z)\right].
 \end{equation}
 Indeed, diagonal coefficient functions grow as
-$\left(\frac{\ln(1-z)}{(1-z)}\right)_+$ while off-diagonal ones tend to a constant
-as $z\to1$. This is clearly seen in the $N$ space plots of
-\cref{fig:dy,fig:higgs}, in which as $N\to\infty$ the diagonal coefficient
-functions are seen to grow (as $\ln^2N$) while the off-diagonal ones
-vanish (as $\frac{1}{N}$)~\footnote{The same power behavior also
-  holds in the \msbar{} scheme, where however the off-diagonal
-  coefficient functions grow as $\ln(1-z)$ as $z\to 1$, corresponding
-  to a $\frac{\ln N}{N}$ behavior of its Mellin transform at large $N$.}
-It follows that at large $z$ the quark and gluon channels decouple, and
-the perturbativity argument is the same as in the
-nonsinglet case. 
+$\left(\frac{\ln(1-z)}{(1-z)}\right)_+$ while off-diagonal ones tend to a
+constant as $z\to1$.
+This is clearly seen in the $N$ space plots of
+\cref{fig:pos/dy,fig:pos/higgs}, in which as $N\to\infty$ the diagonal
+coefficient functions are seen to grow (as $\ln^2N$) while the off-diagonal
+ones vanish (as $\frac{1}{N}$)~\footnote{
+  The same power behavior also holds in the \msbar{} scheme, where however the
+  off-diagonal coefficient functions grow as $\ln(1-z)$ as $z\to 1$,
+  corresponding to a $\frac{\ln N}{N}$ behavior of its Mellin transform at
+  large $N$.
+}
+It follows that at large $z$ the quark and gluon channels decouple, and the
+perturbativity argument is the same as in the non-singlet case. 
 
 \subsubsection{Positive PDFs and their scale dependence}
 \label{sec:pos/ap}
@@ -692,7 +694,8 @@ matrix elements satisfy
   K^{\textrm{MPOS}}_{gg}(z)&= -2n_f f^{\textrm{MOM}}(z) K^{\textrm{POS}}_{qg}\Big|_{N=2} \,.
 \end{align}
 The MPOS scheme then automatically satisfies momentum conservation. Coefficient
-functions in the MPOS scheme are shown in \crefrange{fig:dis}{fig:higgs}. 
+functions in the MPOS scheme are shown in
+\crefrange{fig:pos/dis}{fig:pos/higgs}. 
 It is clear that coefficient functions, and thus PDFs, remain positive in the
 MPOS scheme: indeed, the off-diagonal coefficient functions are unchanged,
 while the diagonal NLO contributions are modified by a small correction which
@@ -763,13 +766,13 @@ inverse of the scheme change matrix, \cref{eq:pos/schch}:
 where $K^{\textrm{POS}}_{ij}(N)$ denote (by slight abuse of notation) the Mellin
 transforms of the matrix elements $K^{\textrm{POS}}_{ij}$ of the matrix
 $K^{\textrm{POS}}$.
-It is easy to check that the factor $ K_{qg}(N)K_{gq}(N)$ is a
-monotonically decreasing function of $N$ along the real $N$ axis, and
-in particular it vanishes as $\frac{1}{N^2}$ as $N\to\infty$, hence
-the prefactor which relates the exact and perturbative inversions,
-\cref{eq:pos/schchinv,eq:pos/exninv}, is actually bounded in the
-region $N\gtrsim 2$ in which the \msbar{} coefficient functions, and
-thus the matrix elements of $K$, turn negative (cf.\ \cref{fig:dy,fig:higgs}). 
+It is easy to check that the factor $ K_{qg}(N)K_{gq}(N)$ is a monotonically
+decreasing function of $N$ along the real $N$ axis, and in particular it
+vanishes as $\frac{1}{N^2}$ as $N\to\infty$, hence the prefactor which relates
+the exact and perturbative inversions, \cref{eq:pos/schchinv,eq:pos/exninv}, is
+actually bounded in the region $N\gtrsim 2$ in which the \msbar{} coefficient
+functions, and thus the matrix elements of $K$, turn negative (cf.\
+\cref{fig:pos/dy,fig:pos/higgs}). 
 
 We conclude that the light quark and gluon \msbar{} PDFs are in fact positive
 at NLO.
