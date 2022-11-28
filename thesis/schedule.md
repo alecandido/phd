@@ -79,27 +79,29 @@ _Buffer_
 
 ## 27
 
-- positivity introductions
-- Rearrange positivity
-- Write Conclusions
-- Import AFB
-- Rearrange IC
-- Review GP section
+- Write GP section
 
 ## 28
 
 _Buffer_
 
-- Write QED mention
-- Rearrange AFB
-- Write banana
+- positivity introductions
+- Rearrange positivity
+- Write Conclusions
+- Import AFB
 
 ## 29
 
 _Buffer_
 
-- Write Dev appendix
+- Write QED mention
+- Rearrange IC
+- Rearrange AFB
 
 ## 30
 
-Buffer
+_Buffer_
+
+- Review GP section
+- Write banana
+- Write Dev appendix
