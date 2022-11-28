@@ -1,6 +1,6 @@
 % !TeX root = ../../../main.tex
 
-The aim of this  section is to scrutinize the PDF dependence of the
+The aim of this  section is to scrutinize the \pdf dependence of the
 neutral-current \acrlong{dy} differential cross-section and of the associated
 forward-backward asymmetry by reviewing the \lo kinematics, determining \lo
 analytic expressions, and finally comparing these analytical calculations to
@@ -21,7 +21,7 @@ gauge boson $Z/\gamma^*$ in proton-proton collisions:
   \mathrm{p}(k_1) + \mathrm{p}(k_2) \to Z/\gamma^*(q) \to \ell(p_{\ell}) + \bar{\ell}(p_{\bar{\ell}}) + X \text{.}
 \end{equation}
 The hadronic differential cross-section $\dd\sigma^{\mathrm{p}\mathrm{p}\to\llb}$  is factorized in
-terms of PDFs $f_i$ and the partonic cross sections
+terms of \pdfs $f_i$ and the partonic cross sections
 $\dd\hat\sigma_{ij}$ for incoming partons of species $i,\,j$ as
 \begin{equation}
   \dd\sigma^{\mathrm{p}\mathrm{p}\to\llb} = \sum_{ij} \int\limits_0^1\!\dd x_1 \dd
@@ -125,7 +125,7 @@ odd.
 Specifically, at \lo the fully differential hadronic cross-section can
 be obtained from the well-known result~\cite{Peskin:1995ev} for
 $e^+e^-\to\mu^+\mu^-$ by replacing the incoming lepton charges  with
-those of the quarks, and accounting for the PDFs, with
+those of the quarks, and accounting for the \pdfs, with
 the result
 \begin{align}
     \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} &= \frac{\pi \alpha^2}{3 \mll s} \left((1+\cos^2({\theta^*})) \sum_q S_q \left[f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2) \right] \right. \nonumber\\
@@ -199,17 +199,17 @@ is a sign change in the relation between $\cos\theta^*$ and
 $\cos\theta$ according to whether the incoming parton with largest
 momentum fraction is a quark or an antiquark, i.e.,
 when interchanging
-$x_1$ with $x_2$ in the argument of the quark and antiquark PDFs,
+$x_1$ with $x_2$ in the argument of the quark and antiquark \pdfs,
 thereby leading to the result of  \cref{eq:lo-triple-diff}.
 %
 This leads
 to a forward-backward asymmetry whenever the quark and antiquark
-PDFs have different $x$ dependence.
+\pdfs have different $x$ dependence.
 
 In order to understand the relation of this forward-backward
 asymmetry in terms of the
-behavior of the PDFs, it is convenient
-to rewrite the PDF combinations that contribute to the differential
+behavior of the \pdfs, it is convenient
+to rewrite the \pdf combinations that contribute to the differential
 cross-section \cref{eq:lo-triple-diff} in terms of symmetric and
 antisymmetric parton luminosities, defined as
 \begin{align}
@@ -236,17 +236,15 @@ equivalent to a charge conjugation transformation
 $q\leftrightarrow \bar q$ and $\ell \leftrightarrow \bar{\ell} $.
 
 The symmetric and antisymmetric parton luminosities \cref{eq:symm_asymm_lumis} can also be expressed
-in terms of the sum and difference of quark and antiquark PDFs,
+in terms of the sum and difference of quark and antiquark \pdfs,
 \begin{equation}
   \label{eq:fqpm}
   f_{q}^\pm \left( x, Q\right) = f_{q} \left( x, Q\right) \pm f_{\bar{q}} \left( x, Q\right) \, ,
 \end{equation}
-where $f_{q}^-$ is usually called the valence PDF combination,
-and $f_{q}^+$  the total quark PDF\@. Note that at \lo, and more
-generally in factorization schemes in which PDFs are
-positive, such as $\msbar$ \cite{Candido:2020yat}, $f^+_q$
-is positive while $f_q^-$
-in general is not, and $f_{q}^+>|f_{q}^-|$.
+where $f_{q}^-$ is usually called the valence \pdf combination, and $f_{q}^+$
+the total quark \pdf\@. Note that at \lo, and more generally in factorization
+schemes in which \pdfs are positive, such as $\mmsbar$ \cite{Candido:2020yat},
+$f^+_q$ is positive while $f_q^-$ in general is not, and $f_{q}^+>|f_{q}^-|$.
 %
 We can write the symmetric and antisymmetric parton luminosities in
 \cref{eq:symm_asymm_lumis} as
@@ -255,24 +253,20 @@ We can write the symmetric and antisymmetric parton luminosities in
   \mathcal{L}_{A,q}(\mll, \yll) &= \frac {\sign (\yll)} 2 \left( f_q^-(x_1,\mll^2) f_{q}^+(x_2,\mll^2) - f_q^-(x_2,\mll^2) f_{q}^+(x_1,\mll^2)  \, \right) \,. \label{eq:lumisa_qpm}
 \end{align}
 
-The symmetric luminosity $\mathcal{L}_{S,q}$ is of course positive,
-and it is
-dominated by the $f_q^+(x_1,\mll^2) f_{q}^+(x_2,\mll^2)$ term, which
-is always larger than the valence contribution 
-$f_q^-(x_2,\mll^2) f_{q}^-(x_1,\mll^2)$.
-The sign of the antisymmetric combination, that in turn
-drives the sign of the
-forward-backward asymmetry, is in general not determined
-uniquely.
+The symmetric luminosity $\mathcal{L}_{S,q}$ is of course positive, and it is
+dominated by the $f_q^+(x_1,\mll^2) f_{q}^+(x_2,\mll^2)$ term, which is always
+larger than the valence contribution  $f_q^-(x_2,\mll^2) f_{q}^-(x_1,\mll^2)$.
+The sign of the antisymmetric combination, that in turn drives the sign of the
+forward-backward asymmetry, is in general not determined uniquely.
 %
-If $x_1$ is in the region of the valence peak, and $x_2$ in
-the small $x$ region, then $f^-(x_1,\mll^2)\gg f^-(x_2,\mll^2)$, and the
-antisymmetric luminosity is positive provided only that the valence PDF is positive.
+If $x_1$ is in the region of the valence peak, and $x_2$ in the small $x$
+region, then $f^-(x_1,\mll^2)\gg f^-(x_2,\mll^2)$, and the antisymmetric
+luminosity is positive provided only that the valence \pdf is positive.
 %
 As we will discuss in Sect.~\ref{sec:largexpdfs},
 while this is indeed the case in
 the $Z$-peak region, it is actually not necessarily the case in the
-high dilepton mass region relevant for BSM searches.
+high dilepton mass region relevant for \bsm searches.
 
 \subsection{Single-differential distributions and the forward-backward asymmetry}
 \label{sec:numlo}
@@ -294,7 +288,7 @@ with $\mll \gsim \mll^{\text{min}}$ will dominate the integral.
 %
 Given that the dependence of the fully differential cross-section
 \cref{eq:lo-triple-diff-lumis}
-on  the Collins-Soper angle factorizes with respect to the PDF
+on  the Collins-Soper angle factorizes with respect to the \pdf
 dependence, the integration over rapidity and invariant mass does not
 affect the  $\cos\theta^*$ dependence, and the single-differential
 cross section \cref{eq:dsigma-dcos} takes the simple form 
@@ -334,8 +328,8 @@ rapidity distribution
 \end{equation}
 does not depend on terms proportional to $A_q$.
 %
-Hence, for BSM searches in which one is
-interested in the interference terms, as well as for PDF studies in which one is
+Hence, for \bsm searches in which one is
+interested in the interference terms, as well as for \pdf studies in which one is
 interested in the valence-sea separation, the forward-backward
 asymmetry is especially relevant.
 %
@@ -354,7 +348,7 @@ which in terms of the coefficients introduced in
   A_{\text{fb}}(\cos\theta^*)   = \frac{\cos\theta^*}{(1+\cos^2(\theta^*))}\frac{\sum_q g_{A,q} }{\sum_{q'} g_{S,q'}} \, ,\quad \cos\theta^*>0 \,.
 \end{equation}
 This  shows that the dependence on $\cos\theta^*$ factorizes
-and the PDF dependence only appears as an overall normalization factor
+and the \pdf dependence only appears as an overall normalization factor
 depending on the ratio of $\sum_q g_{A,q}$
 and $\sum_q g_{S,q}$, which in turn depend on the antisymmetric and symmetric
 partonic luminosities $ \mathcal{L}_{A,q}$ and $ \mathcal{L}_{S,q}$ respectively.
@@ -378,7 +372,7 @@ Note that the overall sign of $A_{\text{fb}}$ remains in general undetermined.
     The bottom panels display the relative difference between the analytic and
     numerical calculations.
     %
-    One of the replicas of the \nnpdfr{4.0} \nnlo PDF set is used as input
+    One of the replicas of the \nnpdfr{4.0} \nnlo \pdf set is used as input
     to the calculation.
   }    
   \label{fig:lo-diff-cos}
