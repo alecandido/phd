@@ -18,18 +18,18 @@ recent \pdf sets: we compare \pdfs, luminosities and the \lo asymmetry
 $A_{\rm fb}$ as a function of the dilepton invariant mass $\mll$.
 
 \subsection{Qualitative features of \texorpdfstring{$A_{\rm fb}$}{Afb}}
-\label{sec:afb_toy}
+\label{sec:afb/afb_toy}
 
 In order to understand the main qualitative features of  the $\cos\theta^*$
 distribution and of the asymmetry $A_{\rm fb}$ and their dependence on the 
 properties of the underlying
 \pdfs, it is instructive to evaluate predictions based on the
-same computational setup adopted in \cref{sec:HMDY}, namely
+same computational setup adopted in \cref{sec:afb/HMDY}, namely
  \lo matrix elements without kinematic cuts, using toy \pdfs as input.
 %
 We consider toy quark and antiquark \pdf with  the form
 \begin{equation}
-  \label{eq:toypdf}
+  \label{eq:afb/toypdf}
   xf_q(x) = A_qx^{-a_q}(1-x)^{b_q} \, , \quad xf_{\bar{q}}(x) = A_{\bar{q}}x^{-a_{\bar{q}}}(1-x)^{b_{\bar{q}}} \, ,
 \end{equation}
 where $A_q$ and $A_{\bar{q}}$ are  normalization constants, irrelevant
@@ -38,8 +38,8 @@ for this discussion.
 For simplicity we neglect the scale dependence of
 the \pdfs.
 %
-We then compute the single-differential distribution \cref{eq:dsigma-dcos} and
-the asymmetry \cref{eq:forward-backward-asymmetry} with different assumptions on the
+We then compute the single-differential distribution \cref{eq:afb/dsigma-dcos} and
+the asymmetry \cref{eq:afb/forward-backward-asymmetry} with different assumptions on the
 large $x$-behavior of these toy \pdfs, i.e.\ different values of the large-$x$
 exponents $b_q$, $b_{\bar{q}}$.
 
@@ -50,8 +50,8 @@ Furthermore, since we are not interested in the small-$x$ behavior,
 we set $a_q=a_{\bar{q}}=1$. 
 %
 Hence, we consider simple scenarios in which 
-\begin{align}\label{eq:toyp}
-xf_q^+(x; b_q,b_{\bar{q}}) &= xf_q(x)+xf_{\bar{q}}(x) = x^{-1}\lc (1-x)^{b_q} +(1-x)^{b_{\bar{q}}}  \rc  \,, \\\label{eq:toym}
+\begin{align}\label{eq:afb/toyp}
+xf_q^+(x; b_q,b_{\bar{q}}) &= xf_q(x)+xf_{\bar{q}}(x) = x^{-1}\lc (1-x)^{b_q} +(1-x)^{b_{\bar{q}}}  \rc  \,, \\\label{eq:afb/toym}
 xf_q^-(x; b_q,b_{\bar{q}}) &= xf_q(x)-xf_{\bar{q}}(x) = x^{-1}\lc (1-x)^{b_q} -(1-x)^{b_{\bar{q}}}  \rc  \,, 
 \end{align}
 with different choices of the parameters  $b_q$ and $b_{\bar{q}}$.
@@ -68,21 +68,21 @@ $(b_q,b_{\bar{q}})=(5,3)$, so the valence combination $xf_q^-$ becomes negative.
  \includegraphics[width=0.49\linewidth]{ch-afb/sigma_toy-33-53-35.pdf}
  \includegraphics[width=0.49\linewidth]{ch-afb/afb_toy-33-53-35.pdf}
  \caption{The single-inclusive $\cos\theta^*$ distribution
-   \cref{eq:dsigma-dcos}  (left)
+   \cref{eq:afb/dsigma-dcos}  (left)
    and the corresponding forward-backward asymmetry
-   (right panel) \cref{eq:forward-backward-asymmetry} evaluated using 
-    the toy \pdfs of \cref{eq:toypdf}.
+   (right panel) \cref{eq:afb/forward-backward-asymmetry} evaluated using 
+    the toy \pdfs of \cref{eq:afb/toypdf}.
    %
    No  kinematic cuts are applied except for $\mll^{\rm min}=5$ TeV.
    %
  }    
- \label{fig:sigma_toy}
+ \label{fig:afb/sigma_toy}
 \end{figure}
 %-----------------------------------------------------------------
 
-In \cref{fig:sigma_toy} we display both the $\cos\theta^*$
-single-inclusive distribution \cref{eq:dsigma-dcos} and
-the asymmetry \cref{eq:forward-backward-asymmetry}.
+In \cref{fig:afb/sigma_toy} we display both the $\cos\theta^*$
+single-inclusive distribution \cref{eq:afb/dsigma-dcos} and
+the asymmetry \cref{eq:afb/forward-backward-asymmetry}.
 %
 It is apparent that if the  antiquark \pdfs fall off at large-$x$ faster than
 the quarks, i.e.\ when $b_q < b_{\bar{q}}$ the forward-backward
@@ -112,9 +112,9 @@ apply in the strict $x\to1$ limit.
 
 In fact, whereas in the toy model a negative asymmetry is
 associated with a negative valence
-\cref{eq:toym}, the formal condition for a negative asymmetry is
+\cref{eq:afb/toym}, the formal condition for a negative asymmetry is
 (assuming $x_1>x_2$)
-\begin{equation}\label{eq:signas}
+\begin{equation}\label{eq:afb/signas}
    \sign\left[\mathcal{L}_{A,q}\right]=\sign\left[\frac{ f_q^+(x_2)}{
        f_q^+(x_1)}-\frac{
        f_q^-(x_2)}{f_q^-(x_1)}\right]=\sign\left[\frac{ f_q(x_2)}{
@@ -124,7 +124,7 @@ Hence what determines the sign of the antisymmetric luminosity, and thus
 of the forward-backward asymmetry, is the relative rate of decrease of
 the quark and antiquark, or valence and total quark \pdfs, rather than
 their sign. Again, it is easy to construct generalizations of the
-toy model in which the condition \cref{eq:signas} still holds,  yet
+toy model in which the condition \cref{eq:afb/signas} still holds,  yet
 the valence \pdf remains positive.
 
 It is interesting to note that a different conclusion is reached using
@@ -134,7 +134,7 @@ peak region.
 This approximation however turns out to fail at high
 invariant mass.
 %
-Indeed, the expression \cref{eq:lumisa_qpm} of the antisymmetric
+Indeed, the expression \cref{eq:afb/lumisa_qpm} of the antisymmetric
 luminosity in terms of the valence 
 and total \pdf combinations $f_q^+$ and $f_q^-$ \pdf combinations
 suggests an approximation based on the expectation
@@ -143,7 +143,7 @@ small $x$. Assuming $x_1> x_2$, one then expects that
 \be
 \mathcal{L}_{A,u}(\yll,\mll) \approx\frac {1}{2} f_u^-(x_1,\mll^2)
 f_{u}^+(x_2,\mll^2)   \,  \, ,\quad x_1>x_2.
-\label{eq:app_asym_lumi_2}
+\label{eq:afb/app_asym_lumi_2}
 \ee
 This is clearly true  in the $Z$-peak region, which  motivates the
 suggestion to use the measurement of $A_{\rm fb}$ as a means to
@@ -153,18 +153,18 @@ suggestion to use the measurement of $A_{\rm fb}$ as a means to
 \begin{figure}[!t]
  \centering
  \includegraphics[width=0.90\linewidth]{ch-afb/pdfplot-abs-DYlumis-minus-validation-lowQ-nnpdf40.pdf}
- \caption{The  antisymmetric partonic luminosity $\mathcal{L}_{A,q}$, \cref{eq:lumisa_qpm},
+ \caption{The  antisymmetric partonic luminosity $\mathcal{L}_{A,q}$, \cref{eq:afb/lumisa_qpm},
 for the up and down quarks 
 compared to the approximation 
-\cref{eq:app_asym_lumi_2} in the case of \nnpdfr{4.0}
+\cref{eq:afb/app_asym_lumi_2} in the case of \nnpdfr{4.0}
 at $\mll=m_Z$ (top)
 and $\mll=5$ TeV (bottom panels).
  }    
- \label{fig:pdfplot-abs-DYlumis-minus-validation-lowQ-nnpdf40}
+ \label{fig:afb/pdfplot-abs-DYlumis-minus-validation-lowQ-nnpdf40}
 \end{figure}
 %---------------------------------------------------------------------------
 
-However, while \cref{eq:app_asym_lumi_2} provides
+However, while \cref{eq:afb/app_asym_lumi_2} provides
 a satisfactory approximation in the  $Z$-peak region,
 it fails  at larger $\mll$ values. Indeed, for on-shell $Z$
 production, with $\sqrt{s}=14$ TeV,
@@ -184,15 +184,15 @@ the different terms that contribute to to antisymmetric
 luminosity $\mathcal{L}_{A,q}$.
 
 This is illustrated in
-\cref{fig:pdfplot-abs-DYlumis-minus-validation-lowQ-nnpdf40},
+\cref{fig:afb/pdfplot-abs-DYlumis-minus-validation-lowQ-nnpdf40},
 where we compare the antisymmetric luminosity $\mathcal{L}_{A,q}$
 for the up and down quarks 
 to the approximation
-\cref{eq:app_asym_lumi_2}, evaluated with \nnpdfr{4.0} \nnlo,
+\cref{eq:afb/app_asym_lumi_2}, evaluated with \nnpdfr{4.0} \nnlo,
 in the $Z$-peak region $\mll=m_Z$ 
 and at $\mll=5$ TeV.
 %
-While indeed for $\mll=m_Z$ \cref{eq:app_asym_lumi_2} reproduces
+While indeed for $\mll=m_Z$ \cref{eq:afb/app_asym_lumi_2} reproduces
 the exact luminosity, this is not the case for $\mll\gg m_Z$: both
 the magnitude and the shape of the luminosity are  very different.
 %
@@ -206,7 +206,7 @@ behavior of the asymmetry must be determined by studying the large-$x$
 behavior of the quark and antiquark \pdfs.
 
 \subsection{Parton distributions}
-\label{sec:subsec-largexPDFs}
+\label{sec:afb/subsec-largexPDFs}
 
 We assess now the large-$x$ behavior of
 the quark and antiquark \pdfs in different recent \pdf
@@ -237,14 +237,14 @@ obtained with the widely used NNPDF3.1~\cite{Ball:2017nwa} set.
    corresponding to a symmetric partonic collision $x_1=x_2$, namely
  $x_{\rm  sym}=\mll/\sqrt{s}$.
  }    
- \label{fig:pdfplot-abslargex}
+ \label{fig:afb/pdfplot-abslargex}
 \end{figure}
 %-------------------------------------------------------------------------------
 
 First, we provide a qualitative assessment of the relative size of the
 \pdfs corresponding to
 individual quark flavors, both for the total and valence \pdfs.
-In \cref{fig:pdfplot-abslargex} we
+In \cref{fig:afb/pdfplot-abslargex} we
 compare  the total $xf^+_q$ and valence $xf_q^-$  quark
    \pdf combinations for the up, down, strange, and charm quarks,
    evaluated at $\mll=5$~TeV with the \nnpdfr{4.0} \nnlo \pdf set.
@@ -260,7 +260,7 @@ compare  the total $xf^+_q$ and valence $xf_q^-$  quark
    the value of $x$ in a symmetric partonic collision where $x_1=x_2$, namely
    $x_{\rm  sym}\equiv\mll/\sqrt{s}$.
 
-   From \cref{fig:pdfplot-abslargex} one can observe that for
+   From \cref{fig:afb/pdfplot-abslargex} one can observe that for
    $x\lesssim 0.3$ there is a clear hierarchy
 $f_u^+>f_d^+ >f_s^+>f_c^+$, while for larger $x$ values the
    strange and charm \pdfs become of comparable magnitude.
@@ -307,18 +307,18 @@ for \bsm searches.
    \pdfs, their ratios and their uncertainties are essentially
    unchanged in the displayed large-$x$ region in the range $1~{\rm TeV}<\mll<7$~TeV.
 }    
- \label{fig:mll_dep_pdfs}
+ \label{fig:afb/mll_dep_pdfs}
 \end{figure}
 %---------------------------------------------------------------------------
 
 We next compare the large-$x$ behavior 
-of the four \pdf sets ABMP16, CT18, MSHT20, and \nnpdfr{4.0} in \cref{fig:mll_dep_pdfs}
+of the four \pdf sets ABMP16, CT18, MSHT20, and \nnpdfr{4.0} in \cref{fig:afb/mll_dep_pdfs}
 for $\mll=5$~TeV.
 %
 We display from top to bottom the absolute \pdfs, their ratio to the central \nnpdfr{4.0} value, and
 their relative 68\% CL uncertainties.
 %
-As in the case of \cref{fig:pdfplot-abslargex}, we indicate with two vertical lines
+As in the case of \cref{fig:afb/pdfplot-abslargex}, we indicate with two vertical lines
 the values of $x_{\rm min}$ and $x_{\rm  sym}$,
 both for $\mll=5$~TeV, and for a smaller and a larger value of $\mll$,
 namely for $\mll=3$~TeV and  $\mll=7$~TeV.
@@ -327,7 +327,7 @@ For clarity, the values of $x_{\rm min}$ are only shown
 in the top row of plots, and the values of  $x_{\rm  sym}$ in the
 central row. Note that the scale dependence
 of the \pdfs in this range of  $x$ and invariant mass is very
-slight. Indeed, the \pdfs shown in \cref{fig:pdfplot-abslargex} are
+slight. Indeed, the \pdfs shown in \cref{fig:afb/pdfplot-abslargex} are
 essentially unchanged at $\mll=3$ TeV or  $\mll=7$ TeV;  only the
 corresponding ranges of $x_1$, $x_2$ vary significantly.
 
@@ -369,8 +369,8 @@ in the antisymmetric \pdf luminosities $\mathcal{L}_{A,q}$ as the value of
 the dilepton invariant mass $\mll$ is increased.
 
 The relative \pdfs uncertainties, shown in the lower panels in
-\cref{fig:mll_dep_pdfs} in all cases grow with $x$ (see also 
-\cref{fig:pdfplot-abslargex}).
+\cref{fig:afb/mll_dep_pdfs} in all cases grow with $x$ (see also 
+\cref{fig:afb/pdfplot-abslargex}).
 %
 The largest \pdf uncertainties correspond to either CT18 or \nnpdfr{4.0}, 
 depending on the $x$ range and the \pdf flavor.
@@ -387,15 +387,15 @@ to other \pdf sets, can  be seen most clearly from a comparison off
 effective asymptotic exponents~\cite{Ball:2016spl}
 \begin{equation}
   \beta_{a,q}(x,Q)\equiv\frac{\partial \ln|xf_q(x,Q)|}{\partial \ln(1-x)}\,,
-  \label{eq:beta_asy}
+  \label{eq:afb/beta_asy}
 \end{equation}
-which of course for \pdfs of the form of \cref{eq:toypdf} just
+which of course for \pdfs of the form of \cref{eq:afb/toypdf} just
 coincide with the exponent $b$ up to $O(1-x)$ corrections.
-In \cref{fig:asy_exponents} we compare
+In \cref{fig:afb/asy_exponents} we compare
 the values of $\beta_{a,q}(x,\mll)$
 for ABMP16, CT18, MSHT20, and \nnpdfr{4.0} evaluated at $\mll=5$~TeV
 for the up and down quark and antiquark \pdfs in the  $x$ range of
-\cref{fig:pdfplot-abslargex}.
+\cref{fig:afb/pdfplot-abslargex}.
 
 It is clear that while all \pdf
 sets have a similar effective asymptotic exponent for $x\lsim 0.35$, a
@@ -421,7 +421,7 @@ In the case of \nnpdfr{4.0} for both antiquarks the exponent
 rapidly drops  in the region $0.3 \lsim x \lsim 0.4$.
 %
 This is consistent with the observation at the \pdf level
-(\cref{fig:mll_dep_pdfs})  that for \nnpdfr{4.0}
+(\cref{fig:afb/mll_dep_pdfs})  that for \nnpdfr{4.0}
 at large-$x$, as compared to the other groups,
 the up and especially the down  quark fall off more rapidly, while
 the antiquark \pdfs drop more slowly. Note in particular that for
@@ -437,10 +437,10 @@ smaller than the quark effective exponent for all $x\gsim0.4$.
  \includegraphics[width=0.49\linewidth]{ch-afb/beta_qbar_plot_beta_asy_bard.pdf}
  \caption{\small 
    The large-$x$ asymptotic exponents $\beta_{a,q}(x,\mll)$, defined in
-   \cref{eq:beta_asy}, for ABMP16, CT18, MSHT20, and \nnpdfr{4.0} evaluated at
+   \cref{eq:afb/beta_asy}, for ABMP16, CT18, MSHT20, and \nnpdfr{4.0} evaluated at
    $\mll=5$~TeV for the up and down quark and antiquark \pdfs.
  }
- \label{fig:asy_exponents}
+ \label{fig:afb/asy_exponents}
 \end{figure}
 %-------------------------------------------------------------------------------
 
@@ -458,7 +458,7 @@ contribution from the overall
 magnitude, which is not captured by the effective exponents displayed here.
 
 \subsection{Parton luminosities}
-\label{subsec:partoniclumis}
+\label{subsec:afb/partoniclumis}
 
 We finally turn to the behavior of parton luminosities, with
 particular regard for the antisymmetric combination which is relevant
@@ -467,8 +467,8 @@ As for \pdfs, we first assess the qualitative features of the
 luminosities corresponding to different quark flavors.
 Specifically, the symmetric $\mathcal{L}_{S,q}$ and antisymmetric
 $\mathcal{L}_{A,q}$ luminosities
-\cref{eq:symm_asymm_lumis}  for individual flavors are
-displayed in \cref{fig:pdfplot-absDYlumis-plus-nnpdf40},
+\cref{eq:afb/symm_asymm_lumis}  for individual flavors are
+displayed in \cref{fig:afb/pdfplot-absDYlumis-plus-nnpdf40},
 evaluated with \nnpdfr{4.0} \nnlo for $\mll=5$ TeV and $\sqrt{s}=14$ TeV.
 %
 The left panels display the absolute luminosities (in logarithmic and
@@ -497,13 +497,13 @@ The bottom  and top $x$-axes in each plot show respectively the values
 of $x_1$ and $x_2$  at which the
 luminosities are being evaluated, within the allowed range
 $x \ge x_{\rm sym}=\mll/\sqrt{s}$, with the convention $x_1>x_2$.}    
- \label{fig:pdfplot-absDYlumis-plus-nnpdf40}
+ \label{fig:afb/pdfplot-absDYlumis-plus-nnpdf40}
 \end{figure}
 %---------------------------------------------------------------------------
 
 The symmetric parton luminosities exhibit of course the same hierarchy
 between flavors
-as the corresponding \pdf plots of \cref{fig:pdfplot-abslargex}. 
+as the corresponding \pdf plots of \cref{fig:afb/pdfplot-abslargex}. 
 %
 The luminosity $\mathcal{L}_{S,q}$  drops rapidly for
 $x_1\gsim 0.6$. \pdf  uncertainties  depend weakly on  $x$
@@ -511,17 +511,17 @@ up to $x_1\gsim 0.8$, after which they blow up, and range between $\sim 20\%$
 for the up quark luminosity to $\sim 60\%$ for the charm quark one,
 with down and strange intermediate and of similar magnitude.
 
-As displayed in \cref{fig:mll_dep_lumi_plus}, the light quark symmetric luminosities of other global \pdf sets
+As displayed in \cref{fig:afb/mll_dep_lumi_plus}, the light quark symmetric luminosities of other global \pdf sets
 are qualitatively similar.
 %
 We show $\mathcal{L}_{S,u}$,  $\mathcal{L}_{S,d}$,
 and their weighted sum that enters the  enters the
-symmetric coefficient $g_{S,q}$ in \cref{eq:dsigma-dcos-v2}
+symmetric coefficient $g_{S,q}$ in \cref{eq:afb/dsigma-dcos-v2}
 for the \nnpdfr{4.0}, ABMP16,
 CT18, and MSHT20 at $\mll=5$ TeV.
 %
 The luminosities are multiplied by the effective charges
-$S_q$ defined in \cref{eq:coup},
+$S_q$ defined in \cref{eq:afb/coup},
 and the bottom panels display the corresponding 68\% CL \pdf uncertainties.
 %
 Good agreement between the four sets, with a similar shape
@@ -539,14 +539,14 @@ The \pdf luminosities for the dominant $\mathcal{L}_{S,u}$ contribution are the 
    invariant masses of $\mll=5$ TeV.
    %
    The luminosities are multiplied by the effective charges
-   $S_q$ defined in \cref{eq:coup}.
+   $S_q$ defined in \cref{eq:afb/coup}.
    %
    From left to right, we display $\mathcal{L}_{S,u}$,  $\mathcal{L}_{S,d}$,
-   and their weighted sum that enters the  coefficient $g_{S,q}$ in \cref{eq:dsigma-dcos-v2}.
+   and their weighted sum that enters the  coefficient $g_{S,q}$ in \cref{eq:afb/dsigma-dcos-v2}.
    %
    The bottom panels display the relative 68\% CL \pdf uncertainties.
     }    
- \label{fig:mll_dep_lumi_plus}
+ \label{fig:afb/mll_dep_lumi_plus}
 \end{figure}
 %---------------------------------------------------------------------------
 
@@ -556,22 +556,22 @@ positive, the central value of the down luminosity is negative, though
 the luminosity is compatible with zero at the one sigma level.
 %
 Recalling
-from \cref{fig:pdfplot-abslargex} that $xf_{d}^-$ itself is
+from \cref{fig:afb/pdfplot-abslargex} that $xf_{d}^-$ itself is
 positive for all values of $x$,  this provides an explicit example in
-which the condition \cref{eq:signas} is satisfied without the valence
+which the condition \cref{eq:afb/signas} is satisfied without the valence
 combination being negative.
 %
 We conclude that for \nnpdfr{4.0}, the faster
 drop of the quark distribution and slower drop of the antiquark
 distribution that was displayed by the effective exponents of
-\cref{fig:asy_exponents} leads to a negative antisymmetric
-luminosity, in agreement with \cref{eq:signas}.
+\cref{fig:afb/asy_exponents} leads to a negative antisymmetric
+luminosity, in agreement with \cref{eq:afb/signas}.
 The absolute \pdf uncertainties are of a similar size for
 $\mathcal{L}_{A,u}$ and $\mathcal{L}_{A,d}$, with a different shape
 reflecting the underlying central values.
 
 We compare
-in \cref{fig:mll_dep_lumi_minus}
+in \cref{fig:afb/mll_dep_lumi_minus}
 the behavior of the antisymmetric luminosities for all \pdf
 sets for $\mll=3$ TeV (top) and $\mll=5$ TeV (bottom).
 %
@@ -579,17 +579,17 @@ In order to facilitate the understanding of the way the \pdf behavior
 determines that of the asymmetry, we show both the contribution of
 individual flavors and the total contribution
 to the antisymmetric coefficient $g_{A,q}$ of
-\cref{eq:gAq_integrated_1}. Namely, in
-\cref{fig:mll_dep_lumi_minus} the luminosities corresponding to
+\cref{eq:afb/gAq_integrated_1}. Namely, in
+\cref{fig:afb/mll_dep_lumi_minus} the luminosities corresponding to
 individual flavors are multiplied by the corresponding flavor-dependent
-effective charges $A_q$ defined in \cref{eq:coup}:
+effective charges $A_q$ defined in \cref{eq:afb/coup}:
 from left to right we display $\mathcal{L}_{A,u}$,  $\mathcal{L}_{A,d}$,
 and their weighted sum
  which determines
 the sign and magnitude of the total forward-backward asymmetry.
 %
 The corresponding absolute \pdf uncertainties for each of the four \pdf sets
-are displayed in  \cref{fig:mll_dep_lumi_minus_pdferrs}.
+are displayed in  \cref{fig:afb/mll_dep_lumi_minus_pdferrs}.
 
 %-------------------------------------------------------------------------------
 \begin{figure}[!t]
@@ -603,12 +603,12 @@ are displayed in  \cref{fig:mll_dep_lumi_minus_pdferrs}.
    $\mll=3$ TeV (top) and $\mll=5$ TeV (bottom).
    %
    The luminosities are multiplied by the effective charges
-   $A_q$ defined in \cref{eq:coup}.
+   $A_q$ defined in \cref{eq:afb/coup}.
    %
    From left to right, we display $\mathcal{L}_{A,u}$,  $\mathcal{L}_{A,d}$,
-   and their weighted sum that enters the  coefficient $g_{A,q}$ \cref{eq:gAq_integrated_1}.
+   and their weighted sum that enters the  coefficient $g_{A,q}$ \cref{eq:afb/gAq_integrated_1}.
     }    
- \label{fig:mll_dep_lumi_minus}
+ \label{fig:afb/mll_dep_lumi_minus}
 \end{figure}
 %---------------------------------------------------------------------------
 
@@ -617,13 +617,13 @@ are displayed in  \cref{fig:mll_dep_lumi_minus_pdferrs}.
  \centering
  \includegraphics[width=1.00\linewidth]{ch-afb/pdfplot-abs-jacobian-DYlumis-pdfsets-minus-q3p0tev-pdferrs.pdf}
  \includegraphics[width=1.00\linewidth]{ch-afb/pdfplot-abs-jacobian-DYlumis-pdfsets-minus-q5p0tev-pdferrs.pdf}
- \caption{Same as \cref{fig:mll_dep_lumi_minus} now for the absolute \pdf uncertainties.
+ \caption{Same as \cref{fig:afb/mll_dep_lumi_minus} now for the absolute \pdf uncertainties.
     }    
- \label{fig:mll_dep_lumi_minus_pdferrs}
+ \label{fig:afb/mll_dep_lumi_minus_pdferrs}
 \end{figure}
 %---------------------------------------------------------------------------
 
-\cref{fig:mll_dep_lumi_minus} shows that for ABMP16, CT18, and
+\cref{fig:afb/mll_dep_lumi_minus} shows that for ABMP16, CT18, and
 MSHT20 the antisymmetric
 parton luminosities depend only mildly on $\mll$, whereas for \nnpdfr{4.0}
 they exhibit a strong $\mll$ dependence.
@@ -637,8 +637,8 @@ central value,  as already noted.
 %
 For all \pdf sets and  $\mll$ values the weighted sum is dominated by the up quark contribution.
 The strong scale dependence of $\mathcal{L}_{A,q}$ in \nnpdfr{4.0}
-reflects the underlying \pdf behavior seen in  \cref{fig:mll_dep_pdfs}
-and highlighted by the effective exponents \cref{fig:asy_exponents}.
+reflects the underlying \pdf behavior seen in  \cref{fig:afb/mll_dep_pdfs}
+and highlighted by the effective exponents \cref{fig:afb/asy_exponents}.
 %
 As the scale $\mll$ increases, a range of increasingly large $x$ values is probed,
 for which, in the case of
@@ -646,10 +646,10 @@ for which, in the case of
 antiquark exponent rapidly drops.
 %
 This leads to a negative asymmetry, 
-following  \cref{eq:signas}. 
+following  \cref{eq:afb/signas}. 
 
 A comparison of the corresponding \pdf uncertainties, displayed in
-\cref{fig:mll_dep_lumi_minus_pdferrs}, clearly shows the transition
+\cref{fig:afb/mll_dep_lumi_minus_pdferrs}, clearly shows the transition
 from the data region to the extrapolation region.
 %
 For
@@ -667,22 +667,22 @@ For all \pdf sets but
 uncertainty is approximately unchanged when the scale is further increased,
 while for \nnpdfr{4.0} it grows markedly.
 
-Finally, in \cref{fig:asym_coeff_mlldep} we display for all
+Finally, in \cref{fig:afb/asym_coeff_mlldep} we display for all
 \pdf sets the
 ratio of antisymmetric to symmetric couplings
 \be
-\label{eq:coupling_ratio}
+\label{eq:afb/coupling_ratio}
 R_{\rm fb}\equiv \frac{\sum_q g_{A,q}}{\sum_{q'} g_{S,{q'}}} \, ,
 \ee
 that, according to
-\cref{eq:afb_lo}, determines at leading order
+\cref{eq:afb/afb_lo}, determines at leading order
 the sign and magnitude
 of the forward-backward asymmetry distribution $A_{\rm fb}(\cos\theta^*)$.
 %
 The symmetric and antisymmetric coefficients are obtained by integrating
 the corresponding symmetric $\mathcal{L}_{S,q}$ and antisymmetric
 $\mathcal{L}_{A,q}$ partonic luminosities according to
-\cref{eq:gAq_integrated_1}, and the result is shown as a function of the lower integration cut $\mll^{\rm min}$.
+\cref{eq:afb/gAq_integrated_1}, and the result is shown as a function of the lower integration cut $\mll^{\rm min}$.
 %
 In all cases the correlation between \pdf uncertainties in the numerator and
 the denominator are kept into account.
@@ -692,19 +692,19 @@ the denominator are kept into account.
  \centering
  \includegraphics[width=0.60\linewidth]{ch-afb/asym_coeff_mlldep.pdf}
  \caption{The coupling ratio $R_{\rm fb}$,
-   \cref{eq:coupling_ratio},
+   \cref{eq:afb/coupling_ratio},
    that enters the forward-backward asymmetry $A_{\rm
-     fb}(\cos\theta^*)$ at \lo,  \cref{eq:afb_lo}, for different \pdf
+     fb}(\cos\theta^*)$ at \lo,  \cref{eq:afb/afb_lo}, for different \pdf
    sets, as  a function of the lower cut in the dilepton
    invariant mass $\mll^{\rm min}$.
  }    
- \label{fig:asym_coeff_mlldep}
+ \label{fig:afb/asym_coeff_mlldep}
 \end{figure}
 %---------------------------------------------------------------------------
 
-\cref{fig:asym_coeff_mlldep} shows that, consistently
+\cref{fig:afb/asym_coeff_mlldep} shows that, consistently
 with the behavior of the luminosity of
-\cref{fig:mll_dep_lumi_minus},  for $\mll^{{\rm
+\cref{fig:afb/mll_dep_lumi_minus},  for $\mll^{{\rm
     min}}\lsim 3$~TeV results agree within uncertainties for all \pdf
 sets.
 %
@@ -727,13 +727,13 @@ with a similar magnitude irrespective of the cut  $\mll^{{\rm min}}$ adopted.
  \includegraphics[width=0.49\linewidth]{ch-afb/asym_coeff_mlldep_abserr.pdf}
  \includegraphics[width=0.49\linewidth]{ch-afb/asym_coeff_mlldep_relerr.pdf}
  \caption{The absolute (left) and relative (right panel) uncertainties
-   in the coupling ratio $R_{\rm fb}$ shown in \cref{fig:asym_coeff_mlldep}.
+   in the coupling ratio $R_{\rm fb}$ shown in \cref{fig:afb/asym_coeff_mlldep}.
  }    
- \label{fig:asym_coeff_mlldep_err}
+ \label{fig:afb/asym_coeff_mlldep_err}
 \end{figure}
 %---------------------------------------------------------------------------
 
-\cref{fig:asym_coeff_mlldep_err} displays the 
+\cref{fig:afb/asym_coeff_mlldep_err} displays the 
 absolute  and relative  uncertainties
 associated to the coupling ratio $R_{\rm fb}$.
 %
