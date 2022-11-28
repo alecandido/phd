@@ -18,32 +18,30 @@ as a function of the dilepton invariant mass $\mll$.
 
 In order to understand the main qualitative features of  the $\cos\theta^*$
 distribution and of the asymmetry $A_{\text{fb}}$ and their dependence on the 
-properties of the underlying
-\pdfs, it is instructive to evaluate predictions based on the
-same computational setup adopted in \cref{sec:afb/HMDY}, namely
- \lo matrix elements without kinematic cuts, using toy \pdfs as input.
+properties of the underlying \pdfs, it is instructive to evaluate predictions
+based on the same computational setup adopted in \cref{sec:afb/HMDY}, namely
+\lo matrix elements without kinematic cuts, using toy \pdfs as input.
 %
-We consider toy quark and antiquark \pdf with  the form
+We consider toy quark and antiquark \pdf with the form
 \begin{equation}
   \label{eq:afb/toypdf}
   xf_q(x) = A_qx^{-a_q}(1-x)^{b_q} \, , \quad xf_{\bar{q}}(x) = A_{\bar{q}}x^{-a_{\bar{q}}}(1-x)^{b_{\bar{q}}} \, ,
 \end{equation}
-where $A_q$ and $A_{\bar{q}}$ are  normalization constants, irrelevant
-for this discussion.
+where $A_q$ and $A_{\bar{q}}$ are  normalization constants, irrelevant for this
+discussion.
 %
-For simplicity we neglect the scale dependence of
-the \pdfs.
+For simplicity we neglect the scale dependence of the \pdfs.
 %
 We then compute the single-differential distribution \cref{eq:afb/dsigma-dcos} and
 the asymmetry \cref{eq:afb/forward-backward-asymmetry} with different assumptions on the
 large $x$-behavior of these toy \pdfs, i.e.\ different values of the large-$x$
 exponents $b_q$, $b_{\bar{q}}$.
 
-Since the overall normalization does not affect the shape
-of the distribution, we set $A_q=A_{\bar{q}}=1$.
+Since the overall normalization does not affect the shape of the distribution,
+we set $A_q=A_{\bar{q}}=1$.
 %
-Furthermore, since we are not interested in the small-$x$ behavior,
-we set $a_q=a_{\bar{q}}=1$. 
+Furthermore, since we are not interested in the small-$x$ behavior, we set
+$a_q=a_{\bar{q}}=1$. 
 %
 Hence, we consider simple scenarios in which 
 \begin{align}\label{eq:afb/toyp}
@@ -51,12 +49,12 @@ xf_q^+(x; b_q,b_{\bar{q}}) &= xf_q(x)+xf_{\bar{q}}(x) = x^{-1}\lc (1-x)^{b_q} +(
 xf_q^-(x; b_q,b_{\bar{q}}) &= xf_q(x)-xf_{\bar{q}}(x) = x^{-1}\lc (1-x)^{b_q} -(1-x)^{b_{\bar{q}}}  \rc  \,, 
 \end{align}
 with different choices of the parameters  $b_q$ and $b_{\bar{q}}$.
-Specifically, we consider a scenario with $b_q < b_{\bar{q}} $, in particular
-$(b_q,b_{\bar{q}})=(3,5)$, which leads to a positive valence combination $xf_q^-$
-for all values of $x$;  a  scenario with
-$(b_q,b_{\bar{q}})=(3,3)$ so  $xf_q^-$ vanishes identically; and a third scenario
-in which the quark \pdfs at large-$x$ fall off more rapidly than the antiquarks,
-$(b_q,b_{\bar{q}})=(5,3)$, so the valence combination $xf_q^-$ becomes negative.
+Specifically, we consider a scenario with $b_q < b_{\bar{q}}$, in particular
+$(b_q,b_{\bar{q}})=(3,5)$, which leads to a positive valence combination
+$xf_q^-$ for all values of $x$; a scenario with $(b_q,b_{\bar{q}})=(3,3)$ so 
+$xf_q^-$ vanishes identically; and a third scenario in which the quark \pdfs at
+large-$x$ fall off more rapidly than the antiquarks, $(b_q,b_{\bar{q}})=(5,3)$,
+so the valence combination $xf_q^-$ becomes negative.
 
 %-----------------------------------------------------------------
 \begin{figure}[!t]
@@ -69,7 +67,7 @@ $(b_q,b_{\bar{q}})=(5,3)$, so the valence combination $xf_q^-$ becomes negative.
    (right panel) \cref{eq:afb/forward-backward-asymmetry} evaluated using 
     the toy \pdfs of \cref{eq:afb/toypdf}.
    %
-   No  kinematic cuts are applied except for $\mll^{\text{min}}=5$ TeV.
+   No  kinematic cuts are applied except for $\mll^{\text{min}}=\SI{5}{\tera\electronvolt}$.
    %
  }    
  \label{fig:afb/sigma_toy}
@@ -154,7 +152,7 @@ for the up and down quarks
 compared to the approximation 
 \cref{eq:afb/app_asym_lumi_2} in the case of \nnpdfr{4.0}
 at $\mll=m_Z$ (top)
-and $\mll=5$ TeV (bottom panels).
+and $\mll=\SI{5}{\tera\electronvolt}$ (bottom panels).
  }    
  \label{fig:afb/pdfplot-abs-DYlumis-minus-validation-lowQ-nnpdf40}
 \end{figure}
@@ -163,14 +161,14 @@ and $\mll=5$ TeV (bottom panels).
 However, while \cref{eq:afb/app_asym_lumi_2} provides
 a satisfactory approximation in the  $Z$-peak region,
 it fails  at larger $\mll$ values. Indeed, for on-shell $Z$
-production, with $\sqrt{s}=14$ TeV,
+production, with $\sqrt{s}=\SI{14}{\tera\electronvolt}$,
 for a dilepton rapidity with $y_{\ell\bar{\ell}}\sim 2.5$, the limit of the
 acceptance region
 of ATLAS and CMS, the colliding partons have
 $x_1=0.09$ and $x_2=6\times 10^{-4}$. So indeed the contribution in
 which the valence \pdf is evaluated at the smallest $x$ value is highly suppressed.
 %
-But for $\mll=5$~TeV, the smallest value of $x_2$, attained when
+But for $\mll=\SI{5}{\tera\electronvolt}$, the smallest value of $x_2$, attained when
 $x_1=1$, is $x_2=0.35$: so both momentum fractions are large and in fact
 to the right of the valence peak.
 %
@@ -186,7 +184,7 @@ for the up and down quarks
 to the approximation
 \cref{eq:afb/app_asym_lumi_2}, evaluated with \nnpdfr{4.0} \nnlo,
 in the $Z$-peak region $\mll=m_Z$ 
-and at $\mll=5$ TeV.
+and at $\mll=\SI{5}{\tera\electronvolt}$.
 %
 While indeed for $\mll=m_Z$ \cref{eq:afb/app_asym_lumi_2} reproduces
 the exact luminosity, this is not the case for $\mll\gg m_Z$: both
@@ -222,14 +220,14 @@ obtained with the widely used NNPDF3.1~\cite{Ball:2017nwa} set.
  \includegraphics[width=1.0\linewidth]{ch-afb/pdfplot-abslargex-nnpdf40-valence.pdf}
  \caption{\small Comparison of the $xf^+_q$ (top) and $xf_q^-$ (bottom) quark
    \pdf combinations for the up, down, strange, and charm quarks,
-   evaluated at $\mll=5$~TeV for \nnpdfr{4.0} \nnlo.
+   evaluated at $\mll=\SI{5}{\tera\electronvolt}$ for \nnpdfr{4.0} \nnlo.
    %
    The right panels display the relative 68\% CL uncertainties.
    %
    The two vertical lines indicate $x_{\text{min}}=\mll^2/s$, the
    smallest allowed value of $x$ 
    for dilepton DY production for a collider
-   CoM energy $\sqrt{s}=14$~TeV, and the value of $x$
+   CoM energy $\sqrt{s}=\SI{14}{\tera\electronvolt}$, and the value of $x$
    corresponding to a symmetric partonic collision $x_1=x_2$, namely
  $x_{\text{sym}}=\mll/\sqrt{s}$.
  }    
@@ -243,14 +241,14 @@ individual quark flavors, both for the total and valence \pdfs.
 In \cref{fig:afb/pdfplot-abslargex} we
 compare  the total $xf^+_q$ and valence $xf_q^-$  quark
    \pdf combinations for the up, down, strange, and charm quarks,
-   evaluated at $\mll=5$~TeV with the \nnpdfr{4.0} \nnlo \pdf set.
+   evaluated at $\mll=\SI{5}{\tera\electronvolt}$ with the \nnpdfr{4.0} \nnlo \pdf set.
    %
    The right panels display the corresponding relative 68\% CL uncertainties.
    %
   The leftmost vertical line indicates $x_{\text{min}}=\mll^2/s$, the
   smallest allowed value of $x$ 
-   for dilepton DY production with invariant mass $\mll=5$~TeV for a collider
-   CoM energy $\sqrt{s}=14$~TeV.
+   for dilepton DY production with invariant mass $\mll=\SI{5}{\tera\electronvolt}$ for a collider
+   CoM energy $\sqrt{s}=\SI{14}{\tera\electronvolt}$.
    %
    The rightmost vertical line corresponds to
    the value of $x$ in a symmetric partonic collision where $x_1=x_2$, namely
@@ -283,7 +281,7 @@ for \bsm searches.
 \begin{figure}[!t]
  \centering
  \includegraphics[width=1.00\linewidth]{ch-afb/pdfplot-pdfsets-quarks-antiquarks-q5p0tev.pdf}
- \caption{\small The up and down quark and antiquark \pdfs evaluated at $\mll=5$ TeV
+ \caption{\small The up and down quark and antiquark \pdfs evaluated at $\mll=\SI{5}{\tera\electronvolt}$
    for \nnpdfr{4.0}, CT18, MSHT20, and ABMP16 in the $x$ region relevant for
    high-mass Drell-Yan production. The upper panels display the absolute \pdfs,
    the middle ones their ratio to the central \nnpdfr{4.0} value, and the bottom panels
@@ -293,7 +291,7 @@ for \bsm searches.
    row indicate the values of  $x_{\text{min}}=\mll^2/s$ and in the central
    row those of $x_{\text{sym}}=\mll/\sqrt{s}$
    for three
-   different values  $\mll=3,\,5,\,7$~TeV.
+   different values  $\mll=3,\,5,\,\SI{7}{\tera\electronvolt}$.
    %
    Note that in the second row the
    range on the $y$ axis is not the same for quarks and antiquarks,
@@ -301,7 +299,7 @@ for \bsm searches.
    %
    Note also that the
    \pdfs, their ratios and their uncertainties are essentially
-   unchanged in the displayed large-$x$ region in the range $1~{\text{TeV}}<\mll<7$~TeV.
+   unchanged in the displayed large-$x$ region in the range $1~{\text{TeV}}<\mll<\SI{7}{\tera\electronvolt}$.
 }    
  \label{fig:afb/mll_dep_pdfs}
 \end{figure}
@@ -309,28 +307,28 @@ for \bsm searches.
 
 We next compare the large-$x$ behavior 
 of the four \pdf sets ABMP16, CT18, MSHT20, and \nnpdfr{4.0} in \cref{fig:afb/mll_dep_pdfs}
-for $\mll=5$~TeV.
+for $\mll=\SI{5}{\tera\electronvolt}$.
 %
 We display from top to bottom the absolute \pdfs, their ratio to the central \nnpdfr{4.0} value, and
 their relative 68\% CL uncertainties.
 %
 As in the case of \cref{fig:afb/pdfplot-abslargex}, we indicate with two vertical lines
 the values of $x_{\text{min}}$ and $x_{\text{sym}}$,
-both for $\mll=5$~TeV, and for a smaller and a larger value of $\mll$,
-namely for $\mll=3$~TeV and  $\mll=7$~TeV.
+both for $\mll=\SI{5}{\tera\electronvolt}$, and for a smaller and a larger value of $\mll$,
+namely for $\mll=\SI{3}{\tera\electronvolt}$ and  $\mll=\SI{7}{\tera\electronvolt}$.
 %
 For clarity, the values of $x_{\text{min}}$ are only shown 
 in the top row of plots, and the values of  $x_{\text{sym}}$ in the
 central row. Note that the scale dependence
 of the \pdfs in this range of  $x$ and invariant mass is very
 slight. Indeed, the \pdfs shown in \cref{fig:afb/pdfplot-abslargex} are
-essentially unchanged at $\mll=3$ TeV or  $\mll=7$ TeV;  only the
+essentially unchanged at $\mll=\SI{3}{\tera\electronvolt}$ or  $\mll=\SI{7}{\tera\electronvolt}$;  only the
 corresponding ranges of $x_1$, $x_2$ vary significantly.
 
 Good agreement between all \pdf
 sets is found up to around $x\simeq 0.4$.
 %
-For $\mll=5$~TeV this corresponds to the value of $x_{\text{sym}}$, i.e.\ central rapidity.
+For $\mll=\SI{5}{\tera\electronvolt}$ this corresponds to the value of $x_{\text{sym}}$, i.e.\ central rapidity.
 %
 For larger values of $x\gsim 0.4$, the up  quark \pdf $xf_u$ from the
 \nnpdfr{4.0} set is somewhat
@@ -344,9 +342,9 @@ MSHT20 and ABMP16 in a somewhat intermediate situation.
 The opposite behavior is found in the same region $x\gsim 0.4$ for
 antiquark \pdfs  $xf_{\bar{u}}$ and $xf_{\bar{d}}$:
 namely, the \nnpdfr{4.0} \pdf is significantly  larger than that of the other sets.
-It follows that for a lower invariant mass value  $\mll = 3$~TeV, all
+It follows that for a lower invariant mass value  $\mll = \SI{3}{\tera\electronvolt}$, all
 \pdf sets are  in agreement in the $x$ range in which they are probed,
-while for a higher value  $\mll = 7$~TeV the 
+while for a higher value  $\mll = \SI{7}{\tera\electronvolt}$ the 
 disagreement between \nnpdfr{4.0} and the other \pdf sets is present for
 most of the $x\ge x_{\text{min}}$ range.
 
@@ -389,7 +387,7 @@ which of course for \pdfs of the form of \cref{eq:afb/toypdf} just
 coincide with the exponent $b$ up to $O(1-x)$ corrections.
 In \cref{fig:afb/asy_exponents} we compare
 the values of $\beta_{a,q}(x,\mll)$
-for ABMP16, CT18, MSHT20, and \nnpdfr{4.0} evaluated at $\mll=5$~TeV
+for ABMP16, CT18, MSHT20, and \nnpdfr{4.0} evaluated at $\mll=\SI{5}{\tera\electronvolt}$
 for the up and down quark and antiquark \pdfs in the  $x$ range of
 \cref{fig:afb/pdfplot-abslargex}.
 
@@ -434,7 +432,7 @@ smaller than the quark effective exponent for all $x\gsim0.4$.
  \caption{\small 
    The large-$x$ asymptotic exponents $\beta_{a,q}(x,\mll)$, defined in
    \cref{eq:afb/beta_asy}, for ABMP16, CT18, MSHT20, and \nnpdfr{4.0} evaluated at
-   $\mll=5$~TeV for the up and down quark and antiquark \pdfs.
+   $\mll=\SI{5}{\tera\electronvolt}$ for the up and down quark and antiquark \pdfs.
  }
  \label{fig:afb/asy_exponents}
 \end{figure}
@@ -465,7 +463,7 @@ Specifically, the symmetric $\mathcal{L}_{S,q}$ and antisymmetric
 $\mathcal{L}_{A,q}$ luminosities
 \cref{eq:afb/symm_asymm_lumis}  for individual flavors are
 displayed in \cref{fig:afb/pdfplot-absDYlumis-plus-nnpdf40},
-evaluated with \nnpdfr{4.0} \nnlo for $\mll=5$ TeV and $\sqrt{s}=14$ TeV.
+evaluated with \nnpdfr{4.0} \nnlo for $\mll=\SI{5}{\tera\electronvolt}$ and $\sqrt{s}=\SI{14}{\tera\electronvolt}$.
 %
 The left panels display the absolute luminosities (in logarithmic and
 linear scale respectively
@@ -487,7 +485,7 @@ $x \ge x_{\text{sym}}=\mll/\sqrt{s}$, with the convention $x_1>x_2$.
    and antisymmetric $\mathcal{L}_{A,q}$ (bottom)
    parton
    luminosities (left) and relative uncertainties (right) evaluated with
-   \nnpdfr{4.0} \nnlo at $\mll=5$ TeV and $\sqrt{s}=14$ TeV.
+   \nnpdfr{4.0} \nnlo at $\mll=\SI{5}{\tera\electronvolt}$ and $\sqrt{s}=\SI{14}{\tera\electronvolt}$.
    %
 The bottom  and top $x$-axes in each plot show respectively the values
 of $x_1$ and $x_2$  at which the
@@ -514,7 +512,7 @@ We show $\mathcal{L}_{S,u}$,  $\mathcal{L}_{S,d}$,
 and their weighted sum that enters the  enters the
 symmetric coefficient $g_{S,q}$ in \cref{eq:afb/dsigma-dcos-v2}
 for the \nnpdfr{4.0}, ABMP16,
-CT18, and MSHT20 at $\mll=5$ TeV.
+CT18, and MSHT20 at $\mll=\SI{5}{\tera\electronvolt}$.
 %
 The luminosities are multiplied by the effective charges
 $S_q$ defined in \cref{eq:afb/coup},
@@ -532,7 +530,7 @@ The \pdf luminosities for the dominant $\mathcal{L}_{S,u}$ contribution are the 
   \caption{The symmetric 
    parton luminosities $\mathcal{L}_{S,q}(x_1,\mll)$ for the \nnpdfr{4.0}, ABMP16,
    CT18, and MSHT20 \nnlo \pdf sets for dilepton
-   invariant masses of $\mll=5$ TeV.
+   invariant masses of $\mll=\SI{5}{\tera\electronvolt}$.
    %
    The luminosities are multiplied by the effective charges
    $S_q$ defined in \cref{eq:afb/coup}.
@@ -569,7 +567,7 @@ reflecting the underlying central values.
 We compare
 in \cref{fig:afb/mll_dep_lumi_minus}
 the behavior of the antisymmetric luminosities for all \pdf
-sets for $\mll=3$ TeV (top) and $\mll=5$ TeV (bottom).
+sets for $\mll=\SI{3}{\tera\electronvolt}$ (top) and $\mll=\SI{5}{\tera\electronvolt}$ (bottom).
 %
 In order to facilitate the understanding of the way the \pdf behavior
 determines that of the asymmetry, we show both the contribution of
@@ -596,7 +594,7 @@ are displayed in  \cref{fig:afb/mll_dep_lumi_minus_pdferrs}.
    parton luminosities $\mathcal{L}_{A,q}(x_1,\mll)$ for the \nnpdfr{4.0}, ABMP16,
    CT18, and MSHT20 \nnlo \pdf sets for dilepton
    invariant masses of
-   $\mll=3$ TeV (top) and $\mll=5$ TeV (bottom).
+   $\mll=\SI{3}{\tera\electronvolt}$ (top) and $\mll=\SI{5}{\tera\electronvolt}$ (bottom).
    %
    The luminosities are multiplied by the effective charges
    $A_q$ defined in \cref{eq:afb/coup}.
@@ -624,9 +622,9 @@ MSHT20 the antisymmetric
 parton luminosities depend only mildly on $\mll$, whereas for \nnpdfr{4.0}
 they exhibit a strong $\mll$ dependence.
 %
-Indeed, for dilepton invariant masses of $\mll=3$ TeV there is good
+Indeed, for dilepton invariant masses of $\mll=\SI{3}{\tera\electronvolt}$ there is good
 agreement between the three groups, but
-for $\mll=5$ TeV the \nnpdfr{4.0} up quark luminosity, while preserving a
+for $\mll=\SI{5}{\tera\electronvolt}$ the \nnpdfr{4.0} up quark luminosity, while preserving a
 similar valence-like shape, is suppressed
 by a factor 2 in comparison  to other groups, and the down quark luminosity becomes compatible with zero with a negative
 central value,  as already noted. 
@@ -649,12 +647,12 @@ A comparison of the corresponding \pdf uncertainties, displayed in
 from the data region to the extrapolation region.
 %
 For
-$\mll=3$~TeV the uncertainty $\delta \mathcal{L}_{A,u}$ is generally
+$\mll=\SI{3}{\tera\electronvolt}$ the uncertainty $\delta \mathcal{L}_{A,u}$ is generally
 small for all sets, with CT18
 showing a somewhat larger uncertainty for the up quark, and comparable
 uncertainties for the down quark for all \pdf sets.
 %
-As the scale  increases to $\mll=5$~TeV, where the large-$x$ region is
+As the scale  increases to $\mll=\SI{5}{\tera\electronvolt}$, where the large-$x$ region is
 probed,  the uncertainty 
 increases, though more markedly for \nnpdfr{4.0}.
 %
@@ -697,17 +695,16 @@ the denominator are kept into account.
 \end{figure}
 %---------------------------------------------------------------------------
 
-\cref{fig:afb/asym_coeff_mlldep} shows that, consistently
-with the behavior of the luminosity of
-\cref{fig:afb/mll_dep_lumi_minus},  for $\mll^{{\rm
-    min}}\lsim 3$~TeV results agree within uncertainties for all \pdf
-sets.
+\cref{fig:afb/asym_coeff_mlldep} shows that, consistently with the behavior of
+the luminosity of \cref{fig:afb/mll_dep_lumi_minus},  for
+$\mll^{\text{min}}\lsim \SI{3}{\tera\electronvolt}$ results agree within
+uncertainties for all \pdf sets.
 %
-The situation is different for higher dilepton invariant masses $\mll^{{\text{min}}}\gsim 3$~TeV:
+The situation is different for higher dilepton invariant masses $\mll^{{\text{min}}}\gsim \SI{3}{\tera\electronvolt}$:
 the ratio $R_{\text{fb}}$ starts to decrease for \nnpdfr{4.0}, while it
 remains approximately  constant 
 for the other  \pdf sets. In particular, for \nnpdfr{4.0} the coupling ratio
-vanishes around $\mll^{{\text{min}}}\sim5$~TeV, and it becomes negative
+vanishes around $\mll^{{\text{min}}}\sim\SI{5}{\tera\electronvolt}$, and it becomes negative
 for yet larger   $\mll^{{\text{min}}}$ values.
 It follows that the forward-backward
 asymmetry in high-mass Drell-Yan production should decrease  and
@@ -736,7 +733,7 @@ We observe that \nnpdfr{4.0} shows
 the most marked increase of the uncertainties in $R_{\text{fb}}$
 as $\mll^{\text{min}}$ grows.
 %
-For instance, for  $\mll^{\text{min}}\gtrsim4$~TeV
+For instance, for  $\mll^{\text{min}}\gtrsim\SI{4}{\tera\electronvolt}$
 the absolute \pdf uncertainty in \nnpdfr{4.0}
 is about twice as large as that found using CT18 
 four times as large as MSHT20,
