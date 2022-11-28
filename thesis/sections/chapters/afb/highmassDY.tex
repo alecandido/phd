@@ -1,12 +1,13 @@
 % !TeX root = ../../../main.tex
 
-The aim of this  section is
-to scrutinize the PDF dependence of the neutral-current
-Drell-Yan differential cross-section and of the associated forward-backward asymmetry by
-reviewing the LO kinematics, determining LO analytic expressions, and finally
-comparing these analytical calculations to the results of LO and NLO  numerical simulations
-obtained  using {\sc\small MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca}
-interfaced to {\sc\small PineAPPL}~\cite{Carrazza:2020gss,christopher_schwan_2022_7023438}.
+The aim of this  section is to scrutinize the PDF dependence of the
+neutral-current \acrlong{dy} differential cross-section and of the associated
+forward-backward asymmetry by
+reviewing the \lo kinematics, determining LO analytic expressions, and finally
+comparing these analytical calculations to the results of \lo and \nlo 
+numerical simulations obtained  using \textsc{\small
+MadGraph5\_aMC@NLO}~\cite{Alwall:2014hca} interfaced to {\sc\small
+PineAPPL}~\cite{Carrazza:2020gss,christopher_schwan_2022_7023438}.
 %
 Specifically, we will relate the behavior of the differential
 distribution and asymmetry to the relevant parton luminosities.
@@ -250,7 +251,7 @@ in terms of the sum and difference of quark and antiquark PDFs,
 where $f_{q}^-$ is usually called the valence PDF combination,
 and $f_{q}^+$  the total quark PDF\@. Note that at LO, and more
 generally in factorization schemes in which PDFs are
-positive, such as $\overline{\rm MS}$~\cite{Candido:2020yat}, $f^+_q$
+positive, such as $\msbar$ \cite{Candido:2020yat}, $f^+_q$
 is positive while $f_q^-$
 in general is not, and $f_{q}^+>|f_{q}^-|$.
 %
@@ -291,13 +292,12 @@ In particular, the single-differential distribution in the
 Collins-Soper angle $\theta^*$ is given by
 \begin{equation}
   \label{eq:dsigma-dcos}
-  \frac{\d\sigma}{\d\cos\theta^*} = \int\limits_{\mll^{{\rm min}}}^{\sqrt s}\!\d\mll\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\d\yll\, \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} \, ,
+  \frac{\d\sigma}{\d\cos\theta^*} = \int\limits_{\mll^{\text{min}}}^{\sqrt s}\!\d\mll\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\d\yll\, \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} \, ,
 \end{equation}
-where $\mll^{{\rm min}}$ is a lower kinematic cut in the dilepton invariant mass.
+where $\mll^{\text{min}}$ is a lower kinematic cut in the dilepton invariant mass.
 %
-Since \cref{eq:lo-triple-diff-lumis}
-falls off steeply with $\mll$, the region with $\mll \gsim \mll^{{\rm min}}$
-will dominate the integral.
+Since \cref{eq:lo-triple-diff-lumis} falls off steeply with $\mll$, the region
+with $\mll \gsim \mll^{\text{min}}$ will dominate the integral.
 %
 Given that the dependence of the fully differential cross-section
 \cref{eq:lo-triple-diff-lumis}
@@ -310,23 +310,25 @@ cross section \cref{eq:dsigma-dcos} takes the simple form
   \frac{\d\sigma}{\d\cos\theta^*} = (1+\cos^2\theta^*)\sum_q g_{S,q} + \cos\theta^*\sum_q g_{A,q} \, ,
 \end{equation}
 where the symmetric and antisymmetric coefficients $g_{S,q}$ and $g_{A,q}$ depend on the quark flavor
-and on the invariant mass cut $\mll^{{\rm min}}$, but not on the
+and on the invariant mass cut $\mll^{\text{min}}$, but not on the
 Collins-Soper angle itself.
 %
 The contributions relevant for the forward-backward asymmetry, $g_{A,q}$,
 are given at LO by
 \begin{equation}
 \label{eq:gAq_integrated_1}
-g_{A,q} =\frac{\pi \alpha^2}{3 s} \int\limits_{\mll^{{\rm min}}}^{\sqrt s}\frac{\d\mll}{\mll}A_{q}(\mll)\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\d\yll\, \mathcal{L}_{A,q}(\mll,\yll) \, ,
+g_{A,q} =\frac{\pi \alpha^2}{3 s} \int\limits_{\mll^{\text{min}}}^{\sqrt s}\frac{\d\mll}{\mll}A_{q}(\mll)\!\!\int\limits_{\ln(\mll/\sqrt s)}^{\ln(\sqrt s/\mll)}\!\!\d\yll\, \mathcal{L}_{A,q}(\mll,\yll) \, ,
 \end{equation}
 which in the large-$\mll$ region,
  expressing the longitudinal momentum integration in terms of
 $x_1$ (assuming $x_1~\ge x_2$), becomes
 \begin{equation}
-\label{eq:gAq_integrated}
-g_{A,q} = \frac{\pi \alpha^2\bar A_q}{3 s} \int\limits_{\mll^{{\rm min}}}^{\sqrt s}\frac{\d\mll}{\mll} \!\!\int\limits_{\mll/\sqrt s}^{1}\!\!\frac{{\rm d}x_1}{x_1}\, \mathcal{L}_{A,q}(\mll,x_1)+\mathcal{O} \left(\frac{m_Z^2}{\mll^2}\right) \, ,
+  g_{A,q} = \frac{\pi \alpha^2\bar A_q}{3 s} \int\limits_{\mll^{\text{min}}}^{\sqrt s}\frac{\d\mll}{\mll}
+  \!\!\int\limits_{\mll/\sqrt s}^{1}\!\!\frac{\text{d}x_1}{x_1}\, 
+  \mathcal{L}_{A,q}(\mll,x_1)+\mathcal{O} \left(\frac{m_Z^2}{\mll^2}\right) \, ,
+  \label{eq:gAq_integrated}
 \end{equation}
-where the  $\mll$-independent effective couplings $\bar A_q$  are
+where the $\mll$-independent effective couplings $\bar A_q$  are
 given substituting in \cref{eq:coup} the expressions for
 the asymptotic propagator factors \cref{eq:propasympt}.
 
@@ -335,7 +337,7 @@ antisymmetric contribution vanishes: so for instance the
 rapidity distribution
 \begin{equation}
   \label{eq:dsigma-dyll}
-  \frac{\d\sigma}{\d\yll} = \int\limits_{\mll^{{\rm min}}}^{\sqrt s}\!\d\mll \int\limits_{-1}^{1}\!\!\d\cos\theta^*\, \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} \, ,
+  \frac{\d\sigma}{\d\yll} = \int\limits_{\mll^{\text{min}}}^{\sqrt s}\!\d\mll \int\limits_{-1}^{1}\!\!\d\cos\theta^*\, \frac{\d^3 \sigma}{\d \mll \, \d \yll \, \d\cos\theta^*} \, ,
 \end{equation}
 does not depend on terms proportional to $A_q$.
 %
@@ -347,7 +349,7 @@ asymmetry is especially relevant.
 This observable is
 defined at the differential level as
 \begin{equation}
-  A_{\rm fb}(\cos\theta^*) \equiv \frac{ \frac{\d\sigma}{\d\cos\theta^*}(\cos\theta^*)
+  A_{\text{fb}}(\cos\theta^*) \equiv \frac{ \frac{\d\sigma}{\d\cos\theta^*}(\cos\theta^*)
   - \frac{\d\sigma}{\d\cos\theta^*}(-\cos\theta^*)}{ \frac{\d\sigma}{\d\cos\theta^*}(\cos\theta^*)
   + \frac{\d\sigma}{\d\cos\theta^*}(-\cos\theta^*) } \, ,\quad \cos\theta^*>0 \, ,
   \label{eq:forward-backward-asymmetry}
@@ -356,7 +358,7 @@ which in terms of the coefficients introduced in
 \cref{eq:dsigma-dcos-v2} is given at LO by
 \begin{equation}
   \label{eq:afb_lo}
-  A_{\rm fb}(\cos\theta^*)   = \frac{\cos\theta^*}{(1+\cos^2(\theta^*))}\frac{\sum_q g_{A,q} }{\sum_{q'} g_{S,q'}} \, ,\quad \cos\theta^*>0 \,.
+  A_{\text{fb}}(\cos\theta^*)   = \frac{\cos\theta^*}{(1+\cos^2(\theta^*))}\frac{\sum_q g_{A,q} }{\sum_{q'} g_{S,q'}} \, ,\quad \cos\theta^*>0 \,.
 \end{equation}
 This  shows that the dependence on $\cos\theta^*$ factorizes
 and the PDF dependence only appears as an overall normalization factor
@@ -364,7 +366,7 @@ depending on the ratio of $\sum_q g_{A,q}$
 and $\sum_q g_{S,q}$, which in turn depend on the antisymmetric and symmetric
 partonic luminosities $ \mathcal{L}_{A,q}$ and $ \mathcal{L}_{S,q}$ respectively.
 %
-Note that the overall sign of $A_{\rm fb}$ remains in general undetermined.
+Note that the overall sign of $A_{\text{fb}}$ remains in general undetermined.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -378,12 +380,12 @@ Note that the overall sign of $A_{\rm fb}$ remains in general undetermined.
     where the analytic calculation  \cref{eq:forward-backward-asymmetry}
     is compared with the numerical simulation based on 
     {\sc\small MadGraph5\_aMC@NLO}
-    interfaced to {\sc\small PineAPPL}.
+    interfaced to \pineappl.
     %
     The bottom panels display the relative difference between the analytic and
     numerical calculations.
     %
-    One of the replicas of the NNPDF4.0 NNLO PDF set is used as input
+    One of the replicas of the \nnpdfr{4.0} NNLO PDF set is used as input
     to the calculation.
   }    
   \label{fig:lo-diff-cos}
@@ -396,7 +398,7 @@ single-inclusive differential distribution in $\cos\theta^*$,
 \cref{eq:dsigma-dcos},
 and the corresponding forward-backward asymmetry,
 \cref{eq:forward-backward-asymmetry} evaluated at LO
-for $\mll^{\rm min}=\SI{5}{\TeV}$. The single-differential rapidity
+for $\mll^{\text{min}}=\SI{5}{\TeV}$. The single-differential rapidity
 distribution Eq.~(\ref{eq:dsigma-dyll}) is also shown for reference in Fig.~\ref{fig:lo-diff-yll}.
 %
 We display both a numerical  evaluation based on
@@ -409,33 +411,28 @@ entering \crefrange{eq:coup}{eq:propzz} set to the values used in
 the {\sc\small MadGraph5\_aMC@NLO} runcard, and performing  numerically
 the integrals in \cref{eq:dsigma-dcos,eq:dsigma-dyll}.
 %
-For validation purposes, no kinematic cuts are applied to the
-rapidities and transverse momenta of final-state leptons.
-The PDF input is taken to be given, for illustrative purposes, by
-one of the replicas of the NNPDF4.0 NNLO set.
-The relative difference between the analytic and
-numerical calculation is shown in the bottom panels of
-\cref{fig:lo-diff-cos} and demonstrates perfect agreement. 
+For validation purposes, no kinematic cuts are applied to the rapidities and
+transverse momenta of final-state leptons.
+The \pdf input is taken to be given, for illustrative purposes, by one of the
+replicas of the \nnpdfr{4.0} \nnlo set.
+The relative difference between the analytic and numerical calculation is shown
+in the bottom panels of \cref{fig:lo-diff-cos} and demonstrates perfect
+agreement. 
 
-While the discussion so far has been presented  at LO, its
-qualitative features are unaffected by 
-higher-order corrections.
+While the discussion so far has been presented  at \lo, its qualitative
+features are unaffected by  higher-order corrections.
 %
-To illustrate this, in \cref{fig:lo-kfact} we compare
-the LO result 
-from \cref{fig:lo-diff-cos} to the corresponding NLO QCD result.
+To illustrate this, in \cref{fig:lo-kfact} we compare the \lo result  from
+\cref{fig:lo-diff-cos} to the corresponding \nlo \qcd result.
 %
-The bottom panels display the NLO $K$-factor
-for the $\cos\theta^*$ distribution
-and the forward-backward asymmetry.
+The bottom panels display the \nlo $K$-factor for the $\cos\theta^*$
+distribution and the forward-backward asymmetry.
 %
-Whereas the NLO $K$-factor in the
-$\cos\theta^*$ distribution is quite large (around 40\%)
-it exhibits only a mild dependence on
-the Collins-Soper angle.
+Whereas the \nlo $K$-factor in the $\cos\theta^*$ distribution is quite large
+(around 40\%) it exhibits only a mild dependence on the Collins-Soper angle.
 %
-For $A_{\rm fb}$, the $K$-factor is at the 10\% level
-and essentially independent of the value of $\cos\theta^*$.
+For $A_{\text{fb}}$, the $K$-factor is at the 10\% level and essentially
+independent of the value of $\cos\theta^*$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -452,8 +449,8 @@ and essentially independent of the value of $\cos\theta^*$.
   \includegraphics[width=0.49\linewidth]{plots/sigma_lo_nlo-MLL_5000_COSTH-r3.pdf}
   \includegraphics[width=0.49\linewidth]{plots/afb_lo_nlo-MLL_5000_COSTH-r3.pdf}
   \caption{Same as \cref{fig:lo-diff-cos} now comparing the LO result
-    to the NLO QCD result obtained using
-    {\sc\small MadGraph5\_aMC@NLO}.
+    to the \nlo \qcd result obtained using
+    \textsc{\small MadGraph5\_aMC@NLO}.
     %
     The $K$-factor is shown in the lower panel.
   }
