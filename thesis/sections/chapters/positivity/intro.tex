@@ -1,2 +1,71 @@
 % !TeX root = ../../../main.tex
 
+The origin of this study has been the observation, brought to \nnpdf by
+external users, that the adoption of \nnpdfr{3.1} in some searches produced
+negative results for the central values of physical observables.
+
+The problem was identified in the \pdf set having negative values for some
+flavors, specifically in the large-$x$ region, which is probed by searches, but
+not covered by data.
+%
+However, already \nnpdfr{3.1} imposed the positivity of a set of physical
+observables, that is a relevant constraint on the \pdf shape.
+But it is not possible to cover, with a finite amount of observable values, the
+whole spectrum of possible measurements, thus they guarantee more the
+positivity of standard data-region values (e.g.\ \dy distributions, or \dis
+structure functions), but not of any possible \bsm search.
+%
+Moreover, an too strong assumptions in the extrapolation region might also
+generate some bias towards the \sm itself, and the inclusion of constraints
+on \bsm observables would be at the very least arbitrary.
+
+Yet, it is true that in the known cases observables negativity can be traced
+back to \pdfs negativity.
+%
+Indeed, \lo observables are positive by construction (being squared
+amplitudes), and convoluted with a positive \pdf would yield a positive result,
+though it is not generally true for all orders, since they are affected by
+factorization subtractions, that can generate negative results also from
+positive \pdfs.
+
+For this reason, we wondered if it were possible to obtain a scheme that would
+guarantee the positivity of the \pdfs, in such a way that two results would be
+achieved at the same time: \lo observables would be positive with these \pdfs,
+and a further theoretical constraint could be imposed on the fit, augmenting
+the physical information embedded in the fit.
+
+As explained later on, the existence goal is easily obtained, since it is
+possible to construct \enquote{physical} schemes in which the \pdf is anchored
+to an observable, and thus positive by construction.
+%
+Unfortunately, using \pdfs in this schemes would be rather unpractical, since
+dedicated calculations would be required, adding the details (coefficient
+functions) of the process linked to the \pdfs to any other process as well.
+So the further requirement we imposed was to obtain a positive subtraction
+scheme as close as possible from \msbar, such that \pdfs could be fitted in
+that scheme, and tree level observables would become positive anyhow, since
+they do not require a specific subtraction (thus the difference with respect to
+\msbar would be higher order).
+%
+We started from the assumption that \msbar itself were not a negative scheme,
+and we tried to enhance positivity working on the negativity of the coefficient
+functions in $N$-space.
+%
+We found out in the first place that $N$-space positivity does not coincide
+with $x$-space one, and the relation is rather non-trivial.
+We wanted the \pdf values to be positive, not its moments, so we needed to work
+on n $x$-space transformation, even though this involved necessarily
+distributions.
+%
+Once we had a reasonable candidate, obtained tracing back the structure of
+\msbar subtraction in $d$-dimensions, we started proving its positivity, and
+studying the relation with the \msbar.
+There, it strangely appeared from the explicit change of scheme that \msbar
+\pdfs were more positive than those in the new scheme.
+%
+Finally, after convincing ourselves of this fact, we turned our argument to
+prove the positivity of \msbar scheme itself.
+This is the most convenient result for the \pdf fit, achieving the goal of
+healing the original \textit{issue} with \nnpdfr{3.1}, but it is in no way
+assuring the positivity of resulting observables, that remain beset by
+subtraction and perturbative truncation.
