@@ -10,4 +10,92 @@
 \markboth{\spacedlowsmallcaps{Conclusions}}%
 	{\spacedlowsmallcaps{Conclusions}}
 
-\vfill
+\historiated{T}{he} material presented cover a range of topics, all related to
+\acrlong{pdf}, but about different aspects.
+%
+My PhD itself has been mainly focused on the rework of the theory predictions
+architecture, in collaboration with other \nnpdf members, the number of which
+increased during the years, together with projects' ambitions: the initial goal
+of replacing the \dis and \dglap evolution modules was pursued by me and Felix
+Hekhorn, but it grew to include a full rework of the theory pipeline, together
+with other collaborators.
+
+The modular structure of the architecture we created (the backbone of which we
+inherited from \apfelcomb and previous \nnpdf projects) has been designed to
+achieve three goals: extensibility, maintainability, and external access.
+Indeed, while designed and developed by \nnpdf members, we hope that the other
+groups interested in \pdf fitting, and related topics, can make use of the
+tools we developed.
+%
+The development itself happened completely in public, and still continues this
+way.
+Until now, it has not been a big deal: projects were formally public, but not
+being production-ready little interactions took place in practice.
+However, we considered important to manifest from the beginning the will to
+write tools at the disposal of the entire community, accepting feedback,
+feature requests, and any kind of contributions (within the scope of the
+projects).
+%
+This is motivated by the non-negligible expense in the amount of manpower
+required, and the intention to lower the barrier for further studies, giving
+free and easy access to common machinery.
+
+We already benefited ourselves from the design choices made: the various
+projects are the base on which new features are being introduced, as described
+for the study of \acrlong{mhou} impact on \pdfs in \cref{ch:mhou}, and
+additional progresses as well, even if they have not been accounted for in this
+thesis, like the introduction of consistent \nnnlo theory predictions and other
+elements already available in existing software (\qed corrections, polarized
+elements or \ff-based predictions, small-$x$ resummed predictions), but all
+provided by a single framework.
+%
+The individual modules are already being used in further studies, as it
+happened for \eko in the quest for intrinsic charm in \cref{ch:ic}, or
+\pineappl for \acrlong{dy} $A_{\text{fb}}$ exercise of \cref{ch:afb}, and also
+\yadism, in the determination of low-energy neutrino structure functions (still
+in preparation, and not described here).
+As we are doing it, we hope that external users of our modules could the same
+as well.
+%
+Also \pdf-wise, the new methodology proposal in \cref{ch:gp} is an example of
+how having lowered the barrier through task decoupling allows for more
+iterations on new ideas, and the consequential innovation.
+
+Any new perturbative order is a completely new challenge, but this translates
+in more complex calculations, heavier math in the results, and more
+sophisticated approximations required for them (to keep them fast enough to
+evaluate), while the rest of the infrastructure is ready to expand for new
+contributions.
+In particular, while \nnnlo inclusion has already been mentioned as a
+work-in-progress effort, one of \pineappl initial motivations has been to
+account for \ew corrections, and this will also be possible with current tools.
+%
+At the same time, also new data and new processes are becoming available, as
+well as alternative data sources, like lattice computations, but the advantage
+of the current approach is that we do not need any major modification of the
+framework for them, but they will plugged as additional modules.
+
+A specific effort in building the new architecture is being dedicated to
+reproducibility, not only in making \textit{possible} to reobtain the same
+result (thus reconstructing and scrutinizing all the choices made), but also
+making it \textit{simple}, as much as possible, to encourage other people to do
+it.
+%
+Running a \pdf fit, i.e.\ a fit accounting for higher orders \qcd effects on a
+global data set, has always been a complex process, but it should become easier
+over the years, despite more ingredients and further theory being added to the
+present status, to encourage people to focus on the new developments, instead
+of the complication of gathering all the pieces from scratch.
+
+It is relevant to note that this last goal is not uniquely pursued by our
+framework, since it exists at least the remarkable example of \xfitter
+\url{https://www.xfitter.org/}, with a similar target, but a different
+perspective, as it privileged an integrated (i.e.\ monolithic) architecture,
+distributing theory predictions tools and the fitting machinery altogether.
+Instead, we want to allow the user (possibly including \xfitter) to compute its
+own theory predictions, and use them with their favorite fitting methodology.
+
+All these tools are empowering \pdf fitters, in order to let them directing
+efforts to the final purpose of more accurate and precise determinations,
+hopefully leading to a fruitful collaboration to reduce the related theoretical
+uncertainty still very relevant in many hadronic observables.
