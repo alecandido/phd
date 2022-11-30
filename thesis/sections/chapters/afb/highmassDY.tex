@@ -1,10 +1,10 @@
 % !TeX root = ../../../main.tex
 
-The aim of this  section is to scrutinize the \pdf dependence of the
-neutral-current \acrlong{dy} differential cross-section and of the associated
-forward-backward asymmetry by reviewing the \lo kinematics, determining \lo
-analytic expressions, and finally comparing these analytical calculations to
-the results of \lo and \nlo  numerical simulations obtained using \mgamc,
+The aim of this  section is to scrutinize the \pdf dependence of the \nc
+\acrlong{dy} differential cross-section and of the associated forward-backward
+asymmetry by reviewing the \lo kinematics, determining \lo analytic
+expressions, and finally comparing these analytical calculations to the results
+of \lo and \nlo  numerical simulations obtained using \mgamc,
 \cite{Alwall:2014hca}, interfaced to \pineappl,
 \cite{Carrazza:2020gss,christopher_schwan_2022_7023438}.
 %
@@ -14,7 +14,7 @@ asymmetry to the relevant parton luminosities.
 \subsection{\acrlong{dy} kinematics and cross-sections at \lo}
 \label{sec:afb/dylo}
 
-We consider dilepton production via the exchange of an electroweak neutral
+We consider dilepton production via the exchange of an \acrlong{ew} neutral
 gauge boson $Z/\gamma^*$ in proton-proton collisions:
 \begin{equation}
   \label{eq:afb/DYprocess}
@@ -59,9 +59,8 @@ kinematics provides a lower bound on the momentum fractions of the
 incoming partons, and all values of the momentum
 fractions such that $x_{1,2}\ge \mll/\sqrt s$ are allowed.
 
-It is useful to define the so-called  \acrlong{cs}
-angle $\theta^*$~\cite{Collins:1977iv}, which in the hadronic \acrfull{com}
-frame is defined as
+It is useful to define the so-called  \acrlong{cs} angle $\theta^*$,
+\cite{Collins:1977iv}, which in the hadronic \acrfull{com} frame is defined as
 \begin{equation}
 \begin{split}
   \cos\theta^* &= \sign (\yll) \cos\theta \, ,\\
@@ -112,24 +111,24 @@ in \cref{eq:afb/factorization} are the sum of a pure photon-exchange
 contribution, a photon-$Z$ interference term, and a pure $Z$-exchange
 contribution.
 %
-Of course, in the region
-$\mll \gtrsim m_Z$ these contributions are all of the same order.
+Of course, in the region $\mll \gtrsim m_Z$ these contributions are all of the
+same order.
 %
-Standard arguments~\cite{Peskin:1995ev} then imply that, because in the
-Standard Model the photon
-coupling to leptons is vector  while the $Z$ coupling is chiral,
-the pure photon and pure $Z$ contributions to the cross-section are
-necessarily  even in $\cos\theta^*$ while the interference term is
-odd.
+Standard arguments, \cite{Peskin:1995ev}, then imply that, because in the
+Standard Model the photon coupling to leptons is vector  while the $Z$ coupling
+is chiral, the pure photon and pure $Z$ contributions to the cross-section are
+necessarily  even in $\cos\theta^*$ while the interference term is odd.
 
-Specifically, at \lo the fully differential hadronic cross-section can
-be obtained from the well-known result~\cite{Peskin:1995ev} for
-$e^+e^-\to\mu^+\mu^-$ by replacing the incoming lepton charges  with
-those of the quarks, and accounting for the \pdfs, with
-the result
+Specifically, at \lo the fully differential hadronic cross-section can be
+obtained from the well-known result, \cite{Peskin:1995ev}, for
+$e^+e^-\to\mu^+\mu^-$ by replacing the incoming lepton charges  with those of
+the quarks, and accounting for the \pdfs, with the result
 \begin{align}
-    \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} &= \frac{\pi \alpha^2}{3 \mll s} \left((1+\cos^2({\theta^*})) \sum_q S_q \left[f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2) \right] \right. \nonumber\\
-    &\hspace*{15pt} + \left. \cos\theta^* \sum_q A_q \sign (\yll) \left[ f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) - f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2)\right] \right) \, ,
+    \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} &= 
+    \frac{\pi \alpha^2}{3 \mll s} \Bigg( \nonumber\\
+    &\hspace*{-2cm} (1+\cos^2({\theta^*})) \sum_q S_q \left[f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) + f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2) \right] \nonumber\\
+    &\hspace*{-2cm} + \left. \cos\theta^* \sum_q A_q \sign (\yll) \left[ f_q(x_1,\mll^2) f_{\bar{q}}(x_2,\mll^2) - f_q(x_2,\mll^2) f_{\bar{q}}(x_1,\mll^2)\right] \nonumber\\
+    &\hspace*{-2.5cm}\Bigg)
     \label{eq:afb/lo-triple-diff}
 \end{align}
 where  $\alpha$ is the QED coupling and the even (symmetric) and
@@ -222,14 +221,15 @@ and $\sqrt{s}$ in \cref{eq:afb/x_fractions}.
 Note that both parton luminosities are invariant under
 the interchange $x_1\leftrightarrow x_2$, upon which $\yll \to -\yll$.
 %
-In terms of these luminosities, the triple differential cross-section \cref{eq:afb/lo-triple-diff}
-takes the compact form
-\begin{equation}
+In terms of these luminosities, the triple differential cross-section
+\cref{eq:afb/lo-triple-diff} takes the compact form
+\begin{align}
+  \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} &=
+  \frac{\pi \alpha^2}{3 \mll s} \left(
+  (1+\cos^2({\theta^*})) \sum_q S_q \mathcal{L}_{S,q}(\mll, \yll) \right. \nonumber\\
+  &+ \left. \cos\theta^* \sum_q A_q \mathcal{L}_{A,q}(\mll, \yll)  \right)
   \label{eq:afb/lo-triple-diff-lumis}
-  \frac{\dd^3 \sigma}{\dd \mll \, \dd \yll \, \dd\cos\theta^*} =
-  \frac{\pi \alpha^2}{3 \mll s} \left( (1+\cos^2({\theta^*})) \sum_q S_q \mathcal{L}_{S,q}(\mll, \yll)
-  + \cos\theta^* \sum_q A_q \mathcal{L}_{A,q}(\mll, \yll)  \right) \, ,
-\end{equation}
+\end{align}
 which explicitly displays
 its symmetry properties upon the transformation $\cos\theta^* \to -\cos\theta^*$,
 equivalent to a charge conjugation transformation 
