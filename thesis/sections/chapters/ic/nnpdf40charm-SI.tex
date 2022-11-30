@@ -122,9 +122,9 @@ If the heavy quark $h$ has no intrinsic component, then below $Q_h$
 its PDF is identically zero, and above $Q_h$ it is determined by
 $\mathbf{A}^{(n_f)}(Q_{h}^2)$. If it does have an intrinsic
 component, then  below $Q_h$ its PDF is scale-independent, but nonzero.
-While  \textsc{\small EKO} is currently an NNLO code, on
-top of the standard~\cite{pdfnnlo} NNLO scheme change for this work
-an N$^3$LO scheme change has been implemented, based on recent higher-order computations
+While  \textsc{\small EKO} is currently an \nnlo code, on
+top of the standard~\cite{pdfnnlo} \nnlo scheme change for this work
+an \nnnlo scheme change has been implemented, based on recent higher-order computations
 of the relevant operator matrix elements~\cite{Bierenbaum:2009zt,Bierenbaum:2009mv,Ablinger:2010ty,Ablinger:2014vwa,Ablinger:2014uka,Behring:2014eya,Blumlein:2017wxd,Ablinger_2014,Ablinger:2014nga}
 and the work of~\cite{zanoli}.
 
@@ -135,13 +135,13 @@ benchmarks~\cite{Dittmar:2005ed,Giele:2002hx} and with
 finding excellent agreement beyond the per-mille level.
 %
 The implementation of the  matching conditions
-has been benchmarked up to N$^3$LO against the independent \textsc{\small Mathematica}-based calculation 
+has been benchmarked up to \nnnlo against the independent \textsc{\small Mathematica}-based calculation 
 presented in~\cite{zanoli} finding also good agreement.
 %
 To illustrate some of these benchmarks, Fig.~\ref{fig:ic/EKObench} displays
 the absolute and relative difference between \textsc{\small EKO},
 \textsc{\small APFEL}, and \textsc{\small PEGASUS}
-for NNLO VFNS evolution
+for \nnlo VFNS evolution
 carried out
 following the settings of~\cite{Dittmar:2005ed,Giele:2002hx}.
 %
@@ -166,7 +166,7 @@ for the gluon and for the other quark PDF combinations.
         \includegraphics[width=0.47\linewidth]{ch-ic/eko_bench_V.pdf}
         \includegraphics[width=0.47\linewidth]{ch-ic/eko_bench_S.pdf}
         \caption{\small Absolute (upper) and relative (bottom) differences between 
-        the outcome of NNLO QCD evolution
+        the outcome of \nnlo QCD evolution
         as implemented in
         \textsc{\small EKO} and the
         corresponding results from \textsc{\small APFEL} and \textsc{\small PEGASUS}.
@@ -199,9 +199,9 @@ result, as shown in Fig.~\ref{fig:ic/charm_content_3fns} (right) as ``default''.
 %
 It should be noticed that the matching conditions for charm are 
 nontrivial starting
-at NNLO: at NLO the perturbative charm PDF vanishes at threshold.
+at \nnlo: at \nlo the perturbative charm PDF vanishes at threshold.
 %
-Hence, having implemented in EKO also the N$^3$LO matching conditions,
+Hence, having implemented in EKO also the \nnnlo matching conditions,
 we are able to assess the MHOU of the perturbative charm at the
 matching scale $Q_c$, by comparing
 results obtained at the first two nonvanishing perturbative
@@ -216,14 +216,14 @@ i.e.\ with a perturbative charm PDF.
 This perturbative charm PDF is compared to our default result
 in Fig.~\ref{fig:ic/charm_fitted_vs_perturbative_mhous}~(left), where the 4FNS
 perturbative 
-charm PDF at scale  $Q_c=m_c$ obtained using either NNLO or N$^3$LO
+charm PDF at scale  $Q_c=m_c$ obtained using either \nnlo or \nnnlo
 under the assumption of no intrinsic charm are shown, together with
 our  result allowing for intrinsic charm.
 %
 It is clear that while on the one hand, the PDF uncertainty on the
 perturbative charm PDF is indeed tiny, on the other
 hand the difference between the result for perturbative charm
-obtained using NNLO or N$^3$LO matching is large, and in
+obtained using \nnlo or \nnnlo matching is large, and in
 fact larger at small $x$ than the difference between perturbative charm and our
 default (intrinsic) result.
 
@@ -234,11 +234,11 @@ default (intrinsic) result.
     \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward.pdf}
     \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward_MHOU.pdf}
     \caption{\small Left: the perturbative charm PDF at $Q=1.51$~GeV
-  obtained from NNLO PDFs using NNLO and N$^3$LO matching
+  obtained from \nnlo PDFs using \nnlo and \nnnlo matching
     conditions.
       %
-      Right: the NNLO perturbative charm PDF including the MHOU
-    computed as the difference between NNLO and N$^3$LO matching.
+      Right: the \nnlo perturbative charm PDF including the MHOU
+    computed as the difference between \nnlo and \nnnlo matching.
 In both plots our default (intrinsic) charm PDF is also shown for comparison.  
   \label{fig:ic/charm_fitted_vs_perturbative_mhous} }
 \end{center}
@@ -247,9 +247,9 @@ In both plots our default (intrinsic) charm PDF is also shown for comparison.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the same manner as we used the difference between the results obtained from
-inversion of NNLO and N$^3$LO  matching as an estimate of the MHOU on
+inversion of \nnlo and \nnnlo  matching as an estimate of the MHOU on
 intrinsic charm, we may use the difference between the 4FNS
- perturbative charm obtained from NNLO and N$^3$LO matching as an
+ perturbative charm obtained from \nnlo and \nnnlo matching as an
  estimate of the MHOU on perturbative charm at the scale $Q_c$.
  %
  The total uncertainty is found by adding
@@ -541,7 +541,7 @@ Fig.~\ref{fig:ic/charm_dataset_dep_nf3} displays the dataset variations shown in
 Fig.~\ref{fig:ic/charm_dataset_dep}, now for the intrinsic (3FNS) charm
 PDF, but with the total uncertainty now being the sum in quadrature of
 the PDF and MHO uncertainties, with the latter determined as the difference between
-results obtained using NNLO and N$^3$LO matching.
+results obtained using \nnlo and \nnnlo matching.
 %
 Additionally, we also performed a few extra  dataset
 variations: a fit without any $W, Z$ production data from \atlas and \cms,
@@ -991,7 +991,7 @@ the $Z$+charm measurements in the forward region
 by \lhcb~\cite{LHCb:2021stx} follow the 
  settings described in~\cite{Boettcher:2015sqn}.
 %
-$Z$+jet events at NLO QCD theory are generated for $\sqrt{s}= 13$ TeV  using the $Zj$ package of the
+$Z$+jet events at \nlo QCD theory are generated for $\sqrt{s}= 13$ TeV  using the $Zj$ package of the
 \textsc{\small POWHEG-BOX}~\cite{Alioli:2010xd}.
 %
 The parton-level events produced by \textsc{\small POWHEG}
@@ -1054,7 +1054,7 @@ of the experimental measurement, so it is not required in the theory
 simulations.
 
 Predictions for Eq.~(\ref{eq:ic/Rcj}) are produced using our default PDF
-determination (NNPDF4.0 NNLO), as well as the corresponding PDF set
+determination (NNPDF4.0 \nnlo), as well as the corresponding PDF set
 with perturbative charm (see SI Sect.~\ref{app:ic/consistency}).
 %
 We have
