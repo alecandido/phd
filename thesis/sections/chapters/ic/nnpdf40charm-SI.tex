@@ -34,13 +34,13 @@ in its online documentation
 \end{center}
 as well as in a dedicated publication~\cite{Candido:2022tld}.
 
-The scale dependence of PDFs in QCD is determined by solving a set
+The scale dependence of \pdfs in QCD is determined by solving a set
 of coupled integro-differential equations (evolution equations) in two
-variables $x$ (momentum fraction) and $Q$ (scale) on which PDFs depend.
+variables $x$ (momentum fraction) and $Q$ (scale) on which \pdfs depend.
 Two families of approaches are commonly used in order to this purpose.
 %
 One possibility is to treat the (integral) dependence on $x$ of the
-PDFs and evolution kernels by
+\pdfs and evolution kernels by
 sampling it on a grid of points.
 %
 This is the strategy adopted by, among others, the  \textsc{\small APFEL}~\cite{Bertone:2013vaa},
@@ -60,18 +60,18 @@ and described in~\cite{DelDebbio:2007ee,Ball:2008by,Ball:2010de}.
 %
 One limitation of \textsc{\small PEGASUS} is that it requires the analytic
 computation of the Mellin transforms of
-the PDFs, which is generally not possible, specifically if PDFs are
+the \pdfs, which is generally not possible, specifically if \pdfs are
 parametrized as neural networks.
 %
 
 This restriction is bypassed in \textsc{\small FastKernel} by transforming only the
 evolution kernel (i.e.\ the evolution operator, solution of differential
 equations, evaluated on a given interpolation basis), which can be then
-convoluted with the $x$-space PDFs at the input evolution scale $Q_0$.
+convoluted with the $x$-space \pdfs at the input evolution scale $Q_0$.
 Following a similar strategy, \textsc{\small EKO}
 solves evolution equations in Mellin space and then produces \pdf-independent
 evolution kernel operators (EKO) which can be convoluted with input 
-PDFs.
+\pdfs.
 %
 Variable flavor number scheme evolution (VFNS) is implemented in \textsc{\small EKO}, with
 the possibility of freely choosing the value of the matching scales
@@ -234,7 +234,7 @@ default (intrinsic) result.
     \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward.pdf}
     \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward_MHOU.pdf}
     \caption{\small Left: the perturbative charm \pdf at $Q=1.51$~GeV
-  obtained from \nnlo PDFs using \nnlo and \nnnlo matching
+  obtained from \nnlo \pdfs using \nnlo and \nnnlo matching
     conditions.
       %
       Right: the \nnlo perturbative charm \pdf including the MHOU
@@ -361,7 +361,7 @@ baseline result.
 This shows that the dominant constraint is now coming from
 collider, and specifically hadron collider data (indeed, as we have
 seen constraints from DIS data are quite loose). Among these, \lhcb
-data (which are taken at large rapidity and thus impact PDFs at large
+data (which are taken at large rapidity and thus impact \pdfs at large
 and small $x$) are especially important, as demonstrated by the
 increase in uncertainty when they are removed.
 
@@ -374,11 +374,11 @@ emphasizing the stability of our results.
 Among the various methodological choices, a possibly critical one is
 the choice of basis functions. Specifically, in our default analysis,
 the output of the neural network does not provide the individual
-quark flavor and antiflavor PDFs, but rather linear combinations
+quark flavor and antiflavor \pdfs, but rather linear combinations
 corresponding to the so-called evolution
 basis~\cite{Ball:2021leu}. Indeed, our charm \pdf is given in
 Eq.~(\ref{eq:ic/fitted_charm_param})  as the linear combination of the
-two basis PDFs $\Sigma$ and $T_{15}$.
+two basis \pdfs $\Sigma$ and $T_{15}$.
 One may thus ask whether this choice may influence the final results
 for individual quark flavors, specifically charm.
 Given that physical results are basis
@@ -398,7 +398,7 @@ xc^+(x,Q_0;{\boldsymbol \theta}) =
 where $\textrm{ NN}_{c^+}(x,{\boldsymbol \theta})$
 indicates the value of the output neuron associated to the charm \pdf $c^+$.
 %
-The 4FNS charm PDFs determined using either basis are compared 
+The 4FNS charm \pdfs determined using either basis are compared 
 in Fig.~\ref{fig:ic/charm_basisdep}  at $Q=1.65$ GeV.
 %
 We find excellent consistency, and in particular 
@@ -410,7 +410,7 @@ of parametrization basis.
   \begin{center}
     \includegraphics[width=0.60\linewidth]{ch-ic/pdfplot-abscharm-basisdep.pdf}
     \caption{\small The default 4FNS charm \pdf at $Q=1.65$ GeV
-    compared to a result obtained by parametrizing PDFs in the flavor
+    compared to a result obtained by parametrizing \pdfs in the flavor
     basis instead of the evolution basis. 
   \label{fig:ic/charm_basisdep} }
 \end{center}
@@ -1091,7 +1091,7 @@ partonic subchannels in the numerator and denominator are not the same.
  their inclusion in the \pdf fit. Results are given for two 
  experimental correlation models, denoted as
  $\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$. We also report values
- before inclusion for the perturbative charm PDFs.
+ before inclusion for the perturbative charm \pdfs.
 }
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1121,7 +1121,7 @@ Fig.~\ref{fig:ic/Zc}, top right).
 The \lhcb $Z$+charm data are then included in the \pdf determination
 through
 Bayesian reweighting~\cite{Ball:2010gb,Ball:2011gg}. The
-$\chi^2/N_\textrm{ dat}$ values obtained using the PDFs found after their
+$\chi^2/N_\textrm{ dat}$ values obtained using the \pdfs found after their
 inclusion are given in
 Table~\ref{tab:ic/chi2_zcharm}.
 %
@@ -1137,7 +1137,7 @@ $\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$ scenarios respectively.
 %
 This
 demonstrates that the inclusion of the \lhcb $Z$+charm measurements  affects
-the PDFs only weakly. This agrees with the results shown in 
+the \pdfs only weakly. This agrees with the results shown in 
 Figs.~\ref{fig:ic/Zc}~(center) in
 the main manuscript, where it is seen that the inclusion of the \lhcb
 data has essentially no impact on the shape of the charm \pdf, but
@@ -1213,7 +1213,7 @@ denominator
       parton luminosities in the  $m_X$ region
       relevant for $Z$+charm production and  three different
       rapidity bins (see text). Results are shown both for our default charm
-    PDFs and for the variant with perturbative charm. 
+    \pdfs and for the variant with perturbative charm. 
   \label{fig:ic/charm_luminosities} }
 \end{center}
 \end{figure}

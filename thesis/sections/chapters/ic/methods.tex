@@ -7,9 +7,9 @@ observation.
 %
 The assumption that there is no intrinsic charm
 amounts to the assumption
-that all 4FNS PDFs are determined~\cite{Collins:1986mp} using
+that all 4FNS \pdfs are determined~\cite{Collins:1986mp} using
 perturbative matching conditions~\cite{pdfnnlo} in terms of 
-3FNS PDFs
+3FNS \pdfs
 that do not include
 a charm \pdf.
 %
@@ -18,28 +18,28 @@ actually given by a square matrix that also includes a 3FNS charm
 \pdf.
 %
 So the assumption of no intrinsic charm amounts to the assumption
-that if the 4FNS PDFs are transformed back to the 3FNS, the 3FNS charm
+that if the 4FNS \pdfs are transformed back to the 3FNS, the 3FNS charm
 \pdf is found to vanish. Hence, intrinsic charm is by definition the
 deviation from zero of the 3FNS charm \pdf~\cite{Ball:2015dpa}. Note
 that whereas the 3FNS charm \pdf is purely intrinsic, while the 4FNS
 charm \pdf includes both an intrinsic and a perturbative
  radiative component, the
 4FNS intrinsic component is not equal to the 3FNS charm \pdf, since
-matching conditions reshuffle all PDFs among each other. 
+matching conditions reshuffle all \pdfs among each other. 
 
 Intrinsic charm can then be determined through the following two steps,
 summarized in Fig.~\ref{fig:ic/strategy}. 
-First, all the PDFs, including the charm \pdf, are parametrized 
+First, all the \pdfs, including the charm \pdf, are parametrized 
 in the 4FNS at an input scale $Q_0$ and evolved 
 using \nnlo perturbative QCD to   $Q \not = Q_0$.
 %
-These evolved PDFs can be used to 
+These evolved \pdfs can be used to 
 compute physical cross-sections, also at \nnlo, which then are
 compared to a global dataset of experimental measurements.
 %
 The result of this first step in our procedure is 
 a Monte Carlo (MC) representation
-of the probability distribution for the 4FNS PDFs at the input
+of the probability distribution for the 4FNS \pdfs at the input
 parametrization scale $Q_0$.
 
 Next, this 4FNS charm \pdf is transformed to the 3FNS at some scale matching scale
@@ -47,14 +47,14 @@ $Q_c$.
 %
 Note that the choice of both $Q_0$ and $Q_c$ are immaterial. The former
 because perturbative evolution is invertible, so
-results for the PDFs do not depend on the choice of
+results for the \pdfs do not depend on the choice of
 parametrization scale $Q_0$. The latter because 
 the 3FNS charm is scale independent, so it does not depend on the
 value of $Q_c$.
 Both statements of course hold up to fixed perturbative accuracy, and
 are violated by MHO corrections.
 %
-In practice, we parametrize PDFs at the scale
+In practice, we parametrize \pdfs at the scale
 $Q_0=$~1.65~GeV and perform the inversion at a scale
 chosen equal to the charm mass $Q_c=m_c=1.51$~GeV.
 
@@ -84,7 +84,7 @@ The 4FNS charm \pdf and its associated
 uncertainties is determined by means of a global QCD analysis
 within the NNPDF4.0 framework.
 %
-All PDFs, including the charm \pdf, are  parametrized at $Q_0=1.65$ GeV in 
+All \pdfs, including the charm \pdf, are  parametrized at $Q_0=1.65$ GeV in 
 a model-independent manner using a neural network, which is fitted to data using 
 supervised machine learning techniques.
 The Monte Carlo replica method
@@ -146,7 +146,7 @@ Particularly important constraints come from $W$ and $Z$ production from
 neutral and charged current deep-inelastic 
 scattering (DIS) structure functions from HERA.
 %
-The 4FNS  PDFs at the input scale $Q_0$ are related
+The 4FNS  \pdfs at the input scale $Q_0$ are related
 to experimental measurements at $Q \not =Q_0$ by means of \nnlo QCD calculations, including
 the FONLL-C general-mass scheme for DIS~\cite{Forte:2010ta} generalized to 
 allow for fitted charm~\cite{Ball:2015tna}.
@@ -189,12 +189,12 @@ generated contribution, with the latter
 becoming larger in the $x\lsim 0.1$ region as the scale $Q$ is increased.
 %
 In order to extract the intrinsic component, 
-we transform PDFs to the 3FNS at the scale $Q_c=m_c=1.51$~GeV using
+we transform \pdfs to the 3FNS at the scale $Q_c=m_c=1.51$~GeV using
 \textsc{\small EKO}, a novel \textsc{\small Python} open source
 \pdf evolution framework (see  SI Sect.~\ref{app:ic/eko}).
 %
 In its current implementation, \textsc{\small EKO} performs  QCD 
-evolution of PDFs to any scale
+evolution of \pdfs to any scale
 up to \nnlo. For
 the sake of the current analysis, \nnnlo matching conditions have also
 been implemented, by 
