@@ -5,7 +5,7 @@
 
 A crucial ingredient in the derivation of our results
 is the determination of the 3FNS intrinsic
-charm PDF starting from the 4FNS, which requires the inversion of the matching
+charm \pdf starting from the 4FNS, which requires the inversion of the matching
 conditions implementing the 3FNS to 
 the 4FNS transformation.
 %
@@ -13,7 +13,7 @@ This inversion is not available in the open-source NNPDF
 code~\cite{NNPDF:2021uiq} and it is performed here by means of a novel code
 for QCD evolution, 
  \textsc{\small EKO} (Evolution Kernel Operators), that we use to take the
- PDF set determined at the reference scale $Q_0$ and evolve it to a
+ \pdf set determined at the reference scale $Q_0$ and evolve it to a
  matching scale $Q_c$ where it is transformed to the 3FNS.
 %
 Here we provide a brief summary of \textsc{\small
@@ -55,7 +55,7 @@ analytically, but the integral transform has to be inverted numerically
 to arrive at a final result.
 %
 This approach is adopted by \textsc{\small PEGASUS}~\cite{pegasus} as well as by the
-internal PDF evolution code \textsc{\small FastKernel} used in earlier NNPDF analyses
+internal \pdf evolution code \textsc{\small FastKernel} used in earlier NNPDF analyses
 and described in~\cite{DelDebbio:2007ee,Ball:2008by,Ball:2010de}.
 %
 One limitation of \textsc{\small PEGASUS} is that it requires the analytic
@@ -69,7 +69,7 @@ evolution kernel (i.e.\ the evolution operator, solution of differential
 equations, evaluated on a given interpolation basis), which can be then
 convoluted with the $x$-space PDFs at the input evolution scale $Q_0$.
 Following a similar strategy, \textsc{\small EKO}
-solves evolution equations in Mellin space and then produces PDF-independent
+solves evolution equations in Mellin space and then produces \pdf-independent
 evolution kernel operators (EKO) which can be convoluted with input 
 PDFs.
 %
@@ -119,9 +119,9 @@ inverse, completely equivalent to the analytic one within the numeral accuracy
 of the rest of the calculation).
 
 If the heavy quark $h$ has no intrinsic component, then below $Q_h$
-its PDF is identically zero, and above $Q_h$ it is determined by
+its \pdf is identically zero, and above $Q_h$ it is determined by
 $\mathbf{A}^{(n_f)}(Q_{h}^2)$. If it does have an intrinsic
-component, then  below $Q_h$ its PDF is scale-independent, but nonzero.
+component, then  below $Q_h$ its \pdf is scale-independent, but nonzero.
 While  \textsc{\small EKO} is currently an \nnlo code, on
 top of the standard~\cite{pdfnnlo} \nnlo scheme change for this work
 an \nnnlo scheme change has been implemented, based on recent higher-order computations
@@ -129,7 +129,7 @@ of the relevant operator matrix elements~\cite{Bierenbaum:2009zt,Bierenbaum:2009
 and the work of~\cite{zanoli}.
 
 The  \textsc{\small EKO} implementation of QCD evolution has been
-benchmarked against the Les Houches PDF evolution
+benchmarked against the Les Houches \pdf evolution
 benchmarks~\cite{Dittmar:2005ed,Giele:2002hx} and with
 \textsc{\small APFEL} and \textsc{\small PEGASUS},
 finding excellent agreement beyond the per-mille level.
@@ -145,7 +145,7 @@ for \nnlo VFNS evolution
 carried out
 following the settings of~\cite{Dittmar:2005ed,Giele:2002hx}.
 %
-A toy PDF set at $Q_0=\sqrt{2}$ GeV is evolved up to $Q=100$ GeV
+A toy \pdf set at $Q_0=\sqrt{2}$ GeV is evolved up to $Q=100$ GeV
 for equal values of the factorization and renormalization scales, $Q_f=Q_r=Q$.
 %
 We show as representative results those corresponding to
@@ -158,7 +158,7 @@ evolution in Mellin space, with relatively differences
 at most at the $\mathcal{O}\left( 10^{-4}\right)$ level.
 %
 A similar level of agreement is found
-for the gluon and for the other quark PDF combinations.
+for the gluon and for the other quark \pdf combinations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -170,7 +170,7 @@ for the gluon and for the other quark PDF combinations.
         as implemented in
         \textsc{\small EKO} and the
         corresponding results from \textsc{\small APFEL} and \textsc{\small PEGASUS}.
-We adopt the settings of the Les Houches PDF evolution benchmarks: we
+We adopt the settings of the Les Houches \pdf evolution benchmarks: we
 consider  VFNS evolution from $Q_0=\sqrt{2}$ GeV up to $Q=100$ GeV,
 and we show  results for the total valence quark distribution $V$ (left)
 and the quark singlet distribution $\Sigma$ (right).
@@ -181,25 +181,25 @@ and the quark singlet distribution $\Sigma$ (right).
 
 
 
-\section{The perturbative charm PDF}
+\section{The perturbative charm \pdf}
 \label{app:ic/consistency}
 
-In the absence of intrinsic charm, the charm PDF is fully determined by
+In the absence of intrinsic charm, the charm \pdf is fully determined by
 perturbative matching conditions, i.e.\ by the matrix
 $\mathbf{A}^{(n_f)}(Q_{c}^2)$ in Eq.~(\ref{eq:ic/EKO2}).
 %
 We will denote the
-charm PDF thus obtained
-``perturbative charm PDF'', for short. The PDF
-uncertainty on the perturbative charm PDF is directly related to that 
+charm \pdf thus obtained
+``perturbative charm \pdf'', for short. The \pdf
+uncertainty on the perturbative charm \pdf is directly related to that 
 of the light quarks and especially the gluon, and is typically much smaller
-than  the  uncertainty on our default charm PDF, that includes
+than  the  uncertainty on our default charm \pdf, that includes
 intrinsic charm. Here and in the following we will refer to our final
 result, as shown in Fig.~\ref{fig:ic/charm_content_3fns} (right) as ``default''.
 %
 It should be noticed that the matching conditions for charm are 
 nontrivial starting
-at \nnlo: at \nlo the perturbative charm PDF vanishes at threshold.
+at \nnlo: at \nlo the perturbative charm \pdf vanishes at threshold.
 %
 Hence, having implemented in EKO also the \nnnlo matching conditions,
 we are able to assess the MHOU of the perturbative charm at the
@@ -208,20 +208,20 @@ results obtained at the first two nonvanishing perturbative
 orders.
 
 As already mentioned, see also Fig.~\ref{fig:ic/Zc}~(top left) in the main manuscript, we have
-constructed a PDF set with perturbative charm, in which the full PDF
-determination from the global dataset leading to the NNPDF4.0 PDF set
+constructed a \pdf set with perturbative charm, in which the full \pdf
+determination from the global dataset leading to the NNPDF4.0 \pdf set
 is repeated, but now with the assumption of vanishing intrinsic charm,
-i.e.\ with a perturbative charm PDF.
+i.e.\ with a perturbative charm \pdf.
 %
-This perturbative charm PDF is compared to our default result
+This perturbative charm \pdf is compared to our default result
 in Fig.~\ref{fig:ic/charm_fitted_vs_perturbative_mhous}~(left), where the 4FNS
 perturbative 
-charm PDF at scale  $Q_c=m_c$ obtained using either \nnlo or \nnnlo
+charm \pdf at scale  $Q_c=m_c$ obtained using either \nnlo or \nnnlo
 under the assumption of no intrinsic charm are shown, together with
 our  result allowing for intrinsic charm.
 %
-It is clear that while on the one hand, the PDF uncertainty on the
-perturbative charm PDF is indeed tiny, on the other
+It is clear that while on the one hand, the \pdf uncertainty on the
+perturbative charm \pdf is indeed tiny, on the other
 hand the difference between the result for perturbative charm
 obtained using \nnlo or \nnnlo matching is large, and in
 fact larger at small $x$ than the difference between perturbative charm and our
@@ -233,13 +233,13 @@ default (intrinsic) result.
   \begin{center}
     \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward.pdf}
     \includegraphics[width=0.49\linewidth]{ch-ic/pch_vs_fitted_forward_MHOU.pdf}
-    \caption{\small Left: the perturbative charm PDF at $Q=1.51$~GeV
+    \caption{\small Left: the perturbative charm \pdf at $Q=1.51$~GeV
   obtained from \nnlo PDFs using \nnlo and \nnnlo matching
     conditions.
       %
-      Right: the \nnlo perturbative charm PDF including the MHOU
+      Right: the \nnlo perturbative charm \pdf including the MHOU
     computed as the difference between \nnlo and \nnnlo matching.
-In both plots our default (intrinsic) charm PDF is also shown for comparison.  
+In both plots our default (intrinsic) charm \pdf is also shown for comparison.  
   \label{fig:ic/charm_fitted_vs_perturbative_mhous} }
 \end{center}
 \end{figure}
@@ -253,7 +253,7 @@ intrinsic charm, we may use the difference between the 4FNS
  estimate of the MHOU on perturbative charm at the scale $Q_c$.
  %
  The total uncertainty is found by adding
- this in quadrature to the PDF uncertainty (which however in practice
+ this in quadrature to the \pdf uncertainty (which however in practice
  is negligible).
 %
 The result is shown in 
@@ -269,15 +269,15 @@ intrinsic component is sizable and positive at large $x$.
 %
 This is of course consistent with our main finding that we
 only see evidence of intrinsic charm for large $x\gsim 0.2$, while for
-smaller $x$ our result for the charm PDF is compatible with zero, as demonstrated by
+smaller $x$ our result for the charm \pdf is compatible with zero, as demonstrated by
 Fig.~\ref{fig:ic/charm_content_3fns}~(right) in the main manuscript.
 
 
-\section{Stability of the 4FNS charm PDF}
+\section{Stability of the 4FNS charm \pdf}
 \label{app:ic/charm_stability_4fns}
 
 The main input to our determination of intrinsic charm is the 4FNS
-charm PDF extracted from high-energy data. While this
+charm \pdf extracted from high-energy data. While this
 determination comes with an uncertainty estimate, it is important to
 verify that this adequately reflects the various sources
 of uncertainty, and that there are no further sources of uncertainty
@@ -303,7 +303,7 @@ are interested in intrinsic charm, in all comparisons we focus on
 the large-$x$ region in which the intrinsic valence-like peak is found.
 %
 In this section, the 4FNS
-charm PDF is displayed at the scale $Q = 1.65$ GeV so that
+charm \pdf is displayed at the scale $Q = 1.65$ GeV so that
 results for all fit variants, including
 those with with different $m_c$ values, can be shown at a common scale.
 
@@ -315,7 +315,7 @@ underlying data, which also allows us to
 identify the datasets or groups of processes that provide
 the leading constraints on intrinsic charm.
 %
-To this purpose, we have repeated our PDF
+To this purpose, we have repeated our \pdf
 determination using a  variety of subsets of the global dataset used for
 our default determination. Results are shown in
 Fig.~\ref{fig:ic/charm_dataset_dep}, where we compare the result using
@@ -330,7 +330,7 @@ Tevatron and \lhc); and by removing the \lhcb  $W$ and $Z$ production data.
 \begin{figure}[t!]
   \begin{center}
     \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-dataset_dep.pdf}
-    \caption{\small The dependence of the 4FNS charm PDF at $Q=1.65$ GeV on
+    \caption{\small The dependence of the 4FNS charm \pdf at $Q=1.65$ GeV on
       the input dataset.
       %
       We compare the
@@ -350,7 +350,7 @@ dataset. The result is stable and only a moderate
 uncertainty reduction at the peak is observed. It is interesting to
 contrast this with the previous NNPDF study~\cite{Ball:2016neh}, in
 which the global fit provided only very loose constraints on the charm
-PDF, which was then determined mostly by the \emc data.
+\pdf, which was then determined mostly by the \emc data.
 %
 Indeed, a DIS-only fit (for which most data were already available at the time
 of the previous determination) determines charm with very large
@@ -366,7 +366,7 @@ and small $x$) are especially important, as demonstrated by the
 increase in uncertainty when they are removed.
 
 In all these determinations, the charm
-PDF at $x\simeq 0.4$ remains consistently nonzero and positive, thus
+\pdf at $x\simeq 0.4$ remains consistently nonzero and positive, thus
 emphasizing the stability of our results.
 
 \paragraph{Dependence on the parametrization basis.}
@@ -376,16 +376,16 @@ the choice of basis functions. Specifically, in our default analysis,
 the output of the neural network does not provide the individual
 quark flavor and antiflavor PDFs, but rather linear combinations
 corresponding to the so-called evolution
-basis~\cite{Ball:2021leu}. Indeed, our charm PDF is given in
+basis~\cite{Ball:2021leu}. Indeed, our charm \pdf is given in
 Eq.~(\ref{eq:ic/fitted_charm_param})  as the linear combination of the
 two basis PDFs $\Sigma$ and $T_{15}$.
 One may thus ask whether this choice may influence the final results
 for individual quark flavors, specifically charm.
 Given that physical results are basis
-independent, the outcome of a PDF determination should not depend
+independent, the outcome of a \pdf determination should not depend
 on the basis choice.
 
-In order to check this, we have repeated the PDF determination, but
+In order to check this, we have repeated the \pdf determination, but
 now using the flavor basis, see Sect.~3.1 of~\cite{Ball:2021leu}, in which
 each of the  neural network output neurons now correspond to individual quark
 flavors, so in particular,
@@ -396,7 +396,7 @@ xc^+(x,Q_0;{\boldsymbol \theta}) =
  (1-x)^{\beta_{c^+}} \textrm{ NN}_{c^+}(x,{\boldsymbol \theta}) \, ,
 \end{equation}
 where $\textrm{ NN}_{c^+}(x,{\boldsymbol \theta})$
-indicates the value of the output neuron associated to the charm PDF $c^+$.
+indicates the value of the output neuron associated to the charm \pdf $c^+$.
 %
 The 4FNS charm PDFs determined using either basis are compared 
 in Fig.~\ref{fig:ic/charm_basisdep}  at $Q=1.65$ GeV.
@@ -409,7 +409,7 @@ of parametrization basis.
 \begin{figure}[t!]
   \begin{center}
     \includegraphics[width=0.60\linewidth]{ch-ic/pdfplot-abscharm-basisdep.pdf}
-    \caption{\small The default 4FNS charm PDF at $Q=1.65$ GeV
+    \caption{\small The default 4FNS charm \pdf at $Q=1.65$ GeV
     compared to a result obtained by parametrizing PDFs in the flavor
     basis instead of the evolution basis. 
   \label{fig:ic/charm_basisdep} }
@@ -421,10 +421,10 @@ of parametrization basis.
 %
 The kinematic threshold for producing charm perturbatively depends on
 the value of the charm mass. Therefore the perturbative contribution
-to the 4FNS charm PDF, and thus the whole charm PDF if one assumes
+to the 4FNS charm \pdf, and thus the whole charm \pdf if one assumes
 perturbative charm, depends strongly on the value of the charm
 mass.
-On the other hand, the intrinsic charm PDF is of nonperturbative
+On the other hand, the intrinsic charm \pdf is of nonperturbative
 origin, so it should be essentially independent of the numerical value of the
 charm mass that is used in  perturbative computations employed in  its 
 determination (though it will of course depend on the true underlying 
@@ -438,31 +438,31 @@ based on the study of~\cite{Bauer:2004ve}, namely
  $m_c = 1.51 \pm 0.13$~GeV. 
 %
 Results are shown in Fig.~\ref{fig:ic/charm_fitted_mcdep}, where
-our default charm PDF determination with  $m_c = 1.51$~GeV is
+our default charm \pdf determination with  $m_c = 1.51$~GeV is
 repeated with $m_c=1.38$~GeV and
 $m_c=1.64$~GeV.
 %
 In order to understand these results note that this is
-the 4FNS PDF, so it includes 
+the 4FNS \pdf, so it includes 
 both a nonperturbative and a perturbative component. The latter is
 strongly dependent on the charm mass, but of course the data
 correspond to the unique true value of the mass and the mass
 dependence of the perturbative component is present only due to our
-ignorance of the actual true value. When determining the PDF from the
+ignorance of the actual true value. When determining the \pdf from the
 data, as we do, we expect this spurious dependence to be to some extent
-reabsorbed into the fitted PDF. So we expect results to display a
+reabsorbed into the fitted \pdf. So we expect results to display a
 moderate dependence on the charm mass --- full independence should
-hold for the intrinsic (3FNS) PDF and will be investigated in
+hold for the intrinsic (3FNS) \pdf and will be investigated in
 SI Sect.~\ref{app:ic/charm_stability_3fns}. 
 
 In Fig.~\ref{fig:ic/charm_pert_mcdep} the same result is shown, but now
-for the perturbative charm PDF discussed in
-SI Sect.~\ref{app:ic/consistency},  so the charm PDF is of
+for the perturbative charm \pdf discussed in
+SI Sect.~\ref{app:ic/consistency},  so the charm \pdf is of
 purely perturbative origin and fully determined by the strongly
 mass-dependent matching condition. This dependence is clearly seen in
 the plots. Furthermore, comparison with
 Fig.~\ref{fig:ic/charm_fitted_mcdep} shows that indeed this spurious
-dependence is partly reabsorbed in the fit when the charm PDF is
+dependence is partly reabsorbed in the fit when the charm \pdf is
 determined from the data, so that  the residual mass dependence is moderate.
 In particular, the large-$x$ valence peak, which is dominated by the
 intrinsic component, is very stable.
@@ -471,7 +471,7 @@ intrinsic component, is very stable.
 \begin{figure}[t]
   \begin{center}
     \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-mcdep.pdf}
-    \caption{\small The 4FNS charm PDF determined
+    \caption{\small The 4FNS charm \pdf determined
     using three different values of the charm mass. The absolute
     result (left) is shown at $Q=1.65$ GeV, while the ratio to the 
        default value
@@ -486,7 +486,7 @@ intrinsic component, is very stable.
   \begin{center}
     \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-mcdep-highQ.pdf}
     \caption{\small The same as Fig.~\ref{fig:ic/charm_fitted_mcdep} but now
-    for the perturbative charm PDF.
+    for the perturbative charm \pdf.
   \label{fig:ic/charm_pert_mcdep} }
 \end{center}
 \end{figure}
@@ -497,7 +497,7 @@ intrinsic component, is very stable.
   \paragraph{Comparison with NNPDF3.1.}
   %
   Fig.~\ref{fig:ic/pdfplot-abscharm-40-vs-31meth} compares
-  the baseline determination of the 4FNS charm PDF based
+  the baseline determination of the 4FNS charm \pdf based
   on NNPDF4.0 with that obtained
   from the same input dataset but using instead
   the NNPDF3.1 fitting methodology and related settings such those related to positivity
@@ -513,7 +513,7 @@ intrinsic component, is very stable.
   \begin{center}
     \includegraphics[width=0.65\linewidth]{ch-ic/pdfplot-abscharm-40-vs-31meth.pdf}
     \caption{\small Same as Fig.~\ref{fig:ic/charm_basisdep}, comparing
-      the baseline determination of the 4FNS charm PDF, based
+      the baseline determination of the 4FNS charm \pdf, based
       on NNPDF4.0, with that obtained
       from the same dataset using the NNPDF3.1 fitting methodology.
   \label{fig:ic/pdfplot-abscharm-40-vs-31meth} }
@@ -529,18 +529,18 @@ intrinsic component, is very stable.
 
 We now repeat the stability and uncertainty
 study of the previous section, but for our final
-result, namely the intrinsic charm PDF. The main difference to be kept
+result, namely the intrinsic charm \pdf. The main difference to be kept
 in mind is that the uncertainty now also includes the dominant MHOU,
 due to the matching condition required in order to determine the 3FNS
-PDF from the 4FNS result. In order to get a complete picture, we now
+\pdf from the 4FNS result. In order to get a complete picture, we now
 add a further set of dataset variations.
 
 \paragraph{Dependence on the input dataset.}
 %
 Fig.~\ref{fig:ic/charm_dataset_dep_nf3} displays the dataset variations shown in
 Fig.~\ref{fig:ic/charm_dataset_dep}, now for the intrinsic (3FNS) charm
-PDF, but with the total uncertainty now being the sum in quadrature of
-the PDF and MHO uncertainties, with the latter determined as the difference between
+\pdf, but with the total uncertainty now being the sum in quadrature of
+the \pdf and MHO uncertainties, with the latter determined as the difference between
 results obtained using \nnlo and \nnnlo matching.
 %
 Additionally, we also performed a few extra  dataset
@@ -581,7 +581,7 @@ effects in the DIS observables are highly suppressed for collider observables.
 %
  this respect, a DIS-only determination of intrinsic charm
   is potentially affected by sources of theory uncertainties, such as higher twists,
-which are not accounted for in global PDF determinations.
+which are not accounted for in global \pdf determinations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
@@ -595,13 +595,13 @@ which are not accounted for in global PDF determinations.
     \includegraphics[width=0.49\linewidth]{ch-ic/nojets_Quad_MHOU.pdf}
     \includegraphics[width=0.49\linewidth]{ch-ic/noZpT_Quad_MHOU.pdf}
     \caption{\small Same as Fig.~\ref{fig:ic/charm_dataset_dep}
-      for the intrinsic charm (3FNS) PDF (top four plots), now also including
+      for the intrinsic charm (3FNS) \pdf (top four plots), now also including
       four additional dataset variations:  no \atlas and \cms $W, Z$
       production data   (third row left),
       no jet data (third row right), no $Z$ $p_T$
       measurements (bottom row left), no HERA
       DIS data (bottom row right).
-The error band indicates the PDF uncertainties combined in quadrature with the MHOUs.
+The error band indicates the \pdf uncertainties combined in quadrature with the MHOUs.
 \label{fig:ic/charm_dataset_dep_nf3} }
 \end{center}
 \end{figure}
@@ -618,7 +618,7 @@ is always present even under very significant changes of the dataset.
 %
 Fig.~\ref{fig:ic/charm_basisdep_3FNS} displays
 the comparison between the intrinsic charm
-PDF determined with the default evolution basis choice, and the flavor
+\pdf determined with the default evolution basis choice, and the flavor
 basis. Complete consistency of central values is found, with somewhat
 larger uncertainties in the case of the flavor basis, due to the more 
 challenging fitting environment in this basis (see the discussion in~\cite{Ball:2021leu}).
@@ -654,8 +654,8 @@ indeed the dependence on the charm mass has all but disappeared.
     \includegraphics[width=0.49\linewidth]{ch-ic/mass_variations_ratio_Quad_MHOU.pdf}
 \caption{\small      
  Same as Fig.~\ref{fig:ic/charm_fitted_mcdep}, now for
-      the intrinsic (3FNS) charm PDF. Note that the intrinsic charm
-      PDF is scale independent.
+      the intrinsic (3FNS) charm \pdf. Note that the intrinsic charm
+      \pdf is scale independent.
   \label{fig:ic/mass_variations_Quad_MHOU} }
 \end{center}
 \end{figure}
@@ -685,10 +685,10 @@ In Table~\ref{tab:ic/momfrac_lowQ} we indicate
 the values of the charm momentum fraction
  in the 3FNS for our default charm
   determination and in the 4FNS  (at $Q=1.65$ GeV) both for the
-  default result and for perturbative charm PDF (see SI Sect.~\ref{app:ic/consistency}).
+  default result and for perturbative charm \pdf (see SI Sect.~\ref{app:ic/consistency}).
 %
 We provide results for  three different values of the charm mass $m_c$ and
-indicate separately the PDF and the MHO uncertainties.
+indicate separately the \pdf and the MHO uncertainties.
 %
 The 3FNS result is scale-independent, it corresponds to the
 momentum fraction carried by intrinsic charm, and it vanishes identically
@@ -703,7 +703,7 @@ As
 discussed in SI Sect.~\ref{app:ic/consistency}, the large uncertainty
 associated to higher order corrections to the matching conditions
 affects the 3FNS result (intrinsic charm) in the default case, in
-which the charm PDF is determined from data in the 4FNS scheme, while
+which the charm \pdf is determined from data in the 4FNS scheme, while
 it affects the 4FNS result for perturbative charm, that is determined
 assuming the vanishing of the 3FNS result.
 
@@ -735,7 +735,7 @@ perturbative charm.
     \renewcommand{\arraystretch}{1.30}
 \begin{tabularx}{\textwidth}{C{2.0cm}C{2.3cm}C{2.2cm}C{2.2cm}C{5.6cm}}
   \toprule
-  Scheme  & $Q$ & Charm PDF & $m_c$  &  $\left[ c\right]~\left(\%\right)$ \\
+  Scheme  & $Q$ & Charm \pdf & $m_c$  &  $\left[ c\right]~\left(\%\right)$ \\
   \midrule
   \midrule
  3FNS  & --  &default  &  1.51 GeV  &   $ 0.62\pm0.28_\textrm{ pdf}\pm 0.54_\textrm{ mhou} $ \\
@@ -762,7 +762,7 @@ perturbative charm.
   for our default charm, and also in the 4FNS for perturbative charm.
   %
 We provide results for  three different values of the charm mass $m_c$ and
-indicate separately the PDF and the MHO uncertainties.
+indicate separately the \pdf and the MHO uncertainties.
 }
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -781,7 +781,7 @@ indicate separately the PDF and the MHO uncertainties.
      from Table~\ref{tab:ic/momfrac_lowQ}. 
      %
      Note that the uncertainty includes the MHOU for the 3FNS default
-     and 4FNS perturbative charm cases, while it is the PDF
+     and 4FNS perturbative charm cases, while it is the \pdf
      uncertainty for the 4FNS default charm case.
   \label{fig:ic/comparison_IC_models} }
 \end{center}
@@ -861,9 +861,9 @@ current data and theory.
     \caption{\small The value of the truncated charm momentum integral,
       Eq.~(\ref{eq:ic/charm_momentum_fraction_truncated}), as a function
       of the lower integration limit $x_\textrm{ min}$
-      for our baseline determination of the 3FNS intrinsic charm PDF.
+      for our baseline determination of the 3FNS intrinsic charm \pdf.
       %
-      We display separately the PDF and the total (PDF+MHOU) uncertainties.
+      We display separately the \pdf and the total (\pdf+MHOU) uncertainties.
   \label{fig:ic/charm_momfrac_xmin_dep} }
 \end{center}
 \end{figure}
@@ -875,17 +875,17 @@ current data and theory.
 \label{app:ic/ct}
 
 The possibility of an intrinsic charm component was recently studied
-in~\cite{Hou:2017khm}, by modifying the CT14 PDF set, with the
-initial 4FNS charm PDF taken equal to the BHPS
+in~\cite{Hou:2017khm}, by modifying the CT14 \pdf set, with the
+initial 4FNS charm \pdf taken equal to the BHPS
 model~\cite{Brodsky:1980pb} form with the normalization fitted as a
 free parameter.
 %
-A 4FNS  charm PDF with uncertainties at $Q=1.3$~GeV was then
+A 4FNS  charm \pdf with uncertainties at $Q=1.3$~GeV was then
 constructed by taking 
 the BHPS model with best-fit normalization as central value (called
 the `BHPS1 model' in~\cite{Hou:2017khm}); the lower
 edge of the uncertainty band was taken to coincide with the standard
-CT14 charm PDF  (i.e.\ the charm PDF determined by perturbative
+CT14 charm \pdf  (i.e.\ the charm \pdf determined by perturbative
 matching from the 3FNS to the 4FNS); the upper edge of the uncertainty
 band was taken as 
 the BHPS model but with  normalization fixed to the upper  90\% CL limit (called the
@@ -898,7 +898,7 @@ the BHPS model but with  normalization fixed to the upper  90\% CL limit (called
     \includegraphics[width=0.49\linewidth]{ch-ic/pdfplot-abscharm-q1p65gev.pdf}
     \includegraphics[width=0.49\linewidth]{ch-ic/pdfplot-abscharm-q100gev.pdf}	
     \includegraphics[width=0.49\linewidth]{ch-ic/charm_momfrac_qdep_ct.pdf}
-    \caption{\small The 4FNS charm PDF
+    \caption{\small The 4FNS charm \pdf
     from~\cite{Hou:2017khm} compared to our result (also in the 4FNS) 
      at $Q=1.65$~GeV on
     a linear (top left) and logarithmic (top right) scale in $x$, and
@@ -907,11 +907,11 @@ the BHPS model but with  normalization fixed to the upper  90\% CL limit (called
     %
     The momentum fraction corresponding to either case
     is also shown as a function of $Q$ (bottom right). Note that for
-    our result the uncertainty band is the 68\%CL PDF uncertainty,
+    our result the uncertainty band is the 68\%CL \pdf uncertainty,
     while for~\cite{Hou:2017khm} the central curve (labeled
     CT14IC BHPS1) corresponds to the BHPS model with best-fit
     normalization, the lower curve (labeled
-    CT14) corresponds to the default CT14 perturbative charm PDF and
+    CT14) corresponds to the default CT14 perturbative charm \pdf and
     the upper curve (labeled
     CT14IC BHPS2) corresponds to the BHPS model with normalization at
     the upper 90\% CL (see text). The value of the momentum fractions
@@ -921,14 +921,14 @@ the BHPS model but with  normalization fixed to the upper  90\% CL limit (called
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The CT14IC charm PDF is compared to our result in
+The CT14IC charm \pdf is compared to our result in
 Fig.~\ref{fig:ic/comparison_CT14}, at  $Q=1.65$ GeV and $Q=100$ GeV, in
 the former case on both a logarithmic and linear scale in $x$ and in
 the latter case on a linear scale only, as a ratio to our default
 result.
 %
 Note that the uncertainty band has a different interpretation in the
-two curves shown: for our result it is the 68\%~CL PDF uncertainty,
+two curves shown: for our result it is the 68\%~CL \pdf uncertainty,
 while for~\cite{Hou:2017khm}  it corresponds to the model
 uncertainty estimated as described above.
 %
@@ -936,12 +936,12 @@ In Fig.~\ref{fig:ic/comparison_CT14} we also quote
 the charm momentum fraction in each case, at the corresponding scale $Q$. 
 
 As shown in Fig.~\ref{fig:ic/charm_content_3fns} (right), our result for
-the charm PDF is in good agreement with the BHPS model at large
+the charm \pdf is in good agreement with the BHPS model at large
 $x$. Correspondingly, for $x\gsim 0.3$
 we find reasonably good agreement between our
 result and the central curve of~\cite{Hou:2017khm}, which
 corresponds to a momentum fraction and thus a normalization of the charm
-PDF not too different from our result (see Table~\ref{tab:ic/momfrac_lowQ}).
+\pdf not too different from our result (see Table~\ref{tab:ic/momfrac_lowQ}).
 %
 Both the upper and lower curve from~\cite{Hou:2017khm} instead
 do not agree with our result within uncertainties: indeed the
@@ -959,9 +959,9 @@ the BHPS form, which vanishes for $x\lsim 0.1$,
 in the 4FNS at the low scale $Q=1.3$~GeV.
 %
 Due to perturbative evolution from  $Q=1.3$~GeV to $Q=1.65$~GeV the charm 
-PDF then develops the large bump that is
+\pdf then develops the large bump that is
 seen in Fig.~\ref{fig:ic/comparison_CT14}, where we instead find that 
-the 4FNS charm PDF is quite small.
+the 4FNS charm \pdf is quite small.
 %
 This difference persists at large scales as seen  in
 Fig.~\ref{fig:ic/charm_content_3fns} (bottom left).
@@ -981,7 +981,7 @@ ruled out at more than $5\sigma$.
 
 Here we provide full details on our computation of  $Z$+charm
 production and on the inclusion of the \lhcb data for this
-process in the determination of the charm PDF shown in
+process in the determination of the charm \pdf shown in
 Fig.~\ref{fig:ic/Zc}. 
 
 \paragraph{Computational settings.}
@@ -1053,20 +1053,20 @@ The charm tagging efficiency is already accounted for at the level
 of the experimental measurement, so it is not required in the theory
 simulations.
 
-Predictions for Eq.~(\ref{eq:ic/Rcj}) are produced using our default PDF
-determination (NNPDF4.0 \nnlo), as well as the corresponding PDF set
+Predictions for Eq.~(\ref{eq:ic/Rcj}) are produced using our default \pdf
+determination (NNPDF4.0 \nnlo), as well as the corresponding \pdf set
 with perturbative charm (see SI Sect.~\ref{app:ic/consistency}).
 %
 We have
 explicitly checked that our results are essentially independent of the
 value of the charm mass.
 %
-We have evaluated MHOUs and PDF uncertainties using the
+We have evaluated MHOUs and \pdf uncertainties using the
 output of the \textsc{\small POWHEG+Pythia8} calculations.
 We have checked that MHOUs, evaluated with the standard
 seven-point prescription, essentially cancel in the ratio
 Eq.~(\ref{eq:ic/Rcj}). Note that 
-this is not the case for  PDF uncertainties, because the dominant
+this is not the case for  \pdf uncertainties, because the dominant
 partonic subchannels in the numerator and denominator are not the same.
 
 \paragraph{Inclusion of the \lhcb data.}
@@ -1088,7 +1088,7 @@ partonic subchannels in the numerator and denominator are not the same.
 \vspace{0.3cm}
 \caption{\label{tab:ic/chi2_zcharm} The values of $\chi^2/N_\textrm{ dat}$
  for the \lhcb $Z$+charm data before (prior) and after (reweighted)
- their inclusion in the PDF fit. Results are given for two 
+ their inclusion in the \pdf fit. Results are given for two 
  experimental correlation models, denoted as
  $\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$. We also report values
  before inclusion for the perturbative charm PDFs.
@@ -1118,14 +1118,14 @@ rapidity bin, which is essentially uncorrelated to the amount of
 intrinsic charm (see
 Fig.~\ref{fig:ic/Zc}, top right).
 
-The \lhcb $Z$+charm data are then included in the PDF determination
+The \lhcb $Z$+charm data are then included in the \pdf determination
 through
 Bayesian reweighting~\cite{Ball:2010gb,Ball:2011gg}. The
 $\chi^2/N_\textrm{ dat}$ values obtained using the PDFs found after their
 inclusion are given in
 Table~\ref{tab:ic/chi2_zcharm}.
 %
-They are computed by combining the PDF and
+They are computed by combining the \pdf and
 experimental covariance matrix so both sources of uncertainty are
 included --- as mentioned above, MHOUs are negligible.
 The fit quality is seen to improve only
@@ -1140,7 +1140,7 @@ demonstrates that the inclusion of the \lhcb $Z$+charm measurements  affects
 the PDFs only weakly. This agrees with the results shown in 
 Figs.~\ref{fig:ic/Zc}~(center) in
 the main manuscript, where it is seen that the inclusion of the \lhcb
-data has essentially no impact on the shape of the charm PDF, but
+data has essentially no impact on the shape of the charm \pdf, but
 it moderately reduces its uncertainty in the region of the valence peak.
 
 
@@ -1155,7 +1155,7 @@ proportional to an individual parton luminosity or linear combination
 of parton luminosities.
 %
 Comparing parton luminosities determined
-using our default PDF set to those obtained imposing perturbative
+using our default \pdf set to those obtained imposing perturbative
 charm (see SI Sect.~\ref{app:ic/consistency}) provides a qualitative estimate of the
 measurable impact of intrinsic charm. Of course this is then modified
 by higher-order
@@ -1247,7 +1247,7 @@ For very forward production, such as the highest rapidity bin of \lhcb,
 $3.5 \le y_X \le 4.5$, the charm-gluon luminosity 
 at $m_X \simeq 100$ GeV is enhanced  by a factor of about 4 in our
 default result in comparison to the perturbative charm case, corresponding
-to a $\simeq 3\sigma$ difference in units of the PDF uncertainty,
+to a $\simeq 3\sigma$ difference in units of the \pdf uncertainty,
 consistently with the behavior observed for the 
 $\mathcal{R}_j^c$ observable in Fig.~\ref{fig:ic/Zc}~(top left) in the
 most forward rapidity  bin.

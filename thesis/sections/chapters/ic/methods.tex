@@ -11,25 +11,25 @@ that all 4FNS PDFs are determined~\cite{Collins:1986mp} using
 perturbative matching conditions~\cite{pdfnnlo} in terms of 
 3FNS PDFs
 that do not include
-a charm PDF.
+a charm \pdf.
 %
 However, these perturbative matching conditions are
 actually given by a square matrix that also includes a 3FNS charm
-PDF.
+\pdf.
 %
 So the assumption of no intrinsic charm amounts to the assumption
 that if the 4FNS PDFs are transformed back to the 3FNS, the 3FNS charm
-PDF is found to vanish. Hence, intrinsic charm is by definition the
-deviation from zero of the 3FNS charm PDF~\cite{Ball:2015dpa}. Note
-that whereas the 3FNS charm PDF is purely intrinsic, while the 4FNS
-charm PDF includes both an intrinsic and a perturbative
+\pdf is found to vanish. Hence, intrinsic charm is by definition the
+deviation from zero of the 3FNS charm \pdf~\cite{Ball:2015dpa}. Note
+that whereas the 3FNS charm \pdf is purely intrinsic, while the 4FNS
+charm \pdf includes both an intrinsic and a perturbative
  radiative component, the
-4FNS intrinsic component is not equal to the 3FNS charm PDF, since
+4FNS intrinsic component is not equal to the 3FNS charm \pdf, since
 matching conditions reshuffle all PDFs among each other. 
 
 Intrinsic charm can then be determined through the following two steps,
 summarized in Fig.~\ref{fig:ic/strategy}. 
-First, all the PDFs, including the charm PDF, are parametrized 
+First, all the PDFs, including the charm \pdf, are parametrized 
 in the 4FNS at an input scale $Q_0$ and evolved 
 using \nnlo perturbative QCD to   $Q \not = Q_0$.
 %
@@ -42,7 +42,7 @@ a Monte Carlo (MC) representation
 of the probability distribution for the 4FNS PDFs at the input
 parametrization scale $Q_0$.
 
-Next, this 4FNS charm PDF is transformed to the 3FNS at some scale matching scale
+Next, this 4FNS charm \pdf is transformed to the 3FNS at some scale matching scale
 $Q_c$.
 %
 Note that the choice of both $Q_0$ and $Q_c$ are immaterial. The former
@@ -58,7 +58,7 @@ In practice, we parametrize PDFs at the scale
 $Q_0=$~1.65~GeV and perform the inversion at a scale
 chosen equal to the charm mass $Q_c=m_c=1.51$~GeV.
 
-The scale-independent 3FNS charm PDF is then the sought-for intrinsic
+The scale-independent 3FNS charm \pdf is then the sought-for intrinsic
 charm.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,7 +67,7 @@ charm.
   \includegraphics[width=0.8\textwidth]{ch-ic/strategy.pdf}
  \end{center}
 \vspace{-0.2cm}
-\caption{The 4FNS charm PDF is parametrized  at $Q_0$
+\caption{The 4FNS charm \pdf is parametrized  at $Q_0$
   and evolved to all  $Q$, where it is  constrained by the NNPDF4.0
   global dataset. 
   %
@@ -80,17 +80,17 @@ charm.
 
 \paragraph{Global QCD analysis.}
 %
-The 4FNS charm PDF and its associated
+The 4FNS charm \pdf and its associated
 uncertainties is determined by means of a global QCD analysis
 within the NNPDF4.0 framework.
 %
-All PDFs, including the charm PDF, are  parametrized at $Q_0=1.65$ GeV in 
+All PDFs, including the charm \pdf, are  parametrized at $Q_0=1.65$ GeV in 
 a model-independent manner using a neural network, which is fitted to data using 
 supervised machine learning techniques.
 The Monte Carlo replica method
 is deployed to ensure a faithful uncertainty estimate.
 %
-Specifically, we express the 4FNS total charm PDF ($c^+=c+\bar{c}$)  in terms of the output neurons associated to the quark singlet $\Sigma$ and non-singlet $T_{15}$
+Specifically, we express the 4FNS total charm \pdf ($c^+=c+\bar{c}$)  in terms of the output neurons associated to the quark singlet $\Sigma$ and non-singlet $T_{15}$
 distributions, see Sect.~3.1 of~\cite{Ball:2021leu}, as
 \begin{equation}
 \label{eq:ic/fitted_charm_param}
@@ -107,7 +107,7 @@ A crucial feature of Eq.~(\ref{eq:ic/fitted_charm_param}) is that no \textit{
 ad hoc} specific model assumptions are used: the shape and size of
 $xc^+(x,Q_0)$ are entirely determined from experimental data.
 %
-Hence, our determination of the 4FNS fitted charm PDF, and thus of the intrinsic charm, is unbiased.
+Hence, our determination of the 4FNS fitted charm \pdf, and thus of the intrinsic charm, is unbiased.
 %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,7 +118,7 @@ Hence, our determination of the 4FNS fitted charm PDF, and thus of the intrinsic
 \vspace{-0.8cm}
 \caption{The kinematic coverage in the $(x,Q)$ plane
   covered by the 4618 cross-sections used for the
-  determination of the charm PDF in the present work.
+  determination of the charm \pdf in the present work.
   %
   These cross-sections have been classified into the main different
   types of processes entering the global analysis.
@@ -153,8 +153,8 @@ allow for fitted charm~\cite{Ball:2015tna}.
 
 We have verified (see SI
 \cref{app:ic/charm_stability_4fns,app:ic/charm_stability_3fns}) that the
-determination of 4FNS charm PDF \cref{eq:ic/fitted_charm_param} and the ensuing
-3FNS intrinsic charm PDF are  stable upon variations of methodology (PDF
+determination of 4FNS charm \pdf \cref{eq:ic/fitted_charm_param} and the ensuing
+3FNS intrinsic charm \pdf are  stable upon variations of methodology (\pdf
 parametrization basis), input dataset, and values of Standard Model parameters
 (the charm mass).
 We have also studied the stability of our results upon replacing the
@@ -180,10 +180,10 @@ The absolute worsening of the total $\chi^2$ when the vanishing of intrinsic cha
 of 166 units, corresponding to
 a $2\sigma$ effects in units of $\sigma_{\chi^2}= \sqrt{2n_\textrm{ dat}}$.
 
-\paragraph{Calculation of the 3FNS charm PDF.}
+\paragraph{Calculation of the 3FNS charm \pdf.}
 %
 The Monte Carlo representation of the probability distribution associated to
-the 4FNS charm PDF determined by the global
+the 4FNS charm \pdf determined by the global
 analysis contains an intrinsic component mixed with a perturbatively
 generated contribution, with the latter
 becoming larger in the $x\lsim 0.1$ region as the scale $Q$ is increased.
@@ -191,7 +191,7 @@ becoming larger in the $x\lsim 0.1$ region as the scale $Q$ is increased.
 In order to extract the intrinsic component, 
 we transform PDFs to the 3FNS at the scale $Q_c=m_c=1.51$~GeV using
 \textsc{\small EKO}, a novel \textsc{\small Python} open source
-PDF evolution framework (see  SI Sect.~\ref{app:ic/eko}).
+\pdf evolution framework (see  SI Sect.~\ref{app:ic/eko}).
 %
 In its current implementation, \textsc{\small EKO} performs  QCD 
 evolution of PDFs to any scale
@@ -206,7 +206,7 @@ so that the direct and inverse transformations from the 3FNS to the
 higher.
 %
 The \nnnlo contributions to the matching conditions are a subset of
-the full \nnnlo terms that would be required to perform a PDF determination
+the full \nnnlo terms that would be required to perform a \pdf determination
  to one higher perturbative order, and would
 also include currently unknown
 \nnnlo contributions to QCD evolution. Therefore, our results have 
@@ -220,7 +220,7 @@ significant impact on the
 perturbatively generated component, see SI Sect.~\ref{app:ic/consistency}.
 %
 They become large for $x \lsim 0.1$, which coincides with the region
-dominated by the perturbative component of the charm PDF,
+dominated by the perturbative component of the charm \pdf,
   and are relatively small for the valence region
   where intrinsic charm dominates.
   
@@ -263,6 +263,6 @@ as a function of the $Z$ boson rapidity $y_Z$ (see SI Sect.~\ref{sec:ic/zcharm} 
 The more forward the rapidity $y_{Z}$, the higher the values of the charm
 momentum $x$ being probed.
 %
-Furthermore, we have also included the \lhcb measurements in the global PDF
+Furthermore, we have also included the \lhcb measurements in the global \pdf
 determination by means of the Bayesian reweighting (see SI
 Sect.~\ref{sec:ic/zcharm}).
