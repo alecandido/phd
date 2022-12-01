@@ -1,22 +1,20 @@
 % !TeX root = ../../../main.tex
 
-A crucial ingredient in the derivation of our results
-is the determination of the 3\fns intrinsic
-charm \pdf starting from the 4\fns, which requires the inversion of the matching
-conditions implementing the 3\fns to 
-the 4\fns transformation.
+A crucial ingredient in the derivation of our results is the determination of
+the 3\fns intrinsic charm \pdf starting from the 4\fns, which requires the
+inversion of the matching conditions implementing the 3\fns to  the 4\fns
+transformation.
 %
-This inversion is not available in the open-source NNPDF
-code~\cite{NNPDF:2021uiq} and it is performed here by means of a novel code
-for QCD evolution, 
- \textsc{\small EKO} (Evolution Kernel Operators), that we use to take the
- \pdf set determined at the reference scale $Q_0$ and evolve it to a
- matching scale $Q_c$ where it is transformed to the 3\fns.
+This inversion is not available in the open-source \nnpdf code,
+\cite{NNPDF:2021uiq}, and it is performed here by means of a novel code for \qcd
+evolution, \eko (cf.\ \cref{ch:ic}), that we use to take the \pdf set
+determined at the reference scale $Q_0$ and evolve it to a matching scale $Q_c$
+where it is transformed to the 3\fns.
 %
 Here we provide a brief summary of \textsc{\small
 EKO}, some details of the way the direct and inverse matching
 conditions are implemented, and some benchmarks between \textsc{\small
-EKO} and other existing QCD evolution codes, including the  \textsc{\small
+EKO} and other existing \qcd evolution codes, including the  \textsc{\small
 APFEL}~\cite{Bertone:2013vaa} evolution code that is used by the
 NNPDF code.
 \textsc{\small EKO} is written in \textsc{\small Python} and is available
@@ -31,7 +29,7 @@ in its online documentation
 \end{center}
 as well as in a dedicated publication~\cite{Candido:2022tld}.
 
-The scale dependence of \pdfs in QCD is determined by solving a set
+The scale dependence of \pdfs in \qcd is determined by solving a set
 of coupled integro-differential equations (evolution equations) in two
 variables $x$ (momentum fraction) and $Q$ (scale) on which \pdfs depend.
 Two families of approaches are commonly used in order to this purpose.
@@ -42,7 +40,7 @@ sampling it on a grid of points.
 %
 This is the strategy adopted by, among others, the  \textsc{\small APFEL}~\cite{Bertone:2013vaa},
 \textsc{\small HOPPET}~\cite{Salam:2008qg},
-and \textsc{\small QCDNUM}~\cite{Botje:2010ay} evolution codes.
+and \textsc{\small \qcdNUM}~\cite{Botje:2010ay} evolution codes.
 %
 An alternative possibility is to perform an integral transform (Mellin
 transform) with
@@ -73,7 +71,7 @@ evolution kernel operators (EKO) which can be convoluted with input
 Variable flavor number scheme evolution (VFNS) is implemented in \textsc{\small EKO}, with
 the possibility of freely choosing the value of the matching scales
 $Q_{h}$ between the $N$-flavor number scheme (NFNS) in which heavy quark $h$
-is not included in QCD evolution, and the $(N+1)$-flavor number
+is not included in \qcd evolution, and the $(N+1)$-flavor number
 scheme in which it is included.
 %
 Schematically, for evolution between $Q_0$ and $Q_1$ if no matching
@@ -125,7 +123,7 @@ an \nnnlo scheme change has been implemented, based on recent higher-order compu
 of the relevant operator matrix elements~\cite{Bierenbaum:2009zt,Bierenbaum:2009mv,Ablinger:2010ty,Ablinger:2014vwa,Ablinger:2014uka,Behring:2014eya,Blumlein:2017wxd,Ablinger_2014,Ablinger:2014nga}
 and the work of~\cite{zanoli}.
 
-The  \textsc{\small EKO} implementation of QCD evolution has been
+The  \textsc{\small EKO} implementation of \qcd evolution has been
 benchmarked against the Les Houches \pdf evolution
 benchmarks~\cite{Dittmar:2005ed,Giele:2002hx} and with
 \textsc{\small APFEL} and \textsc{\small PEGASUS},
@@ -150,7 +148,7 @@ the  total valence quark  $V$
 and the quark singlet $\Sigma$ distributions.
 %
 Excellent agreement is found, in particular
-with \textsc{\small PEGASUS} which also perform QCD
+with \textsc{\small PEGASUS} which also perform \qcd
 evolution in Mellin space, with relatively differences
 at most at the $\mathcal{O}\left( 10^{-4}\right)$ level.
 %
@@ -163,7 +161,7 @@ for the gluon and for the other quark \pdf combinations.
         \includegraphics[width=0.47\linewidth]{ch-ic/eko_bench_V.pdf}
         \includegraphics[width=0.47\linewidth]{ch-ic/eko_bench_S.pdf}
         \caption{\small Absolute (upper) and relative (bottom) differences between 
-        the outcome of \nnlo QCD evolution
+        the outcome of \nnlo \qcd evolution
         as implemented in
         \textsc{\small EKO} and the
         corresponding results from \textsc{\small APFEL} and \textsc{\small PEGASUS}.

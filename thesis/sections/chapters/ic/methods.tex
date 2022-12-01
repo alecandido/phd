@@ -31,7 +31,7 @@ Intrinsic charm can then be determined through the following two steps,
 summarized in Fig.~\ref{fig:ic/strategy}. 
 First, all the \pdfs, including the charm \pdf, are parametrized 
 in the 4\fns at an input scale $Q_0$ and evolved 
-using \nnlo perturbative QCD to   $Q \not = Q_0$.
+using \nnlo perturbative \qcd to   $Q \not = Q_0$.
 %
 These evolved \pdfs can be used to 
 compute physical cross-sections, also at \nnlo, which then are
@@ -68,7 +68,7 @@ charm.
  \end{center}
 \vspace{-0.2cm}
 \caption{The 4\fns charm \pdf is parametrized  at $Q_0$
-  and evolved to all  $Q$, where it is  constrained by the NNPDF4.0
+  and evolved to all  $Q$, where it is  constrained by the \nnpdfr{4.0}
   global dataset. 
   %
  Subsequently, it is transformed to the 3\fns where (if nonzero) it
@@ -78,11 +78,11 @@ charm.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Global QCD analysis.}
+\paragraph{Global \qcd analysis.}
 %
 The 4\fns charm \pdf and its associated
-uncertainties is determined by means of a global QCD analysis
-within the NNPDF4.0 framework.
+uncertainties is determined by means of a global \qcd analysis
+within the \nnpdfr{4.0} framework.
 %
 All \pdfs, including the charm \pdf, are  parametrized at $Q_0=1.65$ GeV in 
 a model-independent manner using a neural network, which is fitted to data using 
@@ -147,18 +147,18 @@ neutral and charged current deep-inelastic
 scattering (DIS) structure functions from HERA.
 %
 The 4\fns  \pdfs at the input scale $Q_0$ are related
-to experimental measurements at $Q \not =Q_0$ by means of \nnlo QCD calculations, including
+to experimental measurements at $Q \not =Q_0$ by means of \nnlo \qcd calculations, including
 the FONLL-C general-mass scheme for DIS~\cite{Forte:2010ta} generalized to 
 allow for fitted charm~\cite{Ball:2015tna}.
 
-We have verified (see SI
+We have verified (cf.\
 \cref{sec:ic/charm_stability_4fns,sec:ic/charm_stability_3fns}) that the
 determination of 4\fns charm \pdf \cref{eq:ic/fitted_charm_param} and the ensuing
 3\fns intrinsic charm \pdf are  stable upon variations of methodology (\pdf
 parametrization basis), input dataset, and values of Standard Model parameters
 (the charm mass).
 We have also studied the stability of our results upon replacing the
-current NNPDF4.0 methodology~\cite{Ball:2021leu} with the previous
+current \nnpdfr{4.0} methodology~\cite{Ball:2021leu} with the previous
 NNPDF3.1 methodology~\cite{NNPDF:2017mvq}. It turns out that results
 are  perfectly consistent. Indeed, the old methodology leads to somewhat larger
 uncertainties, corresponding to a moderate reduction of the local statistical
@@ -191,9 +191,9 @@ becoming larger in the $x\lsim 0.1$ region as the scale $Q$ is increased.
 In order to extract the intrinsic component, 
 we transform \pdfs to the 3\fns at the scale $Q_c=m_c=1.51$~GeV using
 \textsc{\small EKO}, a novel \textsc{\small Python} open source
-\pdf evolution framework (see  SI Sect.~\ref{sec:ic/eko}).
+\pdf evolution framework (see  \cref{sec:ic/eko}).
 %
-In its current implementation, \textsc{\small EKO} performs  QCD 
+In its current implementation, \textsc{\small EKO} performs  \qcd 
 evolution of \pdfs to any scale
 up to \nnlo. For
 the sake of the current analysis, \nnnlo matching conditions have also
@@ -209,7 +209,7 @@ The \nnnlo contributions to the matching conditions are a subset of
 the full \nnnlo terms that would be required to perform a \pdf determination
  to one higher perturbative order, and would
 also include currently unknown
-\nnnlo contributions to QCD evolution. Therefore, our results have 
+\nnnlo contributions to \qcd evolution. Therefore, our results have 
 \nnlo accuracy and we can only use the  \nnnlo contributions to the
  $\mathcal{O}(\alpha_s^3)$ corrections to the
 heavy quark matching
@@ -217,7 +217,7 @@ matching conditions as a way to estimate the
 the size of the missing higher orders. 
 Indeed, these corrections have a very 
 significant impact on the
-perturbatively generated component, see SI Sect.~\ref{sec:ic/consistency}.
+perturbatively generated component, see \cref{sec:ic/consistency}.
 %
 They become large for $x \lsim 0.1$, which coincides with the region
 dominated by the perturbative component of the charm \pdf,
@@ -240,8 +240,8 @@ at rather larger values of $p_T^Z$ than those
 currently accessible experimentally.
 
 We have obtained  theoretical predictions for $Z$+charm production
-at \lhcb with NNPDF4.0, based on
-\nlo QCD calculations using
+at \lhcb with \nnpdfr{4.0}, based on
+\nlo \qcd calculations using
 \textsc{\small POWHEG-BOX} 
 interfaced to \textsc{\small Pythia8}
 with the Monash 2013 tune for showering,
@@ -258,11 +258,10 @@ be compared with the \lhcb measurements
     N(\textrm{ jets};y_Z)} =
   \frac{\sigma(pp\to Z+\textrm{ charm~ jet};y_Z)}{\sigma(pp \to Z+\textrm{ jet};y_Z)} \, ,
 \end{equation}
-as a function of the $Z$ boson rapidity $y_Z$ (see SI Sect.~\ref{sec:ic/zcharm} for details).
+as a function of the $Z$ boson rapidity $y_Z$ (see \cref{sec:ic/zcharm} for details).
 %
 The more forward the rapidity $y_{Z}$, the higher the values of the charm
 momentum $x$ being probed.
 %
 Furthermore, we have also included the \lhcb measurements in the global \pdf
-determination by means of the Bayesian reweighting (see SI
-Sect.~\ref{sec:ic/zcharm}).
+determination by means of the Bayesian reweighting (cf.\ \cref{sec:ic/zcharm}).
