@@ -1,65 +1,55 @@
 % !TeX root = ../../../main.tex
 
-The strategy adopted in this work in order to
-determine the intrinsic charm content of the proton is 
-based on the following
-observation.
+The strategy adopted in this work in order to determine the intrinsic charm
+content of the proton is  based on the following observation.
 %
-The assumption that there is no intrinsic charm
-amounts to the assumption
-that all 4\fns \pdfs are determined~\cite{Collins:1986mp} using
-perturbative matching conditions~\cite{pdfnnlo} in terms of 
-3\fns \pdfs
-that do not include
-a charm \pdf.
+The assumption that there is no intrinsic charm amounts to the assumption that
+all 4\fns \pdfs are determined, \cite{Collins:1986mp}, using perturbative
+matching conditions, \cite{pdfnnlo}, in terms of  3\fns \pdfs that do not
+include a charm \pdf.
 %
-However, these perturbative matching conditions are
-actually given by a square matrix that also includes a 3\fns charm
-\pdf.
+However, these perturbative matching conditions are actually given by a square
+matrix that also includes a 3\fns charm \pdf.
 %
 So the assumption of no intrinsic charm amounts to the assumption
 that if the 4\fns \pdfs are transformed back to the 3\fns, the 3\fns charm
-\pdf is found to vanish. Hence, intrinsic charm is by definition the
-deviation from zero of the 3\fns charm \pdf~\cite{Ball:2015dpa}. Note
-that whereas the 3\fns charm \pdf is purely intrinsic, while the 4\fns
-charm \pdf includes both an intrinsic and a perturbative
- radiative component, the
-4\fns intrinsic component is not equal to the 3\fns charm \pdf, since
+\pdf is found to vanish.
+Hence, intrinsic charm is by definition the deviation from zero of the 3\fns
+charm \pdf, \cite{Ball:2015dpa}. 
+Note that whereas the 3\fns charm \pdf is purely intrinsic, while the 4\fns
+charm \pdf includes both an intrinsic and a perturbative radiative component,
+the 4\fns intrinsic component is not equal to the 3\fns charm \pdf, since
 matching conditions reshuffle all \pdfs among each other. 
 
 Intrinsic charm can then be determined through the following two steps,
-summarized in \cref{fig:ic/strategy}. 
-First, all the \pdfs, including the charm \pdf, are parametrized 
-in the 4\fns at an input scale $Q_0$ and evolved 
-using \nnlo perturbative \qcd to   $Q \not = Q_0$.
+summarized in \cref{fig:ic/strategy}.  
+First, all the \pdfs, including the charm \pdf, are parametrized  in the 4\fns
+at an input scale $Q_0$ and evolved  using \nnlo perturbative \qcd to   $Q \not
+= Q_0$.
 %
-These evolved \pdfs can be used to 
-compute physical cross-sections, also at \nnlo, which then are
-compared to a global dataset of experimental measurements.
+These evolved \pdfs can be used to  compute physical cross-sections, also at
+\nnlo, which then are compared to a global dataset of experimental
+measurements.
 %
-The result of this first step in our procedure is 
-a Monte Carlo (MC) representation
-of the probability distribution for the 4\fns \pdfs at the input
+The result of this first step in our procedure is  a \acrfull{mc}
+representation of the probability distribution for the 4\fns \pdfs at the input
 parametrization scale $Q_0$.
 
-Next, this 4\fns charm \pdf is transformed to the 3\fns at some scale matching scale
-$Q_c$.
+Next, this 4\fns charm \pdf is transformed to the 3\fns at some scale matching
+scale $Q_c$.
 %
-Note that the choice of both $Q_0$ and $Q_c$ are immaterial. The former
-because perturbative evolution is invertible, so
-results for the \pdfs do not depend on the choice of
-parametrization scale $Q_0$. The latter because 
-the 3\fns charm is scale independent, so it does not depend on the
-value of $Q_c$.
-Both statements of course hold up to fixed perturbative accuracy, and
-are violated by MHO corrections.
+Note that the choice of both $Q_0$ and $Q_c$ are immaterial. The former because
+perturbative evolution is invertible, so results for the \pdfs do not depend on
+the choice of parametrization scale $Q_0$.
+The latter because  the 3\fns charm is scale independent, so it does not depend
+on the value of $Q_c$.
+Both statements of course hold up to fixed perturbative accuracy, and are
+violated by MHO corrections.
 %
-In practice, we parametrize \pdfs at the scale
-$Q_0=$~1.65~GeV and perform the inversion at a scale
-chosen equal to the charm mass $Q_c=m_c=1.51$~GeV.
+In practice, we parametrize \pdfs at the scale $Q_0=$~1.65~GeV and perform the
+inversion at a scale chosen equal to the charm mass $Q_c=m_c=1.51$~GeV.
 
-The scale-independent 3\fns charm \pdf is then the sought-for intrinsic
-charm.
+The scale-independent 3\fns charm \pdf is then the sought-for intrinsic charm.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
@@ -80,18 +70,18 @@ charm.
 
 \paragraph{Global \qcd analysis.}
 %
-The 4\fns charm \pdf and its associated
-uncertainties is determined by means of a global \qcd analysis
-within the \nnpdfr{4.0} framework.
+The 4\fns charm \pdf and its associated uncertainties is determined by means of
+a global \qcd analysis within the \nnpdfr{4.0} framework.
 %
 All \pdfs, including the charm \pdf, are  parametrized at $Q_0=1.65$ GeV in 
-a model-independent manner using a neural network, which is fitted to data using 
-supervised machine learning techniques.
-The Monte Carlo replica method
-is deployed to ensure a faithful uncertainty estimate.
+a model-independent manner using a neural network, which is fitted to data
+using  supervised machine learning techniques.
+The \acrlong{mc} replica method is deployed to ensure a faithful uncertainty
+estimate.
 %
-Specifically, we express the 4\fns total charm \pdf ($c^+=c+\bar{c}$)  in terms of the output neurons associated to the quark singlet $\Sigma$ and non-singlet $T_{15}$
-distributions, see Sect.~3.1 of~\cite{Ball:2021leu}, as
+Specifically, we express the 4\fns total charm \pdf ($c^+=c+\bar{c}$)  in terms
+of the output neurons associated to the quark singlet $\Sigma$ and non-singlet
+$T_{15}$ distributions, cf.\ Sect.~3.1 of \cite{Ball:2021leu}, as
 \begin{equation}
 \label{eq:ic/fitted_charm_param}
 xc^+(x,Q_0;{\boldsymbol \theta}) =
@@ -128,137 +118,123 @@ Hence, our determination of the 4\fns fitted charm \pdf, and thus of the intrins
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The neural network parameters ${\boldsymbol \theta}$ in
-\cref{eq:ic/fitted_charm_param}
-are determined by fitting an extensive global dataset that consists of 4618 
-cross-sections from a wide range of different processes, measured over
-the years in a variety of fixed-target and collider experiments  (see~\cite{Ball:2021leu} for a complete list).
+\cref{eq:ic/fitted_charm_param} are determined by fitting an extensive global
+dataset that consists of 4618  cross-sections from a wide range of different
+processes, measured over the years in a variety of fixed-target and collider
+experiments  (cf.\ \cite{Ball:2021leu} for a complete list).
 %
-\cref{fig:ic/kinplot} displays the kinematic coverage in the $(x,Q)$ plane
-covered by these cross-sections, where $Q$ is
-the  scale, and  $x$ is
-the parton momentum fraction that correspond to leading-order kinematics.
+\Cref{fig:ic/kinplot} displays the kinematic coverage in the $(x,Q)$ plane
+covered by these cross-sections, where $Q$ is the  scale, and  $x$ is the
+parton momentum fraction that correspond to leading-order kinematics.
 %
-Many of these processes provide direct or indirect sensitivity 
-to the charm content of the proton.
+Many of these processes provide direct or indirect sensitivity  to the charm
+content of the proton.
 %
 Particularly important constraints come from $W$ and $Z$ production from 
-\atlas, \cms, and \lhcb as well as from
-neutral and charged current deep-inelastic 
-scattering (DIS) structure functions from HERA.
+\atlas, \cms, and \lhcb as well as from neutral and charged current
+\acrfull{dis} structure functions from \hera.
 %
-The 4\fns  \pdfs at the input scale $Q_0$ are related
-to experimental measurements at $Q \not =Q_0$ by means of \nnlo \qcd calculations, including
-the FONLL-C general-mass scheme for DIS~\cite{Forte:2010ta} generalized to 
-allow for fitted charm~\cite{Ball:2015tna}.
+The 4\fns  \pdfs at the input scale $Q_0$ are related to experimental
+measurements at $Q \not =Q_0$ by means of \nnlo \qcd calculations, including
+the \fonll-C general-mass scheme for \dis, \cite{Forte:2010ta}, generalized to 
+allow for fitted charm, \cite{Ball:2015tna}.
 
 We have verified (cf.\
 \cref{sec:ic/charm_stability_4fns,sec:ic/charm_stability_3fns}) that the
-determination of 4\fns charm \pdf \cref{eq:ic/fitted_charm_param} and the ensuing
-3\fns intrinsic charm \pdf are  stable upon variations of methodology (\pdf
-parametrization basis), input dataset, and values of Standard Model parameters
-(the charm mass).
-We have also studied the stability of our results upon replacing the
-current \nnpdfr{4.0} methodology~\cite{Ball:2021leu} with the previous
-NNPDF3.1 methodology~\cite{NNPDF:2017mvq}. It turns out that results
-are  perfectly consistent. Indeed, the old methodology leads to somewhat larger
-uncertainties, corresponding to a moderate reduction of the local statistical
-significance for intrinsic charm, and to a central value which is
-within the smaller  error band of our current result.
+determination of 4\fns charm \pdf \cref{eq:ic/fitted_charm_param} and the
+ensuing 3\fns intrinsic charm \pdf are  stable upon variations of methodology
+(\pdf parametrization basis), input dataset, and values of \acrlong{sm}
+parameters (the charm mass).
+We have also studied the stability of our results upon replacing the current
+\nnpdfr{4.0} methodology~\cite{Ball:2021leu} with the previous \nnpdfr{3.1}
+methodology, \cite{NNPDF:2017mvq}. 
+It turns out that results are  perfectly consistent.
+Indeed, the old methodology leads to somewhat larger uncertainties,
+corresponding to a moderate reduction of the local statistical significance for
+intrinsic charm, and to a central value which is within the smaller  error band
+of our current result.
 
 
-A determination in which the vanishing of intrinsic charm is
-imposed has also been performed.
+A determination in which the vanishing of intrinsic charm is imposed has also
+been performed.
 %
-In this case, the fit quality significantly
-deteriorates: the values of the $\chi^2$ per data point of 1.162,
-1.26, and 1.22 for total, Drell-Yan, 
-and neutral-current DIS data respectively, found when fitting charm, are 
-increased to 1.198, 1.31, 1.28 when the vanishing of intrinsic charm
-is imposed.
+In this case, the fit quality significantly deteriorates: the values of the
+$\chi^2$ per data point of 1.162, 1.26, and 1.22 for total, Drell-Yan,  and
+neutral-current DIS data respectively, found when fitting charm, are  increased
+to 1.198, 1.31, 1.28 when the vanishing of intrinsic charm is imposed.
 %
-The absolute worsening of the total $\chi^2$ when the vanishing of intrinsic charm is imposed is therefore
-of 166 units, corresponding to
-a $2\sigma$ effects in units of $\sigma_{\chi^2}= \sqrt{2n_\textrm{ dat}}$.
+The absolute worsening of the total $\chi^2$ when the vanishing of intrinsic
+charm is imposed is therefore of 166 units, corresponding to a $2\sigma$
+effects in units of $\sigma_{\chi^2}= \sqrt{2n_\textrm{ dat}}$.
 
 \paragraph{Calculation of the 3\fns charm \pdf.}
 %
 The Monte Carlo representation of the probability distribution associated to
-the 4\fns charm \pdf determined by the global
-analysis contains an intrinsic component mixed with a perturbatively
-generated contribution, with the latter
+the 4\fns charm \pdf determined by the global analysis contains an intrinsic
+component mixed with a perturbatively generated contribution, with the latter
 becoming larger in the $x\lsim 0.1$ region as the scale $Q$ is increased.
 %
-In order to extract the intrinsic component, 
-we transform \pdfs to the 3\fns at the scale $Q_c=m_c=1.51$~GeV using
-\textsc{\small EKO}, a novel \textsc{\small Python} open source
-\pdf evolution framework (see  \cref{sec:ic/eko}).
+In order to extract the intrinsic component, we transform \pdfs to the 3\fns at
+the scale $Q_c=m_c=1.51$~GeV using \eko, a novel \textsc{\small Python} open
+source \pdf evolution framework (cf.\ \cref{ch:eko}).
 %
-In its current implementation, \textsc{\small EKO} performs  \qcd 
-evolution of \pdfs to any scale
-up to \nnlo. For
-the sake of the current analysis, \nnnlo matching conditions have also
-been implemented, by 
-using  the results
-of~\cite{Bierenbaum:2009zt,Bierenbaum:2009mv,Ablinger:2010ty,Ablinger:2014vwa,Ablinger:2014uka,Behring:2014eya,Ablinger_2014,Ablinger:2014nga,Blumlein:2017wxd}
-for $\mathcal{O}(\alpha_s^3)$ operator matrix elements~
-so that the direct and inverse transformations from the 3\fns to the
-4\fns can be performed at one order
-higher.
+In its current implementation, \eko performs  \qcd  evolution of \pdfs to any
+scale up to \nnlo. 
+For the sake of the current analysis, \nnnlo matching conditions have also been
+implemented, by  using  the results of
+\cite{Bierenbaum:2009zt,Bierenbaum:2009mv,Ablinger:2010ty,Ablinger:2014vwa,Ablinger:2014uka,Behring:2014eya,Ablinger_2014,Ablinger:2014nga,Blumlein:2017wxd}
+for $\mathcal{O}(\alpha_s^3)$ operator matrix elements~ so that the direct and
+inverse transformations from the 3\fns to the 4\fns can be performed at one
+order higher.
 %
-The \nnnlo contributions to the matching conditions are a subset of
-the full \nnnlo terms that would be required to perform a \pdf determination
- to one higher perturbative order, and would
-also include currently unknown
-\nnnlo contributions to \qcd evolution. Therefore, our results have 
-\nnlo accuracy and we can only use the  \nnnlo contributions to the
- $\mathcal{O}(\alpha_s^3)$ corrections to the
-heavy quark matching
-matching conditions as a way to estimate the 
-the size of the missing higher orders. 
-Indeed, these corrections have a very 
-significant impact on the
-perturbatively generated component, see \cref{sec:ic/consistency}.
+The \nnnlo contributions to the matching conditions are a subset of the full
+\nnnlo terms that would be required to perform a \pdf determination to one
+higher perturbative order, and would also include currently unknown \nnnlo
+contributions to \qcd evolution. 
+Therefore, our results have  \nnlo accuracy and we can only use the  \nnnlo
+contributions to the $\mathcal{O}(\alpha_s^3)$ corrections to the heavy quark
+matching matching conditions as a way to estimate the  the size of the missing
+higher orders. 
+Indeed, these corrections have a very  significant impact on the perturbatively
+generated component, see \cref{sec:ic/consistency}.
 %
-They become large for $x \lsim 0.1$, which coincides with the region
-dominated by the perturbative component of the charm \pdf,
-  and are relatively small for the valence region
-  where intrinsic charm dominates.
+They become large for $x \lsim 0.1$, which coincides with the region dominated
+by the perturbative component of the charm \pdf, and are relatively small for
+the valence region where intrinsic charm dominates.
   
 \paragraph{$Z$ production in association with charm-tagged jets.}
 %
-The production of $Z$ bosons in association with charm-tagged jets (or alternatively,
-with identified $D$ mesons) at the \lhc is directly sensitive to the charm content
-of the proton via the dominant $gc \to Zc$ partonic scattering process.
+The production of $Z$ bosons in association with charm-tagged jets (or
+alternatively, with identified $D$ mesons) at the \lhc is directly sensitive to
+the charm content of the proton via the dominant $gc \to Zc$ partonic
+scattering process.
 %
-Measurements of this process at  the forward rapidities covered by the
-\lhcb acceptance provide access to the large-$x$ region where the intrinsic 
+Measurements of this process at  the forward rapidities covered by the \lhcb
+acceptance provide access to the large-$x$ region where the intrinsic 
 contribution is expected to dominate.
 %
 This is in contrast with the corresponding measurements from \atlas and \cms,
-which only become sensitive to intrinsic charm
-at rather larger values of $p_T^Z$ than those
-currently accessible experimentally.
+which only become sensitive to intrinsic charm at rather larger values of
+$p_T^Z$ than those currently accessible experimentally.
 
-We have obtained  theoretical predictions for $Z$+charm production
-at \lhcb with \nnpdfr{4.0}, based on
-\nlo \qcd calculations using
-\textsc{\small POWHEG-BOX} 
-interfaced to \textsc{\small Pythia8}
-with the Monash 2013 tune for showering,
-hadronization, and underlying event.
+We have obtained  theoretical predictions for $Z$+charm production at \lhcb
+with \nnpdfr{4.0}, based on \nlo \qcd calculations using \textsc{\small
+POWHEG-BOX}  interfaced to \textsc{\small Pythia8} with the Monash 2013 tune
+for showering, hadronization, and underlying event.
 %
 Acceptance requirements and event selection follow the \lhcb analysis,
 where in particular charm jets are defined as those anti-$k_T$ $R=0.5$ jets
 containing a reconstructed charmed hadron.
 %
-The ratio between $c$-tagged and untagged $Z$+jet events can then
-be compared with the \lhcb measurements
+The ratio between $c$-tagged and untagged $Z$+jet events can then be compared
+with the \lhcb measurements
 \begin{equation}
   \mathcal{R}_j^c(y_Z) \equiv \frac{N(c~\textrm{ tagged~jets};y_Z)}{ 
     N(\textrm{ jets};y_Z)} =
   \frac{\sigma(pp\to Z+\textrm{ charm~ jet};y_Z)}{\sigma(pp \to Z+\textrm{ jet};y_Z)} \, ,
 \end{equation}
-as a function of the $Z$ boson rapidity $y_Z$ (see \cref{sec:ic/zcharm} for details).
+as a function of the $Z$ boson rapidity $y_Z$ (see \cref{sec:ic/zcharm} for
+details).
 %
 The more forward the rapidity $y_{Z}$, the higher the values of the charm
 momentum $x$ being probed.
