@@ -42,7 +42,7 @@ the leading constraints on intrinsic charm.
 To this purpose, we have repeated our \pdf
 determination using a  variety of subsets of the global dataset used for
 our default determination. Results are shown in
-Fig.~\ref{fig:ic/charm_dataset_dep}, where we compare the result using
+\cref{fig:ic/charm_dataset_dep}, where we compare the result using
 the 
 baseline dataset to determinations performed by adding to the baseline
 the  \emc charm
@@ -101,7 +101,7 @@ the output of the neural network does not provide the individual
 quark flavor and antiflavor \pdfs, but rather linear combinations
 corresponding to the so-called evolution
 basis~\cite{Ball:2021leu}. Indeed, our charm \pdf is given in
-Eq.~(\ref{eq:ic/fitted_charm_param})  as the linear combination of the
+\cref{eq:ic/fitted_charm_param}  as the linear combination of the
 two basis \pdfs $\Sigma$ and $T_{15}$.
 One may thus ask whether this choice may influence the final results
 for individual quark flavors, specifically charm.
@@ -113,7 +113,7 @@ In order to check this, we have repeated the \pdf determination, but
 now using the flavor basis, see Sect.~3.1 of~\cite{Ball:2021leu}, in which
 each of the  neural network output neurons now correspond to individual quark
 flavors, so in particular,
-instead of Eq.~(\ref{eq:ic/fitted_charm_param}),  one has
+instead of \cref{eq:ic/fitted_charm_param},  one has
 \begin{equation}
 \label{eq:ic/fitted_charm_param_flavour}
 xc^+(x,Q_0;{\boldsymbol \theta}) =
@@ -123,7 +123,7 @@ where $\textrm{ NN}_{c^+}(x,{\boldsymbol \theta})$
 indicates the value of the output neuron associated to the charm \pdf $c^+$.
 %
 The 4\fns charm \pdfs determined using either basis are compared 
-in Fig.~\ref{fig:ic/charm_basisdep}  at $Q=1.65$ GeV.
+in \cref{fig:ic/charm_basisdep}  at $Q=1.65$ GeV.
 %
 We find excellent consistency, and in particular 
 the valence-like structure at high-$x$ is independent of the choice
@@ -161,7 +161,7 @@ by the Higgs cross-section working group~\cite{deFlorian:2016spz}
 based on the study of~\cite{Bauer:2004ve}, namely
  $m_c = 1.51 \pm 0.13$~GeV. 
 %
-Results are shown in Fig.~\ref{fig:ic/charm_fitted_mcdep}, where
+Results are shown in \cref{fig:ic/charm_fitted_mcdep}, where
 our default charm \pdf determination with  $m_c = 1.51$~GeV is
 repeated with $m_c=1.38$~GeV and
 $m_c=1.64$~GeV.
@@ -179,13 +179,13 @@ moderate dependence on the charm mass --- full independence should
 hold for the intrinsic (3\fns) \pdf and will be investigated in
 \cref{sec:ic/charm_stability_3fns}. 
 
-In Fig.~\ref{fig:ic/charm_pert_mcdep} the same result is shown, but now
+In \cref{fig:ic/charm_pert_mcdep} the same result is shown, but now
 for the perturbative charm \pdf discussed in
 \cref{sec:ic/consistency},  so the charm \pdf is of
 purely perturbative origin and fully determined by the strongly
 mass-dependent matching condition. This dependence is clearly seen in
 the plots. Furthermore, comparison with
-Fig.~\ref{fig:ic/charm_fitted_mcdep} shows that indeed this spurious
+\cref{fig:ic/charm_fitted_mcdep} shows that indeed this spurious
 dependence is partly reabsorbed in the fit when the charm \pdf is
 determined from the data, so that  the residual mass dependence is moderate.
 In particular, the large-$x$ valence peak, which is dominated by the
@@ -209,7 +209,7 @@ intrinsic component, is very stable.
 \begin{figure}[t]
   \begin{center}
     \includegraphics[width=0.99\linewidth]{ch-ic/pdfplot-abscharm-mcdep-highQ.pdf}
-    \caption{\small The same as Fig.~\ref{fig:ic/charm_fitted_mcdep} but now
+    \caption{\small The same as \cref{fig:ic/charm_fitted_mcdep} but now
     for the perturbative charm \pdf.
   \label{fig:ic/charm_pert_mcdep} }
 \end{center}
@@ -220,7 +220,7 @@ intrinsic component, is very stable.
 
   \paragraph{Comparison with NNPDF3.1.}
   %
-  Fig.~\ref{fig:ic/pdfplot-abscharm-40-vs-31meth} compares
+  \cref{fig:ic/pdfplot-abscharm-40-vs-31meth} compares
   the baseline determination of the 4\fns charm \pdf based
   on \nnpdfr{4.0} with that obtained
   from the same input dataset but using instead
@@ -236,7 +236,7 @@ intrinsic component, is very stable.
 \begin{figure}[t]
   \begin{center}
     \includegraphics[width=0.65\linewidth]{ch-ic/pdfplot-abscharm-40-vs-31meth.pdf}
-    \caption{\small Same as Fig.~\ref{fig:ic/charm_basisdep}, comparing
+    \caption{\small Same as \cref{fig:ic/charm_basisdep}, comparing
       the baseline determination of the 4\fns charm \pdf, based
       on \nnpdfr{4.0}, with that obtained
       from the same dataset using the NNPDF3.1 fitting methodology.
