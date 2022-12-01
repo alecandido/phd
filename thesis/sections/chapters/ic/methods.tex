@@ -7,30 +7,30 @@ observation.
 %
 The assumption that there is no intrinsic charm
 amounts to the assumption
-that all 4FNS \pdfs are determined~\cite{Collins:1986mp} using
+that all 4\fns \pdfs are determined~\cite{Collins:1986mp} using
 perturbative matching conditions~\cite{pdfnnlo} in terms of 
-3FNS \pdfs
+3\fns \pdfs
 that do not include
 a charm \pdf.
 %
 However, these perturbative matching conditions are
-actually given by a square matrix that also includes a 3FNS charm
+actually given by a square matrix that also includes a 3\fns charm
 \pdf.
 %
 So the assumption of no intrinsic charm amounts to the assumption
-that if the 4FNS \pdfs are transformed back to the 3FNS, the 3FNS charm
+that if the 4\fns \pdfs are transformed back to the 3\fns, the 3\fns charm
 \pdf is found to vanish. Hence, intrinsic charm is by definition the
-deviation from zero of the 3FNS charm \pdf~\cite{Ball:2015dpa}. Note
-that whereas the 3FNS charm \pdf is purely intrinsic, while the 4FNS
+deviation from zero of the 3\fns charm \pdf~\cite{Ball:2015dpa}. Note
+that whereas the 3\fns charm \pdf is purely intrinsic, while the 4\fns
 charm \pdf includes both an intrinsic and a perturbative
  radiative component, the
-4FNS intrinsic component is not equal to the 3FNS charm \pdf, since
+4\fns intrinsic component is not equal to the 3\fns charm \pdf, since
 matching conditions reshuffle all \pdfs among each other. 
 
 Intrinsic charm can then be determined through the following two steps,
 summarized in Fig.~\ref{fig:ic/strategy}. 
 First, all the \pdfs, including the charm \pdf, are parametrized 
-in the 4FNS at an input scale $Q_0$ and evolved 
+in the 4\fns at an input scale $Q_0$ and evolved 
 using \nnlo perturbative QCD to   $Q \not = Q_0$.
 %
 These evolved \pdfs can be used to 
@@ -39,17 +39,17 @@ compared to a global dataset of experimental measurements.
 %
 The result of this first step in our procedure is 
 a Monte Carlo (MC) representation
-of the probability distribution for the 4FNS \pdfs at the input
+of the probability distribution for the 4\fns \pdfs at the input
 parametrization scale $Q_0$.
 
-Next, this 4FNS charm \pdf is transformed to the 3FNS at some scale matching scale
+Next, this 4\fns charm \pdf is transformed to the 3\fns at some scale matching scale
 $Q_c$.
 %
 Note that the choice of both $Q_0$ and $Q_c$ are immaterial. The former
 because perturbative evolution is invertible, so
 results for the \pdfs do not depend on the choice of
 parametrization scale $Q_0$. The latter because 
-the 3FNS charm is scale independent, so it does not depend on the
+the 3\fns charm is scale independent, so it does not depend on the
 value of $Q_c$.
 Both statements of course hold up to fixed perturbative accuracy, and
 are violated by MHO corrections.
@@ -58,7 +58,7 @@ In practice, we parametrize \pdfs at the scale
 $Q_0=$~1.65~GeV and perform the inversion at a scale
 chosen equal to the charm mass $Q_c=m_c=1.51$~GeV.
 
-The scale-independent 3FNS charm \pdf is then the sought-for intrinsic
+The scale-independent 3\fns charm \pdf is then the sought-for intrinsic
 charm.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,11 +67,11 @@ charm.
   \includegraphics[width=0.8\textwidth]{ch-ic/strategy.pdf}
  \end{center}
 \vspace{-0.2cm}
-\caption{The 4FNS charm \pdf is parametrized  at $Q_0$
+\caption{The 4\fns charm \pdf is parametrized  at $Q_0$
   and evolved to all  $Q$, where it is  constrained by the NNPDF4.0
   global dataset. 
   %
- Subsequently, it is transformed to the 3FNS where (if nonzero) it
+ Subsequently, it is transformed to the 3\fns where (if nonzero) it
  provides the intrinsic charm component.
   \label{fig:ic/strategy}
 }
@@ -80,7 +80,7 @@ charm.
 
 \paragraph{Global QCD analysis.}
 %
-The 4FNS charm \pdf and its associated
+The 4\fns charm \pdf and its associated
 uncertainties is determined by means of a global QCD analysis
 within the NNPDF4.0 framework.
 %
@@ -90,7 +90,7 @@ supervised machine learning techniques.
 The Monte Carlo replica method
 is deployed to ensure a faithful uncertainty estimate.
 %
-Specifically, we express the 4FNS total charm \pdf ($c^+=c+\bar{c}$)  in terms of the output neurons associated to the quark singlet $\Sigma$ and non-singlet $T_{15}$
+Specifically, we express the 4\fns total charm \pdf ($c^+=c+\bar{c}$)  in terms of the output neurons associated to the quark singlet $\Sigma$ and non-singlet $T_{15}$
 distributions, see Sect.~3.1 of~\cite{Ball:2021leu}, as
 \begin{equation}
 \label{eq:ic/fitted_charm_param}
@@ -107,7 +107,7 @@ A crucial feature of Eq.~(\ref{eq:ic/fitted_charm_param}) is that no \textit{
 ad hoc} specific model assumptions are used: the shape and size of
 $xc^+(x,Q_0)$ are entirely determined from experimental data.
 %
-Hence, our determination of the 4FNS fitted charm \pdf, and thus of the intrinsic charm, is unbiased.
+Hence, our determination of the 4\fns fitted charm \pdf, and thus of the intrinsic charm, is unbiased.
 %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,15 +146,15 @@ Particularly important constraints come from $W$ and $Z$ production from
 neutral and charged current deep-inelastic 
 scattering (DIS) structure functions from HERA.
 %
-The 4FNS  \pdfs at the input scale $Q_0$ are related
+The 4\fns  \pdfs at the input scale $Q_0$ are related
 to experimental measurements at $Q \not =Q_0$ by means of \nnlo QCD calculations, including
 the FONLL-C general-mass scheme for DIS~\cite{Forte:2010ta} generalized to 
 allow for fitted charm~\cite{Ball:2015tna}.
 
 We have verified (see SI
-\cref{app:ic/charm_stability_4fns,app:ic/charm_stability_3fns}) that the
-determination of 4FNS charm \pdf \cref{eq:ic/fitted_charm_param} and the ensuing
-3FNS intrinsic charm \pdf are  stable upon variations of methodology (\pdf
+\cref{sec:ic/charm_stability_4fns,sec:ic/charm_stability_3fns}) that the
+determination of 4\fns charm \pdf \cref{eq:ic/fitted_charm_param} and the ensuing
+3\fns intrinsic charm \pdf are  stable upon variations of methodology (\pdf
 parametrization basis), input dataset, and values of Standard Model parameters
 (the charm mass).
 We have also studied the stability of our results upon replacing the
@@ -180,18 +180,18 @@ The absolute worsening of the total $\chi^2$ when the vanishing of intrinsic cha
 of 166 units, corresponding to
 a $2\sigma$ effects in units of $\sigma_{\chi^2}= \sqrt{2n_\textrm{ dat}}$.
 
-\paragraph{Calculation of the 3FNS charm \pdf.}
+\paragraph{Calculation of the 3\fns charm \pdf.}
 %
 The Monte Carlo representation of the probability distribution associated to
-the 4FNS charm \pdf determined by the global
+the 4\fns charm \pdf determined by the global
 analysis contains an intrinsic component mixed with a perturbatively
 generated contribution, with the latter
 becoming larger in the $x\lsim 0.1$ region as the scale $Q$ is increased.
 %
 In order to extract the intrinsic component, 
-we transform \pdfs to the 3FNS at the scale $Q_c=m_c=1.51$~GeV using
+we transform \pdfs to the 3\fns at the scale $Q_c=m_c=1.51$~GeV using
 \textsc{\small EKO}, a novel \textsc{\small Python} open source
-\pdf evolution framework (see  SI Sect.~\ref{app:ic/eko}).
+\pdf evolution framework (see  SI Sect.~\ref{sec:ic/eko}).
 %
 In its current implementation, \textsc{\small EKO} performs  QCD 
 evolution of \pdfs to any scale
@@ -201,8 +201,8 @@ been implemented, by
 using  the results
 of~\cite{Bierenbaum:2009zt,Bierenbaum:2009mv,Ablinger:2010ty,Ablinger:2014vwa,Ablinger:2014uka,Behring:2014eya,Ablinger_2014,Ablinger:2014nga,Blumlein:2017wxd}
 for $\mathcal{O}(\alpha_s^3)$ operator matrix elements~
-so that the direct and inverse transformations from the 3FNS to the
-4FNS can be performed at one order
+so that the direct and inverse transformations from the 3\fns to the
+4\fns can be performed at one order
 higher.
 %
 The \nnnlo contributions to the matching conditions are a subset of
@@ -217,7 +217,7 @@ matching conditions as a way to estimate the
 the size of the missing higher orders. 
 Indeed, these corrections have a very 
 significant impact on the
-perturbatively generated component, see SI Sect.~\ref{app:ic/consistency}.
+perturbatively generated component, see SI Sect.~\ref{sec:ic/consistency}.
 %
 They become large for $x \lsim 0.1$, which coincides with the region
 dominated by the perturbative component of the charm \pdf,

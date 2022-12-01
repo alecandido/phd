@@ -1,0 +1,165 @@
+% !TeX root = ../../../main.tex
+
+Here we provide full details on our computation of  $Z$+charm
+production and on the inclusion of the \lhcb data for this
+process in the determination of the charm \pdf shown in
+Fig.~\ref{fig:ic/Zc}. 
+
+\paragraph{Computational settings.}
+%
+Theoretical predictions for
+the $Z$+charm measurements in the forward region 
+by \lhcb~\cite{LHCb:2021stx} follow the 
+ settings described in~\cite{Boettcher:2015sqn}.
+%
+$Z$+jet events at \nlo QCD theory are generated for $\sqrt{s}= 13$ TeV  using the $Zj$ package of the
+\textsc{\small POWHEG-BOX}~\cite{Alioli:2010xd}.
+%
+The parton-level events produced by \textsc{\small POWHEG}
+are then interfaced to \textsc{\small Pythia8}~\cite{Sjostrand:2007gs}
+with the Monash 2013 tune~\cite{Skands:2014pea} for showering,
+hadronization, and simulation of the underlying event and multiple
+parton interactions.
+%
+Long-lived hadrons, including charmed hadrons,
+are assumed stable and not decayed.
+
+Selection criteria on these particle-level events are imposed
+to match the \lhcb acceptance~\cite{LHCb:2021stx}.
+%
+$Z$ bosons are reconstructed in the dimuon final state by
+requiring $60~\textrm{ GeV}\le m_{\mu\mu} \le 120~\textrm{ GeV}$,
+and
+only events where these muons satisfy
+    $p_T^\mu \ge 20~\textrm{ GeV}$ and $2.0 \le \eta_{\mu}\le 4.5$
+    are retained.
+%
+Stable visible hadrons within the \lhcb acceptance of
+$2.0 \le \eta \le 4.5$ are clustered with
+the anti-$k_T$ algorithm with radius parameter
+of $R=0.5$~\cite{Cacciari:2008gp}.
+%
+Only events with a hardest jet satisfying
+  $ 20~\textrm{ GeV} \le p_T^\textrm{ jet} \le 100~\textrm{ GeV}$
+and $2.2 \le \eta_\textrm{ jet}\le 4.2$ are retained.
+%
+Charm jets are defined as jets containing
+a charmed hadron, specifically  jets satisfying
+$\Delta R(j, c\textrm{-hadron})\le 0.5$ for a charmed
+hadron with $p_T(c\textrm{-hadron})\ge 5~\textrm{ GeV}$.
+%
+Jets and muons are required to be separated
+in rapidity and azimuthal angle, so
+we require $\Delta R(j, \mu)\ge 0.5$.
+%
+The resulting events
+are then binned in the $Z$ bosom rapidity $y_Z = y_{\mu \mu}$.
+
+The physical observable measured by \lhcb is the ratio of the fraction of $Z$+jet
+    events with and without a charm tag,
+    \begin{equation}
+    \label{eq:ic/Rcj}
+        \mathcal{R}_j^c \equiv \frac{\sigma(pp\to Z+\textrm{ charm~ jet})}{\sigma(pp \to Z+\textrm{ jet})}=
+         \frac{N(c\textrm{ -tag})}{ 
+        N(\textrm{ jets})} \, .
+    \end{equation}
+ Here  $N(c\textrm{ -tag})$ and $N(\textrm{ jets})$ are, respectively, the number
+    of charm-tagged and un-tagged jets, for a  $Z$ boson rapidity interval
+    that satisfies the selection and acceptance criteria.
+    %
+    The denominator of Eq.~(\ref{eq:ic/Rcj}) includes all jets, even those
+    containing heavy hadrons.
+    %
+The charm tagging efficiency is already accounted for at the level
+of the experimental measurement, so it is not required in the theory
+simulations.
+
+Predictions for Eq.~(\ref{eq:ic/Rcj}) are produced using our default \pdf
+determination (NNPDF4.0 \nnlo), as well as the corresponding \pdf set
+with perturbative charm (see SI Sect.~\ref{sec:ic/consistency}).
+%
+We have
+explicitly checked that our results are essentially independent of the
+value of the charm mass.
+%
+We have evaluated MHOUs and \pdf uncertainties using the
+output of the \textsc{\small POWHEG+Pythia8} calculations.
+We have checked that MHOUs, evaluated with the standard
+seven-point prescription, essentially cancel in the ratio
+Eq.~(\ref{eq:ic/Rcj}). Note that 
+this is not the case for  \pdf uncertainties, because the dominant
+partonic subchannels in the numerator and denominator are not the same.
+
+\paragraph{Inclusion of the \lhcb data.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+  \small
+    \renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\textwidth}{C{3.5cm}C{2.5cm}C{2.5cm}C{2.5cm}C{2.5cm}}
+  \toprule
+ \multirow{2}{*}{ $\chi^2/N_\textrm{ dat}$}  &   \multicolumn{2}{c}{ default charm}   &\multicolumn{2}{c}{perturbative charm} \\
+                       &  $\rho_\textrm{ sys}=0$   & $\rho_\textrm{ sys}=1$ &  $\rho_\textrm{ sys}=0$ &   $\rho_\textrm{ sys}=1$ \\
+  \midrule
+ Prior        &  1.85   &  3.33      &   3.54  & 3.85      \\
+ \midrule
+ Reweighted   &  1.81   &  3.14      &   $-$   &  $-$     \\
+\bottomrule
+\end{tabularx}
+\vspace{0.3cm}
+\caption{\label{tab:ic/chi2_zcharm} The values of $\chi^2/N_\textrm{ dat}$
+ for the \lhcb $Z$+charm data before (prior) and after (reweighted)
+ their inclusion in the \pdf fit. Results are given for two 
+ experimental correlation models, denoted as
+ $\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$. We also report values
+ before inclusion for the perturbative charm \pdfs.
+}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We first compare the quality of the description of the \lhcb data
+before their inclusion. In Table~\ref{tab:ic/chi2_zcharm} we show the
+values of $\chi^2/N_\textrm{ dat}$ for the \lhcb $Z$+charm data
+both with default and perturbative charm.
+%
+Since the experimental covariance matrix is not available for the \lhcb
+data we determine the $\chi^2$ values assuming two limiting scenarios
+for the correlation of experimental systematic uncertainties.
+%
+Namely, 
+we either add in quadrature statistical and systematic errors ($\rho_\textrm{ sys}=0$),
+or alternatively we assume that the total systematic uncertainty
+is fully correlated between $y_Z$ bins ($\rho_\textrm{ sys}=1$). Fit
+quality is always significantly better in our default intrinsic charm
+scenario than with perturbative charm.
+%
+As is clear from
+Fig.~\ref{fig:ic/Zc} (top left), the somewhat poor fit quality is mostly due to the first
+rapidity bin, which is essentially uncorrelated to the amount of
+intrinsic charm (see
+Fig.~\ref{fig:ic/Zc}, top right).
+
+The \lhcb $Z$+charm data are then included in the \pdf determination
+through
+Bayesian reweighting~\cite{Ball:2010gb,Ball:2011gg}. The
+$\chi^2/N_\textrm{ dat}$ values obtained using the \pdfs found after their
+inclusion are given in
+Table~\ref{tab:ic/chi2_zcharm}.
+%
+They are computed by combining the \pdf and
+experimental covariance matrix so both sources of uncertainty are
+included --- as mentioned above, MHOUs are negligible.
+The fit quality is seen to improve only
+mildly, and the effective number of
+replicas~\cite{Ball:2010gb,Ball:2011gg} after reweighting
+is only moderately reduced, from the prior $N_\textrm{ rep}=100$ to $N_\textrm{
+eff}=92$ or $N_\textrm{ eff}=84$ in the
+$\rho_\textrm{ sys}=0$ and $\rho_\textrm{ sys}=1$ scenarios respectively.
+%
+This
+demonstrates that the inclusion of the \lhcb $Z$+charm measurements  affects
+the \pdfs only weakly. This agrees with the results shown in 
+Figs.~\ref{fig:ic/Zc}~(center) in
+the main manuscript, where it is seen that the inclusion of the \lhcb
+data has essentially no impact on the shape of the charm \pdf, but
+it moderately reduces its uncertainty in the region of the valence peak.
