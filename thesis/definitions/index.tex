@@ -3,7 +3,7 @@
 
 \def\acrcommand#1#2#3{
 	\newacronym{#1}{#2}{#3}
-	\csdef{#1}{\acrshort{#1}\xspace}
+	\csdef{#1}{\ignorespaces\acrshort{#1}\xspace}
 }
 
 \input{definitions/typography}

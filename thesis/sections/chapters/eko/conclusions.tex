@@ -47,6 +47,14 @@ applications, but the optimal scaling with the size of the task (practically
 constant, since the time consumed is dominated by the operator calculation)
 makes it extremely good for massive evolution (and already good when evolving
 $\order{10}$ elements).
+%
+Two special examples where a massive evolution is required are the post-fit
+evolution, since it is shared by all the members of the fitted \pdf set, and
+the evolution involved in the comparison of theoretical predictions with
+experimental data during the fit itself, where evolution is required for each
+\pdf member for each fit step (here the operator is usually embedded in the
+so-called \fktab, discussed in more details in \cref{ch:pine}).
+
 
 It should be observed that while the choice of Python as programming language
 particularly stands out among the other programs (all written in Fortran,

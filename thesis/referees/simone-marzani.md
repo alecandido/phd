@@ -11,7 +11,7 @@
   clarified because it is confusing.
 
 ## Chapter 2
-- [ ] In section 2.1 the Altarelli-Parisi splitting functions are presented as
+- [x] In section 2.1 the Altarelli-Parisi splitting functions are presented as
   functions of two scales. Although the meaning is clear, I would suggest adding
   a sentence to explain this, because it is not the standard way of presenting
   them. Also, at the top of page 32: “expose”-> “admit”.

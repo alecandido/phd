@@ -8,15 +8,15 @@
   find it confusing. I would explain in a single paragraph the usage of the word
   e.g. “light” in the different contexts. Or I would keep the presentation as it
   is, but I would add more comments and references to the other sections.
-- [ ] pag. 30: I would point out that N3LO corrections to the splitting kernels
+- [x] pag. 30: I would point out that N3LO corrections to the splitting kernels
   are only known in an approximate form.
-- [ ] pag. 30: “in the determination of the matrix elements for several
+- [x] pag. 30: “in the determination of the matrix elements for several
   processes” → “in the determination of the short-distance cross sections for
   several processes”
 - [ ] pag. 43, Fig. 2.6 and pag. 46, Fig. 2.10: on the plot on the right, I
   would explicitly label the curves with μth = m2 b /2 and μth = 2m2 b , for
   sake of clarity.
-- [ ] pag. 51: “Producing only operators makes EKO less competitive for single
+- [x] pag. 51: “Producing only operators makes EKO less competitive for single
   one-shot applications, but the optimal scaling with the size of the task
   (practically constant, since the time consumed is dominated by the operator
   calculation) makes it extremely good for massive evolution (and already good
