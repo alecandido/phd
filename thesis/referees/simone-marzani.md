@@ -19,28 +19,38 @@
   removed.
 
 ## Chapter 3
-- [ ] In section 3.1, there is a brief description of DGLAP evolution and EKO.
+- [x] In section 3.1, there is a brief description of DGLAP evolution and EKO.
   These topics are presented as if they were mentioned for the first time, while
   they were discussed at length in chapter 2. I would suggest rewording this
   paragraph.
 
 ## Chapter 4
-- [ ] The second paragraph on page 61 must be corrected because it refers to
+- [x] The second paragraph on page 61 must be corrected because it refers to
   something discussed at the beginning of the chapter... while this is the very
   beginning of the chapter
-- [ ] I find the final paragraph on page 61 difficult to read: “two orders,
+- [x] I find the final paragraph on page 61 difficult to read: “two orders,
   etc”. On page 62, second paragraph of section 4.1, I do not understand what is
   meant by “consumed”.
-- [ ] On page 64, the second and third paragraphs of section 4.2 are hard to
+- [x] On page 64, the second and third paragraphs of section 4.2 are hard to
   read. Also, I do not understand the meaning of the sentence “by appointing the
   distribution...”
 - [ ] On page 68, I think that a few equations describing the schemes A, B and C
   could be helpful.
+  > many objects need to be defined to write down the equations, that are
+  > definitely not straightforward, so they are omitted in favor of the
+  > reference to the exact section in the original paper
 - [ ] I do not have specific suggestions, but I do find section 4.4. difficult
   to follow, although well-detailed.
+  > and you're not alone...
+  > if this problem were not confusing in the first place, this whole note,
+  > together with all the discussion that generated it, would have not been
+  > required, and the original paper would have been the only relevant
+  > reference...
+  > but I accept that my attempt to clarify the problem to a technical audience
+  > failed the purpose of addressing the confusion of a broader public
 
 ## Chapter 5
-- [ ] This chapter closely follows the Nature publication and its supplemental
+- [x] This chapter closely follows the Nature publication and its supplemental
   material. Thus, the text is clear, although in a couple of instances it should
   have been better adapted to the thesis format, e.g., on page 98 one can find
   the expression “in the main manuscript”, clearly referring to the publication.
@@ -50,6 +60,10 @@
   evidence is supported by recent data on Z+c by the LHCb collaboration, while
   on page 93 it is said that 3-sigma is obtained by adding either the LHCb or
   the EMC data, neither of which is present in the standard dataset
+  > there should have been a misunderstanding: this part is adherent to the
+  > original publication, and it is said that the 3-sigma evidence is confirmed
+  > with the addition of the two datasets, but it is clearly present also
+  > without them
 
 ## Chapter 6
 - [ ] I have no specific comment on this chapter, other than the same one
@@ -65,6 +79,9 @@
   use counterterms that do not depend on the scale, so that the scale dependence
   is left in the coefficient function. This is clearly equivalent, but perhaps
   it is worth commenting on it.
+  > here I might be not experienced enough, but I would have said that this is
+  > just the standard Catani-Seymour subtraction as for eq. (6.6) of
+  > https://arxiv.org/pdf/hep-ph/9605323.pdf
 
 ## Chapter 8
 - [x] I do not have any specific comment for this chapter.

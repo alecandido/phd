@@ -16,6 +16,7 @@
 - [ ] pag. 43, Fig. 2.6 and pag. 46, Fig. 2.10: on the plot on the right, I
   would explicitly label the curves with μth = m2 b /2 and μth = 2m2 b , for
   sake of clarity.
+  > unfortunately, not possible in the short term...
 - [x] pag. 51: “Producing only operators makes EKO less competitive for single
   one-shot applications, but the optimal scaling with the size of the task
   (practically constant, since the time consumed is dominated by the operator
@@ -39,15 +40,23 @@
   these p + 1 scales i.e. are they ren. or fac. scales? If p ren. scales and 1
   fac. scales, why only 1 fac. scale? Since this assumption is crucial for the
   rest of the discussion, I would explain it better.
-- [ ] pag. 83: “Moreover, eqs. (4.1) and (4.2) itself does not coincide with the
+- [x] pag. 83: “Moreover, eqs. (4.1) and (4.2) itself does not coincide with the
   correct and general eqs. (4.1) and (4.2), because eq. (4.2) ...”: probably
   wrong references.
+  > references are correct, but there are two different pairs of equations with
+  > unfortunately clashing numbers: those in the current thesis, and those in the
+  > cited paper - easily distinguishable by the color and the presence of the
+  > hyperlink (however it is further disambiguate in the current text)
 - [ ] pag. 133, Fig. 6.9: I would increase the size of the plots.
-- [ ] pag. 154: in a few places, a space after MS is required.
+- [x] pag. 154: in a few places, a space after MS is required.
 
 I further have some typographical suggestions:
 - [ ] some words are in boldface without a clear reason (e.g. “theory
   predictions” at pag. 55). I would remove the boldface characters or use them
   in a more systematic way.
-- [ ] before each keyword, there is a larger space. I would suggest to uniform
+- [x] before each keyword, there is a larger space. I would suggest to uniform
   the spaces through-out the document.
+  > this space, e.g. in the ( LO), ( NLO), and similar occurrences in the
+  > introduction of chapter 2, depends on the latex distribution used to compile
+  > the PDF, since it is not present in the locally compiled version - thus it
+  > is rather hard to trace and debug

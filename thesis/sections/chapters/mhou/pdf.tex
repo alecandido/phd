@@ -10,20 +10,29 @@ During a \pdf fit, probability distributions are already involved, but they
 only appears on the experimental data side.
 So, the normal workflow consist to compare a probability distribution coming
 from data with the individual value provided by theoretical predictions, and
-minimize the $\chi^2$ distance.
+minimize the $\chi^2$ distance (defined thanks to presence of said data
+distribution, approximately assumed to be Gaussian).
 %
 This is already not the whole story, since the \nnpdf methodology accounts also
 for the \pdf distribution, that generates a distribution for theory predictions
-through the theory map of \fktab{}s (cf.\ \cref{ch:pine}).
+through the theory map of \fktab{}s (cf.\ \cref{ch:pine}), i.e.\ its
+\textit{push-forward}.
 %
 But \nnpdf, with its \mc approach, accounts for this distribution one \pdf
 replica at a time, reducing the problem to minimize the $\chi^2$ distance, with
-the probability distributions (assumed to be Gaussian) only on experimental
-side once more.
+the probability distributions only on experimental side, again.
 
 However, the introduction of theory uncertainties generates once more a
-distribution for the theoretical prediction values, by appointing the
-distribution not on the \pdf, but on the theory map itself.
+distribution for the theoretical prediction values, this time not stemming from
+the \pdf one, but directly from the distribution of the theory map itself\footnote{
+  To get a feeling of what is happening, consider that the theory predictions
+  are the convolution of the \pdf $f$ with a theory calculation $FK$, and
+  taking both of them to depend on some parameters, say respectively $\xi$ and
+  $\zeta$, so $\sigma(\zeta, \xi) = FK(\zeta) \otimes f(\xi)$, and then the
+  distribution on the observable prediction $\sigma$ can be generated from both
+  the distribution on $\xi$, the \pdf distribution, and one on $\zeta$, the
+  theory map one.
+}.
 %
 In order to deal with these distributions, another approach is required.
 

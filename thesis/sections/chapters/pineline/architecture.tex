@@ -9,18 +9,9 @@ solving operator for a variety of theory settings (corresponding to different
 \pdf fits, e.g.\ \nlo and \nnlo \qcd evolution), able to perform the
 operator computation as efficient as possible, and to smoothly interface with
 the grid for convolution.
-Multiple evolution codes are already available for the purpose
-\cite{Vogt:2004ns,Salam:2008sz,Botje:2010ay,Bertone:2013vaa,Bertone:2017gds},
-but when the authors decided to begin the full rework of the architecture, it
-has been clear that a dedicated tool, with this exact goal in mind, would have
-been an ideal solution.
 For this reason, the software package \eko \cite{Candido:2022tld} has been
-created, described in details in \cref{ch:eko}.
-It is important to recall that, while \eko is not the first tool to provide
-evolution operators \cite{Bertone:2013vaa,Salam:2008sz}, it produces them as
-the default output, optimizing the process as much as possible, storing them in
-a dedicated file format, designed to be easily available from different
-programming languages.
+created, described in details in \cref{ch:eko}, in order to optimize for this
+specific task.
 
 \eko is very different from \apfel, the tool on which the NNPDF framework has
 until now relied. For instance \apfelgrid (then \apfelcomb), the tool which
