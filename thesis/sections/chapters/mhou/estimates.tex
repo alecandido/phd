@@ -4,18 +4,22 @@ The goal of \mhou studies is to give an estimate of the impact of the missing
 part of the perturbative series, in order to assess the size theory uncertainty
 propagated on physical observables.
 %
-There are two categories of possible approaches: use all-order information
-coming from theoretical knowledge of the perturbative series (or properties
-that applies to the all-order result) and extrapolating from the behavior of
-the known orders.
+There are two categories of possible approaches: 
+\begin{itemize}
+  \item use all-order information coming from theoretical knowledge of the
+    perturbative series (or properties that applies to the all-order result)
+  \item and extrapolating from the behavior of the known orders.
+\end{itemize}
 
-The first category makes use of a similar information of that exploited in
-\textit{resummation}, with a different goal: resumming the perturbative series
-produces a new expansion with a better convergence, while in \mhou studies the
-goal is to estimate the missing part of the initial truncated series.
+The \textit{first category} makes use of a similar information of that
+exploited in \textit{resummation}, with a different goal: resumming the
+perturbative series produces a new expansion with a better convergence, while
+in \mhou studies the goal is to estimate the missing part of the initial
+truncated series.
 %
 The prominent example of this category is the widespread adoption of
-\textbf{scale variations} as theory uncertainties on perturbative calculations.
+\textit{scale variations} as theory uncertainties estimates for perturbative
+calculations.
 The physical motivation relies in Callan-Symanzik equations, the same used to
 obtain \dglap (cf.\ \cref{sec:qcd/dglap}).
 %
@@ -26,11 +30,10 @@ spoilt by the perturbative truncation.
 Therefore, measuring the dependence of the final result on the variation of
 unphysical scales, it is possible to extract the magnitude of this violation. 
 %
-It is not possible to reconstruct from the exact value of an observable from
-this information: many missing terms do not belong to the same \textit{class}
-of known ones, since it is possible to group terms in such a way that
-Callan-Symanzik equations are respected for each group, but only the sum of all
-groups value is the value of the full series.
+It is not possible to reconstruct the exact value of an observable from this
+information alone, since there is no unique solution to the equations, not even
+conditioning on the known orders, so solving the equations is not a sufficient
+condition to identify the missing orders and exact observable.
 %
 Nevertheless, as said before the goal of \mhou investigations is not to upgrade
 a truncated result to a full one, so capturing the order of magnitude is
@@ -72,9 +75,9 @@ the estimate and the real value, but it gives a way to compare the impact on
 different calculations, since the two estimates will share the same arbitrary
 value.
 
-The second category began with \cite{Cacciari:2011ze}, that formulated a
-Bayesian model to extrapolate the prediction value for unknown orders, updating
-it with the known ones.
+The \textit{second category} began with \cite{Cacciari:2011ze}, that formulated
+a Bayesian model to extrapolate the prediction value for unknown orders,
+updating it with the known ones.
 %
 There are two main goals for this kind of approaches: getting rid of the
 scale variations arbitrariness, and extract more information than a single

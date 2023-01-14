@@ -25,15 +25,20 @@
   benchmark for such a massive evolution (as far as I have understood, the
   benchmarks shown in the previous sections are all for the evolution of a
   single PDF).
-- [ ] pag. 62: “There are two categories of possible approaches”: it is not
+- [x] pag. 62: “There are two categories of possible approaches”: it is not
   clear which are the first and the second categories.
-- [ ] pag. 62: “ It is not possible to reconstruct from the exact value of an
+  > maybe it is not clear to me in which sense it is not clear; I tried to
+  > structure more the paragraph in which they are introduced, in case the issue
+  > were there; if instead the boundaries between the two are not clear, most
+  > likely it does involve the whole section, so a more thorough rewriting would
+  > be required, not just a quick-fix
+- [x] pag. 62: “ It is not possible to reconstruct from the exact value of an
   observable from this information: many missing terms do not belong to the same
   class of known ones, since it is possible to group terms in such a way that
   Callan-Symanzik equations are respected for each group, but only the sum of
   all groups value is the value of the full series”. I don’t understand the
   meaning of this sentence.
-- [ ] pag. 70: “More precisely, only the kind of scales to be varied are two,
+- [x] pag. 70: “More precisely, only the kind of scales to be varied are two,
   but there is one renormalization scale associated to each process, so the
   amount of scales is essentially p + 1, where p is the amount of processes in
   the dataset.”. I am not sure I understand this sentence. What is the nature of
@@ -47,11 +52,11 @@
   > unfortunately clashing numbers: those in the current thesis, and those in the
   > cited paper - easily distinguishable by the color and the presence of the
   > hyperlink (however it is further disambiguate in the current text)
-- [ ] pag. 133, Fig. 6.9: I would increase the size of the plots.
+- [x] pag. 133, Fig. 6.9: I would increase the size of the plots.
 - [x] pag. 154: in a few places, a space after MS is required.
 
 I further have some typographical suggestions:
-- [ ] some words are in boldface without a clear reason (e.g. “theory
+- [x] some words are in boldface without a clear reason (e.g. “theory
   predictions” at pag. 55). I would remove the boldface characters or use them
   in a more systematic way.
 - [x] before each keyword, there is a larger space. I would suggest to uniform
