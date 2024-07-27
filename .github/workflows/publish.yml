@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build
         uses: xu-cheng/latex-action@v2
         with:
@@ -41,7 +41,7 @@ jobs:
           outdir=$(sed "s@\$out_dir *= *'\(\w*\)';@\1@p" -n .latexmkrc 2>/dev/null || true)
           echo "outdir=${outdir}" >> $GITHUB_OUTPUT
       - name: Upload PDF file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.dir }}
           path: ${{ matrix.dir }}/${{ steps.set-latex-outdir.outputs.outdir }}/main.pdf
@@ -55,13 +55,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: 7
           run_install: false
@@ -71,7 +71,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - name: Setup pnpm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -82,7 +82,7 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Upload website pages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pages
           path: pages/build/
@@ -95,7 +95,7 @@ jobs:
 
     steps:
       - name: Download built documents
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       - name: Extract
         run: |
           artifacts=$(echo */ | tr ' ' '\n' | xargs -I _ basename _)
@@ -108,7 +108,7 @@ jobs:
             rm -r $art
           done
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./
 
@@ -122,4 +122,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
